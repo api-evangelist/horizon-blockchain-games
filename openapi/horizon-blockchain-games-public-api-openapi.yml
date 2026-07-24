@@ -1,0 +1,4612 @@
+openapi: 3.0.0
+info:
+  title: Api Analytics public API
+  version: ''
+  description: Endpoints accessible by passing your project-access-key in the header. This is injected whenever you login automatically.
+servers:
+- url: https://api.sequence.app
+  description: Analytics
+security:
+- ApiKeyAuth: []
+tags:
+- name: public
+  description: Endpoints accessible by passing your project-access-key in the header. This is injected whenever you login automatically.
+paths:
+  /rpc/Indexer/GetNativeTokenBalance:
+    post:
+      summary: GetNativeTokenBalance
+      description: GetNativeTokenBalance queries an ethereum node for the latest native token account balance. The native token is the token of the chain the indexer is connected to, for example, ETH on Ethereum and POL on Polygon.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetNativeTokenBalance_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetNativeTokenBalance_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetTokenBalancesSummary:
+    post:
+      summary: GetTokenBalancesSummary
+      description: On Sepolia Mainnet, get the token balance summaries for an account address
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetTokenBalancesSummary_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetTokenBalancesSummary_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetTokenBalancesDetails:
+    post:
+      summary: GetTokenBalancesDetails
+      description: On Sepolia Mainnet, get the token balance details for tokens owned by an account address
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetTokenBalancesDetails_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetTokenBalancesDetails_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetTokenBalancesByContract:
+    post:
+      summary: GetTokenBalancesByContract
+      description: On Sepolia Mainnet, get the token balances by a specific contract address
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetTokenBalancesByContract_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetTokenBalancesByContract_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetTokenBalances:
+    post:
+      summary: GetTokenBalances
+      description: Get the token balances for the included account address and contract address. Example on Ethereum Sepolia
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetTokenBalances_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetTokenBalances_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetTokenSupplies:
+    post:
+      summary: GetTokenSupplies
+      description: GetTokenSupplies returns the set of tokenIDs used by a contract address, supporting ERC-20, ERC-721, and ERC-1155 contracts, and their respective supply as well.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetTokenSupplies_Request'
+            example:
+              contractAddress: '0x369db37255c76aec060d070eabeb0661e51a42a9'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetTokenSupplies_Response'
+              example:
+                page:
+                  pageSize: 200
+                  more: false
+                contractType: ERC1155
+                tokenIDs:
+                - tokenID: '0'
+                  supply: '9'
+                  chainId: 1
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetTokenSuppliesMap:
+    post:
+      summary: GetTokenSuppliesMap
+      description: On Sepolia Mainnet, get the token supplies of the minted tokens for a contract address and token ID mapping
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetTokenSuppliesMap_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetTokenSuppliesMap_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetBalanceUpdates:
+    post:
+      summary: GetBalanceUpdates
+      description: Get balance update aggregate values -- useful for syncing balance details of a contract, ie. from Skyweaver
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetBalanceUpdates_Request'
+            example:
+              contractAddress: '0x369db37255c76aec060d070eabeb0661e51a42a9'
+              lastBlockNumber: 0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetBalanceUpdates_Response'
+              example:
+                page:
+                  pageSize: 200
+                  more: false
+                balances:
+                - contractType: ERC1155
+                  contractAddress: '0x369db37255c76aec060d070eabeb0661e51a42a9'
+                  accountAddress: '0xc48835421ce2651bc5f78ee59d1e10244753c7fc'
+                  tokenID: '0'
+                  balance: '8'
+                  blockHash: '0x4db688b03de5804dd6e916ebafbc687aa3196c99288fbc63698e92c855400ff3'
+                  blockNumber: 20126805
+                  chainId: 1
+                - contractType: ERC1155
+                  contractAddress: '0x369db37255c76aec060d070eabeb0661e51a42a9'
+                  accountAddress: ''
+                  tokenID: '0'
+                  balance: '9'
+                  blockHash: '0xd5e2e041f9d292b25076a512e198d183a55d21440be15e9869c0b1b7d9b179f5'
+                  blockNumber: 20363254
+                  chainId: 1
+                - contractType: ERC1155
+                  contractAddress: '0x369db37255c76aec060d070eabeb0661e51a42a9'
+                  accountAddress: '0x0000000000000000000000000000000000000000'
+                  tokenID: '0'
+                  balance: '-9'
+                  blockHash: '0xd5e2e041f9d292b25076a512e198d183a55d21440be15e9869c0b1b7d9b179f5'
+                  blockNumber: 20363254
+                  chainId: 1
+                - contractType: ERC1155
+                  contractAddress: '0x369db37255c76aec060d070eabeb0661e51a42a9'
+                  accountAddress: '0xbabebe9fe973a5735d486bf6d31e9a027248024e'
+                  tokenID: '0'
+                  balance: '1'
+                  blockHash: '0x080ea6171f82705555cd1248f73ce1d61dbcbd68f5eefab44b64dec2293a695f'
+                  blockNumber: 20692108
+                  chainId: 1
+                - contractType: ERC1155
+                  contractAddress: '0x369db37255c76aec060d070eabeb0661e51a42a9'
+                  accountAddress: '0xe6eb28398ccbe46aa505b62b96822c2ce8daabf4'
+                  tokenID: '0'
+                  balance: '0'
+                  blockHash: '0x080ea6171f82705555cd1248f73ce1d61dbcbd68f5eefab44b64dec2293a695f'
+                  blockNumber: 20692108
+                  chainId: 1
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/GetTransactionHistory:
+    post:
+      summary: GetTransactionHistory
+      description: History of mined transactions for the account which includes a list of token transfers (sent/recieved) and sent transactions from a Sequence wallet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetTransactionHistory_Request'
+            example:
+              accountAddress: '0xe6eb28398ccbe46aa505b62b96822c2ce8daabf4'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetTransactionHistory_Response'
+              example:
+                page:
+                  after: rmExGgC37OVhMnhCMHhiMjMzM2NlNDliNzlmMzcyOGUwYWFjNzNlNGMwNzYzYmVjODBlYmVmZGViZWZlOWU1ZDVmZGNiNWVmNzMyZWE2YTN4KjB4ZTZlYjI4Mzk4Y2NiZTQ2YWE1MDViNjJiOTY4MjJjMmNlOGRhYWJmNGE0eCoweGRkOTAxMjY4NTY5NTdhYTFlOWM1Y2MzMzk1ZTg2NmI2ZWI4MzBhNDRhNQJhNngqMHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwYTd4KjB4ZTZlYjI4Mzk4Y2NiZTQ2YWE1MDViNjJiOTY4MjJjMmNlOGRhYWJmNGE4eEIweDJkNmFiZmE1MTI2NDRmYzVjMjY2Nzk2ZTg4MzMxYmY0MWNhZDc1YWFlMjE4ZDQxODk0ODU1MzU4ZDhjODlhMGRhOQBhYQFhYmBhZIFDIjAiYWWBRCI2MiJhYxpm6I0N
+                  pageSize: 10
+                  more: true
+                transactions:
+                - txnHash: '0x64628263b93ccad7dfd6fb1a81f1bcdadd0eb89649e0a43bdf65f639fddcd319'
+                  blockNumber: 12215569
+                  blockHash: '0x05a4b055603a0b0cdb9e0d1bc28088bb4fca79a83d32bdc4a98d665e06ae7564'
+                  chainId: 80002
+                  metaTxnID: null
+                  transfers:
+                  - transferType: RECEIVE
+                    contractAddress: '0xdd90126856957aa1e9c5cc3395e866b6eb830a44'
+                    contractType: ERC20
+                    from: '0x0000000000000000000000000000000000000000'
+                    to: '0xe6eb28398ccbe46aa505b62b96822c2ce8daabf4'
+                    tokenIds:
+                    - '0'
+                    amounts:
+                    - '33'
+                    logIndex: 9
+                    contractInfo:
+                      chainId: 80002
+                      address: '0xdd90126856957aa1e9c5cc3395e866b6eb830a44'
+                      name: Oracle Token
+                      type: ERC20
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        originChainId: 0
+                        originAddress: '0xdd90126856957aa1e9c5cc3395e866b6eb830a44'
+                        verified: true
+                        verifiedBy: Sequence Builder
+                      updatedAt: '0001-01-01T00:00:00Z'
+                  timestamp: '2024-09-20T20:36:45Z'
+                - txnHash: '0x5aae198a65b993a767bd495ea77b7825e0e884d9dcc446a1515097eb962814d6'
+                  blockNumber: 12213913
+                  blockHash: '0x726ccdee4ef384493f96c666e959258ba70689bd6553c098a51542b2627a8b22'
+                  chainId: 80002
+                  metaTxnID: null
+                  transfers:
+                  - transferType: RECEIVE
+                    contractAddress: '0xdd90126856957aa1e9c5cc3395e866b6eb830a44'
+                    contractType: ERC20
+                    from: '0x0000000000000000000000000000000000000000'
+                    to: '0xe6eb28398ccbe46aa505b62b96822c2ce8daabf4'
+                    tokenIds:
+                    - '0'
+                    amounts:
+                    - '1000'
+                    logIndex: 1
+                    contractInfo:
+                      chainId: 80002
+                      address: '0xdd90126856957aa1e9c5cc3395e866b6eb830a44'
+                      name: Oracle Token
+                      type: ERC20
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        originChainId: 0
+                        originAddress: '0xdd90126856957aa1e9c5cc3395e866b6eb830a44'
+                        verified: true
+                        verifiedBy: Sequence Builder
+                      updatedAt: '0001-01-01T00:00:00Z'
+                  timestamp: '2024-09-20T19:37:18Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/FetchTransactionReceipt:
+    post:
+      summary: FetchTransactionReceipt
+      description: On Sepolia Mainnet, get the transaction receipt for a specific hash after a certain number of blocks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_FetchTransactionReceipt_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_FetchTransactionReceipt_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/FetchTransactionReceiptWithFilter:
+    post:
+      summary: FetchTransactionReceiptWithFilter
+      description: On Sepolia Mainnet, get the transaction receipt for a specific hash after a certain number of blocks for a certain filter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_FetchTransactionReceiptWithFilter_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_FetchTransactionReceiptWithFilter_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/SubscribeReceipts:
+    post:
+      summary: SubscribeReceipts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_SubscribeReceipts_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_SubscribeReceipts_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      description: On Sepolia Mainnet, subscribe and receive receipts based on a filter of transaction hash and transaction details
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/SubscribeEvents:
+    post:
+      summary: SubscribeEvents
+      description: On Sepolia Mainnet, subscribe and receive receipts based on a filter of transaction mints
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_SubscribeEvents_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_SubscribeEvents_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Indexer/SubscribeBalanceUpdates:
+    post:
+      summary: SubscribeBalanceUpdates
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_SubscribeBalanceUpdates_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_SubscribeBalanceUpdates_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      description: On Sepolia Mainnet, subscribe and receive balance updates based on the affected address, like wallet and contract address, with specific details
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/RefreshTokenMetadata:
+    post:
+      summary: RefreshTokenMetadata
+      deprecated: true
+      description: Deprecated -> Use RefreshContractInfo, RefreshContractTokens or RefreshAllContractTokens
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_RefreshTokenMetadata_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  contractAddress: '0x70a2177079877e4aae639d1abb29ffa537b99279'
+                  tokenIDs:
+                  - '0'
+                  - '1'
+                  refreshAll: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_RefreshTokenMetadata_Response'
+              examples:
+                '0':
+                  value:
+                    taskId: 64137
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/EnqueueTokensForRefresh:
+    post:
+      summary: EnqueueTokensForRefresh
+      deprecated: true
+      description: Deprecated -> RefreshContractTokens or RefreshAllContractTokens
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_EnqueueTokensForRefresh_Request'
+            examples:
+              '0':
+                value:
+                  chainId: '80002'
+                  contractAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                  tokenIds:
+                  - '0'
+                  - '1'
+                  - '2'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_EnqueueTokensForRefresh_Response'
+              examples:
+                '0':
+                  value:
+                    taskId: 64352
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/GetTokenMetadata:
+    post:
+      summary: GetTokenMetadata
+      description: GetTokenMetadata - fetch token metadata for a particular contract and respective tokenIDs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_GetTokenMetadata_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  contractAddress: '0xaf8a08bf8b2945c2779ae507dade15985ea11fbc'
+                  tokenIDs:
+                  - '19371963813488842961773981353605630758075094402'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_GetTokenMetadata_Response'
+              examples:
+                '0':
+                  value:
+                    tokenMetadata:
+                    - tokenId: '19371963813488842961773981353605630758075094402'
+                      name: Dragon Shield Shield
+                      description: A free AI treasure chest mini-game
+                      image: https://metadata.sequence.app/projects/1229/collections/40/tokens/19371963813488842961773981353605630758075094402/image.png
+                      properties: null
+                      attributes:
+                      - display_type: category
+                        trait_type: Category
+                        value: defensive
+                      - display_type: defense_min
+                        trait_type: Defense Minimum
+                        value: '59'
+                      - display_type: defense_max
+                        trait_type: Defense Maximum
+                        value: '67'
+                      - display_type: tier
+                        trait_type: tier
+                        value: Common
+                      - display_type: type
+                        trait_type: type
+                        value: Shield
+                      decimals: 0
+                      updatedAt: '2024-10-10T18:08:04.22766865Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/GetTokenMetadataBatch:
+    post:
+      summary: GetTokenMetadataBatch
+      description: 'GetTokenMetadataBatch allows you to query the token metadata of a batch of contracts and respective tokenIDs where map is contractAddress::[]tokenID => contractAddress::[]TokenMetadata
+
+        Note, we limit each request to 50 contracts max and 50 tokens max per contract.'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_GetTokenMetadataBatch_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  contractTokenMap:
+                    '0x8070c5b48b1ce7b3219660c79b23e8679bfd5041':
+                    - '0'
+                    - '1'
+                    '0x70a2177079877e4aae639d1abb29ffa537b94970':
+                    - '0'
+                    - '1'
+                    - '2'
+                    - '3'
+                    - '4'
+                    - '5'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_GetTokenMetadataBatch_Response'
+              examples:
+                '0':
+                  value:
+                    contractTokenMetadata:
+                      '0x70a2177079877e4aae639d1abb29ffa537b94970':
+                      - tokenId: '0'
+                        name: 'Divine Axe #160'
+                        description: This legendary axe, blessed by ancient gods, capable of shattering mountains.
+                        image: https://metadata.sequence.app/projects/30957/collections/819/tokens/0/image.png
+                        properties: null
+                        attributes:
+                        - sharpness: 1120
+                        - attackPower: 463
+                        - weight: 700
+                        - criticalHitChance: 1218
+                        updatedAt: '2024-11-01T08:29:29.848063928Z'
+                      - tokenId: '1'
+                        name: 'Divine Axe #724'
+                        description: This powerful axe, blessed by ancient gods, with the power to summon storms.
+                        image: https://metadata.sequence.app/projects/30957/collections/819/tokens/1/image.png
+                        properties: null
+                        attributes:
+                        - speed: 1491
+                        - edgeRetention: 1198
+                        - criticalHitChance: 370
+                        - attackPower: 396
+                        updatedAt: '2024-11-01T08:29:29.848063928Z'
+                      - tokenId: '2'
+                        name: 'Divine Axe #819'
+                        description: This ancient axe, blessed by ancient gods, capable of shattering mountains.
+                        image: https://metadata.sequence.app/projects/30957/collections/819/tokens/2/image.png
+                        properties: null
+                        attributes:
+                        - balance: 81
+                        - edgeRetention: 283
+                        - sharpness: 105
+                        - durability: 338
+                        updatedAt: '2024-11-01T08:29:29.848063928Z'
+                      - tokenId: '3'
+                        name: 'Divine Axe #948'
+                        description: This enchanted axe, crafted by the hands of giants, which never dulls.
+                        image: https://metadata.sequence.app/projects/30957/collections/819/tokens/3/image.png
+                        properties: null
+                        attributes:
+                        - speed: 1314
+                        - balance: 1235
+                        - weight: 48
+                        - magic: 826
+                        updatedAt: '2024-11-01T08:29:29.848063928Z'
+                      - tokenId: '4'
+                        name: 'Divine Axe #031'
+                        description: This powerful axe, forged in the fires of a dying star, which never dulls.
+                        image: https://metadata.sequence.app/projects/30957/collections/819/tokens/4/image.png
+                        properties: null
+                        attributes:
+                        - speed: 1144
+                        - elementalAffinity: 1315
+                        - edgeRetention: 1128
+                        - sharpness: 1232
+                        updatedAt: '2024-11-01T08:29:29.848063928Z'
+                      - tokenId: '5'
+                        name: 'Divine Axe #452'
+                        description: This enchanted axe, crafted by the hands of giants, with the power to summon storms.
+                        image: https://metadata.sequence.app/projects/30957/collections/819/tokens/5/image.png
+                        properties: null
+                        attributes:
+                        - elementalAffinity: 803
+                        - durability: 83
+                        - criticalHitChance: 268
+                        - balance: 1039
+                        updatedAt: '2024-11-01T08:29:29.848063928Z'
+                      '0x8070c5b48b1ce7b3219660c79b23e8679bfd5041':
+                      - tokenId: '0'
+                        name: Test nft erc721
+                        description: Description
+                        image: https://metadata.sequence.app/projects/30957/collections/273/tokens/0/image.jpg
+                        properties:
+                          armor: '100'
+                        attributes: null
+                        updatedAt: '2024-11-01T08:18:33.514523974Z'
+                      - tokenId: '1'
+                        name: NFT 2 Amoy
+                        description: Description
+                        image: https://metadata.sequence.app/projects/30957/collections/273/tokens/1/image.jpg
+                        properties: null
+                        attributes: null
+                        updatedAt: '2024-11-01T08:18:33.514523974Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/SearchTokenMetadata:
+    post:
+      summary: SearchTokenMetadata
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_SearchTokenMetadata_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  contractAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                  filter:
+                    text: Divine
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_SearchTokenMetadata_Response'
+              examples:
+                '0':
+                  value:
+                    page:
+                      pageSize: 10
+                      more: false
+                    tokenMetadata:
+                    - tokenId: '0'
+                      name: 'Divine Axe #160'
+                      description: This legendary axe, blessed by ancient gods, capable of shattering mountains.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/0/image.png
+                      properties: null
+                      attributes:
+                      - sharpness: 1120
+                      - attackPower: 463
+                      - weight: 700
+                      - criticalHitChance: 1218
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '1'
+                      name: 'Divine Axe #724'
+                      description: This powerful axe, blessed by ancient gods, with the power to summon storms.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/1/image.png
+                      properties: null
+                      attributes:
+                      - speed: 1491
+                      - edgeRetention: 1198
+                      - criticalHitChance: 370
+                      - attackPower: 396
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '2'
+                      name: 'Divine Axe #819'
+                      description: This ancient axe, blessed by ancient gods, capable of shattering mountains.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/2/image.png
+                      properties: null
+                      attributes:
+                      - balance: 81
+                      - edgeRetention: 283
+                      - sharpness: 105
+                      - durability: 338
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '3'
+                      name: 'Divine Axe #948'
+                      description: This enchanted axe, crafted by the hands of giants, which never dulls.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/3/image.png
+                      properties: null
+                      attributes:
+                      - speed: 1314
+                      - balance: 1235
+                      - weight: 48
+                      - magic: 826
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '4'
+                      name: 'Divine Axe #031'
+                      description: This powerful axe, forged in the fires of a dying star, which never dulls.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/4/image.png
+                      properties: null
+                      attributes:
+                      - speed: 1144
+                      - elementalAffinity: 1315
+                      - edgeRetention: 1128
+                      - sharpness: 1232
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '5'
+                      name: 'Divine Axe #452'
+                      description: This enchanted axe, crafted by the hands of giants, with the power to summon storms.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/5/image.png
+                      properties: null
+                      attributes:
+                      - elementalAffinity: 803
+                      - durability: 83
+                      - criticalHitChance: 268
+                      - balance: 1039
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '6'
+                      name: 'Divine Axe #689'
+                      description: This cursed axe, forged in the fires of a dying star, which never dulls.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/6/image.png
+                      properties: null
+                      attributes:
+                      - speed: 1088
+                      - elementalAffinity: 1195
+                      - magic: 1398
+                      - sharpness: 1069
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '7'
+                      name: 'Divine Axe #759'
+                      description: This ancient axe, blessed by ancient gods, with the power to summon storms.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/7/image.png
+                      properties: null
+                      attributes:
+                      - balance: 670
+                      - elementalAffinity: 514
+                      - weight: 146
+                      - edgeRetention: 747
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '8'
+                      name: 'Divine Axe #599'
+                      description: This enchanted axe, crafted by the hands of giants, capable of shattering mountains.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/8/image.png
+                      properties: null
+                      attributes:
+                      - criticalHitChance: 375
+                      - weight: 531
+                      - speed: 1300
+                      - edgeRetention: 368
+                      updatedAt: '0001-01-01T00:00:00Z'
+                    - tokenId: '9'
+                      name: 'Divine Axe #364'
+                      description: This cursed axe, imbued with the souls of fallen warriors, which never dulls.
+                      image: https://metadata.sequence.app/projects/30957/collections/819/tokens/9/image.png
+                      properties: null
+                      attributes:
+                      - weight: 109
+                      - balance: 395
+                      - durability: 863
+                      - speed: 484
+                      updatedAt: '0001-01-01T00:00:00Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/SearchTokenIDs:
+    post:
+      summary: SearchTokenIDs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_SearchTokenIDs_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  contractAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                  filter:
+                    text: Divine
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_SearchTokenIDs_Response'
+              examples:
+                '0':
+                  value:
+                    page: null
+                    tokenIds:
+                    - '0'
+                    - '1'
+                    - '2'
+                    - '3'
+                    - '4'
+                    - '5'
+                    - '6'
+                    - '7'
+                    - '8'
+                    - '9'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/TokenCollectionFilters:
+    post:
+      summary: TokenCollectionFilters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_TokenCollectionFilters_Request'
+            examples:
+              '0':
+                value:
+                  chainId: '80002'
+                  contractAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_TokenCollectionFilters_Response'
+              examples:
+                '0':
+                  value:
+                    filters:
+                    - name: Rarity
+                      type: STRING
+                      min: null
+                      max: null
+                      values:
+                      - Rare
+                    - name: Type
+                      type: STRING
+                      min: null
+                      max: null
+                      values:
+                      - Knife
+                    - name: Model
+                      type: STRING
+                      min: null
+                      max: null
+                      values:
+                      - Butterfly
+                    - name: Condition
+                      type: STRING
+                      min: null
+                      max: null
+                      values:
+                      - Slightly Used (SU)
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/GetContractInfo:
+    post:
+      summary: GetContractInfo
+      description: Contract Info -- returns contract meta-info for contracts found in registered chain's token-lists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_GetContractInfo_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  contractAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_GetContractInfo_Response'
+              examples:
+                '0':
+                  value:
+                    contractInfo:
+                      chainId: 80002
+                      address: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                      name: Placeholders
+                      type: ERC721
+                      symbol: ''
+                      logoURI: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: ''
+                        description: Placeholders collection
+                        ogImage: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                        ogName: Vault for Sales
+                        originChainId: 0
+                        originAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-10-22T21:10:39.267327075Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/GetContractInfoBatch:
+    post:
+      summary: GetContractInfoBatch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_GetContractInfoBatch_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  contractAddresses:
+                  - '0x33c7848db3d37103718736d233f0db65cc222b1e'
+                  - '0x70a2177071177e4aae639d1abb23ffa537b94970'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_GetContractInfoBatch_Response'
+              examples:
+                '0':
+                  value:
+                    contractInfoMap:
+                      '0x33c7848db3d37103718736d233f0db65cc222b1e':
+                        chainId: 80002
+                        address: '0x33c7848db3d37103718736d233f0db65cc222b1e'
+                        name: Knives
+                        type: ERC1155
+                        symbol: ''
+                        logoURI: https://metadata.sequence.app/projects/35598/collections/827/image.png
+                        deployed: true
+                        bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                        extensions:
+                          link: https://baseurl/collections/collectioname
+                          description: All knives from Alternates can be found in this category.
+                          ogImage: https://metadata.sequence.app/projects/35598/collections/827/image.png
+                          ogName: Knives
+                          originChainId: 0
+                          originAddress: '0x33c7848db3d37103718736d233f0db65cc222b1e'
+                          verified: true
+                          verifiedBy: token-directory
+                        updatedAt: '2024-10-23T06:12:24.243404151Z'
+                      '0x70a2177071177e4aae639d1abb23ffa537b94970':
+                        chainId: 80002
+                        address: '0x70a2177071177e4aae639d1abb23ffa537b94970'
+                        name: Placeholders
+                        type: ERC721
+                        symbol: ''
+                        logoURI: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                        deployed: true
+                        bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                        extensions:
+                          link: ''
+                          description: Placeholders collection
+                          ogImage: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                          ogName: Vault for Sales
+                          originChainId: 0
+                          originAddress: '0x70a2177071177e4aae639d1abb23ffa537b94970'
+                          verified: true
+                          verifiedBy: token-directory
+                        updatedAt: '2024-10-23T05:53:19.171080211Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/SearchContractInfo:
+    post:
+      summary: SearchContractInfo
+      description: Search Contract Info across all chains token-lists. Similar to GetContractInfo above, but it will traverse all chains and results from all.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_SearchContractInfo_Request'
+            examples:
+              '0':
+                value:
+                  contractAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_SearchContractInfo_Response'
+              examples:
+                '0':
+                  value:
+                    contractInfoList:
+                    - chainId: 80002
+                      address: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                      name: Placeholders
+                      type: ERC721
+                      symbol: ''
+                      logoURI: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: ''
+                        description: Placeholders collection
+                        ogImage: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                        ogName: Vault for Sales
+                        originChainId: 0
+                        originAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-10-23T05:53:19.171080211Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/SearchContractInfoBatch:
+    post:
+      summary: SearchContractInfoBatch
+      description: 'map of contractAddress :: []ContractInfo'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_SearchContractInfoBatch_Request'
+            examples:
+              '0':
+                value:
+                  contractAddresses:
+                  - '0x70a2177079877e4aae639d1abb29ffa537b94970'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_SearchContractInfoBatch_Response'
+              examples:
+                '0':
+                  value:
+                    contractInfoByChain:
+                      '0x70a2177079877e4aae639d1abb29ffa537b94970':
+                      - chainId: 80002
+                        address: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                        name: Placeholders
+                        type: ERC721
+                        symbol: ''
+                        logoURI: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                        deployed: true
+                        bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                        extensions:
+                          link: ''
+                          description: Placeholders collection
+                          ogImage: https://metadata.sequence.app/projects/30957/collections/819/image.png
+                          ogName: Vault for Sales
+                          originChainId: 0
+                          originAddress: '0x70a2177079877e4aae639d1abb29ffa537b94970'
+                          verified: true
+                          verifiedBy: token-directory
+                        updatedAt: '2024-10-23T05:53:19.171080211Z'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/SearchTokens:
+    post:
+      summary: SearchTokens
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_SearchTokens_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '80002'
+                  q: skyweaver
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_SearchTokens_Response'
+              examples:
+                '0':
+                  value:
+                    tokenMetadata:
+                    - tokenId: '107'
+                      name: Season 0 Floof 107
+                      description: ''
+                      image: https://nft.flooftopia.org/images/Floof_80001_107.png
+                      properties:
+                        000_season:
+                          name: season
+                          value: Season 0
+                        005_floofId:
+                          name: Floof ID
+                          value: '107'
+                        010_head_indices_shape:
+                          name: Head Shape
+                          value: Egg
+                        015_head_indices_nose:
+                          name: Nose
+                          value: Dog Nose
+                        020_head_indices_mouth:
+                          name: Mouth
+                          value: Smiley
+                        025_head_indices_ears:
+                          name: Ears
+                          value: Curly Loppy
+                        030_head_shape:
+                          name: Head Shape Options
+                          value:
+                          - 4
+                          - 2
+                          - -8
+                        035_head_eye:
+                          name: Eye Options
+                          value:
+                          - 2
+                          - 21
+                          - -38
+                        040_head_eyeColor:
+                          name: Eye Color
+                          value: (R=0.018500,G=0.001214,B=0.009721,A=1.000000)
+                        045_head_nose:
+                          name: Nose Options
+                          value:
+                          - -22
+                          - -6
+                        050_head_mouth:
+                          name: Mouth Options
+                          value:
+                          - -61
+                          - 61
+                        055_head_ears:
+                          name: Ears Options
+                          value:
+                          - 19
+                          - 14
+                          - 4
+                        060_fur_indices_length:
+                          name: Fur Length
+                          value: Short
+                        065_fur_indices_pattern:
+                          name: Fur Pattern
+                          value: Patches
+                        070_fur_color:
+                          name: Fur Color
+                          value: (R=0.361307,G=0.155926,B=0.012286,A=1.000000)
+                        075_fur_color_pattern:
+                          name: Pattern Color
+                          value: (R=0.016807,G=0.001214,B=0.005182,A=1.000000)
+                        080_fur_pattern:
+                          name: Fur Pattern Options
+                          value:
+                          - -45
+                          - 50
+                        085_extras_indices_attachments:
+                          name: Attachment
+                          value: Deer Antlers
+                        090_extras_indices_tail:
+                          name: Tail
+                          value: Fox Tail
+                        095_extras_attachments:
+                          name: Attachment Options
+                          value:
+                          - -4
+                          - -18
+                          - -16
+                        100_extras_tail:
+                          name: Tail Options
+                          value:
+                          - -61
+                          - 14
+                        200_background_sky:
+                          name: Background Sky
+                          value: Blue Sky
+                        205_background_middle:
+                          name: Background Middle
+                          value: Mountains
+                        210_background_ground:
+                          name: Background Ground
+                          value: Grassy Field
+                        215_background_item_l:
+                          name: Background Left Item
+                          value: Present
+                        220_background_item_r:
+                          name: Background Right Item
+                          value: Skyweaver
+                      attributes: null
+                      external_url: https://www.flooftopia.org
+                      decimals: 0
+                      updatedAt: '2023-11-16T19:48:51.110477Z'
+                    nextPage:
+                      page: 2
+                      pageSize: 30
+                      more: true
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/DirectoryGetNetworks:
+    post:
+      summary: DirectoryGetNetworks
+      description: 'Token Directory. NOTE: this only searches the ''token-directory'' items. Use ''SearchContracts'' or ''SearchTokens'' for everything else.'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_DirectoryGetNetworks_Request'
+            examples:
+              '0':
+                value:
+                  includeTestnets: true
+                  onlyFeatured: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_DirectoryGetNetworks_Response'
+              examples:
+                '0':
+                  value:
+                    networks:
+                    - 84532
+                    - 19011
+                    - 42161
+                    - 168587773
+                    - 43114
+                    - 42170
+                    - 10
+                    - 37714555429
+                    - 21000000
+                    - 100
+                    - 11155111
+                    - 8453
+                    - 137
+                    - 1946
+                    - 1993
+                    - 80002
+                    - 97
+                    - 40875
+                    - 43113
+                    - 1
+                    - 37084624
+                    - 5
+                    - 80001
+                    - 3776
+                    - 6038361
+                    - 660279
+                    - 421614
+                    - 33111
+                    - 1101
+                    - 33139
+                    - 56
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+  /rpc/Metadata/DirectoryGetCollections:
+    post:
+      summary: DirectoryGetCollections
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_DirectoryGetCollections_Request'
+            examples:
+              '0':
+                value:
+                  includeTestnets: true
+                  onlyFeatured: false
+                  chainId: 80002
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_DirectoryGetCollections_Response'
+              examples:
+                '0':
+                  value:
+                    collections:
+                    - chainId: 80002
+                      address: '0xecfda15b60f2090b9c2c678910889e49e7edaab8'
+                      name: colecction 3 de las uan
+                      type: ERC721
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: ''
+                        description: test en poligon
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-08-20T15:53:43.971994Z'
+                    - chainId: 80002
+                      address: '0xd67dd82a97b21dafc1c62671e6909d22741c8235'
+                      name: Tester Contract For Indexer Subscriptions
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-08-01T14:30:37.100518Z'
+                    - chainId: 80002
+                      address: '0xa1b52a27a68f77db09e57defc912eab802500278'
+                      name: Toys
+                      type: ERC1155
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-08-20T15:53:45.705423Z'
+                    - chainId: 80002
+                      address: '0x4442e4878d60b13c0bca9ceb6b0bab82eaa03d56'
+                      name: demo collection
+                      type: ERC1155
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: ''
+                        description: demo collection description
+                        ogImage: https://metadata.sequence.app/projects/38573/collections/713/image.jpg
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-09-09T08:49:47.852638Z'
+                    - chainId: 80002
+                      address: '0x9559e7958d4729cf7ed4d9ff58a3ae1704800500'
+                      name: Prueba-0
+                      type: ERC721
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x77d12b9637a99b3ba23920eea929a68cc89b49a0e1ff4d2a71b798550cc0060e'
+                      extensions:
+                        link: https://www.google.com
+                        description: Collection description
+                        ogImage: https://metadata.sequence.app/projects/30957/collections/552/image.png
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-08-20T15:53:47.072029Z'
+                    - chainId: 80002
+                      address: '0x2b1e643324b3c479aa0803664637586493c3c204'
+                      name: Weapons
+                      type: ERC1155
+                      symbol: ''
+                      logoURI: https://metadata.sequence.app/projects/35598/collections/620/image.png
+                      deployed: true
+                      bytecodeHash: '0xed47946e266a404fc37371df08eefdebb2fccba9ebe60c6ca8b467e1dd554ae0'
+                      extensions:
+                        link: https://baseurl/collections/collectioname
+                        description: All weapons from Alternates can be found in this category.
+                        ogImage: https://metadata.sequence.app/projects/35598/collections/620/image.png
+                        ogName: Weapons 1155
+                        originChainId: 0
+                        originAddress: '0x2b1e643324b3c479aa0803664637586493c3c204'
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-10-03T09:49:56.459325Z'
+                    page:
+                      page: 2
+                      pageSize: 30
+                      more: true
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      tags:
+      - public
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+components:
+  schemas:
+    Filter:
+      type: object
+      properties:
+        text:
+          type: string
+        properties:
+          type: array
+          description: '[]PropertyFilter'
+          items:
+            $ref: '#/components/schemas/PropertyFilter'
+    PropertyFilter:
+      type: object
+      required:
+      - name
+      - type
+      properties:
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/PropertyType'
+        min:
+          type: number
+        max:
+          type: number
+        values:
+          type: array
+          description: '[]any'
+          items:
+            type: object
+    ErrorInvalidArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidArgument
+        code:
+          type: number
+          example: 2001
+        msg:
+          type: string
+          example: Invalid argument
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Metadata_GetTokenMetadata_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Metadata_DirectoryGetNetworks_Response:
+      type: object
+      properties:
+        networks:
+          type: array
+          description: '[]uint64'
+          items:
+            type: number
+    ErrorUnauthorized:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unauthorized
+        code:
+          type: number
+          example: 1000
+        msg:
+          type: string
+          example: Unauthorized access
+        cause:
+          type: string
+        status:
+          type: number
+          example: 401
+    Indexer_SubscribeReceipts_Response:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceipt'
+    Metadata_SearchContractInfo_Response:
+      type: object
+      properties:
+        contractInfoList:
+          type: array
+          description: '[]ContractInfo'
+          items:
+            $ref: '#/components/schemas/ContractInfo_2'
+    ErrorPermissionDenied:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: PermissionDenied
+        code:
+          type: number
+          example: 1001
+        msg:
+          type: string
+          example: Permission denied
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    Metadata_DirectoryGetCollections_Response:
+      type: object
+      properties:
+        collections:
+          type: array
+          description: '[]ContractInfo'
+          items:
+            $ref: '#/components/schemas/ContractInfo_2'
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Indexer_GetTransactionHistory_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        transactions:
+          type: array
+          description: '[]Transaction'
+          items:
+            $ref: '#/components/schemas/Transaction'
+    ContractType:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - UNKNOWN
+      - NATIVE
+      - ERC20
+      - ERC721
+      - ERC1155
+      - SEQUENCE_WALLET
+      - ERC20_BRIDGE
+      - ERC721_BRIDGE
+      - ERC1155_BRIDGE
+      - SEQ_MARKETPLACE
+    ErrorUnavailable:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unavailable
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Unavailable resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorWebrpcBadResponse:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadResponse
+        code:
+          type: number
+          example: -5
+        msg:
+          type: string
+          example: bad response
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    Metadata_RefreshTokenMetadata_Response:
+      type: object
+      properties:
+        taskId:
+          type: number
+    Metadata_GetTokenMetadataBatch_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractTokenMap:
+          type: object
+          description: map<string,[]string>
+          additionalProperties:
+            type: array
+            description: '[]string'
+            items:
+              type: string
+    Metadata_SearchTokenMetadata_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page_2'
+        tokenMetadata:
+          type: array
+          description: '[]TokenMetadata'
+          items:
+            $ref: '#/components/schemas/TokenMetadata_2'
+    ErrorResourceExhausted:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ResourceExhausted
+        code:
+          type: number
+          example: 2004
+        msg:
+          type: string
+          example: Resource exhausted
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorRequiredArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RequiredArgument
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Required argument missing
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    NativeTokenBalance:
+      type: object
+      required:
+      - accountAddress
+      - balance
+      properties:
+        accountAddress:
+          type: string
+        balance:
+          type: string
+    Metadata_TokenCollectionFilters_Response:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: '[]PropertyFilter'
+          items:
+            $ref: '#/components/schemas/PropertyFilter'
+    PropertyType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - INT
+      - STRING
+      - ARRAY
+      - GENERIC
+    TransactionReceipt:
+      type: object
+      required:
+      - txnHash
+      - txnStatus
+      - txnIndex
+      - txnType
+      - blockHash
+      - blockNumber
+      - gasUsed
+      - effectiveGasPrice
+      - from
+      - to
+      - logs
+      - final
+      - reorged
+      properties:
+        txnHash:
+          type: string
+        txnStatus:
+          $ref: '#/components/schemas/TransactionStatus'
+        txnIndex:
+          type: number
+        txnType:
+          $ref: '#/components/schemas/TransactionType'
+        blockHash:
+          type: string
+        blockNumber:
+          type: number
+        gasUsed:
+          type: number
+        effectiveGasPrice:
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        logs:
+          type: array
+          description: '[]TransactionLog'
+          items:
+            $ref: '#/components/schemas/TransactionLog'
+        final:
+          type: boolean
+        reorged:
+          type: boolean
+    Metadata_EnqueueTokensForRefresh_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        refreshAll:
+          type: boolean
+    ContractInfoExtensions_2:
+      type: object
+      required:
+      - link
+      - description
+      - categories
+      - ogImage
+      - ogName
+      - originChainId
+      - originAddress
+      - blacklist
+      - verified
+      - verifiedBy
+      - featured
+      properties:
+        link:
+          type: string
+        description:
+          type: string
+        categories:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        ogImage:
+          type: string
+        ogName:
+          type: string
+        originChainId:
+          type: number
+        originAddress:
+          type: string
+        blacklist:
+          type: boolean
+        verified:
+          type: boolean
+        verifiedBy:
+          type: string
+        featured:
+          type: boolean
+    ContractInfo:
+      type: object
+      required:
+      - chainId
+      - address
+      - name
+      - type
+      - symbol
+      - logoURI
+      - deployed
+      - bytecodeHash
+      - extensions
+      - contentHash
+      - updatedAt
+      properties:
+        chainId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        symbol:
+          type: string
+        decimals:
+          type: number
+        logoURI:
+          type: string
+        deployed:
+          type: boolean
+        bytecodeHash:
+          type: string
+        extensions:
+          $ref: '#/components/schemas/ContractInfoExtensions'
+        contentHash:
+          type: number
+        updatedAt:
+          type: string
+    Metadata_SearchTokens_Request:
+      type: object
+      properties:
+        q:
+          type: string
+        chainID:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Metadata_GetContractInfoBatch_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Indexer_GetTokenBalancesDetails_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    ErrorWebrpcServerPanic:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcServerPanic
+        code:
+          type: number
+          example: -6
+        msg:
+          type: string
+          example: server panic
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    ErrorWebrpcBadRequest:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadRequest
+        code:
+          type: number
+          example: -4
+        msg:
+          type: string
+          example: bad request
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    TokenMetadata:
+      type: object
+      required:
+      - tokenId
+      - name
+      - attributes
+      properties:
+        tokenId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        video:
+          type: string
+        audio:
+          type: string
+        properties:
+          type: object
+          description: map<string,any>
+          additionalProperties:
+            type: object
+        attributes:
+          type: array
+          description: '[]map<string,any>'
+          items:
+            type: object
+            description: map<string,any>
+            additionalProperties:
+              type: object
+        imageData:
+          type: string
+        externalUrl:
+          type: string
+        backgroundColor:
+          type: string
+        animationUrl:
+          type: string
+        decimals:
+          type: number
+        updatedAt:
+          type: string
+        assets:
+          type: array
+          description: '[]Asset'
+          items:
+            $ref: '#/components/schemas/Asset'
+    Metadata_GetTokenMetadataBatch_Response:
+      type: object
+      properties:
+        contractTokenMetadata:
+          type: object
+          description: map<string,[]TokenMetadata>
+          additionalProperties:
+            type: array
+            description: '[]TokenMetadata'
+            items:
+              $ref: '#/components/schemas/TokenMetadata_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    ErrorWebrpcRequestFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcRequestFailed
+        code:
+          type: number
+          example: -1
+        msg:
+          type: string
+          example: request failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    TransactionStatus:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - FAILED
+      - SUCCESSFUL
+    Metadata_GetContractInfoBatch_Response:
+      type: object
+      properties:
+        contractInfoMap:
+          type: object
+          description: map<string,ContractInfo>
+          additionalProperties:
+            $ref: '#/components/schemas/ContractInfo_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    Page:
+      type: object
+      properties:
+        page:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        sort:
+          type: array
+          description: '[]SortBy'
+          items:
+            $ref: '#/components/schemas/SortBy'
+        pageSize:
+          type: number
+        more:
+          type: boolean
+    Indexer_GetBalanceUpdates_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        lastBlockNumber:
+          type: number
+        lastBlockHash:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+    TxnInfo:
+      type: object
+      required:
+      - from
+      - to
+      - value
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        value:
+          type: string
+    Indexer_SubscribeReceipts_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TransactionFilter'
+    ErrorProjectNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ProjectNotFound
+        code:
+          type: number
+          example: 3002
+        msg:
+          type: string
+          example: Project not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorWebrpcBadRoute:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadRoute
+        code:
+          type: number
+          example: -2
+        msg:
+          type: string
+          example: bad route
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    Indexer_SubscribeEvents_Response:
+      type: object
+      properties:
+        log:
+          $ref: '#/components/schemas/EventLog'
+    Asset:
+      type: object
+      required:
+      - id
+      - collectionId
+      - metadataField
+      properties:
+        id:
+          type: number
+        collectionId:
+          type: number
+        tokenId:
+          type: string
+        url:
+          type: string
+        metadataField:
+          type: string
+        filename:
+          type: string
+        filesize:
+          type: number
+        mimeType:
+          type: string
+        width:
+          type: number
+        height:
+          type: number
+        updatedAt:
+          type: string
+    ErrorGeoblocked:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Geoblocked
+        code:
+          type: number
+          example: 1006
+        msg:
+          type: string
+          example: Geoblocked region
+        cause:
+          type: string
+        status:
+          type: number
+          example: 451
+    TransactionLog:
+      type: object
+      required:
+      - contractAddress
+      - topics
+      - data
+      - index
+      properties:
+        contractAddress:
+          type: string
+        topics:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        data:
+          type: string
+        index:
+          type: number
+    EventLog:
+      type: object
+      required:
+      - id
+      - uid
+      - type
+      - blockNumber
+      - blockHash
+      - parentBlockHash
+      - contractAddress
+      - contractType
+      - txnHash
+      - txnIndex
+      - txnLogIndex
+      - logDataType
+      - ts
+      properties:
+        id:
+          type: number
+        uid:
+          type: string
+        type:
+          $ref: '#/components/schemas/EventLogType'
+        blockNumber:
+          type: number
+        blockHash:
+          type: string
+        parentBlockHash:
+          type: string
+        contractAddress:
+          type: string
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        txnHash:
+          type: string
+        txnIndex:
+          type: number
+        txnLogIndex:
+          type: number
+        logDataType:
+          $ref: '#/components/schemas/EventLogDataType'
+        ts:
+          type: string
+        txnInfo:
+          $ref: '#/components/schemas/TxnInfo'
+        rawLog:
+          type: object
+          description: map<string,any>
+          additionalProperties:
+            type: object
+        event:
+          $ref: '#/components/schemas/EventDecoded'
+    TransactionFilter:
+      type: object
+      properties:
+        txnHash:
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        contractAddress:
+          type: string
+        event:
+          type: string
+    Metadata_GetTokenMetadata_Response:
+      type: object
+      properties:
+        tokenMetadata:
+          type: array
+          description: '[]TokenMetadata'
+          items:
+            $ref: '#/components/schemas/TokenMetadata_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    TaskStatus:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - QUEUED
+      - PAUSED
+      - FAILED
+      - COMPLETED
+    TransactionHistoryFilter:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+        contractAddress:
+          type: string
+        accountAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        transactionHashes:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        metaTransactionIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        fromBlock:
+          type: number
+        toBlock:
+          type: number
+        tokenID:
+          type: string
+    Indexer_GetTokenSuppliesMap_Response:
+      type: object
+      properties:
+        supplies:
+          type: object
+          description: map<string,[]TokenSupply>
+          additionalProperties:
+            type: array
+            description: '[]TokenSupply'
+            items:
+              $ref: '#/components/schemas/TokenSupply'
+    TokenBalance:
+      type: object
+      required:
+      - contractType
+      - contractAddress
+      - accountAddress
+      - balance
+      - blockHash
+      - blockNumber
+      - chainId
+      - uniqueCollectibles
+      - isSummary
+      properties:
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        contractAddress:
+          type: string
+        accountAddress:
+          type: string
+        tokenID:
+          type: string
+        balance:
+          type: string
+        blockHash:
+          type: string
+        blockNumber:
+          type: number
+        chainId:
+          type: number
+        uniqueCollectibles:
+          type: string
+        isSummary:
+          type: boolean
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo'
+        tokenMetadata:
+          $ref: '#/components/schemas/TokenMetadata'
+    Indexer_GetTokenSupplies_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        includeMetadata:
+          type: boolean
+        metadataOptions:
+          $ref: '#/components/schemas/MetadataOptions'
+        page:
+          $ref: '#/components/schemas/Page'
+    Indexer_GetNativeTokenBalance_Response:
+      type: object
+      properties:
+        balance:
+          $ref: '#/components/schemas/NativeTokenBalance'
+    TokenSupply:
+      type: object
+      required:
+      - tokenID
+      - supply
+      - chainId
+      properties:
+        tokenID:
+          type: string
+        supply:
+          type: string
+        chainId:
+          type: number
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo'
+        tokenMetadata:
+          $ref: '#/components/schemas/TokenMetadata'
+    Page_2:
+      type: object
+      properties:
+        page:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        pageSize:
+          type: number
+        more:
+          type: boolean
+    ErrorRequestConflict:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RequestConflict
+        code:
+          type: number
+          example: 1004
+        msg:
+          type: string
+          example: Conflict with target resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    ErrorNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: NotFound
+        code:
+          type: number
+          example: 3000
+        msg:
+          type: string
+          example: Resource not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ContractVerificationStatus:
+      type: string
+      description: Represented as string on the server side
+      enum:
+      - VERIFIED
+      - UNVERIFIED
+      - ALL
+    ErrorSessionExpired:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: SessionExpired
+        code:
+          type: number
+          example: 1002
+        msg:
+          type: string
+          example: Session expired
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    Indexer_FetchTransactionReceiptWithFilter_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TransactionFilter'
+        maxBlockWait:
+          type: number
+    Metadata_SearchTokenIDs_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page_2'
+        tokenIds:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    TokenBalancesByContractFilter:
+      type: object
+      required:
+      - contractAddresses
+      - accountAddresses
+      - contractStatus
+      properties:
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        accountAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractStatus:
+          $ref: '#/components/schemas/ContractVerificationStatus'
+    Metadata_SearchContractInfoBatch_Response:
+      type: object
+      properties:
+        contractInfoByChain:
+          type: object
+          description: map<string,[]ContractInfo>
+          additionalProperties:
+            type: array
+            description: '[]ContractInfo'
+            items:
+              $ref: '#/components/schemas/ContractInfo_2'
+    ErrorTokenDirectoryDisabled:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: TokenDirectoryDisabled
+        code:
+          type: number
+          example: 4001
+        msg:
+          type: string
+          example: Token Directory is disabled
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_GetTokenBalancesSummary_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TokenBalancesFilter'
+        omitMetadata:
+          type: boolean
+        page:
+          $ref: '#/components/schemas/Page'
+    Transaction:
+      type: object
+      required:
+      - txnHash
+      - blockNumber
+      - blockHash
+      - chainId
+      - timestamp
+      properties:
+        txnHash:
+          type: string
+        blockNumber:
+          type: number
+        blockHash:
+          type: string
+        chainId:
+          type: number
+        metaTxnID:
+          type: string
+        transfers:
+          type: array
+          description: '[]TxnTransfer'
+          items:
+            $ref: '#/components/schemas/TxnTransfer'
+        timestamp:
+          type: string
+    ContractInfoExtensions:
+      type: object
+      required:
+      - link
+      - description
+      - ogImage
+      - originChainId
+      - originAddress
+      - blacklist
+      - verified
+      - verifiedBy
+      - featured
+      properties:
+        link:
+          type: string
+        description:
+          type: string
+        ogImage:
+          type: string
+        originChainId:
+          type: number
+        originAddress:
+          type: string
+        blacklist:
+          type: boolean
+        verified:
+          type: boolean
+        verifiedBy:
+          type: string
+        featured:
+          type: boolean
+    TokenBalancesFilter:
+      type: object
+      required:
+      - accountAddresses
+      - contractStatus
+      - contractWhitelist
+      - contractBlacklist
+      properties:
+        accountAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractStatus:
+          $ref: '#/components/schemas/ContractVerificationStatus'
+        contractWhitelist:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractBlacklist:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Metadata_SearchTokens_Response:
+      type: object
+      properties:
+        tokenMetadata:
+          type: array
+          description: '[]TokenMetadata'
+          items:
+            $ref: '#/components/schemas/TokenMetadata_2'
+        nextPage:
+          $ref: '#/components/schemas/Page_2'
+    ErrorTimeout:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Timeout
+        code:
+          type: number
+          example: 2000
+        msg:
+          type: string
+          example: Request timed out
+        cause:
+          type: string
+        status:
+          type: number
+          example: 408
+    Indexer_GetTokenBalances_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+        contractAddress:
+          type: string
+        tokenID:
+          type: string
+        includeMetadata:
+          type: boolean
+        metadataOptions:
+          $ref: '#/components/schemas/MetadataOptions'
+        includeCollectionTokens:
+          type: boolean
+        page:
+          $ref: '#/components/schemas/Page'
+    Indexer_GetTokenSupplies_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        tokenIDs:
+          type: array
+          description: '[]TokenSupply'
+          items:
+            $ref: '#/components/schemas/TokenSupply'
+    SortOrder:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - DESC
+      - ASC
+    Indexer_SubscribeBalanceUpdates_Response:
+      type: object
+      properties:
+        balance:
+          $ref: '#/components/schemas/TokenBalance'
+    Metadata_DirectoryGetCollections_Request:
+      type: object
+      properties:
+        chainId:
+          type: number
+        includeTestnets:
+          type: boolean
+        onlyFeatured:
+          type: boolean
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Metadata_SearchTokenIDs_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/Filter'
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Metadata_SearchContractInfoBatch_Request:
+      type: object
+      properties:
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    EventFilter:
+      type: object
+      properties:
+        events:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        accounts:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Indexer_GetTransactionHistory_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TransactionHistoryFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+        includeMetadata:
+          type: boolean
+        metadataOptions:
+          $ref: '#/components/schemas/MetadataOptions'
+    MetadataOptions:
+      type: object
+      properties:
+        verifiedOnly:
+          type: boolean
+        unverifiedOnly:
+          type: boolean
+        includeContracts:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Task:
+      type: object
+      required:
+      - id
+      - queue
+      - try
+      - payload
+      properties:
+        id:
+          type: number
+        queue:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        try:
+          type: number
+        runAt:
+          type: string
+        lastRanAt:
+          type: string
+        createdAt:
+          type: string
+        payload:
+          type: array
+          description: '[]byte'
+          items:
+            type: string
+        hash:
+          type: string
+    Indexer_SubscribeBalanceUpdates_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+    TransactionType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - LegacyTxnType
+      - AccessListTxnType
+      - DynamicFeeTxnType
+    ErrorAborted:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Aborted
+        code:
+          type: number
+          example: 1005
+        msg:
+          type: string
+          example: Request aborted
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ResourceStatus:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - NOT_AVAILABLE
+      - STALE
+      - AVAILABLE
+    ErrorWebrpcEndpoint:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcEndpoint
+        code:
+          type: number
+          example: 0
+        msg:
+          type: string
+          example: endpoint error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Metadata_DirectoryGetNetworks_Request:
+      type: object
+      properties:
+        includeTestnets:
+          type: boolean
+        onlyFeatured:
+          type: boolean
+    Indexer_GetTokenSuppliesMap_Request:
+      type: object
+      properties:
+        tokenMap:
+          type: object
+          description: map<string,[]string>
+          additionalProperties:
+            type: array
+            description: '[]string'
+            items:
+              type: string
+        includeMetadata:
+          type: boolean
+        metadataOptions:
+          $ref: '#/components/schemas/MetadataOptions'
+    ErrorChainNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ChainNotFound
+        code:
+          type: number
+          example: 3003
+        msg:
+          type: string
+          example: Chain not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Metadata_TokenCollectionFilters_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+    ErrorWebrpcBadMethod:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadMethod
+        code:
+          type: number
+          example: -3
+        msg:
+          type: string
+          example: bad method
+        cause:
+          type: string
+        status:
+          type: number
+          example: 405
+    Metadata_GetContractInfo_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+    Metadata_SearchTokenMetadata_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/Filter'
+        page:
+          $ref: '#/components/schemas/Page_2'
+    ContractInfo_2:
+      type: object
+      required:
+      - chainId
+      - address
+      - name
+      - type
+      - symbol
+      - logoURI
+      - deployed
+      - bytecodeHash
+      - extensions
+      - contentHash
+      - updatedAt
+      - notFound
+      - status
+      properties:
+        chainId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        symbol:
+          type: string
+        decimals:
+          type: number
+        logoURI:
+          type: string
+        deployed:
+          type: boolean
+        bytecodeHash:
+          type: string
+        extensions:
+          $ref: '#/components/schemas/ContractInfoExtensions_2'
+        contentHash:
+          type: number
+        updatedAt:
+          type: string
+        notFound:
+          type: boolean
+        queuedAt:
+          type: string
+        status:
+          $ref: '#/components/schemas/ResourceStatus'
+    ErrorValidationFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ValidationFailed
+        code:
+          type: number
+          example: 2004
+        msg:
+          type: string
+          example: Validation failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_GetTokenBalancesByContract_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    Metadata_GetContractInfo_Response:
+      type: object
+      properties:
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    Metadata_SearchContractInfo_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+    Metadata_EnqueueTokensForRefresh_Response:
+      type: object
+      properties:
+        taskId:
+          type: number
+    EventDecoded:
+      type: object
+      required:
+      - topicHash
+      - eventSig
+      - types
+      - names
+      - values
+      properties:
+        topicHash:
+          type: string
+        eventSig:
+          type: string
+        types:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        names:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        values:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    EventLogDataType:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - EVENT
+      - TOKEN_TRANSFER
+      - NATIVE_TOKEN_TRANSFER
+      - SEQUENCE_TXN
+    Indexer_GetTokenBalances_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    Indexer_SubscribeEvents_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/EventFilter'
+    TxnTransferType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - UNKNOWN
+      - SEND
+      - RECEIVE
+    Indexer_FetchTransactionReceiptWithFilter_Response:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceipt'
+    TxnTransfer:
+      type: object
+      required:
+      - transferType
+      - contractAddress
+      - contractType
+      - from
+      - to
+      - amounts
+      - logIndex
+      properties:
+        transferType:
+          $ref: '#/components/schemas/TxnTransferType'
+        contractAddress:
+          type: string
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        from:
+          type: string
+        to:
+          type: string
+        tokenIds:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        amounts:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        logIndex:
+          type: number
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo'
+        tokenMetadata:
+          type: object
+          description: map<string,TokenMetadata>
+          additionalProperties:
+            $ref: '#/components/schemas/TokenMetadata'
+    Indexer_GetTokenBalancesByContract_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TokenBalancesByContractFilter'
+        omitMetadata:
+          type: boolean
+        page:
+          $ref: '#/components/schemas/Page'
+    EventLogType:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - UNKNOWN
+      - BLOCK_ADDED
+      - BLOCK_REMOVED
+    ErrorWebrpcInternalError:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcInternalError
+        code:
+          type: number
+          example: -7
+        msg:
+          type: string
+          example: internal error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    Indexer_GetBalanceUpdates_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    ErrorMethodNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MethodNotFound
+        code:
+          type: number
+          example: 1003
+        msg:
+          type: string
+          example: Method not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    Indexer_GetNativeTokenBalance_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+    ErrorMetadataCallFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MetadataCallFailed
+        code:
+          type: number
+          example: 3003
+        msg:
+          type: string
+          example: Metadata service call failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_GetTokenBalancesDetails_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TokenBalancesFilter'
+        omitMetadata:
+          type: boolean
+        page:
+          $ref: '#/components/schemas/Page'
+    ErrorFail:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Fail
+        code:
+          type: number
+          example: 1005
+        msg:
+          type: string
+          example: Request Failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    SortBy:
+      type: object
+      required:
+      - column
+      - order
+      properties:
+        column:
+          type: string
+        order:
+          $ref: '#/components/schemas/SortOrder'
+    TokenMetadata_2:
+      type: object
+      required:
+      - tokenId
+      - name
+      - attributes
+      - status
+      properties:
+        tokenId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        video:
+          type: string
+        audio:
+          type: string
+        properties:
+          type: object
+          description: map<string,any>
+          additionalProperties:
+            type: object
+        attributes:
+          type: array
+          description: '[]map<string,any>'
+          items:
+            type: object
+            description: map<string,any>
+            additionalProperties:
+              type: object
+        imageData:
+          type: string
+        externalUrl:
+          type: string
+        backgroundColor:
+          type: string
+        animationUrl:
+          type: string
+        decimals:
+          type: number
+        updatedAt:
+          type: string
+        assets:
+          type: array
+          description: '[]Asset'
+          items:
+            $ref: '#/components/schemas/Asset'
+        status:
+          $ref: '#/components/schemas/ResourceStatus'
+        queuedAt:
+          type: string
+        lastFetched:
+          type: string
+    ErrorRateLimited:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RateLimited
+        code:
+          type: number
+          example: 2005
+        msg:
+          type: string
+          example: Rate limited
+        cause:
+          type: string
+        status:
+          type: number
+          example: 429
+    ErrorWebrpcClientDisconnected:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcClientDisconnected
+        code:
+          type: number
+          example: -8
+        msg:
+          type: string
+          example: client disconnected
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_FetchTransactionReceipt_Response:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceipt'
+    Indexer_GetTokenBalancesSummary_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    ErrorWebrpcStreamLost:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcStreamLost
+        code:
+          type: number
+          example: -9
+        msg:
+          type: string
+          example: stream lost
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_FetchTransactionReceipt_Request:
+      type: object
+      properties:
+        txnHash:
+          type: string
+        maxBlockWait:
+          type: number
+    ErrorQueryFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: QueryFailed
+        code:
+          type: number
+          example: 2003
+        msg:
+          type: string
+          example: Query failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Metadata_RefreshTokenMetadata_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        refreshAll:
+          type: boolean

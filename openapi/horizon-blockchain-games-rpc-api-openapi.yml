@@ -1,0 +1,4466 @@
+openapi: 3.0.0
+info:
+  title: Api Analytics Rpc API
+  version: ''
+servers:
+- url: https://api.sequence.app
+  description: Analytics
+security:
+- ApiKeyAuth: []
+tags:
+- name: Rpc
+paths:
+  /rpc/Builder/GetContract:
+    post:
+      summary: GetContract
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_GetContract_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_GetContract_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/ListContracts:
+    post:
+      summary: ListContracts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_ListContracts_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_ListContracts_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/ListContractSources:
+    post:
+      summary: ListContractSources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_ListContractSources_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_ListContractSources_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/ListAudiences:
+    post:
+      summary: ListAudiences
+      description: Audience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_ListAudiences_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_ListAudiences_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/GetAudience:
+    post:
+      summary: GetAudience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_GetAudience_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_GetAudience_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/CreateAudience:
+    post:
+      summary: CreateAudience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_CreateAudience_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_CreateAudience_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/UpdateAudience:
+    post:
+      summary: UpdateAudience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_UpdateAudience_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_UpdateAudience_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/DeleteAudience:
+    post:
+      summary: DeleteAudience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_DeleteAudience_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_DeleteAudience_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/AddAudienceContacts:
+    post:
+      summary: AddAudienceContacts
+      description: Contacts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_AddAudienceContacts_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_AddAudienceContacts_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Builder/RemoveAudienceContacts:
+    post:
+      summary: RemoveAudienceContacts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Builder_RemoveAudienceContacts_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Builder_RemoveAudienceContacts_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorServiceDisabled'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorUserNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorInvalidTier'
+                - $ref: '#/components/schemas/ErrorEmailTemplateExists'
+                - $ref: '#/components/schemas/ErrorSubscriptionLimit'
+                - $ref: '#/components/schemas/ErrorFeatureNotIncluded'
+                - $ref: '#/components/schemas/ErrorInvalidNetwork'
+                - $ref: '#/components/schemas/ErrorInvitationExpired'
+                - $ref: '#/components/schemas/ErrorAlreadyCollaborator'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Indexer/GetEtherBalance:
+    post:
+      summary: GetEtherBalance
+      deprecated: true
+      description: 'Queries an ethereum node for the latest and confirm ETH balances DEPRECATED: use GetNativeTokenBalance instead'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_GetEtherBalance_Request'
+            example:
+              accountAddress: '0x8e3e38fe7367dd3b52d1e281e4e8400447c8d8b9'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_GetEtherBalance_Response'
+              example:
+                balance:
+                  accountAddress: '0x8e3e38fe7367dd3b52d1e281e4e8400447c8d8b9'
+                  balanceWei: '9429929734634710350'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+        BearerAuth: []
+      tags:
+      - Rpc
+  /rpc/Indexer/SyncBalance:
+    post:
+      summary: SyncBalance
+      description: Re-sync an incorrect token balance with the correct on-chain balance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Indexer_SyncBalance_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Indexer_SyncBalance_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorResourceExhausted'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorMetadataCallFailed'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/IsValidSignature:
+    post:
+      summary: IsValidSignature
+      description: 'TODO: we can add walletContext optional in the future when we need it NOTE: chainId can be either a number or canonical name'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_IsValidSignature_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_IsValidSignature_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/IsValidMessageSignature:
+    post:
+      summary: IsValidMessageSignature
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_IsValidMessageSignature_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_IsValidMessageSignature_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/IsValidTypedDataSignature:
+    post:
+      summary: IsValidTypedDataSignature
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_IsValidTypedDataSignature_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_IsValidTypedDataSignature_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/IsValidETHAuthProof:
+    post:
+      summary: IsValidETHAuthProof
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_IsValidETHAuthProof_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_IsValidETHAuthProof_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/LinkWallet:
+    post:
+      summary: LinkWallet
+      description: Send a Payload to link a user wallet, this would require a signed message from both parent wallet (Embedded Wallet) and a linking wallet like an EOA.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_LinkWallet_Request'
+            example:
+              signatureChainId: '137'
+              linkedWalletType: MetaMask
+              parentWalletAddress: '0xb33018E5C4f5A168f5560D9C05597508dA8a4E91'
+              parentWalletMessage: child wallet with address 0x4f8A351143A0aAec055873959b8Cb705c00a37F6
+              parentWalletSignature: '0x01000100000000020189e6eb0408ae08542bcc99696fba0c001f6aa3ac0000fe01000300000000060100010000740001b467851352ace0a432c71a157e6fd6b5007b86e473247919461148e5eed2bd68226f24168e61a2c1dddb3c860188dec82df140637dc765d1be3ad814853db8a91c010400002c01019cec96321d5a54df2277fe3dbb2405016a3bbf9601013f5602872eff7ef96e69ef2409e0dd3c62923bd7060200010000740001069b3fb27e49dcb5e396cac5d5b073be0d86ae1e4a591150387b98583a7a23856f3ad6e24a21cc56d5cab9f61708e88cf526de72eff8b83416de7b8cab6378f51c010400002c0101951448847a03ad1005a0e463dff0da093690ff240101e0f61b36d02be47455ce5332e9d7bb43bf8f344b030100c46d323d87fc26dad057c9a8d5faeb7112ab829e'
+              linkedWalletAddress: '0x4f8A351143A0aAec055873959b8Cb705c00a37F6'
+              linkedWalletMessage: Link to parent wallet with address 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91
+              linkedWalletSignature: '0x0d31791e6aefbd01590f846e93a7740988a6d5ffc50a59ee0941747c2740242a3ec105fddf66a8b39b49db5d13de9d68a36c5fd7e1e83da1e01657c9996d87181c'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_LinkWallet_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/GetLinkedWallets:
+    post:
+      summary: GetLinkedWallets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_GetLinkedWallets_Request'
+            example:
+              parentWalletAddress: '0xb33018E5C4f5A168f5560D9C05597508dA8a4E91'
+              parentWalletMessage: parent wallet with address 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91
+              parentWalletSignature: '0x01000100000000020189e6eb0408ae08542bcc99696fba0c001f6aa3ac0000fe010003000000000601000100007400019b61caaf15c224553593641f40c0ecd8d57e589dd9b04c129505d4537d979b827548ad6feef3379b0c3442e9b76ac07e06307e779c9b3a5fd4ec2ff27037eac81b010400002c01019cec96321d5a54df2277fe3dbb2405016a3bbf9601013f5602872eff7ef96e69ef2409e0dd3c62923bd7060200010000740001c0fb1a592dd8424b917820c1d8ae25bd1516df486fa6f7610999b141fac46f1e072a5c439d21eaad9521b912b68c428135117bef95bebf56d0a2dfe61fc8fddd1c010400002c0101951448847a03ad1005a0e463dff0da093690ff240101e0f61b36d02be47455ce5332e9d7bb43bf8f344b030100c46d323d87fc26dad057c9a8d5faeb7112ab829e'
+              signatureChainId: '137'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_GetLinkedWallets_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      description: Query all wallets that are linked
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/RemoveLinkedWallet:
+    post:
+      summary: RemoveLinkedWallet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_RemoveLinkedWallet_Request'
+            example:
+              signatureChainId: '137'
+              parentWalletAddress: '0xb33018E5C4f5A168f5560D9C05597508dA8a4E91'
+              parentWalletMessage: child wallet with address 0x4f8A351143A0aAec055873959b8Cb705c00a37F6
+              parentWalletSignature: '0x01000100000000020189e6eb0408ae08542bcc99696fba0c001f6aa3ac0000fe01000300000000060100010000740001b467851352ace0a432c71a157e6fd6b5007b86e473247919461148e5eed2bd68226f24168e61a2c1dddb3c860188dec82df140637dc765d1be3ad814853db8a91c010400002c01019cec96321d5a54df2277fe3dbb2405016a3bbf9601013f5602872eff7ef96e69ef2409e0dd3c62923bd7060200010000740001069b3fb27e49dcb5e396cac5d5b073be0d86ae1e4a591150387b98583a7a23856f3ad6e24a21cc56d5cab9f61708e88cf526de72eff8b83416de7b8cab6378f51c010400002c0101951448847a03ad1005a0e463dff0da093690ff240101e0f61b36d02be47455ce5332e9d7bb43bf8f344b030100c46d323d87fc26dad057c9a8d5faeb7112ab829e'
+              linkedWalletAddress: '0x4f8A351143A0aAec055873959b8Cb705c00a37F6'
+              linkedWalletMessage: Unlink from parent wallet with address 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91
+              linkedWalletSignature: '0x3cb92cfae098adb135560f52158fb6fc4c02ca962b9a8721ab6203440f116464259099457f014d46b078d59a02946c3f40b6031f89efa2ac9df4ddc7f88ec1131b'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_RemoveLinkedWallet_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      description: Send a Payload to link a user wallet, this would require a signed message from both parent wallet (Embedded Wallet) and a linking wallet like an EOA.
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/GetSwapPrice:
+    post:
+      summary: GetSwapPrice
+      description: ' Currency abstraction '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_GetSwapPrice_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_GetSwapPrice_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/GetSwapPrices:
+    post:
+      summary: GetSwapPrices
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_GetSwapPrices_Request'
+            example:
+              userAddress: '0x1fEA9Fcbd1989C0f2D0Fbad08144c528c7F5ea54'
+              buyCurrencyAddress: '0x50ba9d89fbfa2862d0447281219a3058e7724224'
+              buyAmount: '1000000000000000000'
+              chainId: 11155111
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_GetSwapPrices_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      description: Retrieve swap prices for the specified ERC20 token at the address provided as 'buyCurrencyAddress'. The result will be 'null' if the user lacks sufficient funds or if there is insufficient pool liquidity.
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/API/GetSwapQuote:
+    post:
+      summary: GetSwapQuote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/API_GetSwapQuote_Request'
+            example:
+              userAddress: '0x1fEA9Fcbd1989C0f2D0Fbad08144c528c7F5ea54'
+              sellCurrencyAddress: '0x1c7d4b196cb0c7b01d743fbc6116a902379c7238'
+              buyCurrencyAddress: '0x50ba9d89fbfa2862d0447281219a3058e7724224'
+              buyAmount: '1000000000000000000'
+              chainId: 11155111
+              includeApprove: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_GetSwapQuote_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument_2'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      description: After selecting a swap price from 'GetSwapPrices', use this API to retrieve the transaction data needed to execute the swap on-chain.
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Metadata/RefreshContractInfo:
+    post:
+      summary: RefreshContractInfo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_RefreshContractInfo_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_RefreshContractInfo_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Metadata/RefreshContractTokens:
+    post:
+      summary: RefreshContractTokens
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_RefreshContractTokens_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_RefreshContractTokens_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Metadata/RefreshAllContractTokens:
+    post:
+      summary: RefreshAllContractTokens
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_RefreshAllContractTokens_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_RefreshAllContractTokens_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Metadata/SearchMetadata:
+    post:
+      summary: SearchMetadata
+      deprecated: true
+      description: 'Deprecated: Use SearchTokens() and SearchContracts() instead.'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_SearchMetadata_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_SearchMetadata_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Metadata/SearchContracts:
+    post:
+      summary: SearchContracts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata_SearchContracts_Request'
+            examples:
+              '0':
+                value:
+                  chainID: '137'
+                  q: skyweaver
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metadata_SearchContracts_Response'
+              examples:
+                '0':
+                  value:
+                    contractInfo:
+                    - chainId: 137
+                      address: '0x6310c8c6190d99e60422307e75d7770fd1f519d4'
+                      name: Skyweaver Payment Proxy
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x8a5479c4349518592d41456e7e6983cab19fc4b71f9fce257d3bb5eaec6001bf'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-02-28T19:52:03.42984Z'
+                    - chainId: 137
+                      address: '0x9b609bf3a3977ee7254210e0a0d835251540c4d5'
+                      name: Skyweaver Niftyswap
+                      type: UNKNOWN
+                      symbol: SWAP
+                      logoURI: https://assets.skyweaver.net/latest/sw-swap.png
+                      deployed: true
+                      bytecodeHash: '0xa04f6e37cbe77c331383504e172081eb95e8ef7aea51ad38c3f313c49422ecad'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348913Z'
+                    - chainId: 137
+                      address: '0xb5c3023dbece7a6bb78014000cd1c8ce940b50a0'
+                      name: Skyweaver Market Fee
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348925Z'
+                    - chainId: 137
+                      address: '0x2f88096676ea7491305c82752f87a4df73e77a5c'
+                      name: Skyweaver Niftyswap
+                      type: UNKNOWN
+                      symbol: SWAP
+                      logoURI: https://assets.skyweaver.net/latest/sw-swap.png
+                      deployed: true
+                      bytecodeHash: '0xb29d8f6581dc0b517b09690a2d320e8b491b843058853b1d02becd97d0a0364d'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        blacklist: true
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348965Z'
+                    - chainId: 137
+                      address: '0x86815cd8a85414a032e631f375f966a6cc366f9f'
+                      name: Skyweaver Conquest
+                      type: UNKNOWN
+                      symbol: CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348953Z'
+                    - chainId: 137
+                      address: '0x58d82d9fb669aec50832f3703698479ff7567559'
+                      name: Skyweaver Niftyswap (local)
+                      type: UNKNOWN
+                      symbol: SWAP
+                      logoURI: https://assets.skyweaver.net/latest/sw-swap.png
+                      deployed: true
+                      bytecodeHash: '0x81fdabb11cb9f9ff9b95fa3af750edbb2f3ca4f85e16ee2ee0144ce31e0ab973'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348997Z'
+                    - chainId: 137
+                      address: '0xa841aa6805957486cc2e30bb30b737e3f5b14e17'
+                      name: Skyweaver Conquest Tickets Factory
+                      type: UNKNOWN
+                      symbol: GET-CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        blacklist: true
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349016Z'
+                    - chainId: 137
+                      address: '0x742ac8f575563f090abc70e5ca19932472ec76ef'
+                      name: Skyweaver Conquest Tickets Factory (stg)
+                      type: UNKNOWN
+                      symbol: GET-CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349041Z'
+                    - chainId: 137
+                      address: '0x85117852a3dea4fa50afff171b9b09a4d83c8e4f'
+                      name: Skyweaver Conquest
+                      type: UNKNOWN
+                      symbol: CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        blacklist: true
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349047Z'
+                    - chainId: 137
+                      address: '0xedbdeb151e1cd111df8ec4a6d88719f415c5fdd7'
+                      name: Skyweaver Conquest (dev)
+                      type: UNKNOWN
+                      symbol: CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349053Z'
+                    - chainId: 137
+                      address: '0x9bc4bd99b0eac905dcc7a9f52d0b1fa1d72cd532'
+                      name: Skyweaver Conquest (local)
+                      type: UNKNOWN
+                      symbol: CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349059Z'
+                    - chainId: 137
+                      address: '0xdc9df33d9bad1ca9a9220b5f3d65865a84a8d528'
+                      name: Skyweaver Conquest (stg)
+                      type: UNKNOWN
+                      symbol: CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349065Z'
+                    - chainId: 137
+                      address: '0x12faf77beab96a21593fc32734be1178346f17e6'
+                      name: Skyweaver Payment Proxy
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x8a5479c4349518592d41456e7e6983cab19fc4b71f9fce257d3bb5eaec6001bf'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-03-11T20:20:38.740017Z'
+                    - chainId: 137
+                      address: '0x8e0079a2452f71558f13f0facb65d43e376d4f20'
+                      name: Skyweaver Payment Proxy
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x2b4204c124e194df7080ef85312509b7161980e9da5d565fcb18a2770e457289'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-03-11T20:26:53.048209Z'
+                    - chainId: 137
+                      address: '0x96897146606c7d16b208891e74bc5db9d0faa3af'
+                      name: Skyweaver Payment Proxy
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x2b4204c124e194df7080ef85312509b7161980e9da5d565fcb18a2770e457289'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-03-01T00:03:03.436606Z'
+                    - chainId: 137
+                      address: '0xa3db84c3d8003f93b6890bb5a291237a408c61cf'
+                      name: Skyweaver Sam's Avatars
+                      type: ERC20
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0xcf86b412cad75b8679f7f2810e4865a977de8fb4a657d83d144d740edd4a0e2e'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2023-11-24T16:58:29.125983Z'
+                    - chainId: 137
+                      address: '0x86442a7180ed2bb304d5304ed5ac66e041eeb623'
+                      name: Skyweaver Payment Proxy
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0x2b4204c124e194df7080ef85312509b7161980e9da5d565fcb18a2770e457289'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-03-12T18:39:34.447134Z'
+                    - chainId: 137
+                      address: '0x787efdb84e94abc631e5a1983c937d220529b94c'
+                      name: Skyweaver Treasury
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348938Z'
+                    - chainId: 137
+                      address: '0x059d3242ded5bad6008ed0899f5e0e22cab0586a'
+                      name: Skyweaver Conquest Tickets Factory
+                      type: UNKNOWN
+                      symbol: GET-CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: '0x61d1bd5e3a4d5c9c380d3b6cf970f96d63ae1376d55a2c1205869d1f5ef770f7'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348946Z'
+                    - chainId: 137
+                      address: '0x00a33f640f8b4efd6a154270fcdbf288d17d4385'
+                      name: Skyweaver Niftyswap (dev old)
+                      type: UNKNOWN
+                      symbol: SWAP
+                      logoURI: https://assets.skyweaver.net/latest/sw-swap.png
+                      deployed: true
+                      bytecodeHash: '0x24cd2c7fa8e95fd37d27f97497f08d207895c52b9c318973cfa43121dbbd8da7'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348973Z'
+                    - chainId: 137
+                      address: '0x7f6b2bb2217f2cdccd304cb04c4bf98704d30d54'
+                      name: Skyweaver Niftyswap (dev)
+                      type: UNKNOWN
+                      symbol: SWAP
+                      logoURI: https://assets.skyweaver.net/latest/sw-swap.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.348981Z'
+                    - chainId: 137
+                      address: '0x95584e36255681f5335702057e150a02cc9a3032'
+                      name: Skyweaver Niftyswap (stg)
+                      type: UNKNOWN
+                      symbol: SWAP
+                      logoURI: https://assets.skyweaver.net/latest/sw-swap.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349007Z'
+                    - chainId: 137
+                      address: '0x241c42c409c4ba4f449ec9cf3b5b853a4a5e8d4c'
+                      name: Skyweaver Conquest Tickets Factory (dev)
+                      type: UNKNOWN
+                      symbol: GET-CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: '0x448b201ec52b593a425f3f002309c52830dd1928aac61b4826264613f8ac81b0'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349026Z'
+                    - chainId: 137
+                      address: '0x2e7dd4b107e7449700df4eb74df910443b0a8acf'
+                      name: Skyweaver Conquest Tickets Factory (local)
+                      type: UNKNOWN
+                      symbol: GET-CONQUEST
+                      logoURI: https://assets.skyweaver.net/iYyh8-Op/webapp/icons/conquest-ticket-splash.png
+                      deployed: true
+                      bytecodeHash: 0x
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-06-24T14:56:10.349034Z'
+                    - chainId: 137
+                      address: '0xaf23b2199fd8a4f0d47a587c6403db534f131f8e'
+                      name: Big Skyweaver
+                      type: ERC1155
+                      symbol: Big Skyweaver
+                      deployed: true
+                      bytecodeHash: '0xa2a2f71551a15ee9e88d5be5f3a0d1716fb9a758d7f525b73d25368d1bca60e5'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-09-19T08:30:23.53885Z'
+                    - chainId: 137
+                      address: '0x6dba7e0065d43e61412c55fddc3214e371101ad4'
+                      name: Skyweaver Payment Proxy
+                      type: UNKNOWN
+                      symbol: ''
+                      deployed: true
+                      bytecodeHash: '0xa1275962bd7967e5e8ce1d31a731aa230605cebbf841d8967a910023d1b38ef1'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-03-01T00:03:03.436612Z'
+                    - chainId: 137
+                      address: '0xd6e5ad42107196628229bda2e4ddf83a740b0891'
+                      name: Light Skyweaver
+                      type: ERC1155
+                      symbol: Light Skyweaver
+                      deployed: true
+                      bytecodeHash: '0xa2a2f71551a15ee9e88d5be5f3a0d1716fb9a758d7f525b73d25368d1bca60e5'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-07-26T10:30:37.613067Z'
+                    - chainId: 137
+                      address: '0x7fb40ba8fbff2b115f72ebd12648488619924f4d'
+                      name: Tiny Skyweaver
+                      type: ERC1155
+                      symbol: Tiny Skyweaver
+                      deployed: true
+                      bytecodeHash: '0xa2a2f71551a15ee9e88d5be5f3a0d1716fb9a758d7f525b73d25368d1bca60e5'
+                      extensions:
+                        link: ''
+                        description: ''
+                        ogImage: ''
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: ''
+                        verified: false
+                      updatedAt: '2024-09-29T06:52:52.198645Z'
+                    - chainId: 137
+                      address: '0x631998e91476da5b870d741192fc5cbc55f5a52e'
+                      name: Skyweaver
+                      type: ERC1155
+                      symbol: SKYWVR
+                      logoURI: https://assets.skyweaver.net/_tX5dRVi/webapp/icons/skyweaver-token.png
+                      deployed: true
+                      bytecodeHash: '0x0b3a422ea307987db0bc40c75566bf4ad0d4fcd617916032e73757f2a4017539'
+                      extensions:
+                        link: https://www.skyweaver.net/
+                        description: Skyweaver is a Free-to-Play, trading card game powered by Polygon and Ethereum.
+                        ogImage: https://skyweaver.net/images/skyweavercover.jpg
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: '0x631998e91476da5b870d741192fc5cbc55f5a52e'
+                        verified: true
+                        verifiedBy: token-directory
+                        featured: true
+                      updatedAt: '2024-08-13T15:44:12.355679Z'
+                    - chainId: 137
+                      address: '0x5151bfa48249c57695336c66d51054c9367f6d33'
+                      name: Skyweaver
+                      type: ERC1155
+                      symbol: SKYWVR
+                      logoURI: https://assets.skyweaver.net/wiu-vYUH/webapp/icons/skyweaver-token.png
+                      deployed: true
+                      bytecodeHash: '0xacf498e88ebcfaa0f9074db9d49486392a93b507149a0163c506eacb12864739'
+                      extensions:
+                        link: https://www.skyweaver.net/
+                        description: Skyweaver is a Free-to-Play, trading card game powered by Ethereum.
+                        ogImage: https://skyweaver.net/images/skyweavercover.jpg
+                        ogName: ''
+                        originChainId: 0
+                        originAddress: '0x5151bfa48249c57695336c66d51054c9367f6d33'
+                        blacklist: true
+                        verified: true
+                        verifiedBy: token-directory
+                      updatedAt: '2024-08-13T15:44:12.355679Z'
+                    nextPage:
+                      page: 2
+                      pageSize: 30
+                      more: true
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorSessionExpired'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorTimeout'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorRequiredArgument'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorValidationFailed'
+                - $ref: '#/components/schemas/ErrorRateLimited'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorProjectNotFound'
+                - $ref: '#/components/schemas/ErrorChainNotFound'
+                - $ref: '#/components/schemas/ErrorTokenDirectoryDisabled'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+                - $ref: '#/components/schemas/ErrorFail'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Relayer/GetChainID:
+    post:
+      summary: GetChainID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Relayer_GetChainID_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relayer_GetChainID_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorInsufficientFee'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Relayer/FeeTokens:
+    post:
+      summary: FeeTokens
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Relayer_FeeTokens_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relayer_FeeTokens_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorInsufficientFee'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Relayer/FeeOptions:
+    post:
+      summary: FeeOptions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Relayer_FeeOptions_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relayer_FeeOptions_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorInsufficientFee'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Relayer/ListGasSponsors:
+    post:
+      summary: Gas Sponsorship
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Relayer_ListGasSponsors_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relayer_ListGasSponsors_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorInsufficientFee'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+  /rpc/Relayer/AddGasSponsor:
+    post:
+      summary: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Relayer_AddGasSponsor_Request'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relayer_AddGasSponsor_Response'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcEndpoint'
+                - $ref: '#/components/schemas/ErrorWebrpcRequestFailed'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRoute'
+                - $ref: '#/components/schemas/ErrorWebrpcBadMethod'
+                - $ref: '#/components/schemas/ErrorWebrpcBadRequest'
+                - $ref: '#/components/schemas/ErrorWebrpcClientDisconnected'
+                - $ref: '#/components/schemas/ErrorWebrpcStreamLost'
+                - $ref: '#/components/schemas/ErrorUnauthorized'
+                - $ref: '#/components/schemas/ErrorPermissionDenied'
+                - $ref: '#/components/schemas/ErrorMethodNotFound'
+                - $ref: '#/components/schemas/ErrorRequestConflict'
+                - $ref: '#/components/schemas/ErrorAborted'
+                - $ref: '#/components/schemas/ErrorGeoblocked'
+                - $ref: '#/components/schemas/ErrorInvalidArgument'
+                - $ref: '#/components/schemas/ErrorUnavailable'
+                - $ref: '#/components/schemas/ErrorQueryFailed'
+                - $ref: '#/components/schemas/ErrorNotFound'
+                - $ref: '#/components/schemas/ErrorInsufficientFee'
+        5XX:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ErrorWebrpcBadResponse'
+                - $ref: '#/components/schemas/ErrorWebrpcServerPanic'
+                - $ref: '#/components/schemas/ErrorWebrpcInternalError'
+      security:
+      - ApiKeyAuth:
+        - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+      tags:
+      - Rpc
+components:
+  schemas:
+    Builder_DeleteAudience_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        audienceId:
+          type: number
+    SwapQuote:
+      type: object
+      required:
+      - currencyAddress
+      - currencyBalance
+      - price
+      - maxPrice
+      - to
+      - transactionData
+      - transactionValue
+      - approveData
+      properties:
+        currencyAddress:
+          type: string
+        currencyBalance:
+          type: string
+        price:
+          type: string
+        maxPrice:
+          type: string
+        to:
+          type: string
+        transactionData:
+          type: string
+        transactionValue:
+          type: string
+        approveData:
+          type: string
+    ErrorUserNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: UserNotFound
+        code:
+          type: number
+          example: 3001
+        msg:
+          type: string
+          example: User not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorInvalidArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidArgument
+        code:
+          type: number
+          example: 2001
+        msg:
+          type: string
+          example: Invalid argument
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Metadata_RefreshContractInfo_Request:
+      type: object
+      properties:
+        chainHandle:
+          type: string
+        contractAddress:
+          type: string
+    ErrorSubscriptionLimit:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: SubscriptionLimit
+        code:
+          type: number
+          example: 3005
+        msg:
+          type: string
+          example: Subscription limit reached
+        cause:
+          type: string
+        status:
+          type: number
+          example: 402
+    EtherBalance:
+      type: object
+      required:
+      - accountAddress
+      - balanceWei
+      properties:
+        accountAddress:
+          type: string
+        balanceWei:
+          type: string
+    ErrorUnauthorized:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unauthorized
+        code:
+          type: number
+          example: 1000
+        msg:
+          type: string
+          example: Unauthorized access
+        cause:
+          type: string
+        status:
+          type: number
+          example: 401
+    ErrorFeatureNotIncluded:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: FeatureNotIncluded
+        code:
+          type: number
+          example: 3006
+        msg:
+          type: string
+          example: Feature not included
+        cause:
+          type: string
+        status:
+          type: number
+          example: 402
+    ErrorPermissionDenied:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: PermissionDenied
+        code:
+          type: number
+          example: 1001
+        msg:
+          type: string
+          example: Permission denied
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    API_IsValidMessageSignature_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        message:
+          type: string
+        signature:
+          type: string
+    Indexer_GetEtherBalance_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+    ContractType:
+      type: string
+      description: Represented as uint16 on the server side
+      enum:
+      - UNKNOWN
+      - ERC20
+      - ERC721
+      - ERC1155
+    ErrorUnavailable:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unavailable
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Unavailable resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorWebrpcBadResponse:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadResponse
+        code:
+          type: number
+          example: -5
+        msg:
+          type: string
+          example: bad response
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    ErrorResourceExhausted:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ResourceExhausted
+        code:
+          type: number
+          example: 2004
+        msg:
+          type: string
+          example: Resource exhausted
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorRequiredArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RequiredArgument
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Required argument missing
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Page_3:
+      type: object
+      properties:
+        pageSize:
+          type: number
+        page:
+          type: number
+        more:
+          type: boolean
+        totalRecords:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        sort:
+          type: array
+          description: '[]SortBy'
+          items:
+            $ref: '#/components/schemas/SortBy_2'
+    API_IsValidSignature_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        digest:
+          type: string
+        signature:
+          type: string
+    Metadata_SearchMetadata_Response:
+      type: object
+      properties:
+        tokenMetadata:
+          type: array
+          description: '[]TokenMetadata'
+          items:
+            $ref: '#/components/schemas/TokenMetadata'
+        contractInfo:
+          type: array
+          description: '[]ContractInfo'
+          items:
+            $ref: '#/components/schemas/ContractInfo'
+    Contract:
+      type: object
+      required:
+      - id
+      - projectId
+      - contractName
+      - contractAddress
+      - contractType
+      - chainId
+      - source
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: number
+        projectId:
+          type: number
+        contractName:
+          type: string
+        contractAddress:
+          type: string
+        contractType:
+          type: string
+        chainId:
+          type: number
+        source:
+          $ref: '#/components/schemas/ContractSourceType'
+        itemsContractAddress:
+          type: string
+        abi:
+          type: string
+        bytecode:
+          type: string
+        bytecodeHash:
+          type: string
+        audienceId:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    Indexer_SyncBalance_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+        contractAddress:
+          type: string
+        tokenID:
+          type: string
+    Builder_RemoveAudienceContacts_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        audienceId:
+          type: number
+        contactIds:
+          type: array
+          description: '[]uint64'
+          items:
+            type: number
+    ContractInfo:
+      type: object
+      required:
+      - chainId
+      - address
+      - name
+      - type
+      - symbol
+      - logoURI
+      - deployed
+      - bytecodeHash
+      - extensions
+      - contentHash
+      - updatedAt
+      - notFound
+      - status
+      properties:
+        chainId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        symbol:
+          type: string
+        decimals:
+          type: number
+        logoURI:
+          type: string
+        deployed:
+          type: boolean
+        bytecodeHash:
+          type: string
+        extensions:
+          $ref: '#/components/schemas/ContractInfoExtensions'
+        contentHash:
+          type: number
+        updatedAt:
+          type: string
+        notFound:
+          type: boolean
+        queuedAt:
+          type: string
+        status:
+          $ref: '#/components/schemas/ResourceStatus'
+    ErrorInvitationExpired:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvitationExpired
+        code:
+          type: number
+          example: 4000
+        msg:
+          type: string
+          example: Invitation code is expired
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorAlreadyCollaborator:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: AlreadyCollaborator
+        code:
+          type: number
+          example: 4001
+        msg:
+          type: string
+          example: Already a collaborator
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    ErrorWebrpcServerPanic:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcServerPanic
+        code:
+          type: number
+          example: -6
+        msg:
+          type: string
+          example: server panic
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    API_IsValidETHAuthProof_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        ethAuthProofString:
+          type: string
+    ErrorWebrpcBadRequest:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadRequest
+        code:
+          type: number
+          example: -4
+        msg:
+          type: string
+          example: bad request
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    TokenMetadata:
+      type: object
+      required:
+      - tokenId
+      - name
+      - attributes
+      - status
+      properties:
+        tokenId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        video:
+          type: string
+        audio:
+          type: string
+        properties:
+          type: object
+          description: map<string,any>
+          additionalProperties:
+            type: object
+        attributes:
+          type: array
+          description: '[]map<string,any>'
+          items:
+            type: object
+            description: map<string,any>
+            additionalProperties:
+              type: object
+        imageData:
+          type: string
+        externalUrl:
+          type: string
+        backgroundColor:
+          type: string
+        animationUrl:
+          type: string
+        decimals:
+          type: number
+        updatedAt:
+          type: string
+        assets:
+          type: array
+          description: '[]Asset'
+          items:
+            $ref: '#/components/schemas/Asset'
+        status:
+          $ref: '#/components/schemas/ResourceStatus'
+        queuedAt:
+          type: string
+        lastFetched:
+          type: string
+    ErrorWebrpcRequestFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcRequestFailed
+        code:
+          type: number
+          example: -1
+        msg:
+          type: string
+          example: request failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Page:
+      type: object
+      properties:
+        pageSize:
+          type: number
+        page:
+          type: number
+        column:
+          type: string
+        more:
+          type: boolean
+        before:
+          type: object
+        after:
+          type: object
+        sort:
+          type: array
+          description: '[]SortBy'
+          items:
+            $ref: '#/components/schemas/SortBy'
+    Relayer_AddGasSponsor_Response:
+      type: object
+      properties:
+        status:
+          type: boolean
+        gasSponsor:
+          $ref: '#/components/schemas/GasSponsor'
+    API_GetSwapPrice_Request:
+      type: object
+      properties:
+        buyCurrencyAddress:
+          type: string
+        sellCurrencyAddress:
+          type: string
+        buyAmount:
+          type: string
+        chainId:
+          type: number
+        slippagePercentage:
+          type: number
+    Relayer_FeeOptions_Response:
+      type: object
+      properties:
+        options:
+          type: array
+          description: '[]FeeOption'
+          items:
+            $ref: '#/components/schemas/FeeOption'
+        sponsored:
+          type: boolean
+        quote:
+          type: string
+    SwapPrice:
+      type: object
+      required:
+      - currencyAddress
+      - currencyBalance
+      - price
+      - maxPrice
+      - transactionValue
+      properties:
+        currencyAddress:
+          type: string
+        currencyBalance:
+          type: string
+        price:
+          type: string
+        maxPrice:
+          type: string
+        transactionValue:
+          type: string
+    Relayer_ListGasSponsors_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        page:
+          $ref: '#/components/schemas/Page_3'
+    ErrorProjectNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ProjectNotFound
+        code:
+          type: number
+          example: 3002
+        msg:
+          type: string
+          example: Project not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_SyncBalance_Response:
+      type: object
+    ErrorWebrpcBadRoute:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadRoute
+        code:
+          type: number
+          example: -2
+        msg:
+          type: string
+          example: bad route
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    Metadata_RefreshAllContractTokens_Request:
+      type: object
+      properties:
+        chainHandle:
+          type: string
+        contractAddress:
+          type: string
+    ErrorGeoblocked:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Geoblocked
+        code:
+          type: number
+          example: 1006
+        msg:
+          type: string
+          example: Geoblocked region
+        cause:
+          type: string
+        status:
+          type: number
+          example: 451
+    Asset:
+      type: object
+      required:
+      - id
+      - collectionId
+      - metadataField
+      properties:
+        id:
+          type: number
+        collectionId:
+          type: number
+        tokenId:
+          type: string
+        url:
+          type: string
+        metadataField:
+          type: string
+        filename:
+          type: string
+        filesize:
+          type: number
+        mimeType:
+          type: string
+        width:
+          type: number
+        height:
+          type: number
+        updatedAt:
+          type: string
+    Relayer_GetChainID_Request:
+      type: object
+    ContractSourceType:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - LINKED
+      - DEPLOYED
+      - SALE
+    FeeOption:
+      type: object
+      required:
+      - token
+      - to
+      - value
+      - gasLimit
+      properties:
+        token:
+          $ref: '#/components/schemas/FeeToken'
+        to:
+          type: string
+        value:
+          type: string
+        gasLimit:
+          type: number
+    API_IsValidSignature_Response:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+    TaskStatus:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - QUEUED
+      - PAUSED
+      - FAILED
+      - COMPLETED
+    Metadata_SearchContracts_Response:
+      type: object
+      properties:
+        contractInfo:
+          type: array
+          description: '[]ContractInfo'
+          items:
+            $ref: '#/components/schemas/ContractInfo'
+        nextPage:
+          $ref: '#/components/schemas/Page_2'
+    FeeToken:
+      type: object
+      required:
+      - chainId
+      - name
+      - symbol
+      - type
+      - logoURL
+      properties:
+        chainId:
+          type: number
+        name:
+          type: string
+        symbol:
+          type: string
+        type:
+          $ref: '#/components/schemas/FeeTokenType'
+        decimals:
+          type: number
+        logoURL:
+          type: string
+        contractAddress:
+          type: string
+        tokenID:
+          type: string
+    Relayer_FeeTokens_Response:
+      type: object
+      properties:
+        isFeeRequired:
+          type: boolean
+        tokens:
+          type: array
+          description: '[]FeeToken'
+          items:
+            $ref: '#/components/schemas/FeeToken'
+    ErrorServiceDisabled:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ServiceDisabled
+        code:
+          type: number
+          example: 1005
+        msg:
+          type: string
+          example: Service disabled
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    Metadata_SearchContracts_Request:
+      type: object
+      properties:
+        q:
+          type: string
+        chainID:
+          type: string
+        chainIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        types:
+          type: array
+          description: '[]ContractType'
+          items:
+            $ref: '#/components/schemas/ContractType'
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Page_2:
+      type: object
+      properties:
+        page:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        pageSize:
+          type: number
+        more:
+          type: boolean
+    ErrorRequestConflict:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RequestConflict
+        code:
+          type: number
+          example: 1004
+        msg:
+          type: string
+          example: Conflict with target resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    ErrorNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: NotFound
+        code:
+          type: number
+          example: 3000
+        msg:
+          type: string
+          example: Resource not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    API_RemoveLinkedWallet_Request:
+      type: object
+      properties:
+        parentWalletAddress:
+          type: string
+        parentWalletMessage:
+          type: string
+        parentWalletSignature:
+          type: string
+        linkedWalletAddress:
+          type: string
+        linkedWalletMessage:
+          type: string
+        linkedWalletSignature:
+          type: string
+        signatureChainId:
+          type: string
+    ErrorSessionExpired:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: SessionExpired
+        code:
+          type: number
+          example: 1002
+        msg:
+          type: string
+          example: Session expired
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    API_IsValidTypedDataSignature_Response:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+    Builder_AddAudienceContacts_Response:
+      type: object
+      properties:
+        ok:
+          type: boolean
+    LinkedWallet:
+      type: object
+      required:
+      - id
+      - walletAddress
+      - linkedWalletAddress
+      properties:
+        id:
+          type: number
+        walletType:
+          type: string
+        walletAddress:
+          type: string
+        linkedWalletAddress:
+          type: string
+        createdAt:
+          type: string
+    Metadata_SearchMetadata_Request:
+      type: object
+      properties:
+        filter:
+          type: string
+        chainID:
+          type: string
+        types:
+          type: array
+          description: '[]ContractType'
+          items:
+            $ref: '#/components/schemas/ContractType'
+        excludeTokenMetadata:
+          type: boolean
+    Metadata_RefreshContractInfo_Response:
+      type: object
+    ErrorTokenDirectoryDisabled:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: TokenDirectoryDisabled
+        code:
+          type: number
+          example: 4001
+        msg:
+          type: string
+          example: Token Directory is disabled
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_UpdateAudience_Response:
+      type: object
+      properties:
+        audience:
+          $ref: '#/components/schemas/Audience'
+    ContractFilter:
+      type: object
+      properties:
+        chainId:
+          type: number
+        contractSourceType:
+          $ref: '#/components/schemas/ContractSourceType'
+        contractType:
+          type: string
+    Builder_GetAudience_Response:
+      type: object
+      properties:
+        audience:
+          $ref: '#/components/schemas/Audience'
+        contacts:
+          type: array
+          description: '[]AudienceContact'
+          items:
+            $ref: '#/components/schemas/AudienceContact'
+        contracts:
+          type: array
+          description: '[]Contract'
+          items:
+            $ref: '#/components/schemas/Contract'
+    Indexer_GetEtherBalance_Response:
+      type: object
+      properties:
+        balance:
+          $ref: '#/components/schemas/EtherBalance'
+    API_GetSwapQuote_Request:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        buyCurrencyAddress:
+          type: string
+        sellCurrencyAddress:
+          type: string
+        buyAmount:
+          type: string
+        chainId:
+          type: number
+        includeApprove:
+          type: boolean
+        slippagePercentage:
+          type: number
+    ContractInfoExtensions:
+      type: object
+      required:
+      - link
+      - description
+      - categories
+      - ogImage
+      - ogName
+      - originChainId
+      - originAddress
+      - blacklist
+      - verified
+      - verifiedBy
+      - featured
+      properties:
+        link:
+          type: string
+        description:
+          type: string
+        categories:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        ogImage:
+          type: string
+        ogName:
+          type: string
+        originChainId:
+          type: number
+        originAddress:
+          type: string
+        blacklist:
+          type: boolean
+        verified:
+          type: boolean
+        verifiedBy:
+          type: string
+        featured:
+          type: boolean
+    ErrorInvalidArgument_2:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidArgument
+        code:
+          type: number
+          example: 2000
+        msg:
+          type: string
+          example: Invalid argument
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Audience:
+      type: object
+      required:
+      - id
+      - projectId
+      - name
+      - contactCount
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: number
+        projectId:
+          type: number
+        name:
+          type: string
+        contactCount:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        deletedAt:
+          type: string
+    ErrorInvalidNetwork:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidNetwork
+        code:
+          type: number
+          example: 3007
+        msg:
+          type: string
+          example: Invalid network
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_DeleteAudience_Response:
+      type: object
+      properties:
+        ok:
+          type: boolean
+    Metadata_RefreshAllContractTokens_Response:
+      type: object
+      properties:
+        task:
+          $ref: '#/components/schemas/Task'
+        retryAfter:
+          type: number
+    ErrorTimeout:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Timeout
+        code:
+          type: number
+          example: 2000
+        msg:
+          type: string
+          example: Request timed out
+        cause:
+          type: string
+        status:
+          type: number
+          example: 408
+    API_LinkWallet_Request:
+      type: object
+      properties:
+        parentWalletAddress:
+          type: string
+        parentWalletMessage:
+          type: string
+        parentWalletSignature:
+          type: string
+        linkedWalletAddress:
+          type: string
+        linkedWalletMessage:
+          type: string
+        linkedWalletSignature:
+          type: string
+        signatureChainId:
+          type: string
+        linkedWalletType:
+          type: string
+    Relayer_FeeTokens_Request:
+      type: object
+    Builder_ListAudiences_Response:
+      type: object
+      properties:
+        audiences:
+          type: array
+          description: '[]Audience'
+          items:
+            $ref: '#/components/schemas/Audience'
+    SortOrder:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - DESC
+      - ASC
+    Builder_ListContractSources_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        page:
+          $ref: '#/components/schemas/Page'
+    Relayer_AddGasSponsor_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        active:
+          type: boolean
+    API_GetSwapPrices_Response:
+      type: object
+      properties:
+        swapPrices:
+          type: array
+          description: '[]SwapPrice'
+          items:
+            $ref: '#/components/schemas/SwapPrice'
+    Builder_ListContracts_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        contracts:
+          type: array
+          description: '[]Contract'
+          items:
+            $ref: '#/components/schemas/Contract'
+    Builder_ListContracts_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        filter:
+          $ref: '#/components/schemas/ContractFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+    API_IsValidTypedDataSignature_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        typedData:
+          type: object
+        signature:
+          type: string
+    API_GetSwapPrices_Request:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        buyCurrencyAddress:
+          type: string
+        buyAmount:
+          type: string
+        chainId:
+          type: number
+        slippagePercentage:
+          type: number
+    Metadata_RefreshContractTokens_Request:
+      type: object
+      properties:
+        chainHandle:
+          type: string
+        contractAddress:
+          type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Task:
+      type: object
+      required:
+      - id
+      - queue
+      - try
+      - payload
+      properties:
+        id:
+          type: number
+        queue:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        try:
+          type: number
+        runAt:
+          type: string
+        lastRanAt:
+          type: string
+        createdAt:
+          type: string
+        payload:
+          type: array
+          description: '[]byte'
+          items:
+            type: string
+        hash:
+          type: string
+    GasSponsor:
+      type: object
+      required:
+      - id
+      - gasTankId
+      - projectId
+      - chainId
+      - address
+      - name
+      - active
+      - updatedAt
+      - createdAt
+      - deletedAt
+      properties:
+        id:
+          type: number
+        gasTankId:
+          type: number
+        projectId:
+          type: number
+        chainId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        active:
+          type: boolean
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+        deletedAt:
+          type: string
+    ErrorAborted:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Aborted
+        code:
+          type: number
+          example: 1005
+        msg:
+          type: string
+          example: Request aborted
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ResourceStatus:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - NOT_AVAILABLE
+      - STALE
+      - AVAILABLE
+    API_LinkWallet_Response:
+      type: object
+      properties:
+        status:
+          type: boolean
+    ErrorWebrpcEndpoint:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcEndpoint
+        code:
+          type: number
+          example: 0
+        msg:
+          type: string
+          example: endpoint error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_ListContractSources_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        contractSources:
+          type: array
+          description: '[]ContractSource'
+          items:
+            $ref: '#/components/schemas/ContractSource'
+    AudienceContact:
+      type: object
+      required:
+      - id
+      - audienceId
+      - address
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: number
+        audienceId:
+          type: number
+        name:
+          type: string
+        address:
+          type: string
+        email:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    ErrorChainNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ChainNotFound
+        code:
+          type: number
+          example: 3003
+        msg:
+          type: string
+          example: Chain not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_CreateAudience_Response:
+      type: object
+      properties:
+        audience:
+          $ref: '#/components/schemas/Audience'
+    API_GetLinkedWallets_Request:
+      type: object
+      properties:
+        parentWalletAddress:
+          type: string
+        parentWalletMessage:
+          type: string
+        parentWalletSignature:
+          type: string
+        signatureChainId:
+          type: string
+    ErrorInsufficientFee:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InsufficientFee
+        code:
+          type: number
+          example: 3004
+        msg:
+          type: string
+          example: Insufficient fee
+        cause:
+          type: string
+        status:
+          type: number
+          example: 402
+    ErrorInvalidTier:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidTier
+        code:
+          type: number
+          example: 3003
+        msg:
+          type: string
+          example: Invalid subscription tier
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorWebrpcBadMethod:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadMethod
+        code:
+          type: number
+          example: -3
+        msg:
+          type: string
+          example: bad method
+        cause:
+          type: string
+        status:
+          type: number
+          example: 405
+    API_RemoveLinkedWallet_Response:
+      type: object
+      properties:
+        status:
+          type: boolean
+    Relayer_GetChainID_Response:
+      type: object
+      properties:
+        chainID:
+          type: number
+    ErrorValidationFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ValidationFailed
+        code:
+          type: number
+          example: 2004
+        msg:
+          type: string
+          example: Validation failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    API_IsValidETHAuthProof_Response:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+    Builder_GetContract_Request:
+      type: object
+      properties:
+        id:
+          type: number
+    Builder_AddAudienceContacts_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        audienceId:
+          type: number
+        contacts:
+          type: array
+          description: '[]AudienceContact'
+          items:
+            $ref: '#/components/schemas/AudienceContact'
+    API_GetLinkedWallets_Response:
+      type: object
+      properties:
+        linkedWallets:
+          type: array
+          description: '[]LinkedWallet'
+          items:
+            $ref: '#/components/schemas/LinkedWallet'
+    Builder_RemoveAudienceContacts_Response:
+      type: object
+      properties:
+        ok:
+          type: boolean
+    Builder_GetContract_Response:
+      type: object
+      properties:
+        contract:
+          $ref: '#/components/schemas/Contract'
+    API_GetSwapQuote_Response:
+      type: object
+      properties:
+        swapQuote:
+          $ref: '#/components/schemas/SwapQuote'
+    Relayer_FeeOptions_Request:
+      type: object
+      properties:
+        wallet:
+          type: string
+        to:
+          type: string
+        data:
+          type: string
+        simulate:
+          type: boolean
+    ErrorWebrpcInternalError:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcInternalError
+        code:
+          type: number
+          example: -7
+        msg:
+          type: string
+          example: internal error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    ErrorMethodNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MethodNotFound
+        code:
+          type: number
+          example: 1003
+        msg:
+          type: string
+          example: Method not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    FeeTokenType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - UNKNOWN
+      - ERC20_TOKEN
+      - ERC1155_TOKEN
+    SortBy_2:
+      type: object
+      required:
+      - column
+      - order
+      properties:
+        column:
+          type: string
+        order:
+          $ref: '#/components/schemas/SortOrder'
+    ErrorMetadataCallFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MetadataCallFailed
+        code:
+          type: number
+          example: 3003
+        msg:
+          type: string
+          example: Metadata service call failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_UpdateAudience_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        audienceId:
+          type: number
+        name:
+          type: string
+    ErrorEmailTemplateExists:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: EmailTemplateExists
+        code:
+          type: number
+          example: 3004
+        msg:
+          type: string
+          example: Email Template exists
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    Relayer_ListGasSponsors_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page_3'
+        gasSponsors:
+          type: array
+          description: '[]GasSponsor'
+          items:
+            $ref: '#/components/schemas/GasSponsor'
+    Builder_GetAudience_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        audienceId:
+          type: number
+    API_IsValidMessageSignature_Response:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+    Metadata_RefreshContractTokens_Response:
+      type: object
+      properties:
+        task:
+          $ref: '#/components/schemas/Task'
+    Builder_CreateAudience_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        name:
+          type: string
+    API_GetSwapPrice_Response:
+      type: object
+      properties:
+        swapPrice:
+          $ref: '#/components/schemas/SwapPrice'
+    ErrorFail:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Fail
+        code:
+          type: number
+          example: 1005
+        msg:
+          type: string
+          example: Request Failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    ContractSource:
+      type: object
+      required:
+      - id
+      - uid
+      - contractType
+      - name
+      - description
+      - author
+      - license
+      - audited
+      - moreInfoUrl
+      - disabled
+      - factorySourceUid
+      - abi
+      - bytecode
+      - bytecodeHash
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: number
+        uid:
+          type: string
+        contractType:
+          type: string
+        projectId:
+          type: number
+        name:
+          type: string
+        description:
+          type: string
+        author:
+          type: string
+        license:
+          type: string
+        audited:
+          type: boolean
+        moreInfoUrl:
+          type: string
+        disabled:
+          type: boolean
+        factorySourceUid:
+          type: string
+        abi:
+          type: string
+        bytecode:
+          type: string
+        bytecodeHash:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    Builder_ListAudiences_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+    SortBy:
+      type: object
+      required:
+      - column
+      properties:
+        column:
+          type: string
+        order:
+          $ref: '#/components/schemas/SortOrder'
+    ErrorRateLimited:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RateLimited
+        code:
+          type: number
+          example: 2005
+        msg:
+          type: string
+          example: Rate limited
+        cause:
+          type: string
+        status:
+          type: number
+          example: 429
+    ErrorWebrpcClientDisconnected:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcClientDisconnected
+        code:
+          type: number
+          example: -8
+        msg:
+          type: string
+          example: client disconnected
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorWebrpcStreamLost:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcStreamLost
+        code:
+          type: number
+          example: -9
+        msg:
+          type: string
+          example: stream lost
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorQueryFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: QueryFailed
+        code:
+          type: number
+          example: 2003
+        msg:
+          type: string
+          example: Query failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
