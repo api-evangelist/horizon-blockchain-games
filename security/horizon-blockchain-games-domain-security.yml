@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: horizongames.net
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Sep  9 08:30:39 2026 GMT
+  hsts: false
+- host: api.sequence.app
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Aug 30 23:17:27 2026 GMT
+  hsts: null
+- host: amoy-indexer.sequence.app
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Aug 30 23:17:27 2026 GMT
+  hsts: null
+domains:
+- domain: horizongames.net
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: sequence.app
+  dnssec: true
+  caa: []
+  spf: false
+  dmarc: true
+  dmarc_policy: none

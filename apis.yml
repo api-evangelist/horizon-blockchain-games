@@ -1,27 +1,176 @@
 aid: horizon-blockchain-games
 name: Horizon Blockchain Games
-description: 'Horizon Blockchain Games is a company surfaced as a portfolio company of initialized-capital
-  and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: >-
+  Horizon Blockchain Games is the web3 gaming studio and infrastructure company behind Skyweaver and
+  the Sequence platform (sequence.xyz / 0xsequence) — a modular, open-source web3 development stack
+  for onchain apps, DeFi, stablecoins, and games. Sequence unifies smart-contract wallets, embedded
+  Wallet-as-a-Service, 1-click cross-chain payments, an NFT marketplace, a multi-chain indexer,
+  token metadata, a transaction relayer with gas sponsorship, a node gateway, analytics, and SDKs
+  for Web, Unity, Unreal, React Native, and Go. Its APIs are webrpc JSON-RPC-over-HTTP services
+  spanning 40+ EVM chains, authenticated with project access keys. Sequence was acquired by Polygon
+  Labs. This profile was enriched by the API Evangelist pipeline from Sequence's public developer
+  surface.
 url: https://raw.githubusercontent.com/api-evangelist/horizon-blockchain-games/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://sequence.xyz/favicon.ico
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - initialized-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: active
+x-tier-reason: enriched-provider
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Consumer
-apis: []
+- Blockchain
+- Web3
+- Gaming
+- NFT
+- Wallet
+- Cryptocurrency
+- Smart Contracts
+- Marketplace
+- Developer Tools
+- Ethereum
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: horizon-blockchain-games:horizon-blockchain-games-analytics-api
+  name: Horizon Blockchain Games Analytics API
+  description: The Analytics API from Horizon Blockchain Games — 177 operation(s) for analytics.
+  humanURL: https://docs.sequence.xyz/api-references/indexer/overview
+  baseURL: https://mainnet-indexer.sequence.app
+  tags:
+  - Analytics
+  properties:
+  - type: OpenAPI
+    url: openapi/horizon-blockchain-games-analytics-api-openapi.yml
+- aid: horizon-blockchain-games:horizon-blockchain-games-marketplace-api
+  name: Horizon Blockchain Games Marketplace API
+  description: The Marketplace API from Horizon Blockchain Games — 34 operation(s) for marketplace.
+  humanURL: https://docs.sequence.xyz/api-references/indexer/overview
+  baseURL: https://mainnet-indexer.sequence.app
+  tags:
+  - Marketplace
+  properties:
+  - type: OpenAPI
+    url: openapi/horizon-blockchain-games-marketplace-api-openapi.yml
+- aid: horizon-blockchain-games:horizon-blockchain-games-public-api
+  name: Horizon Blockchain Games public API
+  description: >-
+    Endpoints accessible by passing your project-access-key in the header. This is injected whenever you
+    login automatically.
+  humanURL: https://docs.sequence.xyz/api-references/indexer/overview
+  baseURL: https://mainnet-indexer.sequence.app
+  tags:
+  - public
+  properties:
+  - type: OpenAPI
+    url: openapi/horizon-blockchain-games-public-api-openapi.yml
+- aid: horizon-blockchain-games:horizon-blockchain-games-rpc-api
+  name: Horizon Blockchain Games Rpc API
+  description: The Rpc API from Horizon Blockchain Games — 32 operation(s) for rpc.
+  humanURL: https://docs.sequence.xyz/api-references/indexer/overview
+  baseURL: https://mainnet-indexer.sequence.app
+  tags:
+  - Rpc
+  properties:
+  - type: OpenAPI
+    url: openapi/horizon-blockchain-games-rpc-api-openapi.yml
+- aid: horizon-blockchain-games:horizon-blockchain-games-secret-api
+  name: Horizon Blockchain Games secret API
+  description: >-
+    Endpoints that require a Sequence service token intended to be secret. You can manually generate one
+    on Sequence Builder and pass it as a Bearer Token.
+  humanURL: https://docs.sequence.xyz/api-references/indexer/overview
+  baseURL: https://mainnet-indexer.sequence.app
+  tags:
+  - secret
+  properties:
+  - type: OpenAPI
+    url: openapi/horizon-blockchain-games-secret-api-openapi.yml
 common:
 - type: Website
   url: https://horizongames.net/
+- type: DeveloperPortal
+  url: https://sequence.build
+- type: Documentation
+  url: https://docs.sequence.xyz
+- type: APIReference
+  url: https://docs.sequence.xyz/api-references/overview
+- type: GettingStarted
+  url: https://docs.sequence.xyz/solutions/builder/getting-started
+- type: Support
+  url: https://support.sequence.xyz/en/
+- type: Blog
+  url: https://sequence.xyz/blog
+- type: GitHubOrganization
+  url: https://github.com/0xsequence
+- type: Pricing
+  url: https://sequence.xyz/pricing
+- type: SignUp
+  url: https://sequence.build
+- type: TermsOfService
+  url: https://sequence.xyz/terms
+- type: PrivacyPolicy
+  url: https://sequence.xyz/privacy
+- type: StatusPage
+  url: https://status.sequence.info
+- type: Authentication
+  url: authentication/horizon-blockchain-games-authentication.yml
+- type: DomainSecurity
+  url: security/horizon-blockchain-games-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/horizon-blockchain-games-agentic-access.yml
+- type: Packages
+  url: packages/horizon-blockchain-games-packages.yml
+- type: SDKs
+  url: packages/horizon-blockchain-games-packages.yml
+- type: LLMsTxt
+  url: llms/horizon-blockchain-games-llms.txt
+- type: Conformance
+  url: conformance/horizon-blockchain-games-conformance.yml
+- type: ErrorCatalog
+  url: errors/horizon-blockchain-games-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/horizon-blockchain-games-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/horizon-blockchain-games-lifecycle.yml
+- type: Conventions
+  url: conventions/horizon-blockchain-games-conventions.yml
+- type: ChangeLog
+  url: changelog/horizon-blockchain-games-changelog.yml
+- type: Sandbox
+  url: sandbox/horizon-blockchain-games-sandbox.yml
+- type: Components
+  url: components/horizon-blockchain-games-components.yml
+- type: DataModel
+  url: data-model/horizon-blockchain-games-data-model.yml
+- type: MCPServer
+  url: mcp/horizon-blockchain-games-mcp.yml
+- type: Webhooks
+  url: asyncapi/horizon-blockchain-games-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

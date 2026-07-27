@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.sequence.xyz/api-references/indexer/overview
+type: Webhooks
+summary: >-
+  Sequence exposes a webhook surface through the Indexer service: developers register webhook
+  listeners that receive push notifications when on-chain events (native/token balance updates,
+  transactions) matching a filter occur for their project. Listeners are managed via the Indexer
+  webrpc API and delivered to a developer-supplied HTTPS endpoint. The Builder API additionally
+  manages project-level webhook configuration.
+delivery:
+  transport: https-post
+  auth: developer endpoint receives POST callbacks; listeners registered with project access key
+management_operations:
+  - service: indexer
+    operation: Indexer/GetAllWebhookListeners
+    endpoint: POST /rpc/Indexer/GetAllWebhookListeners
+  - service: indexer
+    operation: Indexer/GetWebhookListener
+    endpoint: POST /rpc/Indexer/GetWebhookListener
+  - service: indexer
+    operation: Indexer/AddWebhookListener
+    endpoint: POST /rpc/Indexer/AddWebhookListener
+  - service: indexer
+    operation: Indexer/UpdateWebhookListener
+    endpoint: POST /rpc/Indexer/UpdateWebhookListener
+  - service: indexer
+    operation: Indexer/RemoveWebhookListener
+    endpoint: POST /rpc/Indexer/RemoveWebhookListener
+  - service: indexer
+    operation: Indexer/ToggleWebhookListener
+    endpoint: POST /rpc/Indexer/ToggleWebhookListener
+  - service: indexer
+    operation: Indexer/PauseAllWebhookListeners
+    endpoint: POST /rpc/Indexer/PauseAllWebhookListeners
+  - service: indexer
+    operation: Indexer/ResumeAllWebhookListeners
+    endpoint: POST /rpc/Indexer/ResumeAllWebhookListeners

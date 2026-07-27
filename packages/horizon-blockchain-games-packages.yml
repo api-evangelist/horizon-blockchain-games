@@ -1,0 +1,81 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.npmjs.com/org/0xsequence + https://github.com/0xsequence
+docs: https://docs.sequence.xyz/sdk/overview
+packages:
+  - language: javascript
+    registry: npm
+    name: 0xsequence
+    version: 2.3.44
+    url: https://www.npmjs.com/package/0xsequence
+    install: npm install 0xsequence
+    official: true
+    description: Sequence modular web3 stack and smart wallet SDK for Ethereum chains (umbrella package)
+  - language: javascript
+    registry: npm
+    name: "@0xsequence/waas"
+    version: 2.3.44
+    url: https://www.npmjs.com/package/@0xsequence/waas
+    install: npm install @0xsequence/waas
+    official: true
+    description: Embedded Wallet-as-a-Service session client
+  - language: javascript
+    registry: npm
+    name: "@0xsequence/connect"
+    version: 5.4.12
+    url: https://www.npmjs.com/package/@0xsequence/connect
+    install: npm install @0xsequence/connect
+    official: true
+    description: Sequence Web SDK connect / wallet-connection React library
+  - language: javascript
+    registry: npm
+    name: "@0xsequence/indexer"
+    url: https://www.npmjs.com/package/@0xsequence/indexer
+    install: npm install @0xsequence/indexer
+    official: true
+    description: Indexer API client
+  - language: javascript
+    registry: npm
+    name: "@0xsequence/metadata"
+    url: https://www.npmjs.com/package/@0xsequence/metadata
+    install: npm install @0xsequence/metadata
+    official: true
+    description: Metadata API client
+  - language: javascript
+    registry: npm
+    name: "@0xsequence/marketplace"
+    url: https://www.npmjs.com/package/@0xsequence/marketplace
+    install: npm install @0xsequence/marketplace
+    official: true
+    description: Marketplace API client
+  - language: javascript
+    registry: npm
+    name: "@0xsequence/design-system"
+    url: https://www.npmjs.com/package/@0xsequence/design-system
+    install: npm install @0xsequence/design-system
+    official: true
+    description: Sequence React design-system / UI component library
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/0xsequence/go-sequence
+    version: v0.61.0
+    url: https://pkg.go.dev/github.com/0xsequence/go-sequence
+    install: go get github.com/0xsequence/go-sequence
+    official: true
+    description: Sequence SDK for Go (wallet, indexer, metadata, marketplace, relayer clients)
+  - language: csharp
+    registry: github
+    name: sequence-unity
+    version: v5.0.7
+    url: https://github.com/0xsequence/sequence-unity
+    install: Import the Sequence Unity SDK .unitypackage / OpenUPM
+    official: true
+    description: Sequence Unity SDK for game development
+  - language: cpp
+    registry: github
+    name: sequence-unreal
+    version: v3.0.4
+    url: https://github.com/0xsequence/sequence-unreal
+    install: Add the Sequence Unreal Engine plugin
+    official: true
+    description: Sequence Unreal Engine SDK

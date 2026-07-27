@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.sequence.xyz/sdk/web/overview + https://www.npmjs.com/org/0xsequence
+summary: >-
+  Sequence ships a client-side React component surface (the Sequence Web SDK) for embedding wallet
+  connection, an embedded wallet UI, and NFT checkout into web apps, plus a shared design system.
+  These are prebuilt UI surfaces distinct from the server-side API clients in packages/.
+families:
+  - name: Web SDK / Connect
+    loader: "@0xsequence/connect"
+    url: https://docs.sequence.xyz/sdk/web/overview
+    components:
+      - SequenceConnect / connect modal (email, social, guest, and web3 wallet sign-in)
+      - useOpenConnectModal / wallet connection hooks
+      - Embedded wallet inventory and send/receive UI
+  - name: Checkout
+    loader: "@0xsequence/checkout"
+    url: https://docs.sequence.xyz/sdk/web/guides/checkout
+    components:
+      - NFT checkout modal (credit-card and crypto payment for collectibles)
+      - Fiat on-ramp / add-funds surface
+  - name: Design System
+    loader: "@0xsequence/design-system"
+    url: https://www.npmjs.com/package/@0xsequence/design-system
+    components:
+      - Sequence-branded React primitives (theming, layout, form controls) used across the SDK UIs
+notes:
+  - Framework support documented for React, Next.js, Vue, and React Native.
+  - Native game engine UI is delivered through the Unity and Unreal SDKs (see packages/).

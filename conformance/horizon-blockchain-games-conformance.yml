@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/ + docs.sequence.xyz
+standards:
+  - id: openapi-3.0
+    conforms: true
+    evidence: seven OpenAPI 3.0.0 documents published at docs.sequence.xyz/api-references
+  - id: webrpc
+    conforms: true
+    evidence: all services are webrpc-generated JSON-RPC-over-HTTP (POST /rpc/Service/Method)
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: errors use the webrpc envelope {error, code, msg, cause, status}, not application/problem+json
+  - id: oauth2
+    conforms: false
+    evidence: no oauth2 securityScheme; auth is X-Access-Key (apiKey) + HTTP Bearer JWT
+  - id: api-key-auth
+    conforms: true
+    evidence: X-Access-Key project access key header (ApiKeyAuth securityScheme) across all services
+  - id: eip-1271-signature-validation
+    conforms: true
+    evidence: infrastructure API IsValidSignature / IsValidTypedDataSignature implement smart-contract signature checks
+  - id: erc-721-erc-1155-metadata
+    conforms: true
+    evidence: metadata API serves ERC-721/ERC-1155 token and contract metadata
+  - id: evm-json-rpc
+    conforms: true
+    evidence: Node Gateway proxies standard EVM JSON-RPC across 40+ chains

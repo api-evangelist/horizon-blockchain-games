@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.sequence.xyz + https://status.sequence.info + openapi/
+versioning:
+  scheme: sdk-semver
+  note: >-
+    HTTP webrpc endpoints are unversioned; versioning is carried by the SDKs (0xsequence npm 2.3.44,
+    go-sequence v0.61.0, sequence-unity v5.0.7, sequence-unreal v3.0.4). Deprecated RPC methods are
+    marked in the OpenAPI and superseded by renamed methods.
+deprecation:
+  policy_url: https://docs.sequence.xyz/api-references/overview
+  sunset_header: false
+  note: >-
+    Deprecations are signalled by "Deprecated:" markers in the OpenAPI operation summaries pointing
+    to the replacement method; no RFC 8594 Sunset/Deprecation HTTP headers are documented.
+status_page: https://status.sequence.info
+sla:
+  url: https://sequence.xyz/terms
+  note: uptime/SLA governed by plan tier; see Builder pricing
+deprecated_operations:
+  - openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetEtherBalance
+  - openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectibleLowestOffer
+  - openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectibleHighestOffer
+  - openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectibleLowestListing
+  - openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectibleHighestListing
+  - openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/ListCollectibleListings
+  - openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/ListCollectibleOffers
+  - openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/RefreshTokenMetadata
+  - openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/EnqueueTokensForRefresh
+  - openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/SearchMetadata

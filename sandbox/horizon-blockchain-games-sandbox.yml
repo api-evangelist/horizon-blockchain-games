@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.sequence.xyz + OpenAPI servers[]
+summary: >-
+  Sequence provides a sandbox by way of EVM testnets rather than a separate mock API. A single
+  project access key (created in Sequence Builder at sequence.build) works against both testnet and
+  mainnet; the developer selects the network by choosing the per-chain service host. Testnet
+  transactions, gas, and NFTs carry no real value, and the Sequence testnet relayers sponsor gas so
+  wallets can transact without funding.
+separation:
+  model: network-selection (per-chain host), not test-vs-live key prefixes
+  access_key: X-Access-Key project access key issued in Sequence Builder; same key across networks
+testnet_hosts:
+  indexer:
+    - https://sepolia-indexer.sequence.app
+    - https://arbitrum-sepolia-indexer.sequence.app
+    - https://base-sepolia-indexer.sequence.app
+    - https://amoy-indexer.sequence.app
+  relayer:
+    - https://sepolia-relayer.sequence.app
+    - https://arbitrum-sepolia-relayer.sequence.app
+    - https://base-sepolia-relayer.sequence.app
+    - https://amoy-relayer.sequence.app
+  marketplace:
+    - https://marketplace-api.sequence.app/sepolia/
+    - https://marketplace-api.sequence.app/arbitrum-sepolia/
+    - https://marketplace-api.sequence.app/base-sepolia/
+supported_testnets:
+  - sepolia (Ethereum)
+  - arbitrum-sepolia
+  - base-sepolia
+  - amoy (Polygon)
+  - optimism-sepolia
+  - avalanche-testnet
+  - bsc-testnet
+gas_sponsorship:
+  note: >-
+    Testnet transactions can be sponsored via the Sequence Gas Tank / relayer so developers do not
+    need testnet funds; mainnet sponsorship is configured per project.
+notes:
+  - No published static test tokens/cards; testing is performed against live testnet chains.
+  - Get a project access key and testnet configuration from https://sequence.build

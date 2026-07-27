@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/0xsequence/sequence.js/releases
+scheme: semver
+current_version: 2.3.44
+note: >-
+  Sequence ships its developer surface through versioned SDK packages rather than a dated HTTP-API
+  changelog. The canonical release feed is the 0xsequence/sequence.js GitHub Releases page; the
+  native (Unity/Unreal/Go) SDKs and the WaaS wallet-wdk track their own release tags.
+feeds:
+  - name: sequence.js releases
+    url: https://github.com/0xsequence/sequence.js/releases
+  - name: sequence-unity releases
+    url: https://github.com/0xsequence/sequence-unity/releases
+  - name: sequence-unreal releases
+    url: https://github.com/0xsequence/sequence-unreal/releases
+  - name: go-sequence releases
+    url: https://github.com/0xsequence/go-sequence/releases
+entries:
+  - version: "0xsequence 2.3.44"
+    package: 0xsequence
+    highlights: Current published npm release of the umbrella Sequence web3 SDK
+  - version: "@0xsequence/connect 5.4.12"
+    package: "@0xsequence/connect"
+    highlights: Current Web SDK connect library release
+  - version: "wallet-wdk 3.0.4"
+    date: '2026-03-18'
+    package: "@0xsequence/wallet-wdk"
+    highlights: Wallet WDK release
+  - version: sequence-unity v5.0.7
+    date: '2025-12-15'
+    package: sequence-unity
+    highlights: Unity SDK release
+  - version: sequence-unreal v3.0.4
+    date: '2025-12-15'
+    package: sequence-unreal
+    highlights: Unreal Engine SDK release
+  - version: go-sequence v0.61.0
+    date: '2025-11-28'
+    package: go-sequence
+    highlights: Go SDK release

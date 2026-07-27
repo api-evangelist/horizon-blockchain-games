@@ -1,0 +1,28 @@
+{
+  "provider": "horizon-blockchain-games",
+  "sources": [
+    "horizon-blockchain-games-analytics-api-openapi.yml",
+    "horizon-blockchain-games-marketplace-api-openapi.yml",
+    "horizon-blockchain-games-public-api-openapi.yml",
+    "horizon-blockchain-games-rpc-api-openapi.yml",
+    "horizon-blockchain-games-secret-api-openapi.yml"
+  ],
+  "outputs": [
+    "horizon-blockchain-games-analytics-api-openapi.yml",
+    "horizon-blockchain-games-marketplace-api-openapi.yml",
+    "horizon-blockchain-games-public-api-openapi.yml",
+    "horizon-blockchain-games-rpc-api-openapi.yml",
+    "horizon-blockchain-games-secret-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [
+    "horizon-blockchain-games-analytics-api-openapi.yml: info.version missing",
+    "horizon-blockchain-games-marketplace-api-openapi.yml: info.version missing",
+    "horizon-blockchain-games-public-api-openapi.yml: info.version missing",
+    "horizon-blockchain-games-rpc-api-openapi.yml: info.version missing",
+    "horizon-blockchain-games-secret-api-openapi.yml: info.version missing"
+  ],
+  "notes": [],
+  "skipped": []
+}

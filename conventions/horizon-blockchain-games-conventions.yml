@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/ + https://docs.sequence.xyz/api-references/overview
+authentication:
+  style: api-key-header
+  header: X-Access-Key
+  description: >-
+    Client-side requests use a project access key in the X-Access-Key header; server-side/admin
+    requests use an HTTP Bearer JWT (service token / secret) via the Authorization header.
+  artifact: authentication/horizon-blockchain-games-authentication.yml
+transport:
+  protocol: webrpc (JSON-RPC-over-HTTP)
+  method: POST
+  path_pattern: /rpc/<Service>/<Method>
+  content_type: application/json
+  note: all operations are POST regardless of read/write semantics
+pagination:
+  style: page-object (hybrid offset + cursor)
+  request_field: page
+  request_params: [page, pageSize, column, before, after, sort]
+  response_field: page
+  response_params: [page, pageSize, more, totalRecords, column, before, after, sort]
+  description: >-
+    List endpoints accept and return a `page` object. `page.more` signals additional results;
+    `after`/`before` carry cursor tokens for column-based pagination and `page`/`pageSize`
+    support offset pagination.
+idempotency:
+  supported: false
+  note: >-
+    Sequence webrpc APIs do not document an idempotency-key header. Transaction submission
+    idempotency is handled at the wallet/relayer layer via nonce management, not an HTTP idempotency key.
+error_envelope:
+  shape: {error, code, msg, cause, status}
+  format: webrpc
+  artifact: errors/horizon-blockchain-games-error-codes.yml
+rate_limiting:
+  signal: HTTP 429 ErrorRateLimited (code 2005)
+  note: compute/credits-based quotas enforced per project; see Builder plan tiers
+versioning:
+  scheme: sdk-semver
+  note: >-
+    HTTP APIs are unversioned webrpc endpoints; the SDKs (0xsequence, go-sequence, sequence-unity,
+    sequence-unreal) are semver-versioned and are the primary versioned surface.
+cross_references:
+  errors: errors/horizon-blockchain-games-error-codes.yml
+  lifecycle: lifecycle/horizon-blockchain-games-lifecycle.yml
+  authentication: authentication/horizon-blockchain-games-authentication.yml

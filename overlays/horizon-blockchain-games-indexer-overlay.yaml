@@ -1,0 +1,16 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Sequence Sequence Indexer
+  version: 1.0.0
+extends: openapi/horizon-blockchain-games-indexer-openapi-original.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: horizon-blockchain-games
+      x-apievangelist-service: indexer
+      x-apievangelist-rating: agent-ready-candidate
+      x-apievangelist-notes: >-
+        Sequence Sequence Indexer is a webrpc-generated JSON-RPC-over-HTTP API. All operations are
+        POST /rpc/<Service>/<Method>. Auth is an X-Access-Key project access key header
+        (client-side) or HTTP Bearer service/JWT token (server-side). Errors use the webrpc
+        envelope {error, code, msg, cause, status} captured in errors/horizon-blockchain-games-error-codes.yml.

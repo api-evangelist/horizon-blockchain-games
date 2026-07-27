@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/ (grounded in real Sequence webrpc operations)
+skills:
+  - file: horizon-blockchain-games-query-token-balances.md
+    name: Query wallet token balances and history (Sequence Indexer)
+    api: openapi/horizon-blockchain-games-indexer-openapi-original.json
+    operations: [GetTokenBalances, GetTokenBalancesSummary, GetTransactionHistory, GetNativeTokenBalance]
+  - file: horizon-blockchain-games-fetch-nft-metadata.md
+    name: Fetch token and contract metadata (Sequence Metadata)
+    api: openapi/horizon-blockchain-games-metadata-openapi-original.json
+    operations: [GetTokenMetadata, GetTokenMetadataBatch, GetContractInfo, GetContractInfoBatch, SearchTokenMetadata]
+  - file: horizon-blockchain-games-browse-marketplace.md
+    name: Browse marketplace listings and offers (Sequence Marketplace)
+    api: openapi/horizon-blockchain-games-marketplace-openapi-original.json
+    operations: [GetCollectible, GetCollectionDetail, ListListingsForCollectible, ListOffersForCollectible, GetLowestPriceListingForCollectible, ListCurrencies]

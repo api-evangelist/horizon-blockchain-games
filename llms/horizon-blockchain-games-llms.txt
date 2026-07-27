@@ -1,0 +1,514 @@
+# Sequence Docs
+
+## Docs
+
+- [DailyComputeByService](https://docs.sequence.xyz/api-references/analytics/endpoints/default/daily-compute-by-service.md)
+- [GetOrderbookCollections](https://docs.sequence.xyz/api-references/analytics/endpoints/default/get-orderbook-collections.md)
+- [AverageDAU](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/average-d-a-u.md)
+- [AverageD1Retention](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/average-d1-retention.md)
+- [AverageD14Retention](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/average-d14-retention.md)
+- [AverageD28Retention](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/average-d28-retention.md)
+- [AverageD3Retention](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/average-d3-retention.md)
+- [AverageD7Retention](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/average-d7-retention.md)
+- [AverageStickiness](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/average-stickiness.md)
+- [ComputeByService](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/compute-by-service.md)
+- [D1RetentionByCohort](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/d1-retention-by-cohort.md)
+- [D14RetentionByCohort](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/d14-retention-by-cohort.md)
+- [D28RetentionByCohort](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/d28-retention-by-cohort.md)
+- [D3RetentionByCohort](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/d3-retention-by-cohort.md)
+- [D7RetentionByCohort](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/d7-retention-by-cohort.md)
+- [DailyComputeByType](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/daily-compute-by-type.md)
+- [DailyNewWallets](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/daily-new-wallets.md)
+- [DailyWalletTxnConversionRate](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/daily-wallet-txn-conversion-rate.md)
+- [MarketTxnEventDaily](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/market-txn-event-daily.md)
+- [MarketTxnEventMonthly](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/market-txn-event-monthly.md)
+- [MarketTxnEventTotal](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/market-txn-event-total.md)
+- [MarketWalletsDaily](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/market-wallets-daily.md)
+- [MarketWalletsMonthly](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/market-wallets-monthly.md)
+- [MarketWalletsTotal](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/market-wallets-total.md)
+- [MonthlyActiveWalletsBySegment](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/monthly-active-wallets-by-segment.md)
+- [MonthlyNewWallets](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/monthly-new-wallets.md)
+- [MonthlyTransactingWalletsBySegment](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/monthly-transacting-wallets-by-segment.md)
+- [MonthlyWalletTxnConversionRate](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/monthly-wallet-txn-conversion-rate.md)
+- [RollingStickiness](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/rolling-stickiness.md)
+- [TotalCompute](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/total-compute.md)
+- [TotalNewWallets](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/total-new-wallets.md)
+- [TotalWalletTxnConversionRate](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/total-wallet-txn-conversion-rate.md)
+- [WalletsByBrowser](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-by-browser.md)
+- [WalletsByCountry](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-by-country.md)
+- [WalletsByDevice](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-by-device.md)
+- [WalletsByOS](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-by-o-s.md)
+- [WalletsDaily](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-daily.md)
+- [WalletsMonthly](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-monthly.md)
+- [WalletsTotal](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-total.md)
+- [WalletsTxnSentDaily](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-txn-sent-daily.md)
+- [WalletsTxnSentMonthly](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-txn-sent-monthly.md)
+- [WalletsTxnSentTotal](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/wallets-txn-sent-total.md)
+- [WeeklyActiveWallets](https://docs.sequence.xyz/api-references/analytics/endpoints/secret/weekly-active-wallets.md)
+- [Marketplace Analytics Examples](https://docs.sequence.xyz/api-references/analytics/examples/marketplace.md)
+- [Wallet Analytics Examples](https://docs.sequence.xyz/api-references/analytics/examples/wallets.md)
+- [Analytics](https://docs.sequence.xyz/api-references/analytics/overview.md)
+- [AddAudienceContacts](https://docs.sequence.xyz/api-references/builder/endpoints/add-audience-contacts.md)
+- [CreateAudience](https://docs.sequence.xyz/api-references/builder/endpoints/create-audience.md)
+- [DeleteAudience](https://docs.sequence.xyz/api-references/builder/endpoints/delete-audience.md)
+- [GetAudience](https://docs.sequence.xyz/api-references/builder/endpoints/get-audience.md)
+- [GetContract](https://docs.sequence.xyz/api-references/builder/endpoints/get-contract.md)
+- [ListAudiences](https://docs.sequence.xyz/api-references/builder/endpoints/list-audiences.md)
+- [ListContractSources](https://docs.sequence.xyz/api-references/builder/endpoints/list-contract-sources.md)
+- [ListContracts](https://docs.sequence.xyz/api-references/builder/endpoints/list-contracts.md)
+- [RemoveAudienceContacts](https://docs.sequence.xyz/api-references/builder/endpoints/remove-audience-contacts.md)
+- [UpdateAudience](https://docs.sequence.xyz/api-references/builder/endpoints/update-audience.md)
+- [Sequence Builder API](https://docs.sequence.xyz/api-references/builder/overview.md)
+- [Fetch balance updates from specific contracts](https://docs.sequence.xyz/api-references/indexer-gateway/examples/get-balance-updates.md): This content provides instructions on fetching balance updates from specific contracts.
+- [Fetch Native Network Balance from all chains](https://docs.sequence.xyz/api-references/indexer-gateway/examples/get-native-token-balances.md): This content provides instructions on getting native balances on all Ethereum networks
+- [Sequence Indexer Gateway API - Fetch ERC20, ERC721, and ERC1155 Tokens and Metadata](https://docs.sequence.xyz/api-references/indexer-gateway/examples/get-token-balances.md): The Tokens API allows users to fetch a list of ERC20, ERC721, and ERC1155 tokens along with metadata from any wallet across multiple Ethereum networks.
+- [Fetch token balances from specific contracts across all networks.](https://docs.sequence.xyz/api-references/indexer-gateway/examples/get-token-balances-by-contract.md): This content provides instructions on fetching token balances from specific contracts.
+- [Fetch balances on all networks](https://docs.sequence.xyz/api-references/indexer-gateway/examples/get-token-balances-details.md): This content provides instructions on fetching token data details from specific contracts across all different networks.
+- [Sequence Indexer Gateway API Installation](https://docs.sequence.xyz/api-references/indexer-gateway/installation.md): Learn how to install the Sequence Indexer Gateway API for querying blockchain token and NFT data across all networks. Get your API access key from Sequence Builder. Integration is simple with HTTP RPC endpoints for Webapps, Games, and backends.
+- [Sequence Indexer Gateway](https://docs.sequence.xyz/api-references/indexer-gateway/overview.md): The Indexer Gateway provides you with tools to query and filter data across multiple Ethereum networks with ease.
+- [GetWebhookListener](https://docs.sequence.xyz/api-references/indexer/endpoints/default/get-webhook-listener.md)
+- [FetchTransactionReceipt](https://docs.sequence.xyz/api-references/indexer/endpoints/public/fetch-transaction-receipt.md)
+- [FetchTransactionReceiptWithFilter](https://docs.sequence.xyz/api-references/indexer/endpoints/public/fetch-transaction-receipt-with-filter.md)
+- [GetBalanceUpdates](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-balance-updates.md)
+- [GetNativeTokenBalance](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-native-token-balance.md)
+- [GetTokenBalances](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-token-balances.md)
+- [GetTokenBalancesByContract](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-token-balances-by-contract.md)
+- [GetTokenBalancesDetails](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-token-balances-details.md)
+- [GetTokenBalancesSummary](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-token-balances-summary.md)
+- [GetTokenSupplies](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-token-supplies.md)
+- [GetTokenSuppliesMap](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-token-supplies-map.md)
+- [GetTransactionHistory](https://docs.sequence.xyz/api-references/indexer/endpoints/public/get-transaction-history.md)
+- [SubscribeBalanceUpdates](https://docs.sequence.xyz/api-references/indexer/endpoints/public/subscribe-balance-updates.md)
+- [SubscribeEvents](https://docs.sequence.xyz/api-references/indexer/endpoints/public/subscribe-events.md)
+- [SubscribeReceipts](https://docs.sequence.xyz/api-references/indexer/endpoints/public/subscribe-receipts.md)
+- [AddWebhookListener](https://docs.sequence.xyz/api-references/indexer/endpoints/secret/add-webhook-listener.md)
+- [GetAllWebhookListeners](https://docs.sequence.xyz/api-references/indexer/endpoints/secret/get-all-webhook-listeners.md)
+- [PauseAllWebhookListeners](https://docs.sequence.xyz/api-references/indexer/endpoints/secret/pause-all-webhook-listeners.md)
+- [RemoveWebhookListener](https://docs.sequence.xyz/api-references/indexer/endpoints/secret/remove-webhook-listener.md)
+- [ResumeAllWebhookListeners](https://docs.sequence.xyz/api-references/indexer/endpoints/secret/resume-all-webhook-listeners.md)
+- [ToggleWebhookListener](https://docs.sequence.xyz/api-references/indexer/endpoints/secret/toggle-webhook-listener.md)
+- [UpdateWebhookListener](https://docs.sequence.xyz/api-references/indexer/endpoints/secret/update-webhook-listener.md)
+- [Tokens API](https://docs.sequence.xyz/api-references/indexer/examples/fetch-tokens.md)
+- [Metadata Tips & Notes on Spam](https://docs.sequence.xyz/api-references/indexer/examples/metadata-tips.md)
+- [Native network balances (ie. ETH, MATIC, etc.)](https://docs.sequence.xyz/api-references/indexer/examples/native-network-balance.md)
+- [Subscriptions](https://docs.sequence.xyz/api-references/indexer/examples/subscriptions.md)
+- [Wallet transaction history](https://docs.sequence.xyz/api-references/indexer/examples/transaction-history.md)
+- [Contract token history](https://docs.sequence.xyz/api-references/indexer/examples/transation-history-token-contract.md)
+- [Tokens in a contract](https://docs.sequence.xyz/api-references/indexer/examples/unique-tokens.md)
+- [Webhook Listener Example](https://docs.sequence.xyz/api-references/indexer/examples/webhook-listener.md)
+- [Indexer Installation](https://docs.sequence.xyz/api-references/indexer/installation.md)
+- [Indexer](https://docs.sequence.xyz/api-references/indexer/overview.md)
+- [GetLinkedWallets](https://docs.sequence.xyz/api-references/infrastructure/endpoints/get-linked-wallets.md)
+- [GetSwapPrice](https://docs.sequence.xyz/api-references/infrastructure/endpoints/get-swap-price.md)
+- [GetSwapPrices](https://docs.sequence.xyz/api-references/infrastructure/endpoints/get-swap-prices.md)
+- [GetSwapQuote](https://docs.sequence.xyz/api-references/infrastructure/endpoints/get-swap-quote.md)
+- [IsValidETHAuthProof](https://docs.sequence.xyz/api-references/infrastructure/endpoints/is-valid-e-t-h-auth-proof.md)
+- [IsValidMessageSignature](https://docs.sequence.xyz/api-references/infrastructure/endpoints/is-valid-message-signature.md)
+- [IsValidSignature](https://docs.sequence.xyz/api-references/infrastructure/endpoints/is-valid-signature.md)
+- [IsValidTypedDataSignature](https://docs.sequence.xyz/api-references/infrastructure/endpoints/is-valid-typed-data-signature.md)
+- [LinkWallet](https://docs.sequence.xyz/api-references/infrastructure/endpoints/link-wallet.md)
+- [RemoveLinkedWallet](https://docs.sequence.xyz/api-references/infrastructure/endpoints/remove-linked-wallet.md)
+- [Infrastructure Stack API](https://docs.sequence.xyz/api-references/infrastructure/overview.md)
+- [CheckoutOptionsMarketplace](https://docs.sequence.xyz/api-references/marketplace/endpoints/checkout-options-marketplace.md)
+- [CheckoutOptionsSalesContract](https://docs.sequence.xyz/api-references/marketplace/endpoints/checkout-options-sales-contract.md)
+- [GenerateBuyTransaction](https://docs.sequence.xyz/api-references/marketplace/endpoints/generate-buy-transaction.md)
+- [GenerateCancelTransaction](https://docs.sequence.xyz/api-references/marketplace/endpoints/generate-cancel-transaction.md)
+- [GenerateListingTransaction](https://docs.sequence.xyz/api-references/marketplace/endpoints/generate-listing-transaction.md)
+- [GenerateOfferTransaction](https://docs.sequence.xyz/api-references/marketplace/endpoints/generate-offer-transaction.md)
+- [GenerateSellTransaction](https://docs.sequence.xyz/api-references/marketplace/endpoints/generate-sell-transaction.md)
+- [GetCollectible](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-collectible.md)
+- [GetCountOfAllCollectibles](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-count-of-all-collectibles.md)
+- [GetCountOfFilteredCollectibles](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-count-of-filtered-collectibles.md)
+- [GetFloorOrder](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-floor-order.md)
+- [GetHighestPriceListingForCollectible](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-highest-price-listing-for-collectible.md)
+- [GetHighestPriceOfferForCollectible](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-highest-price-offer-for-collectible.md)
+- [GetLowestPriceListingForCollectible](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-lowest-price-listing-for-collectible.md)
+- [GetLowestPriceOfferForCollectible](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-lowest-price-offer-for-collectible.md)
+- [GetOrders](https://docs.sequence.xyz/api-references/marketplace/endpoints/get-orders.md)
+- [ListCollectibles](https://docs.sequence.xyz/api-references/marketplace/endpoints/list-collectibles.md)
+- [ListCurrencies](https://docs.sequence.xyz/api-references/marketplace/endpoints/list-currencies.md)
+- [ListListingsForCollectible](https://docs.sequence.xyz/api-references/marketplace/endpoints/list-listings-for-collectible.md)
+- [ListOffersForCollectible](https://docs.sequence.xyz/api-references/marketplace/endpoints/list-offers-for-collectible.md)
+- [Marketplace API](https://docs.sequence.xyz/api-references/marketplace/overview.md)
+- [DirectoryGetCollections](https://docs.sequence.xyz/api-references/metadata/endpoints/public/directory-get-collections.md)
+- [DirectoryGetNetworks](https://docs.sequence.xyz/api-references/metadata/endpoints/public/directory-get-networks.md)
+- [EnqueueTokensForRefresh](https://docs.sequence.xyz/api-references/metadata/endpoints/public/enqueue-tokens-for-refresh.md): <Warning>This Endpoint is Deprecated!</Warning>
+- [GetContractInfo](https://docs.sequence.xyz/api-references/metadata/endpoints/public/get-contract-info.md)
+- [GetContractInfoBatch](https://docs.sequence.xyz/api-references/metadata/endpoints/public/get-contract-info-batch.md)
+- [GetTokenMetadata](https://docs.sequence.xyz/api-references/metadata/endpoints/public/get-token-metadata.md)
+- [GetTokenMetadataBatch](https://docs.sequence.xyz/api-references/metadata/endpoints/public/get-token-metadata-batch.md)
+- [RefreshAllContractTokens](https://docs.sequence.xyz/api-references/metadata/endpoints/public/refresh-all-contract-tokens.md)
+- [RefreshContractInfo](https://docs.sequence.xyz/api-references/metadata/endpoints/public/refresh-contract-info.md)
+- [RefreshContractTokens](https://docs.sequence.xyz/api-references/metadata/endpoints/public/refresh-contract-tokens.md)
+- [RefreshTokenMetadata](https://docs.sequence.xyz/api-references/metadata/endpoints/public/refresh-token-metadata.md): <Warning>This Endpoint is Deprecated!</Warning>
+- [SearchContractInfo](https://docs.sequence.xyz/api-references/metadata/endpoints/public/search-contract-info.md)
+- [SearchContractInfoBatch](https://docs.sequence.xyz/api-references/metadata/endpoints/public/search-contract-info-batch.md)
+- [SearchContracts](https://docs.sequence.xyz/api-references/metadata/endpoints/public/search-contracts.md)
+- [SearchMetadata](https://docs.sequence.xyz/api-references/metadata/endpoints/public/search-metadata.md): <Warning>This Endpoint is Deprecated!</Warning>
+- [SearchTokenIDs](https://docs.sequence.xyz/api-references/metadata/endpoints/public/search-token-i-ds.md)
+- [SearchTokenMetadata](https://docs.sequence.xyz/api-references/metadata/endpoints/public/search-token-metadata.md)
+- [SearchTokens](https://docs.sequence.xyz/api-references/metadata/endpoints/public/search-tokens.md)
+- [TokenCollectionFilters](https://docs.sequence.xyz/api-references/metadata/endpoints/public/token-collection-filters.md)
+- [CreateAsset](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/create-asset.md)
+- [CreateCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/create-collection.md)
+- [CreateContractCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/create-contract-collection.md)
+- [CreateToken](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/create-token.md)
+- [DeleteAsset](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/delete-asset.md)
+- [DeleteCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/delete-collection.md)
+- [DeleteContractCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/delete-contract-collection.md)
+- [DeleteToken](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/delete-token.md)
+- [GetAsset](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/get-asset.md)
+- [GetCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/get-collection.md)
+- [GetContractCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/get-contract-collection.md)
+- [GetToken](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/get-token.md)
+- [ListCollections](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/list-collections.md)
+- [ListContractCollections](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/list-contract-collections.md)
+- [ListTokens](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/list-tokens.md)
+- [PublishCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/publish-collection.md)
+- [UnpublishCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/unpublish-collection.md)
+- [UpdateAsset](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/update-asset.md)
+- [UpdateCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/update-collection.md)
+- [UpdateContractCollection](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/update-contract-collection.md)
+- [UpdateToken](https://docs.sequence.xyz/api-references/metadata/endpoints/secret/update-token.md)
+- [Contract Metadata](https://docs.sequence.xyz/api-references/metadata/examples/contract-metadata.md)
+- [Metadata REST API Reference & Usage](https://docs.sequence.xyz/api-references/metadata/examples/rest-api.md)
+- [Token Metadata](https://docs.sequence.xyz/api-references/metadata/examples/token-metadata.md)
+- [Metadata](https://docs.sequence.xyz/api-references/metadata/overview.md)
+- [Node Gateway](https://docs.sequence.xyz/api-references/node-gateway.md)
+- [Overview](https://docs.sequence.xyz/api-references/overview.md): Overview of the various APIs available for integrating with the Sequence developer platform.
+- [AddGasSponsor](https://docs.sequence.xyz/api-references/transactions/endpoints/add-gas-sponsor.md)
+- [FeeOptions](https://docs.sequence.xyz/api-references/transactions/endpoints/fee-options.md)
+- [FeeTokens](https://docs.sequence.xyz/api-references/transactions/endpoints/fee-tokens.md)
+- [GetChainID](https://docs.sequence.xyz/api-references/transactions/endpoints/get-chain-id.md)
+- [ListGasSponsors](https://docs.sequence.xyz/api-references/transactions/endpoints/list-gas-sponsors.md)
+- [Fetching Fee Options](https://docs.sequence.xyz/api-references/transactions/examples/fetch-fee-options.md)
+- [Fetching Transaction Receipts](https://docs.sequence.xyz/api-references/transactions/examples/fetch-transaction-receipts.md)
+- [Sending Transactions](https://docs.sequence.xyz/api-references/transactions/examples/send-transactions.md)
+- [Installation](https://docs.sequence.xyz/api-references/transactions/installation.md)
+- [Transactions API](https://docs.sequence.xyz/api-references/transactions/overview.md)
+- [Sequence Analytics API in Dune](https://docs.sequence.xyz/guides/analytics-guide.md): Learn how to use the Sequence Builder analytics feature to query user data for your project with a serverless Cloudflare Worker.
+- [Build embedding wallet](https://docs.sequence.xyz/guides/build-embedding-wallet.md)
+- [Building a Relaying Transaction Server](https://docs.sequence.xyz/guides/building-relaying-server.md): Learn how to build a relaying transaction server with Sequence, enabling your server to dispatch transactions on behalf of users seamlessly.
+- [Building Transaction Heavy Games with Unity](https://docs.sequence.xyz/guides/building-transaction-heavy-games-with-unity.md): Some games frequently save the game state. When working with the blockchain, this can be expensive and involve a lot of latency. This guide addresses how to work around these constraints without impacting end user experience or over-inflating your operational expenses.
+- [Build a Custom Marketplace](https://docs.sequence.xyz/guides/custom-marketplace.md): This guide walks you through building a custom marketplace using the Sequence stack. It covers token minting, wallet authentication, displaying collections, creating and purchasing listings, making and accepting offers, and managing inventory—all seamlessly integrated with an embedded wallet and Web…
+- [Build a Yield Flow with Embedded Wallet + Trails](https://docs.sequence.xyz/guides/embedded-wallet-yield-with-trails.md): Learn how to build a white-labeled yield deposit flow using Sequence Embedded Wallet for authentication and signing, and Trails intents for routing assets into a target vault.
+- [Guides](https://docs.sequence.xyz/guides/guide-overview.md): Follow our step-by-step guides and open source code templates to accelerate your time to market.
+- [Intro to Jelly Forest - Unity Game Guide](https://docs.sequence.xyz/guides/jelly-forest-unity-guide.md): Intro to Jelly Forest - Unity Game Guide introduces a 2D runner game with blockchain features like social sign-in, upgrades, and cosmetic items stored in a smart contract wallet.
+- [Collection Metadata Management](https://docs.sequence.xyz/guides/metadata-guide.md): How to store media using the Sequence Collections API with Cloudflare Workers, as well as read from the Metadata API to render images.
+- [Mint Collectibles Using a Gasless Serverless Transactions API](https://docs.sequence.xyz/guides/mint-collectibles-serverless.md): Learn how to mint collectibles using a gasless serverless Transactions API with Sequence. Implement the API on a Cloudflare worker for seamless user interactions without gas payments.
+- [How to Configure a ERC1155Pack Contract in Sequence Builder](https://docs.sequence.xyz/guides/packs.md): Learn how ERC1155Pack works in Builder, including commit-reveal mechanics, and publishing pack contents.
+- [Create NFT Drop Sales with Sequence](https://docs.sequence.xyz/guides/primary-drop-sales-erc721.md): This guide covers the creation of a Primary Sales 721 of Sequence. It includes steps to create a sales contract, to create an NFT contract, to create a collection, to create unrevealed tokens, to reveal unrevealed tokens, to authenticate wallets, and to purchase and mint.
+- [Sell your Game Items via a Web Shop](https://docs.sequence.xyz/guides/primary-sales.md): This guide covers the creation of a Primary Sales of Sequence. It includes steps for create sales contract, create nft contract, create collection, wallet authentication, purchase and mint.
+- [Integrating Web SDK with Telegram Mini-apps](https://docs.sequence.xyz/guides/telegram-integration.md): Learn how to integrate Web SDK with your Telegram Mini-app or Game for seamless web3 functionality.
+- [Templates](https://docs.sequence.xyz/guides/template-overview.md): The templates overview for the Sequence documentation
+- [Treasure Chests with AI Minting](https://docs.sequence.xyz/guides/treasure-chest-guide.md): Learn how to build a web3 application using React with AI-generated loot from treasure chests. Utilize an Embedded Wallet for authentication, Cloudflare workers for transaction ease, and Sequence Stack tools.
+- [Verified Typed Data & Validated Signature Messages On-chain](https://docs.sequence.xyz/guides/typed-on-chain-signatures.md): How to perform signature verification of messages on-chain and for non-deployed wallet contracts to ensure the integrity of data on a blockchain from signers
+- [How to do Primary Sales for On-Chain Items in Unity](https://docs.sequence.xyz/guides/unity-primary-sales.md): This guide covers the creation of a Primary Sale with Sequence's Unity SDK.
+- [Build a Telegram Mini-Game in Unity](https://docs.sequence.xyz/guides/unity-webgl-telegram.md): This guide covers the creation of a Telegram Game using Sequence's Unity SDK.
+- [Building and Integrating Web3 Game Features with Sequence's Unreal Engine SDK](https://docs.sequence.xyz/guides/unreal-ew-guide.md): Integrate the Sequence Wallet, fetch your players assets, sign messages, send transactions and more using Sequence's Unreal SDK.
+- [Connect Privy with Sequence](https://docs.sequence.xyz/guides/use-with-privy.md): Learn how to use Privy as a signer for your Sequence Smart Wallet.
+- [Using Unity IAP to Sell NFTs](https://docs.sequence.xyz/guides/using-unity-iap-to-sell-nfts.md): How we added NFTs purchaseable via IAP (in-app purchase) on the iOS App Store and Google Play Store to Jelly Forest and how you can do something similar in your own games
+- [Aviator Web3 Game with WebGL](https://docs.sequence.xyz/guides/webgl-guide.md): Learn how to integrate WebGL in a game using tools from the Sequence Stack to earn achievements and use custom ERC1155's.
+- [Home](https://docs.sequence.xyz/home.md)
+- [Overview](https://docs.sequence.xyz/sdk/go/overview.md): Go SDK documentation for the Sequence infrastructure stack for web3 gaming.
+- [Embedded Wallet Account Federation](https://docs.sequence.xyz/sdk/headless-wallet/account-federation.md): The content provides detailed information on implementing the ability to federate and link single or multiple wallets to a main embedded wallet session, describing best practices when combined with ephemeral guest wallets to be converted to permanent on-chain embedded wallets.
+- [Initialization and Authentication](https://docs.sequence.xyz/sdk/headless-wallet/authentication.md): The Authentication feature in Embedded Wallets simplifies account management, authentication, and session control for your application.
+- [Fee Options](https://docs.sequence.xyz/sdk/headless-wallet/fee-options.md): The content provides detailed information on implementing Fee Options for gas fees when sending transactions using an Embedded Wallet with the Sequence stack.
+- [Headless Wallet Session Management — Sequence Docs](https://docs.sequence.xyz/sdk/headless-wallet/manage-sessions.md): The Session Management feature in Auth + Embedded Wallet simplifies account management, authentication, and session control for your application.
+- [On-ramp](https://docs.sequence.xyz/sdk/headless-wallet/on-ramp.md): The on-ramp feature allows developers to integrate the Embedded Wallet with Web SDK, enabling users to easily purchase fiat currency using a credit or debit card through a simplified react component.
+- [Headless Wallet Quickstart](https://docs.sequence.xyz/sdk/headless-wallet/quickstart.md): Connect your users to your App with the Sequence Embedded Wallet.
+- [Transaction receipts](https://docs.sequence.xyz/sdk/headless-wallet/transaction-receipts.md): The content explains the generation of transaction receipts for successful and failed transactions.
+- [Using your Embedded Wallet](https://docs.sequence.xyz/sdk/headless-wallet/use-wallets.md): The content provides detailed instructions on using the Sequence WaaS SDK for wallet management and transactions.
+- [Privy & Sequence](https://docs.sequence.xyz/sdk/headless-wallet/use-with-privy.md): Learn how to use Privy as a signer for your Sequence Smart Wallet.
+- [Headless Wallet Verification](https://docs.sequence.xyz/sdk/headless-wallet/verification.md): The content provides a detailed guide on verifying ownership of an Embedded Wallet address using a nonce and optional time expiry.
+- [Mobile SDK for Embedded Wallet (React Native)](https://docs.sequence.xyz/sdk/mobile.md): This content provides detailed instructions on integrating the Sequence Embedded Wallet SDK with React Native for complete wallet and indexer integration.
+- [Overview](https://docs.sequence.xyz/sdk/overview.md): Overview of the various SDKs available for integrating with the Sequence developer platform.
+- [Connect and send transactions](https://docs.sequence.xyz/sdk/typescript/guides/backend/integration.md): Learn how to integrate Sequence with your backend services
+- [Overview](https://docs.sequence.xyz/sdk/typescript/overview.md): The [0xsequence](https://github.com/0xsequence/sequence.js) package is versatile, working seamlessly on both browser/client and nodejs backends in Javascript or Typescript. For Go backends, the go-sequence SDK offers similar functionality, with all of Sequence's infrastructure built using go-sequenc…
+- [Clients](https://docs.sequence.xyz/sdk/unity/advanced/clients.md)
+- [Smart Contracts](https://docs.sequence.xyz/sdk/unity/advanced/contracts.md)
+- [Smart Contract Deployment](https://docs.sequence.xyz/sdk/unity/advanced/deploy-contracts.md)
+- [Introduction](https://docs.sequence.xyz/sdk/unity/advanced/introduction.md): For experienced developers on EVM-based blockchains, our lightweight Ethereum library, SequenceEthereum, tailored for Unity, offers essential tools without the complexity of popular libraries like Nethereum.
+- [Secure Session Recovery](https://docs.sequence.xyz/sdk/unity/advanced/recovering-sessions.md): The SDK offers the option to store session wallet information securely on select platforms using native secure storage.
+- [Tokens](https://docs.sequence.xyz/sdk/unity/advanced/tokens.md)
+- [Transfers](https://docs.sequence.xyz/sdk/unity/advanced/transfers.md)
+- [Wallets](https://docs.sequence.xyz/sdk/unity/advanced/wallets.md)
+- [Boostrap your Ecosystem Wallet Game](https://docs.sequence.xyz/sdk/unity/bootstrap.md): Using the provided boilerplates to quickly get your integration up and running.
+- [Smart Contract Events](https://docs.sequence.xyz/sdk/unity/indexer/contract-events.md)
+- [Read from Blockchain](https://docs.sequence.xyz/sdk/unity/indexer/read-from-blockchain.md): To read data from the blockchain, use the Unity-Native implementation of the Sequence Indexer.
+- [Installation](https://docs.sequence.xyz/sdk/unity/installation.md)
+- [Checkout UI](https://docs.sequence.xyz/sdk/unity/monetization/checkout-ui.md)
+- [Unity Currency Swaps](https://docs.sequence.xyz/sdk/unity/monetization/currency-swaps.md)
+- [Introduction](https://docs.sequence.xyz/sdk/unity/monetization/intro.md)
+- [Onboard User Funds](https://docs.sequence.xyz/sdk/unity/monetization/onboard-user-funds.md)
+- [Credit Card Checkout](https://docs.sequence.xyz/sdk/unity/monetization/primary-sales/credit-card-checkout.md)
+- [Introduction](https://docs.sequence.xyz/sdk/unity/monetization/primary-sales/intro.md)
+- [Accepting Offers](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/accepting-offers.md)
+- [Building a Marketplace](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/building-a-marketplace.md)
+- [Creating Listings](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/creating-listings.md)
+- [Creating Offers](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/creating-offers.md)
+- [Credit Card Checkout](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/how-it-works/credit-card-checkout.md)
+- [Filling Orders](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/how-it-works/filling-orders.md)
+- [Reading Orders](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/how-it-works/reading-orders.md)
+- [Introduction](https://docs.sequence.xyz/sdk/unity/monetization/secondary-sales/intro.md)
+- [Overview](https://docs.sequence.xyz/sdk/unity/overview.md): Documentation for Unity SDK overview for the Sequence infrastructure stack for web3 gaming.
+- [Unity Ecosystem Wallet Authentication](https://docs.sequence.xyz/sdk/unity/wallets/ecosystem-wallet/authentication.md): Ecosystem Wallet Documentation for Sequence's Unity SDK.
+- [Unity Ecosystem Wallet Blockchain Interactions](https://docs.sequence.xyz/sdk/unity/wallets/ecosystem-wallet/blockchain-interactions.md): Ecosystem Wallet Documentation for Sequence's Unity SDK.
+- [Manage Unity Ecosystem Wallet Sessions](https://docs.sequence.xyz/sdk/unity/wallets/ecosystem-wallet/manage-sessions.md): Ecosystem Wallet Documentation for Sequence's Unity SDK.
+- [Unity Ecosystem Wallet Permissions](https://docs.sequence.xyz/sdk/unity/wallets/ecosystem-wallet/permissions.md): Ecosystem Wallet Documentation for Sequence's Unity SDK.
+- [Unity SDK Setup for Ecosystem Wallets](https://docs.sequence.xyz/sdk/unity/wallets/ecosystem-wallet/setup.md): Ecosystem Wallet Documentation for Sequence's Unity SDK.
+- [Blockchain Interactions](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/blockchain-interactions.md): The content provides detailed instructions on writing to a blockchain using the Sequence SDK. It explains how to handle transactions asynchronously, including raw transactions, ERC20, ERC721, and ERC1155 token transfers, as well as smart contract interactions.
+- [Connecting External Wallets](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/connecting-external-wallets.md): The content provides detailed instructions on how to connect external wallets with an embedded wallet using a web interface.
+- [Email + OTP](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/onboard/authentication/email.md)
+- [Federated Accounts](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/onboard/authentication/federated-accounts.md)
+- [Guest](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/onboard/authentication/guest.md)
+- [Intro](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/onboard/authentication/intro.md)
+- [OIDC - Social Sign In](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/onboard/authentication/oidc.md)
+- [PlayFab](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/onboard/authentication/playfab.md)
+- [Recover Embedded Wallet Sessions](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/recovering-sessions.md)
+- [Unity Session Management — Sequence Docs](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/session-management.md)
+- [Unity SDK Setup for Embedded Wallets](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/setup.md): Documentation for Unity SDK setup for the Sequence infrastructure stack for web3 gaming.
+- [Sign Messages](https://docs.sequence.xyz/sdk/unity/wallets/embedded-wallet/sign-messages.md)
+- [Advanced Blockchain Interactions](https://docs.sequence.xyz/sdk/unreal/advanced/advanced.md): Documentation for Unreal SDK advanced blockchain interactions for the Sequence infrastructure stack for web3 gaming.
+- [Migrate from a previous Major Version](https://docs.sequence.xyz/sdk/unreal/advanced/migration.md)
+- [Packaging](https://docs.sequence.xyz/sdk/unreal/advanced/platforms.md): Documentation for Unreal packaging for the Sequence infrastructure stack for web3 gaming.
+- [Smart Contracts](https://docs.sequence.xyz/sdk/unreal/advanced/smart-contracts.md): Documentation for Unreal SDK API for reading from the blockchain with the Sequence infrastructure stack for web3 gaming.
+- [Utilities](https://docs.sequence.xyz/sdk/unreal/advanced/utilities.md): Documentation for Unreal SDK API for reading from the blockchain with the Sequence infrastructure stack for web3 gaming.
+- [Bootstrap your Unreal Game](https://docs.sequence.xyz/sdk/unreal/bootstrap.md): Documentation for Unreal SDK API for reading from the blockchain with the Sequence infrastructure stack for web3 gaming.
+- [Read From Blockchain](https://docs.sequence.xyz/sdk/unreal/indexer/read-from-blockchain.md): Documentation for Unreal SDK API for reading from the blockchain with the Sequence infrastructure stack for web3 gaming.
+- [Installation](https://docs.sequence.xyz/sdk/unreal/installation.md): Documentation for Unreal SDK Installation for the Sequence infrastructure stack for web3 gaming.
+- [Checkout](https://docs.sequence.xyz/sdk/unreal/monetization/checkout.md): Documentation for Unreal SDK overview for the Sequence infrastructure stack for web3 gaming.
+- [Unreal Currency Swaps](https://docs.sequence.xyz/sdk/unreal/monetization/currency-swaps.md): Documentation for Unreal SDK overview for the Sequence infrastructure stack for web3 gaming.
+- [Onboard User Funds](https://docs.sequence.xyz/sdk/unreal/monetization/onboard-user-funds.md): Documentation for Unreal SDK overview for the Sequence infrastructure stack for web3 gaming.
+- [Secondary Sales Marketplace](https://docs.sequence.xyz/sdk/unreal/monetization/secondary-sales-marketplace.md): Documentation for Unreal SDK overview for the Sequence infrastructure stack for web3 gaming.
+- [Overview](https://docs.sequence.xyz/sdk/unreal/overview.md)
+- [Unreal Ecosystem Wallet Authentication](https://docs.sequence.xyz/sdk/unreal/wallets/ecosystem-wallet/authentication.md): Ecosystem Wallet Documentation for Sequence's Unreal SDK.
+- [Unreal Ecosystem Wallet Blockchain Interactions](https://docs.sequence.xyz/sdk/unreal/wallets/ecosystem-wallet/blockchain-interactions.md): Ecosystem Wallet Documentation for Sequence's Unreal SDK.
+- [Manage Unreal Ecosystem Wallet Sessions](https://docs.sequence.xyz/sdk/unreal/wallets/ecosystem-wallet/manage-sessions.md): Ecosystem Wallet Documentation for Sequence's Unreal SDK.
+- [Unreal Ecosystem Wallet Permissions](https://docs.sequence.xyz/sdk/unreal/wallets/ecosystem-wallet/permissions.md): Ecosystem Wallet Documentation for Sequence's Unreal SDK.
+- [Unreal Ecosystem Wallet Setup](https://docs.sequence.xyz/sdk/unreal/wallets/ecosystem-wallet/setup.md): Ecosystem Wallet Documentation for Sequence's Unreal SDK.
+- [Blockchain Interactions](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/blockchain-interactions.md): Documentation for Unreal SDK API for writing to the blockchain with the Sequence infrastructure stack for web3 gaming.
+- [Sign-In with Epic Games](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/guides/epic-auth-guide.md)
+- [Marketplace Quickstart](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/guides/marketplace-guide.md): Quickstart Guide on how to build your own In-Game Marketplace using Sequence's Unreal SDK.
+- [Sign-In with Google & Apple](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/guides/social-signin-guide.md): Learn how to use Social Sign In and get an Id Token using the Browser Plugin and Sequence's Unreal SDK.
+- [Swaps Quickstart](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/guides/swaps-guide.md): Quickstart Guide on how to make Smart Swaps using Sequence's Unreal SDK.
+- [Authenticating Users](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/onboarding/authentication.md): Documentation for Unreal SDK API to manage sessions for the Sequence infrastructure stack for web3 gaming.
+- [Manage Sessions](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/onboarding/manage_sessions.md): Documentation for Unreal SDK API to manage sessions for the Sequence infrastructure stack for web3 gaming.
+- [Connecting External Wallets](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/onboarding/wallet_linking.md): Documentation for Unreal SDK API to manage sessions for the Sequence infrastructure stack for web3 gaming.
+- [Unreal Embedded Wallet Setup](https://docs.sequence.xyz/sdk/unreal/wallets/embedded-wallet/setup.md): Quickstart Documentation for Sequence's Unreal SDK.
+- [Getting started](https://docs.sequence.xyz/sdk/web/checkout-sdk/getting-started.md): Learn how to get started with Checkout SDK
+- [useAddFundsModal](https://docs.sequence.xyz/sdk/web/checkout-sdk/hooks/useAddFundsModal.md): Hook for managing the add on-ramp modal
+- [useCheckoutModal](https://docs.sequence.xyz/sdk/web/checkout-sdk/hooks/useCheckoutModal.md): Hook for managing a simple checkout modal
+- [useSelectPaymentModal](https://docs.sequence.xyz/sdk/web/checkout-sdk/hooks/useSelectPaymentModal.md): Hook for opening the payment selection modal
+- [useSwapModal](https://docs.sequence.xyz/sdk/web/checkout-sdk/hooks/useSwapModal.md): Hook for opening the swap modal
+- [useTransferFundsModal](https://docs.sequence.xyz/sdk/web/checkout-sdk/hooks/useTransferFundsModal.md): Hook to manage the transfer funds modal state and configuration
+- [Getting started](https://docs.sequence.xyz/sdk/web/hooks-sdk/getting-started.md): Learn how to get started with Hooks SDK
+- [useGetCoinPrices](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetCoinPrices.md): Hook to fetch current prices for a list of tokens
+- [useGetCollectiblePrices](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetCollectiblePrices.md): Hook to fetch current market prices for NFTs/collectibles
+- [useGetContractInfo](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetContractInfo.md): Hook for fetching token contract information including native tokens
+- [useGetExchangeRate](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetExchangeRate.md): Hook to fetch current exchange rates from USD to other currencies
+- [useGetMultipleContractsInfo](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetMultipleContractsInfo.md): Hook for fetching contract information for multiple tokens and NFTs in parallel
+- [useGetNativeTokenBalance](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetNativeTokenBalance.md): Hook for fetching native token balances across multiple chains
+- [useGetSingleTokenBalance](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetSingleTokenBalance.md): Hook to fetch the balance of a specific token (native or ERC20) for an account on a specific chain
+- [useGetSwapQuote](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetSwapQuote.md): Hook for fetching quotes for a swap
+- [useGetSwapRoutes](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetSwapRoutes.md): Hook for fetching available routes for a swap
+- [useGetTokenBalancesByContract](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetTokenBalancesByContract.md): Hook for fetching multiple token balances by contract addresses
+- [useGetTokenBalancesDetails](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetTokenBalancesDetails.md): Hook for fetching detailed token balances including metadata across multiple chains
+- [useGetTokenBalancesSummary](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetTokenBalancesSummary.md): Hook for fetching summarized token balances across multiple chains
+- [useGetTokenMetadata](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetTokenMetadata.md): Hook for fetching token-specific metadata for individual tokens within a contract
+- [useGetTransactionHistory](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetTransactionHistory.md): Hook for fetching and paginating through transaction history
+- [useGetTransactionHistorySummary](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useGetTransactionHistorySummary.md): Hook for fetching and combining transaction history across multiple chains
+- [useIndexerClient](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useIndexerClient.md): Hook for managing a Sequence Indexer client for a specific chain
+- [useIndexerGatewayClient](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useIndexerGatewayClient.md): Hook for accessing the Sequence Indexer Gateway client for multi-chain queries
+- [useMetadataClient](https://docs.sequence.xyz/sdk/web/hooks-sdk/hooks/useMetadataClient.md): Hook for accessing the Sequence Metadata client for token and contract metadata
+- [CollectibleCard](https://docs.sequence.xyz/sdk/web/marketplace-sdk/components/CollectibleCard.md): A versatile card component for displaying collectibles in marketplace and shop contexts
+- [Media](https://docs.sequence.xyz/sdk/web/marketplace-sdk/components/Media.md): Component for displaying various types of collectible assets
+- [Getting Started with Marketplace SDK](https://docs.sequence.xyz/sdk/web/marketplace-sdk/getting-started.md): Learn how to integrate Marketplace SDK into your application with guidance on installation, configuration, and implementing the make offer feature
+- [useBuyModal](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-actions/useBuyModal.md): Hook for managing the buy modal interface for collectible purchases
+- [useCancelOrder](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-actions/useCancelOrder.md): The useCancelOrder hook allows users to cancel a listing of an NFT that is currently for sale on the Marketplace. It handles the cancellation process and transaction execution.
+- [useCreateListingModal](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-actions/useCreateListingModal.md): Hook for managing the create listing modal interface for collectible sales
+- [useMakeOfferModal](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-actions/useMakeOfferModal.md): Hook for managing the make offer modal interface for creating offers on collectibles
+- [useSellModal](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-actions/useSellModal.md): Hook for managing the sell modal interface for accepting offers on collectibles
+- [useTransferModal](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-actions/useTransferModal.md): Hook that provides functions to transfer NFTs from your account to another account
+- [Marketplace Data Hooks](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/overview.md): The data hooks are essential for retrieving key Marketplace information in your application. Useful for fetching listings, offers, and other relevant data to power your UI.
+- [useBalanceOfCollectible](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useBalanceOfCollectible.md): Hook to fetch the balance of a specific collectible for a user
+- [useCollectible](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCollectible.md): Hook to fetch metadata for a specific collectible This hook retrieves metadata for an individual NFT from a collection, including properties like name, description, image, attributes, etc.
+- [useCollection](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCollection.md): The useCollection hook retrieves information about a specific collection address in your Marketplace from Builder. The returned data includes details such as the chainId, address, symbol, and more.
+- [useCollectionBalanceDetails](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCollectionBalanceDetails.md): The useCollectionBalanceDetails hook retrieves the token balances of multiple wallet addresses across one or more specified collections in your Marketplace from Builder.
+- [useCollectionDetails](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCollectionDetails.md): The useCollectionDetails hook retrieves information about a specific collection address.
+- [useCountListingsForCollectible](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCountListingsForCollectible.md): Hook to get the count of listings for a specific collectible Counts the number of active listings for a given collectible in the marketplace. Useful for displaying listing counts in UI components
+- [useCountOfCollectables](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCountOfCollectables.md): The useCountOfCollectables hook returns the number of NFTs in a collection.
+- [useCountOffersForCollectible](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCountOffersForCollectible.md): Hook to get the count of offers for a specific collectible Counts the number of active offers for a given collectible in the marketplace. Useful for displaying offer counts in UI components
+- [useCurrency](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useCurrency.md): Hook to fetch currency details from the marketplace Retrieves detailed information about a specific currency by its contract address. The currency data is cached from previous currency list calls when possible
+- [useFilters](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useFilters.md): Hook to fetch metadata filters for a collection Retrieves property filters for a collection from the metadata service, with support for marketplace-specific filter configuration including exclusion rules and custom ordering
+- [useFloorOrder](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useFloorOrder.md): Hook to fetch the floor order for a collection Retrieves the lowest priced order (listing) currently available for any token in the specified collection from the marketplace
+- [useGetCountOfFilteredOrders](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useGetCountOfFilteredOrders.md): The useGetCountOfFilteredOrders hook returns the number of filtered orders in a collection
+- [useGetCountOfPrimarySaleItems](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useGetCountOfPrimarySaleItems.md): The useGetCountOfPrimarySaleItems hook returns the number of filtered primary sale items in a collection
+- [useHighestOffer](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useHighestOffer.md): Hook to fetch the highest offer for a collectible Retrieves the highest offer currently available for a specific token in a collection from the marketplace
+- [useInventory](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useInventory.md): Fetches a user's collectible inventory for a specific collection with infinite scroll This hook combines data from both the marketplace API and indexer to provide a complete view of owned collectibles. It automatically detects LAOS ERC-721 collections and handles them appropriately. The hook ensures…
+- [useListCollectibles](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useListCollectibles.md): The useListCollectibles hook retrieves the current listings and offers in a collection from your Marketplace. Useful for accessing and managing listings and offers efficiently.
+- [useListCollectiblesPaginated](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useListCollectiblesPaginated.md): The useListCollectiblesPaginated hook efficiently retrieves and manages current listings and offers from your Marketplace, making it ideal for displaying paginated NFTs within a collection.
+- [useListCollections](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useListCollections.md): Hook to fetch collections from marketplace configuration Retrieves all collections configured in the marketplace, with optional filtering by marketplace type. Combines metadata from the metadata API with marketplace configuration to provide complete collection information.
+- [useListListingsForCollectible](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useListListingsForCollectible.md): Hook to fetch listings for a specific collectible Fetches active listings (sales) for a specific token from the marketplace with support for filtering and pagination.
+- [useListOffersForCollectible](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useListOffersForCollectible.md): Fetches all offers for a specific collectible This hook retrieves a list of active offers made on a specific collectible, including offer details like price, expiry, and maker information. Results can be filtered and paginated as needed.
+- [useListPrimarySaleItems](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useListPrimarySaleItems.md): Hook for fetching paginated primary sale items
+- [useLowestListing](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useLowestListing.md): Hook for fetching the lowest priced listing for a collectible
+- [useMarketCurrencies](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useMarketCurrencies.md): The useMarketCurrencies hook retrieves the list of currencies accepted by a specific contract address in your Marketplace from Builder. Each currency includes information such as its name, contractAddress, symbol, decimals, and image.
+- [useMarketplaceConfig](https://docs.sequence.xyz/sdk/web/marketplace-sdk/hooks/marketplace-data/useMarketplaceConfig.md): The useMarketplaceConfig hook retrieves your Marketplace's configuration, including collections, social links, title, and other settings from Builder.
+- [Marketplace SDK](https://docs.sequence.xyz/sdk/web/marketplace-sdk/overview.md): Marketplace SDK is a comprehensive toolkit that seamlessly integrates our Marketplaces into applications.
+- [Web SDKs](https://docs.sequence.xyz/sdk/web/overview.md): A comprehensive toolkit of Web3 SDKs that seamlessly integrate into your application.
+- [Getting started](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/getting-started.md): Learn how to get started with Ecosystem Wallet Web SDK
+- [useChain](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useChain.md): Hook for retrieving chain configuration information
+- [useExplicitSessions](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useExplicitSessions.md): Hook for managing explicit sessions for Sequence V3 wallet connections
+- [useFeeOptions](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useFeeOptions.md): Hook for handling fee options for unsponsored transactions
+- [useHasPermission](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useHasPermission.md): Hook to check whether the current Sequence V3 session can execute a set of transactions
+- [useListAccounts](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useListAccounts.md): Hook to list all accounts associated with the current WaaS session
+- [useOpenConnectModal](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useOpenConnectModal.md): Hook for opening the connect modal
+- [useProjectAccessKey](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useProjectAccessKey.md): Hook to access the project access key from the Sequence Connect configuration
+- [useSendWalletTransaction](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useSendWalletTransaction.md): Hook to send a transaction via the Sequence wallet popup (wallet action)
+- [useSequenceSessionState](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useSequenceSessionState.md): Hook to access Sequence session state and wallet information
+- [useSignInEmail](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useSignInEmail.md): Hook to retrieve the email address associated with the connected wallet
+- [useStorage](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useStorage.md): Hook for accessing the storage instance of the Sequence Connect client
+- [useTheme](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useTheme.md): Hook to access and modify theme and modal position settings
+- [useWalletSettings](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useWalletSettings.md): Hook to access and modify wallet configuration settings
+- [useWallets](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/hooks/useWallets.md): Hook for managing connected wallets
+- [Overview](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/overview.md)
+- [Examples](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/smart-sessions/examples.md)
+- [Overview](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/smart-sessions/overview.md)
+- [Utils](https://docs.sequence.xyz/sdk/web/wallet-sdk/ecosystem/smart-sessions/utils.md)
+- [Custom Configuration Options](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/custom-configuration.md): The Configuration section allows developers to customize the Web SDK by passing options to the `SequenceConnect` wrapper.
+- [Custom Connectors in Web SDK](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/custom-connectors.md): Learn how to create and integrate custom connectors with Web SDK. Follow step-by-step instructions to build your own connector using existing templates.
+- [Ethers v6 Migration Guide](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/ethers-v6-migration.md): Support for ethers v6 and migration guides for moving code from ethers v5 to v6
+- [Getting Started with Web SDK for Embedded Wallet](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/getting-started.md): Learn how to get started with Web SDK by installing the necessary packages and using the wagmi connectors to utilize an Embedded Wallet or Native EOA Wallet for authentication.
+- [Checkout Modal](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/guides/checkout.md): The Checkout Modal provides developers with an easy way to implement cryptocurrency payments.
+- [On-ramp Overview](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/guides/on-ramp.md): The checkout on-ramp modal in Web SDK allows developers to easily onboard users with fiat currency into cryptocurrency using a credit card.
+- [On-ramp and Swap to a custom token](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/guides/on-ramp-and-swap.md): On-ramp to a supported token and swap to your own custom token.
+- [Pay Gas in ERC20](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/guides/pay-gas-in-erc20.md): Learn how to pay gas in ERC20 using Web SDK
+- [Send a sponsored transaction](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/guides/send-sponsored-tx.md): In this tutorial, we'll learn how to send sponsored transactions using Web SDK.
+- [Smart Swaps](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/guides/smart-swaps.md): Sequence Smart Swaps auto detects eligible currencies in the user's wallet and swaps them to the target currency. Developers can define the target currency and Sequence will handle everything, including the UI and flow through Web SDK.
+- [Web Verification Guide](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/guides/verification.md): The content provides a detailed guide on verifying ownership of an Embedded Wallet address using a nonce and optional time expiry.
+- [useChain](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useChain.md): Hook for retrieving chain configuration information
+- [useCheckWaasFeeOptions](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useCheckWaasFeeOptions.md): Hook for checking transaction fee options in Sequence
+- [useListAccounts](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useListAccounts.md): Hook to list all accounts associated with the current WaaS session
+- [useOpenConnectModal](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useOpenConnectModal.md): Hook for opening the connect modal
+- [useProjectAccessKey](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useProjectAccessKey.md): Hook to access the project access key from the Sequence Connect configuration
+- [useSequenceWaaS](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useSequenceWaas.md): Hook to create and access a Sequence WaaS instance
+- [useSignInEmail](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useSignInEmail.md): Hook to retrieve the email address associated with the connected wallet
+- [useSocialLink](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useSocialLink.md): Hook to manage social link modal state and configuration
+- [useStorage](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useStorage.md): Hook for accessing the storage instance of the Sequence Connect client
+- [useTheme](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useTheme.md): Hook to access and modify theme and modal position settings
+- [useWaasFeeOptions](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useWaasFeeOptions.md): Hook for handling WaaS fee options for gas payments
+- [useWalletSettings](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useWalletSettings.md): Hook to access and modify wallet configuration settings
+- [useWallets](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/hooks/useWallets.md): Hook for managing connected wallets
+- [Migrate to v5 (Web SDK)](https://docs.sequence.xyz/sdk/web/wallet-sdk/embedded/migration.md): Sequence Kit (v4) is now Web SDK (v5), here are the biggest changes.
+- [Getting started](https://docs.sequence.xyz/sdk/web/wallet-widget-sdk/getting-started.md): Learn how to get started with Wallet Widget SDK
+- [useOpenWalletModal](https://docs.sequence.xyz/sdk/web/wallet-widget-sdk/hooks/useOpenWalletModal.md): Hook for opening the wallet inventory modal
+- [Analytics](https://docs.sequence.xyz/solutions/builder/analytics.md): Sequence's analytics feature allows users to easily track key metrics in Sequence Builder without additional work. By using Sequence SDKs/APIs, analytics events are sent to Databeat for real-time storage and visualization.
+- [How to Manage Item Metadata in Sequence Builder](https://docs.sequence.xyz/solutions/builder/collections/manage-item-metadata.md): This guide explains how to manage token metadata in Sequence Builder with the help from Pinata for IPFS hosting.
+- [Manage NFT Collections in Sequence Builder](https://docs.sequence.xyz/solutions/builder/collections/quickstart.md): The Sequence Builder allows you to manage Collections of collectible metadata, including details, images, and properties. You can link Collections to deployable contracts for easy crafting flows. Control updates and public/private viewing of collection info on Sequence servers.
+- [How to Deploy in-game Currency in Sequence Builder](https://docs.sequence.xyz/solutions/builder/contracts/deploy-ERC20-currency.md): Learn how to create your own in-game currency by deploying and minting from an ERC20 contract. Understand the difference between fungible and non-fungible tokens.
+- [How to Deploy an Item Collection Contract in Sequence Builder](https://docs.sequence.xyz/solutions/builder/contracts/deploy-an-item-collection.md): This guide provides a detailed walkthrough on setting up and deploying a Web3 Game Item contract in Builder. It discusses the differences between ERC721 and ERC1155 contracts, walks through the steps of deploying a contract.
+- [Deploying a Primary Sales Contract in Sequence Builder](https://docs.sequence.xyz/solutions/builder/contracts/deploy-primary-sales-contract.md): This guide provides a detailed walkthrough on setting up and deploying a Primary Sales Contract in Builder. It discusses the differences between ERC721 and ERC1155 contracts, walks through the steps of deploying a contract.
+- [How to Deploy a Soulbound Token Contract in Sequence Builder](https://docs.sequence.xyz/solutions/builder/contracts/deploy-soulbound-token.md): Learn how to deploy Soulbound Token contracts in Sequence Builder for non-transferable, exclusive game assets. This guide covers setup, key steps, and best practices for deploying non-tradable NFTs.
+- [Contracts](https://docs.sequence.xyz/solutions/builder/contracts/overview.md): Sequence Builder offers a user-friendly platform for smart contract deployment and management. Choose from contract templates or upload custom contracts, deploy directly to your chosen network.
+- [Apple Auth Configuration for Embedded Wallet](https://docs.sequence.xyz/solutions/builder/embedded-wallet/apple-configuration.md): Learn how to configure Apple auth for your Embedded Wallet by creating an Apple client in the Apple Developer Console. Follow step-by-step instructions to create App Identifier and App ID for iOS or web applications.
+- [Embedded Wallet Configuration](https://docs.sequence.xyz/solutions/builder/embedded-wallet/configuration.md): Configure a Sequence Embedded Wallet in Builder to easily onboard users to your games by integrating OAuth accounts. Learn how to set up login providers like Google Auth and Apple Auth, specify allowed origins for security, set up a recovery wallet, create an initial configuration.
+- [Google Configuration for Embedded Wallet](https://docs.sequence.xyz/solutions/builder/embedded-wallet/google-configuration.md): Learn how to configure Google OAuth client for your Embedded Wallet instance. Follow steps to create OAuth Client ID for web, Android, or iOS applications.
+- [Guest Wallet Configuration for Embedded Wallet](https://docs.sequence.xyz/solutions/builder/embedded-wallet/guest-wallet-configuration.md): Learn how to configure a Guest wallet for your Embedded Wallet instance.
+- [Playfab Configuration for Embedded Wallet](https://docs.sequence.xyz/solutions/builder/embedded-wallet/playfab-configuration.md): Learn how to configure a PlayFab client for your Embedded Wallet instance. Follow steps to create and retrieve a Title ID from the PlayFab dashboard.
+- [Stytch Configuration for Embedded Wallet](https://docs.sequence.xyz/solutions/builder/embedded-wallet/stytch-configuration.md): Learn how to configure a Stytch client for your Embedded Wallet instance. Follow steps to create and retrieve a Public Token from the Stytch dashboard.
+- [X (Twitter) Configuration for Embedded Wallet](https://docs.sequence.xyz/solutions/builder/embedded-wallet/x-configuration.md): Learn how to configure X (Twitter) OAuth for your Embedded Wallet instance. This guide covers using Sequence's proxy for X's OAuth 2.0 and the required permissions.
+- [Gas Sponsorship](https://docs.sequence.xyz/solutions/builder/gas-sponsorship.md): Sequence Builder offers a Gas Sponsorship feature that allows project owners to sponsor gas for their users in web3 apps. By covering transaction fees, users can enjoy a seamless gaming experience without worrying about obtaining crypto for fees.
+- [Getting Started with Builder](https://docs.sequence.xyz/solutions/builder/getting-started.md): Learn how to sign up for Sequence Builder and create your first project in just a few minutes.
+- [Marketplaces](https://docs.sequence.xyz/solutions/builder/marketplaces.md): Documentation for Builder Marketplaces for the Sequence infrastructure stack for web3 gaming.
+- [Project Management in Sequence Builder](https://docs.sequence.xyz/solutions/builder/project-management.md): The content discusses the seamless process of creating projects in Sequence Builder, emphasizing the ease of use without the need for KYC. Users must adhere to global regulations and platform terms. Options to choose a project name, upload a custom avatar, and configure networks.
+- [Settings in Sequence Builder](https://docs.sequence.xyz/solutions/builder/project-settings.md): The Sequence Builder allows users to access various settings for their projects, including General, Advanced, Collaborators, Networks, API Access Keys, and Billing. Users can update project details, add collaborators, manage network settings, configure API access keys, etc.
+- [Webhooks in Sequence Builder](https://docs.sequence.xyz/solutions/builder/webhooks.md): The content discusses the use of webhooks in Sequence Builder for game builders to listen to events on multiple blockchains.
+- [Cross-Chain Token Balances](https://docs.sequence.xyz/solutions/indexer/cross-chain-balances.md)
+- [Indexer Overview](https://docs.sequence.xyz/solutions/indexer/overview.md): Real-time balances, transfers, NFTs, prices, and contract events across EVM chains with webhooks and subscriptions. Use it as your production read layer for onchain apps.
+- [Subscriptions](https://docs.sequence.xyz/solutions/indexer/subscriptions.md): Subscribe to events, receipts, balance updates for any wallet or contract address.
+- [Token Balances](https://docs.sequence.xyz/solutions/indexer/token-balances.md)
+- [Transaction History](https://docs.sequence.xyz/solutions/indexer/transaction-history.md)
+- [Webhooks](https://docs.sequence.xyz/solutions/indexer/webhooks.md)
+- [Blockchain RPC](https://docs.sequence.xyz/solutions/infrastructure/blockchain-rpc.md): High-availability RPC access with provider failover, health checks, and simple URLs for each network.
+- [Overview](https://docs.sequence.xyz/solutions/infrastructure/overview.md): Sequence offers end-to-end onchain infrastructure for DeFi, stablecoins, chains, and web3 games. Covering real-time data (Indexer), transaction dispatch (Transaction API), node access (Blockchain RPC), and a Dockerized backend (Sidekick).
+- [Minting Server](https://docs.sequence.xyz/solutions/infrastructure/sidekick/minting-server.md): This example demonstrates how to build an NFT minting server using Sidekick.
+- [Overview](https://docs.sequence.xyz/solutions/infrastructure/sidekick/overview.md): Dockerized backend that exposes standardized blockchain read/write endpoints with secure key management, built on Sequence infrastructure.
+- [Sidekick Quickstart](https://docs.sequence.xyz/solutions/infrastructure/sidekick/quickstart.md): Quickstart guide for getting started with Sidekick
+- [Transaction API](https://docs.sequence.xyz/solutions/infrastructure/transaction-api.md): Send transactions via a unified relayer with gas sponsorship, batching, and parallel processing. Works with any EVM contract and any Sequence or external wallet.
+- [LLM Integrations](https://docs.sequence.xyz/solutions/llm-integrations.md): There are several ways to integrate Sequence with LLMs to get intelligent assistance with Sequence-related development tasks, from querying blockchain data to interacting with smart contracts.
+- [Welcome to Sequence](https://docs.sequence.xyz/solutions/overview.md): The open source, modular web3 stack for onchain apps
+- [Checkout SDK (card payments for NFTs)](https://docs.sequence.xyz/solutions/payments/checkout-sdk.md): Use @0xsequence/checkout to add credit/debit card checkout for NFT purchases via partners (e.g., Transak, Forte).
+- [Custom Marketplace](https://docs.sequence.xyz/solutions/payments/marketplace/custom.md): Build and customize your own marketplace with our pre-built marketplace boilerplate, or use our Marketplace SDK to integrate into your existing application.
+- [Launching Your Hosted Marketplace with Sequence Builder](https://docs.sequence.xyz/solutions/payments/marketplace/hosted.md): Follow this 8-step guide to learn how to use the Sequence Builder which offers developers a white-label marketplace that can be easily customized and integrated into any onchain experience without any coding experience needed.
+- [Marketplace Overview](https://docs.sequence.xyz/solutions/payments/marketplace/overview.md): Choose between a hosted marketplace, a customizable boilerplate, the Marketplace SDK, and Marketplace APIs that aggregate listings from Sequence Marketplace as well as OpenSea and Magic Eden.
+- [Payments Overview](https://docs.sequence.xyz/solutions/payments/overview.md): Choose the right payment approach for your app. Trails is recommended for cross-chain, 1-click transactions. Shop/Marketplace are prebuilt direct and peer-to-peer sales sites. Checkout SDK adds pay with card flows for NFT purchases.
+- [Launching Your Shop with Sequence Builder](https://docs.sequence.xyz/solutions/payments/shop/guide.md): Follow this 9-step guide to learn how to use the Sequence Builder which offers game builders a Shop that can be easily customized and integrated into their game experience without any coding experience needed.
+- [Sequence Shop](https://docs.sequence.xyz/solutions/payments/shop/overview.md): Configurable primary sales for ERC‑1155/721, backed by audited contracts. Manage SKUs, pricing, and schedules in Builder.
+- [Trails](https://docs.sequence.xyz/solutions/payments/trails.md): Intent‑based, cross‑chain payments with one user confirmation. Aggregate user liquidity across chains and orchestrate swaps/bridges automatically.
+- [Enclave verification](https://docs.sequence.xyz/solutions/technical-references/architecture/embedded-wallets/enclave-verification.md): The WaaS enclave's security hinges on code integrity verification using verified enclaves.
+- [Intents](https://docs.sequence.xyz/solutions/technical-references/architecture/embedded-wallets/intents.md): Learn about how intents are specific actions used to interact with your account, sessions, and wallet. They are essentially JSON objects signed with your session key, representing actions like signing a message.
+- [Architecture Overview](https://docs.sequence.xyz/solutions/technical-references/architecture/embedded-wallets/overview.md): Documentation for Embedded Wallet Architecture for the Sequence infrastructure stack for web3 gaming.
+- [Trust Contract Recovery Flow](https://docs.sequence.xyz/solutions/technical-references/architecture/embedded-wallets/trust-contract-recovery-flow.md): The Trust Contract Recovery Flow document details the architecture of Trust contracts, which safeguard Sequence WaaS accounts.
+- [Deploy Process V1](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/deploy.md): The content provides a detailed guide for deploying the Sequence Wallet V1 Context on a new network. It includes steps to deploy NanoUniversalDeployer and UniversalDeployer2 contracts, along with necessary code snippets and pre-signed transactions.
+- [Guest Module](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/guest-module.md): The Guest Module is a version of the Sequence wallet without signatures, nonces, or replay protection.
+- [Main Module Upgradeable & configuration migration](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/main-module-upgradeable.md): The Main Module Upgradeable is a key contract in the wallet system, allowing for seamless upgrades without changing the wallet address.
+- [Modules & wallet update](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/modules-and-updates.md): This content explains how Sequence wallets are implemented using modules and how the wallet configuration can be updated.
+- [Signature Encoding](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/signature-encoding.md): Sequence Wallets support ERC-1271 Standard Contract Signature Verification for signing transactions and messages. Messages can be encoded with ERC-191 Ethereum Signed Data or ERC-712 Structured Data Signatures.
+- [Wallet Configuration](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/wallet-configuration.md): The Sequence wallet configuration includes a threshold and a list of signers with their weights.
+- [Wallet Context V1](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/wallet-context.md): This Wallet Context V1 includes various addresses for different modules and libraries.
+- [Wallet Factory](https://docs.sequence.xyz/solutions/technical-references/architecture/v1/wallet-factory.md): The Wallet Factory allows for the creation of Sequence Wallets using the Factory contract, which generates child MinimalUpgradeableProxies that serve as the base code for all Sequence wallets.
+- [Wallet Configuration (V2)](https://docs.sequence.xyz/solutions/technical-references/architecture/v2/configuration.md): The Wallet Configuration in Sequence Wallets defines access control, signers, and signature weight.
+- [Deploy Process V2](https://docs.sequence.xyz/solutions/technical-references/architecture/v2/deploy.md): The content provides a detailed guide on deploying the Sequence Wallet Context on a new network.
+- [Transaction Encoding](https://docs.sequence.xyz/solutions/technical-references/architecture/v2/transaction-encoding.md): The content discusses the custom transaction encoding format used by Sequence Wallets to bundle multiple transactions into a single transaction.
+- [Wallet Context v2](https://docs.sequence.xyz/solutions/technical-references/architecture/v2/wallet-context.md): This code snippet defines the wallet context v2, including the addresses for the factory, main module, upgradable main module, guest module, and sequence utils.
+- [Contract Audits](https://docs.sequence.xyz/solutions/technical-references/contract-audits.md): Sequence Wallet (formerly Arcadeum Wallet) contracts have been thoroughly audited by reputable firms like Consensys Diligence, Quantstamp, and Zellic.
+- [Contract Deployments](https://docs.sequence.xyz/solutions/technical-references/contract-deployment.md): The content discusses the deployment process of Sequence contract wallets, emphasizing their deterministic nature across EVM-compatible networks.
+- [Technical References Overview](https://docs.sequence.xyz/solutions/technical-references/overview.md): Deep-dive references for Sequence's onchain infrastructure: contracts, audits, deployments, and wallet architectures across versions.
+- [Smart Contract Wallets](https://docs.sequence.xyz/solutions/technical-references/smart-contract-wallets.md): Smart contract wallets offer enhanced functionality and security compared to externally owned accounts. Examples include Sequence, Gnosis Safe, and Argent. Sequence has the lowest deployment fees among various smart account providers, making it a cost-effective option for users.
+- [Ecosystem Wallet Quickstart — Sequence Solutions](https://docs.sequence.xyz/solutions/wallets/developers/ecosystem-wallet/react_quickstart.md): Adding a Sequence-powered smart wallet to your React app is a straightforward process. This guide outlines the three core steps to get you from a new project to a fully integrated wallet.
+- [Unity SDK Quickstart](https://docs.sequence.xyz/solutions/wallets/developers/ecosystem-wallet/unity-quickstart.md): Add a Sequence-powered smart wallet to your Unity app.
+- [Unreal SDK Quickstart](https://docs.sequence.xyz/solutions/wallets/developers/ecosystem-wallet/unreal-quickstart.md): Add a Sequence-powered smart wallet to your Unreal game.
+- [FAQ](https://docs.sequence.xyz/solutions/wallets/developers/embedded-wallet/faq.md): FAQ and Common Errors
+- [Migration Guide – Moving to Sequence Embedded Wallets](https://docs.sequence.xyz/solutions/wallets/developers/embedded-wallet/migration.md): Migrating to Sequence Embedded Wallets from another provider.
+- [Sequence Embedded Wallet (v5)](https://docs.sequence.xyz/solutions/wallets/developers/embedded-wallet/overview.md): Sequence Embedded Wallet allows for the easy creation, management, and integration of EVM compatible wallets into games or experiences using SDKs like Web, Unity, and Unreal.
+- [Embedded Wallet Quickstart](https://docs.sequence.xyz/solutions/wallets/developers/embedded-wallet/quickstart.md): Connect your users to your App with the Sequence Embedded Wallet.
+- [Wallet Linking: Embedded Wallet Authentication & External Wallet Sign-in](https://docs.sequence.xyz/solutions/wallets/developers/embedded-wallet/wallet-linking.md): This guide demonstrates how to integrate a parent Embedded Wallet with web2 authentication methods for wallet linking purposes. It covers signing into a social login provider and linking using signatures from an external wallet signed in via Web SDK stored privately and securely.
+- [Wallets for Developers](https://docs.sequence.xyz/solutions/wallets/developers/overview.md): Use this page to choose the right integration path and jump to the relevant guides.
+- [Custom Wallet](https://docs.sequence.xyz/solutions/wallets/ecosystems/custom-wallet.md): Build a fully custom Ecosystem Wallet using the Wallet Development Kit on top of Sequence infrastructure. Self-host critical components if needed.
+- [Guard Firewall](https://docs.sequence.xyz/solutions/wallets/ecosystems/guard-firewall.md): Ecosystem-level review signer that evaluates every transaction against policies, simulations, and blacklists before allowing execution.
+- [Hosted Wallet](https://docs.sequence.xyz/solutions/wallets/ecosystems/hosted-wallet.md): Launch an Ecosystem Wallet on your domain with Sequence-operated infrastructure, branding control, Smart Sessions, and passkey-based auth.
+- [Identity Instrument](https://docs.sequence.xyz/solutions/wallets/ecosystems/identity-instrument.md): Enclave-backed service that verifies user identity, binds device Auth Keys, and signs session attestations for Ecosystem Wallets.
+- [Wallets for Ecosystems](https://docs.sequence.xyz/solutions/wallets/ecosystems/overview.md): Ecosystem Wallet is a consumer-ready smart wallet that runs on your domain and serves all your apps. It combines passkeys, social auth, timed recovery keys, and sandboxed permissions to deliver higher security with less friction.
+- [Smart Sessions](https://docs.sequence.xyz/solutions/wallets/ecosystems/smart-sessions.md): Sequence's Smart Sessions provide a seamless way to interact with apps by reducing wallet pop-ups and improving user experience.
+- [Timed Recovery](https://docs.sequence.xyz/solutions/wallets/ecosystems/timed-recovery.md): Ecosystem Wallets come with built-in timed recovery, enabling passphrase-based recovery of any wallet with a 24-word recovery phrase and a 30-day lockdown.
+- [Merkleized Wallet Configuration](https://docs.sequence.xyz/solutions/wallets/ecosystems/wallet-config.md): Single-root wallet configuration for Ecosystem Wallets, enabling signers, sessions, recovery, and extensions with efficient on-chain proofs.
+- [Overview](https://docs.sequence.xyz/solutions/wallets/overview.md): Sequence Ecosystem Wallet is a non-custodial smart wallet designed for chains and ecosystems. It combines passkeys, social auth, timed recovery keys, and sandboxed permissions to deliver higher security with less friction.
+- [Support](https://docs.sequence.xyz/support.md): Sequence provides support teams in multiple timezones to assist with any issues or queries for new projects
+- [Changelog](https://docs.sequence.xyz/support/changelog.md)
+- [Contact Us](https://docs.sequence.xyz/support/contact-us.md)
+- [Discord](https://docs.sequence.xyz/support/discord.md)
+- [FAQ](https://docs.sequence.xyz/support/faq.md)
+- [We're hiring!](https://docs.sequence.xyz/support/hiring.md)
+- [Restricted Regions](https://docs.sequence.xyz/support/restricted-regions.md): Sequence is restricted in certain regions due to regulatory requirements from Canada, USA, and other global jurisdictions.
+- [Token Directory](https://docs.sequence.xyz/support/token-directory.md): Sequence Token Directory is an open resource repository on GitHub used to filter spam tokens from our services and wallets. Developers can submit pull requests to the Token Directory to get new tokens verified in wallets and infrastructure.
+
+## OpenAPI Specs
+
+- [analytics-api](https://docs.sequence.xyz/api-references/analytics/endpoints/analytics-api.json)
+- [rpc.gen](https://docs.sequence.xyz/docs/pages/api/relayer/rpc.gen.yaml)
+- [api.gen](https://docs.sequence.xyz/docs/pages/api/api/api.gen.yaml)
+- [relayer-api](https://docs.sequence.xyz/api-references/transactions/endpoints/relayer-api.json)
+- [sequence-metadata](https://docs.sequence.xyz/api-references/metadata/endpoints/sequence-metadata.json)
+- [indexer](https://docs.sequence.xyz/api-references/indexer/endpoints/indexer.json)
+- [sequence-marketplace](https://docs.sequence.xyz/api-references/marketplace/endpoints/sequence-marketplace.json)
+- [sequence-api](https://docs.sequence.xyz/api-references/infrastructure/endpoints/sequence-api.json)
+- [builder-api](https://docs.sequence.xyz/api-references/builder/endpoints/builder-api.json)
+- [pnpm-lock](https://docs.sequence.xyz/pnpm-lock.yaml)
+- [package](https://docs.sequence.xyz/package.json)
+- [mermaid-history-2024-06-19-115839](https://docs.sequence.xyz/images/guides/overview/mermaid-history-2024-06-19-115839.json)
+
+## Optional
+
+- [Supported Chains](https://status.sequence.info/)
+- [Changelog](https://0xsequence.featurebase.app/changelog)

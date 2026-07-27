@@ -1,0 +1,74 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/ (schema $ref graph across Sequence services)
+entities:
+  - name: Project
+    domain: builder
+    description: A Sequence Builder project; owns access keys, contracts, audiences, webhooks
+  - name: Contract
+    domain: builder/metadata
+    description: A deployed smart contract (ERC-20/721/1155) tracked by the project
+  - name: TokenMetadata
+    domain: metadata
+    description: Metadata for a token id within a contract collection
+  - name: ContractInfo
+    domain: metadata
+    description: Collection-level contract metadata (name, symbol, type, extensions)
+  - name: TokenBalance
+    domain: indexer
+    description: An account's balance of a token/native asset on a chain
+  - name: Transaction
+    domain: indexer/transactions
+    description: An on-chain transaction and its receipt/history
+  - name: WebhookListener
+    domain: indexer
+    description: A registered webhook subscription filtering on-chain events for a project
+  - name: Order
+    domain: marketplace
+    description: A marketplace listing or offer for a collectible
+  - name: Collectible
+    domain: marketplace
+    description: A tradable NFT within a collection on the marketplace
+  - name: Audience
+    domain: builder
+    description: A contact audience for messaging/campaigns
+relationships:
+  - from: Project
+    to: Contract
+    type: has_many
+    via: projectId
+  - from: Project
+    to: WebhookListener
+    type: has_many
+    via: projectId
+  - from: Project
+    to: Audience
+    type: has_many
+    via: projectId
+  - from: Contract
+    to: TokenMetadata
+    type: has_many
+    via: contractAddress
+  - from: Contract
+    to: ContractInfo
+    type: has_one
+    via: contractAddress
+  - from: TokenBalance
+    to: ContractInfo
+    type: belongs_to
+    via: contractAddress
+  - from: Order
+    to: Collectible
+    type: belongs_to
+    via: tokenId
+  - from: Collectible
+    to: ContractInfo
+    type: belongs_to
+    via: contractAddress
+identifiers:
+  - entity: account
+    format: EVM address (0x + 40 hex)
+  - entity: contract
+    format: EVM address (0x + 40 hex)
+  - entity: token
+    format: tokenId (uint256 string) scoped to a contract + chainId
