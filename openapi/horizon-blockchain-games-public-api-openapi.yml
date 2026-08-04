@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Api Analytics public API
-  version: ''
+  version: "1.0"
   description: Endpoints accessible by passing your project-access-key in the header. This is injected whenever you login automatically.
 servers:
 - url: https://api.sequence.app
