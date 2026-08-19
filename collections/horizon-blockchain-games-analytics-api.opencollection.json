@@ -1,0 +1,2511 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Analytics API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Analytics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Analytics-TotalCompute",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalCompute",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-ComputeByService",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ComputeByService",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyComputeByType",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyComputeByType",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyComputeByService",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyComputeByService",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-GetOrderbookCollections",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/GetOrderbookCollections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-CreditsPerDailyActiveUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/CreditsPerDailyActiveUser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-CreditsPerMonthlyActiveUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/CreditsPerMonthlyActiveUser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsTotal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsTotal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsDaily",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsDaily",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsMonthly",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsMonthly",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsByCountry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsByCountry",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsByDevice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsByDevice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsByBrowser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsByBrowser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsByOS",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsByOS",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsByType",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsByType",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsTxnSentTotal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsTxnSentTotal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsTxnSentDaily",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsTxnSentDaily",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsTxnSentMonthly",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsTxnSentMonthly",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WalletsByOrigin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WalletsByOrigin",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-ConnectionsByOrigin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ConnectionsByOrigin",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MarketTxnEventTotal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MarketTxnEventTotal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MarketTxnEventDaily",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MarketTxnEventDaily",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MarketTxnEventMonthly",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MarketTxnEventMonthly",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MarketWalletsTotal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MarketWalletsTotal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MarketWalletsDaily",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MarketWalletsDaily",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MarketWalletsMonthly",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MarketWalletsMonthly",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalWalletTxnConversionRate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalWalletTxnConversionRate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyWalletTxnConversionRate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyWalletTxnConversionRate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyWalletTxnConversionRate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyWalletTxnConversionRate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyNewWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyNewWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyNewWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyNewWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalNewWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalNewWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageDAU",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageDAU",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-RollingStickiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/RollingStickiness",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageStickiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageStickiness",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-D1RetentionByCohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/D1RetentionByCohort",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-D3RetentionByCohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/D3RetentionByCohort",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-D7RetentionByCohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/D7RetentionByCohort",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-D14RetentionByCohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/D14RetentionByCohort",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-D28RetentionByCohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/D28RetentionByCohort",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageD1Retention",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageD1Retention",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageD3Retention",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageD3Retention",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageD7Retention",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageD7Retention",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageD14Retention",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageD14Retention",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageD28Retention",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageD28Retention",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyActiveWalletsBySegment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyActiveWalletsBySegment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyTransactingWalletsBySegment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyTransactingWalletsBySegment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WeeklyActiveWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WeeklyActiveWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Views Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalViews",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Views Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyViews",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyViews",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-ViewsByCountry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ViewsByCountry",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-ViewsByDevice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ViewsByDevice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-ViewsByOS",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ViewsByOS",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Visitors Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyUniqueVisitors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Visitors Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyUniqueVisitors",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyUniqueVisitors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Real-time Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ActiveSessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Real-time Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-UserEvents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/UserEvents",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Ecosystem Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Ecosystem Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalProjects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalProjects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalProjectsCreated",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalProjectsCreated",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalActiveProjects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalActiveProjects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalDevelopers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalDevelopers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemActiveDevelopers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemActiveDevelopers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemDailyActiveWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemDailyActiveWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyActiveWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyActiveWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemDailyNewProjects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemDailyNewProjects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyNewProjects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyNewProjects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalContracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalContracts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyContracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyContracts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTopProjectsByActiveWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTopProjectsByActiveWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTopProjectsByNewWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTopProjectsByNewWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemWalletsCreated",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemWalletsCreated",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyActiveEcoWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyActiveEcoWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemDailyNewWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemDailyNewWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyNewWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyNewWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTopProjectsByDeveloperActivity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTopProjectsByDeveloperActivity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTopProjectsByNewDevelopers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTopProjectsByNewDevelopers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalMarketplaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalMarketplaces",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyMarketplaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyMarketplaces",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemActiveMarketplaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemActiveMarketplaces",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemWalletsByCountry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemWalletsByCountry",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemWalletsByDevice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemWalletsByDevice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemWalletsByOS",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemWalletsByOS",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemWalletsByBrowser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemWalletsByBrowser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemWalletsByType",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemWalletsByType",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemWalletsByLoginMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemWalletsByLoginMethod",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Ecosystem Transaction Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Ecosystem Transaction Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalTransactingUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalTransactingUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyTransactingUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyTransactingUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTotalTransactionVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTotalTransactionVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemMonthlyTransactionVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemMonthlyTransactionVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTopProjectsByTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTopProjectsByTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTopProjectsByTransactingUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTopProjectsByTransactingUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-EcosystemTopProjectsByTransactionVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/EcosystemTopProjectsByTransactionVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Transaction Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Transaction Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyProjectTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyProjectTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyProjectTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyProjectTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalProjectTransactionsByChain",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectTransactionsByChain",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalProjectTransactionsByCollection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectTransactionsByCollection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalProjectTransactionsByToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectTransactionsByToken",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyProjectTransactionsByCollection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyProjectTransactionsByCollection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalProjectTransactionVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectTransactionVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyProjectVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyProjectVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyProjectVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyProjectVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalProjectVolumeByChain",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectVolumeByChain",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalProjectVolumeByCollection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectVolumeByCollection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalProjectVolumeByToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalProjectVolumeByToken",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyProjectVolumeByCollection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyProjectVolumeByCollection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TransactionVolumePerUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TransactionVolumePerUser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TransactionVolumePerTransactingUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TransactionVolumePerTransactingUser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalTransactingUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalTransactingUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyUniqueTransactingUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyUniqueTransactingUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyUniqueTransactingUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyUniqueTransactingUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TransactingUserConversion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TransactingUserConversion",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyTransactingUserConversion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyTransactingUserConversion",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyTransactingUserConversion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyTransactingUserConversion",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-RepeatingTransactingUserPercentage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/RepeatingTransactingUserPercentage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-WeekOnWeekTransactingUserRetention",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/WeekOnWeekTransactingUserRetention",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthOnMonthTransactingUserRetention",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthOnMonthTransactingUserRetention",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AvgBalanceOfSequenceWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AvgBalanceOfSequenceWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AvgBalanceOfTransactingSequenceWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AvgBalanceOfTransactingSequenceWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Marketplace Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Marketplace Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyMarketplaceTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyMarketplaceTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyMarketplaceTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyMarketplaceTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceItemsTransacted",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceItemsTransacted",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceItemsPurchased",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceItemsPurchased",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceItemsSold",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceItemsSold",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceItemsListed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceItemsListed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceItemsOffered",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceItemsOffered",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceTransactingUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceTransactingUsers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyMarketplaceVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyMarketplaceVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyMarketplaceVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyMarketplaceVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageMarketplaceTransactionPrice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageMarketplaceTransactionPrice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalMarketplaceTradedCollections",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceTradedCollections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TopMarketplaceBuyers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TopMarketplaceBuyers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TopMarketplaceSellers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TopMarketplaceSellers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MarketplaceCollectionTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MarketplaceCollectionTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Shop Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalShopTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Shop Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyShopTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyShopTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyShopTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyShopTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalShopItemsPurchased",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalShopItemsPurchased",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalShopPurchasers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalShopPurchasers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalShopVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalShopVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-DailyShopVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/DailyShopVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-MonthlyShopVolume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/MonthlyShopVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-AverageShopPurchasePrice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/AverageShopPurchasePrice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TopShopBuyers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TopShopBuyers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-ShopCollectionTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ShopCollectionTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Marketplace Token-Level Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalMarketplaceItemsSoldByToken",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Marketplace Token-Level Analytics"
+        },
+        {
+          "info": {
+            "name": "Analytics-TotalShopItemsSoldByToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TotalShopItemsSoldByToken",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Trails Analytics - Big Numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTotalTransactionVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trails Analytics - Big Numbers"
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsTotalTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTotalTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsTotalUniqueTransactingWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTotalUniqueTransactingWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsAverageTransactionDuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsAverageTransactionDuration",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsPaymentCompletionPercentage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsPaymentCompletionPercentage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Trails Analytics - Category Charts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTransactionsByDomain",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trails Analytics - Category Charts"
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsTransactionsByAmount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTransactionsByAmount",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Trails Analytics - Daily Time Series",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsDailyTransactionVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trails Analytics - Daily Time Series"
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsDailyTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsDailyTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsDailyTransactingWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsDailyTransactingWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsDailyActiveWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsDailyActiveWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsDailyAverageTransactionDuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsDailyAverageTransactionDuration",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsDailyPaymentCompletionPercentage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsDailyPaymentCompletionPercentage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Trails Analytics - Monthly Time Series",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsMonthlyTransactionVolume",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trails Analytics - Monthly Time Series"
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsMonthlyTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsMonthlyTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsMonthlyTransactingWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsMonthlyTransactingWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsMonthlyActiveWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsMonthlyActiveWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsMonthlyAverageTransactionDuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsMonthlyAverageTransactionDuration",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsMonthlyPaymentCompletionPercentage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsMonthlyPaymentCompletionPercentage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Trails Analytics - Tables",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTransactionsByMode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trails Analytics - Tables"
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsTransactionsByRoute",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTransactionsByRoute",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsTransactionsByProvider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTransactionsByProvider",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsTransactionsByCountry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTransactionsByCountry",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Analytics-TrailsTopTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/TrailsTopTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Trails Analytics - Export (returns all data without limit for CSV export)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Analytics/ExportTrailsTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trails Analytics - Export (returns all data without limit for CSV export)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

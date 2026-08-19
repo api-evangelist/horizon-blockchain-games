@@ -1,0 +1,438 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Analytics public API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "public",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetNativeTokenBalance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetNativeTokenBalance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetNativeTokenBalance queries an ethereum node for the latest native token account balance. The native token is the token of the chain the indexer is connected to, for example, ETH on Ethereum and POL on Polygon."
+        },
+        {
+          "info": {
+            "name": "GetTokenBalancesSummary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetTokenBalancesSummary",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, get the token balance summaries for an account address"
+        },
+        {
+          "info": {
+            "name": "GetTokenBalancesDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetTokenBalancesDetails",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, get the token balance details for tokens owned by an account address"
+        },
+        {
+          "info": {
+            "name": "GetTokenBalancesByContract",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetTokenBalancesByContract",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, get the token balances by a specific contract address"
+        },
+        {
+          "info": {
+            "name": "GetTokenBalances",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetTokenBalances",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the token balances for the included account address and contract address. Example on Ethereum Sepolia"
+        },
+        {
+          "info": {
+            "name": "GetTokenSupplies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetTokenSupplies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetTokenSupplies returns the set of tokenIDs used by a contract address, supporting ERC-20, ERC-721, and ERC-1155 contracts, and their respective supply as well."
+        },
+        {
+          "info": {
+            "name": "GetTokenSuppliesMap",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetTokenSuppliesMap",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, get the token supplies of the minted tokens for a contract address and token ID mapping"
+        },
+        {
+          "info": {
+            "name": "GetBalanceUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetBalanceUpdates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get balance update aggregate values -- useful for syncing balance details of a contract, ie. from Skyweaver"
+        },
+        {
+          "info": {
+            "name": "GetTransactionHistory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetTransactionHistory",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "History of mined transactions for the account which includes a list of token transfers (sent/recieved) and sent transactions from a Sequence wallet"
+        },
+        {
+          "info": {
+            "name": "FetchTransactionReceipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/FetchTransactionReceipt",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, get the transaction receipt for a specific hash after a certain number of blocks"
+        },
+        {
+          "info": {
+            "name": "FetchTransactionReceiptWithFilter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/FetchTransactionReceiptWithFilter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, get the transaction receipt for a specific hash after a certain number of blocks for a certain filter"
+        },
+        {
+          "info": {
+            "name": "SubscribeReceipts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/SubscribeReceipts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, subscribe and receive receipts based on a filter of transaction hash and transaction details"
+        },
+        {
+          "info": {
+            "name": "SubscribeEvents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/SubscribeEvents",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, subscribe and receive receipts based on a filter of transaction mints"
+        },
+        {
+          "info": {
+            "name": "SubscribeBalanceUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/SubscribeBalanceUpdates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "On Sepolia Mainnet, subscribe and receive balance updates based on the affected address, like wallet and contract address, with specific details"
+        },
+        {
+          "info": {
+            "name": "RefreshTokenMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/RefreshTokenMetadata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated -> Use RefreshContractInfo, RefreshContractTokens or RefreshAllContractTokens"
+        },
+        {
+          "info": {
+            "name": "EnqueueTokensForRefresh",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/EnqueueTokensForRefresh",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated -> RefreshContractTokens or RefreshAllContractTokens"
+        },
+        {
+          "info": {
+            "name": "GetTokenMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/GetTokenMetadata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetTokenMetadata - fetch token metadata for a particular contract and respective tokenIDs"
+        },
+        {
+          "info": {
+            "name": "GetTokenMetadataBatch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/GetTokenMetadataBatch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetTokenMetadataBatch allows you to query the token metadata of a batch of contracts and respective tokenIDs where map is contractAddress::[]tokenID => contractAddress::[]TokenMetadata\nNote, we limit each request to 50 contracts max and 50 tokens max per contract."
+        },
+        {
+          "info": {
+            "name": "SearchTokenMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/SearchTokenMetadata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "SearchTokenMetadata"
+        },
+        {
+          "info": {
+            "name": "SearchTokenIDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/SearchTokenIDs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "SearchTokenIDs"
+        },
+        {
+          "info": {
+            "name": "TokenCollectionFilters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/TokenCollectionFilters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "TokenCollectionFilters"
+        },
+        {
+          "info": {
+            "name": "GetContractInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/GetContractInfo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Contract Info -- returns contract meta-info for contracts found in registered chain's token-lists"
+        },
+        {
+          "info": {
+            "name": "GetContractInfoBatch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/GetContractInfoBatch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetContractInfoBatch"
+        },
+        {
+          "info": {
+            "name": "SearchContractInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/SearchContractInfo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search Contract Info across all chains token-lists. Similar to GetContractInfo above, but it will traverse all chains and results from all."
+        },
+        {
+          "info": {
+            "name": "SearchContractInfoBatch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/SearchContractInfoBatch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "map of contractAddress :: []ContractInfo"
+        },
+        {
+          "info": {
+            "name": "SearchTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/SearchTokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "SearchTokens"
+        },
+        {
+          "info": {
+            "name": "DirectoryGetNetworks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/DirectoryGetNetworks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Token Directory. NOTE: this only searches the 'token-directory' items. Use 'SearchContracts' or 'SearchTokens' for everything else."
+        },
+        {
+          "info": {
+            "name": "DirectoryGetCollections",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/DirectoryGetCollections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "DirectoryGetCollections"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

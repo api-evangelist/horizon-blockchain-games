@@ -1,0 +1,502 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Analytics Marketplace API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Marketplace",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/ListCurrencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCurrencies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetCollectionDetail",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCollectionDetail",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetLowestPriceOfferForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetLowestPriceOfferForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetHighestPriceOfferForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetHighestPriceOfferForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetLowestPriceListingForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetLowestPriceListingForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetHighestPriceListingForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetHighestPriceListingForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/ListListingsForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListListingsForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/ListOffersForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListOffersForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetCountOfListingsForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCountOfListingsForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetCountOfOffersForCollectible",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCountOfOffersForCollectible",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Deprecated: Please use GetLowestPriceOfferForCollectible instead.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCollectibleLowestOffer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated: Please use GetLowestPriceOfferForCollectible instead."
+        },
+        {
+          "info": {
+            "name": "Deprecated: Please use GetHighestPriceOfferForCollectible instead.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCollectibleHighestOffer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated: Please use GetHighestPriceOfferForCollectible instead."
+        },
+        {
+          "info": {
+            "name": "Deprecated: Please use GetLowestPriceListingForCollectible instead.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCollectibleLowestListing",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated: Please use GetLowestPriceListingForCollectible instead."
+        },
+        {
+          "info": {
+            "name": "Deprecated: Please use GetHighestPriceListingForCollectible instead.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCollectibleHighestListing",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated: Please use GetHighestPriceListingForCollectible instead."
+        },
+        {
+          "info": {
+            "name": "Deprecated: Please use ListListingsForCollectible instead.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCollectibleListings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated: Please use ListListingsForCollectible instead."
+        },
+        {
+          "info": {
+            "name": "Deprecated: Please use ListOffersForCollectible instead.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCollectibleOffers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated: Please use ListOffersForCollectible instead."
+        },
+        {
+          "info": {
+            "name": "checkout process",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GenerateBuyTransaction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "checkout process"
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GenerateSellTransaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GenerateSellTransaction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GenerateListingTransaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GenerateListingTransaction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GenerateOfferTransaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GenerateOfferTransaction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GenerateCancelTransaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GenerateCancelTransaction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "list of collectibles with best order for each collectible, by default this only returns collectibles with an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCollectibles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "list of collectibles with best order for each collectible, by default this only returns collectibles with an order"
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetCountOfAllCollectibles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCountOfAllCollectibles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetCountOfFilteredCollectibles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetCountOfFilteredCollectibles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetFloorOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetFloorOrder",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/ListCollectionActivities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCollectionActivities",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/ListCollectibleActivities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCollectibleActivities",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/ListCollectiblesWithLowestListing",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCollectiblesWithLowestListing",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/ListCollectiblesWithHighestOffer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/ListCollectiblesWithHighestOffer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/GetOrders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/GetOrders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/CheckoutOptionsMarketplace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/CheckoutOptionsMarketplace",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/CheckoutOptionsSalesContract",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/CheckoutOptionsSalesContract",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Marketplace/SupportedMarketplaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Marketplace/SupportedMarketplaces",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

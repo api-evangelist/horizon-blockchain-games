@@ -5,62 +5,67 @@ source: openapi/ (no official Sequence MCP server published as of 2026-07-19)
 server:
   name: horizon-blockchain-games-sequence
   transport: http
-  note: >-
-    Sequence does not publish an official hosted MCP server. This is a candidate tool list
-    derived from marquee read operations across the Sequence webrpc APIs; each tool maps to a
-    POST /rpc/<Service>/<Method> call authenticated with an X-Access-Key project access key.
+  note: Sequence does not publish an official hosted MCP server. This is a candidate tool list derived
+    from marquee read operations across the Sequence webrpc APIs; each tool maps to a POST /rpc/<Service>/<Method>
+    call authenticated with an X-Access-Key project access key.
 tools:
-  - name: getcontract
-    description: Sequence builder GetContract
-    source_operation: openapi/horizon-blockchain-games-builder-openapi-original.json#/rpc/Builder/GetContract
-  - name: listcontracts
-    description: Sequence builder ListContracts
-    source_operation: openapi/horizon-blockchain-games-builder-openapi-original.json#/rpc/Builder/ListContracts
-  - name: gettokenbalances
-    description: Sequence indexer GetTokenBalances
-    source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTokenBalances
-  - name: gettokenbalancessummary
-    description: Sequence indexer GetTokenBalancesSummary
-    source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTokenBalancesSummary
-  - name: gettransactionhistory
-    description: Sequence indexer GetTransactionHistory
-    source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTransactionHistory
-  - name: gettokensupplies
-    description: Sequence indexer GetTokenSupplies
-    source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTokenSupplies
-  - name: getswapprice
-    description: Sequence infrastructure GetSwapPrice
-    source_operation: openapi/horizon-blockchain-games-infrastructure-openapi-original.json#/rpc/API/GetSwapPrice
-  - name: getswapquote
-    description: Sequence infrastructure GetSwapQuote
-    source_operation: openapi/horizon-blockchain-games-infrastructure-openapi-original.json#/rpc/API/GetSwapQuote
-  - name: isvalidsignature
-    description: Sequence infrastructure IsValidSignature
-    source_operation: openapi/horizon-blockchain-games-infrastructure-openapi-original.json#/rpc/API/IsValidSignature
-  - name: getcollectible
-    description: Sequence marketplace GetCollectible
-    source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectible
-  - name: listlistingsforcollectible
-    description: Sequence marketplace ListListingsForCollectible
-    source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/ListListingsForCollectible
-  - name: listoffersforcollectible
-    description: Sequence marketplace ListOffersForCollectible
-    source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/ListOffersForCollectible
-  - name: getcollectiondetail
-    description: Sequence marketplace GetCollectionDetail
-    source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectionDetail
-  - name: gettokenmetadata
-    description: Sequence metadata GetTokenMetadata
-    source_operation: openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/GetTokenMetadata
-  - name: getcontractinfo
-    description: Sequence metadata GetContractInfo
-    source_operation: openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/GetContractInfo
-  - name: searchtokenmetadata
-    description: Sequence metadata SearchTokenMetadata
-    source_operation: openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/SearchTokenMetadata
-  - name: feeoptions
-    description: Sequence transactions FeeOptions
-    source_operation: openapi/horizon-blockchain-games-transactions-openapi-original.json#/rpc/Relayer/FeeOptions
-  - name: feetokens
-    description: Sequence transactions FeeTokens
-    source_operation: openapi/horizon-blockchain-games-transactions-openapi-original.json#/rpc/Relayer/FeeTokens
+- name: getcontract
+  description: Sequence builder GetContract
+  source_operation: openapi/horizon-blockchain-games-builder-openapi-original.json#/rpc/Builder/GetContract
+- name: listcontracts
+  description: Sequence builder ListContracts
+  source_operation: openapi/horizon-blockchain-games-builder-openapi-original.json#/rpc/Builder/ListContracts
+- name: gettokenbalances
+  description: Sequence indexer GetTokenBalances
+  source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTokenBalances
+- name: gettokenbalancessummary
+  description: Sequence indexer GetTokenBalancesSummary
+  source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTokenBalancesSummary
+- name: gettransactionhistory
+  description: Sequence indexer GetTransactionHistory
+  source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTransactionHistory
+- name: gettokensupplies
+  description: Sequence indexer GetTokenSupplies
+  source_operation: openapi/horizon-blockchain-games-indexer-openapi-original.json#/rpc/Indexer/GetTokenSupplies
+- name: getswapprice
+  description: Sequence infrastructure GetSwapPrice
+  source_operation: openapi/horizon-blockchain-games-infrastructure-openapi-original.json#/rpc/API/GetSwapPrice
+- name: getswapquote
+  description: Sequence infrastructure GetSwapQuote
+  source_operation: openapi/horizon-blockchain-games-infrastructure-openapi-original.json#/rpc/API/GetSwapQuote
+- name: isvalidsignature
+  description: Sequence infrastructure IsValidSignature
+  source_operation: openapi/horizon-blockchain-games-infrastructure-openapi-original.json#/rpc/API/IsValidSignature
+- name: getcollectible
+  description: Sequence marketplace GetCollectible
+  source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectible
+- name: listlistingsforcollectible
+  description: Sequence marketplace ListListingsForCollectible
+  source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/ListListingsForCollectible
+- name: listoffersforcollectible
+  description: Sequence marketplace ListOffersForCollectible
+  source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/ListOffersForCollectible
+- name: getcollectiondetail
+  description: Sequence marketplace GetCollectionDetail
+  source_operation: openapi/horizon-blockchain-games-marketplace-openapi-original.json#/rpc/Marketplace/GetCollectionDetail
+- name: gettokenmetadata
+  description: Sequence metadata GetTokenMetadata
+  source_operation: openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/GetTokenMetadata
+- name: getcontractinfo
+  description: Sequence metadata GetContractInfo
+  source_operation: openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/GetContractInfo
+- name: searchtokenmetadata
+  description: Sequence metadata SearchTokenMetadata
+  source_operation: openapi/horizon-blockchain-games-metadata-openapi-original.json#/rpc/Metadata/SearchTokenMetadata
+- name: feeoptions
+  description: Sequence transactions FeeOptions
+  source_operation: openapi/horizon-blockchain-games-transactions-openapi-original.json#/rpc/Relayer/FeeOptions
+- name: feetokens
+  description: Sequence transactions FeeTokens
+  source_operation: openapi/horizon-blockchain-games-transactions-openapi-original.json#/rpc/Relayer/FeeTokens
+deployment:
+  mode: none
+  verified: derived
+  tools: 18
+  checked: '2026-08-12'
+  source: catalog MCP census

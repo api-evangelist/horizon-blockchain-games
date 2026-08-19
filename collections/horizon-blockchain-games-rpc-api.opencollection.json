@@ -1,0 +1,497 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Analytics Rpc API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rpc",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetContract",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/GetContract",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetContract"
+        },
+        {
+          "info": {
+            "name": "ListContracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/ListContracts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "ListContracts"
+        },
+        {
+          "info": {
+            "name": "ListContractSources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/ListContractSources",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "ListContractSources"
+        },
+        {
+          "info": {
+            "name": "ListAudiences",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/ListAudiences",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Audience"
+        },
+        {
+          "info": {
+            "name": "GetAudience",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/GetAudience",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetAudience"
+        },
+        {
+          "info": {
+            "name": "CreateAudience",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/CreateAudience",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateAudience"
+        },
+        {
+          "info": {
+            "name": "UpdateAudience",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/UpdateAudience",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateAudience"
+        },
+        {
+          "info": {
+            "name": "DeleteAudience",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/DeleteAudience",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "DeleteAudience"
+        },
+        {
+          "info": {
+            "name": "AddAudienceContacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/AddAudienceContacts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Contacts"
+        },
+        {
+          "info": {
+            "name": "RemoveAudienceContacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Builder/RemoveAudienceContacts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "RemoveAudienceContacts"
+        },
+        {
+          "info": {
+            "name": "GetEtherBalance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/GetEtherBalance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Queries an ethereum node for the latest and confirm ETH balances DEPRECATED: use GetNativeTokenBalance instead"
+        },
+        {
+          "info": {
+            "name": "SyncBalance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Indexer/SyncBalance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Re-sync an incorrect token balance with the correct on-chain balance"
+        },
+        {
+          "info": {
+            "name": "IsValidSignature",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/IsValidSignature",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "TODO: we can add walletContext optional in the future when we need it NOTE: chainId can be either a number or canonical name"
+        },
+        {
+          "info": {
+            "name": "IsValidMessageSignature",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/IsValidMessageSignature",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "IsValidMessageSignature"
+        },
+        {
+          "info": {
+            "name": "IsValidTypedDataSignature",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/IsValidTypedDataSignature",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "IsValidTypedDataSignature"
+        },
+        {
+          "info": {
+            "name": "IsValidETHAuthProof",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/IsValidETHAuthProof",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "IsValidETHAuthProof"
+        },
+        {
+          "info": {
+            "name": "LinkWallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/LinkWallet",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a Payload to link a user wallet, this would require a signed message from both parent wallet (Embedded Wallet) and a linking wallet like an EOA."
+        },
+        {
+          "info": {
+            "name": "GetLinkedWallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/GetLinkedWallets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query all wallets that are linked"
+        },
+        {
+          "info": {
+            "name": "RemoveLinkedWallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/RemoveLinkedWallet",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a Payload to link a user wallet, this would require a signed message from both parent wallet (Embedded Wallet) and a linking wallet like an EOA."
+        },
+        {
+          "info": {
+            "name": "GetSwapPrice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/GetSwapPrice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": " Currency abstraction "
+        },
+        {
+          "info": {
+            "name": "GetSwapPrices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/GetSwapPrices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve swap prices for the specified ERC20 token at the address provided as 'buyCurrencyAddress'. The result will be 'null' if the user lacks sufficient funds or if there is insufficient pool liquidity."
+        },
+        {
+          "info": {
+            "name": "GetSwapQuote",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/API/GetSwapQuote",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "After selecting a swap price from 'GetSwapPrices', use this API to retrieve the transaction data needed to execute the swap on-chain."
+        },
+        {
+          "info": {
+            "name": "RefreshContractInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/RefreshContractInfo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "RefreshContractInfo"
+        },
+        {
+          "info": {
+            "name": "RefreshContractTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/RefreshContractTokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "RefreshContractTokens"
+        },
+        {
+          "info": {
+            "name": "RefreshAllContractTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/RefreshAllContractTokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "RefreshAllContractTokens"
+        },
+        {
+          "info": {
+            "name": "SearchMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/SearchMetadata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deprecated: Use SearchTokens() and SearchContracts() instead."
+        },
+        {
+          "info": {
+            "name": "SearchContracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Metadata/SearchContracts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "SearchContracts"
+        },
+        {
+          "info": {
+            "name": "GetChainID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Relayer/GetChainID",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetChainID"
+        },
+        {
+          "info": {
+            "name": "FeeTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Relayer/FeeTokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FeeTokens"
+        },
+        {
+          "info": {
+            "name": "FeeOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Relayer/FeeOptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FeeOptions"
+        },
+        {
+          "info": {
+            "name": "Gas Sponsorship",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Relayer/ListGasSponsors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Gas Sponsorship"
+        },
+        {
+          "info": {
+            "name": "POST /rpc/Relayer/AddGasSponsor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sequence.app/rpc/Relayer/AddGasSponsor",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
