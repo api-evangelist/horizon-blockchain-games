@@ -117,7 +117,7 @@ apis:
   humanURL: https://docs.sequence.xyz/api-references/indexer/overview
   baseURL: https://mainnet-indexer.sequence.app
   tags:
-  - RPC
+  - Rpc
   tags_raw:
   - Rpc
   properties:
@@ -131,7 +131,7 @@ apis:
   humanURL: https://docs.sequence.xyz/api-references/indexer/overview
   baseURL: https://mainnet-indexer.sequence.app
   tags:
-  - Secret
+  - secret
   tags_raw:
   - secret
   properties:
