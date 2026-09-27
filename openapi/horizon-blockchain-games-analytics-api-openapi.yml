@@ -7254,89 +7254,128 @@ paths:
                 - $ref: '#/components/schemas/ErrorWebrpcInternalError'
 components:
   schemas:
+    Analytics_AverageShopPurchasePrice_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalViews_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemTopProjectsByNewWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_EcosystemTopProjectsByActiveWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemDailyActiveWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemDailyNewWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemWalletsByCountry_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalMarketplaceItemsSoldByToken_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsMonthlyAverageTransactionDuration_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsDailyPaymentCompletionPercentage_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTotalActiveProjects_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    ErrorWebrpcInternalError:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcInternalError
+        code:
+          type: number
+          example: -7
+        msg:
+          type: string
+          example: internal error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    Analytics_MonthlyMarketplaceTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTransactionsByProvider_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TrailsTransactionByProvider'
+          items:
+            $ref: '#/components/schemas/TrailsTransactionByProvider'
+    Analytics_EcosystemTotalWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalMarketplaceTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
     Analytics_DailyShopVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WalletsTxnSentMonthly_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemMonthlyTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalProjectVolumeByCollection_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalMarketplaceVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyAverageTransactionDuration_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_AvgBalanceOfTransactingSequenceWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WalletsTxnSentMonthly_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_ConnectionsByOrigin_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_TrailsTransactionsByDomain_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemActiveDevelopers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_DailyViews_Response:
       type: object
       properties:
         data:
@@ -7352,17 +7391,27 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_DailyMarketplaceTransactions_Request:
+    Analytics_TrailsMonthlyActiveWallets_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalCompute_Request:
+    Analytics_MonthlyActiveWalletsBySegment_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsMonthlyPaymentCompletionPercentage_Response:
+    Analytics_TotalMarketplaceTradedCollections_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectTransactionsByChain_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_AvgBalanceOfSequenceWallets_Response:
       type: object
       properties:
         data:
@@ -7370,48 +7419,98 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTotalTransactions_Request:
+    Analytics_TopMarketplaceBuyers_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_CreditsPerDailyActiveUser_Response:
+    Analytics_EcosystemTotalDevelopers_Response:
       type: object
       properties:
         data:
           type: array
-          description: '[]MultiValueChart'
+          description: '[]Chart'
           items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_DailyUniqueVisitors_Response:
+            $ref: '#/components/schemas/Chart'
+    ChartWithPercentage:
+      type: object
+      required:
+      - label
+      - total
+      - percentage
+      properties:
+        label:
+          type: string
+        total:
+          type: number
+        percentage:
+          type: number
+    Analytics_TotalMarketplaceItemsSold_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemMonthlyTransactionVolume_Response:
       type: object
       properties:
         data:
           type: array
-          description: '[]MultiValueChart'
+          description: '[]Chart'
           items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_WalletsByOS_Request:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalProjectTransactionsByCollection_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_UserEvents_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyUniqueVisitors_Request:
+    Analytics_EcosystemWalletsCreated_Response:
       type: object
       properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyTransactingUserConversion_Request:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalMarketplaceItemsListed_Response:
       type: object
       properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
     Analytics_MarketWalletsTotal_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsTotalTransactions_Response:
+    Analytics_WalletsTotal_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemDailyActiveWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemMonthlyMarketplaces_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyMarketplaceTransactions_Response:
       type: object
       properties:
         data:
@@ -7419,35 +7518,66 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemWalletsByType_Request:
+    Analytics_MonthOnMonthTransactingUserRetention_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_ExportTrailsTransactions_Response:
+    Analytics_EcosystemTopProjectsByActiveWallets_Response:
       type: object
       properties:
         data:
           type: array
-          description: '[]TrailsTransactionDetail'
+          description: '[]MultiValueChart'
           items:
-            $ref: '#/components/schemas/TrailsTransactionDetail'
-    Analytics_MarketWalletsMonthly_Request:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_EcosystemTotalWallets_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyProjectVolume_Request:
+    Analytics_EcosystemMonthlyNewProjects_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceItemsTransacted_Request:
+    Analytics_D28RetentionByCohort_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemTopProjectsByNewWallets_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_MarketTxnEventDaily_Request:
+    Analytics_MarketplaceCollectionTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsPaymentCompletionPercentage_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTotalTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyComputeByType_Response:
+      type: object
+      properties:
+        computeStats:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_TrailsDailyActiveWallets_Request:
       type: object
       properties:
         filter:
@@ -7460,57 +7590,22 @@ components:
           description: '[]MultiValueChart'
           items:
             $ref: '#/components/schemas/MultiValueChart'
-    QueryResult:
-      type: object
-      required:
-      - collection
-      - source
-      - volumeUSD
-      - numTokens
-      - numTxns
-      properties:
-        collection:
-          type: string
-        source:
-          type: string
-        tokenId:
-          type: string
-        volumeUSD:
-          type: number
-        numTokens:
-          type: number
-        numTxns:
-          type: number
-    Analytics_AverageShopPurchasePrice_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalMarketplaceTransactions_Request:
+    Analytics_DailyProjectTransactions_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyContracts_Response:
+    Analytics_EcosystemTotalTransactionVolume_Request:
       type: object
       properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WalletsByDevice_Response:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_CreditsPerDailyActiveUser_Request:
       type: object
       properties:
-        walletStats:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_TrailsTransactionsByDomain_Request:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsTxnSentDaily_Request:
       type: object
       properties:
         filter:
@@ -7523,34 +7618,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_AverageD14Retention_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    ErrorWebrpcStreamLost:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcStreamLost
-        code:
-          type: number
-          example: -9
-        msg:
-          type: string
-          example: stream lost
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Analytics_AverageD3Retention_Response:
+    Analytics_AverageD14Retention_Response:
       type: object
       properties:
         data:
@@ -7558,12 +7626,25 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTopProjectsByTransactingUsers_Request:
+    Analytics_MarketTxnEventDaily_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_EcosystemWalletsByType_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceTransactions_Response:
+    Analytics_ExportTrailsTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyUniqueTransactingUsers_Response:
       type: object
       properties:
         data:
@@ -7571,17 +7652,230 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemMonthlyNewProjects_Request:
+    Analytics_MonthlyProjectVolumeByCollection_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_D7RetentionByCohort_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsAverageTransactionDuration_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WeekOnWeekTransactingUserRetention_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemDailyNewWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MarketWalletsMonthly_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MarketTxnEventTotal_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_D7RetentionByCohort_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemMonthlyTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTotalTransactingUsers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyShopTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTotalProjectsCreated_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalNewWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalShopItemsPurchased_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTransactionsByMode_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemDailyNewProjects_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTransactionsByProvider_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTotalMarketplaces_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyUniqueVisitors_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemActiveDevelopers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsDaily_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTotalTransactionVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalNewWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsTransactionsByRoute_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_ViewsByOS_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyTransactingWalletsBySegment_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTransactionsByCountry_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalShopItemsSoldByToken_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TokenTransactionData'
+          items:
+            $ref: '#/components/schemas/TokenTransactionData'
+    Analytics_RollingStickiness_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalMarketplaceItemsTransacted_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemActiveDevelopers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_AvgBalanceOfTransactingSequenceWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemMonthlyActiveEcoWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_UserEvents_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemTotalMarketplaces_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsMonthlyTransactingWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthOnMonthTransactingUserRetention_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsByOrigin_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
     Analytics_AverageD28Retention_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceItemsListed_Request:
       type: object
       properties:
         filter:
@@ -7608,7 +7902,7 @@ components:
         status:
           type: number
           example: 500
-    Analytics_TrailsMonthlyAverageTransactionDuration_Response:
+    Analytics_TotalMarketplaceItemsSold_Response:
       type: object
       properties:
         data:
@@ -7616,7 +7910,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TotalProjectTransactionVolume_Response:
+    Analytics_EcosystemMonthlyActiveWallets_Response:
       type: object
       properties:
         data:
@@ -7624,7 +7918,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTotalUniqueTransactingWallets_Response:
+    Analytics_EcosystemMonthlyContracts_Response:
       type: object
       properties:
         data:
@@ -7632,181 +7926,94 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TotalMarketplaceItemsSoldByToken_Response:
+    Analytics_DailyViews_Response:
       type: object
       properties:
         data:
           type: array
-          description: '[]TokenTransactionData'
+          description: '[]Chart'
           items:
-            $ref: '#/components/schemas/TokenTransactionData'
-    Analytics_WalletsTotal_Response:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsByBrowser_Response:
       type: object
       properties:
         walletStats:
           type: array
-          description: '[]Chart'
+          description: '[]ChartWithPercentage'
           items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalMarketplaceItemsSoldByToken_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalNewWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MarketWalletsTotal_Response:
-      type: object
-      properties:
-        marketStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_DailyViews_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyTransactingWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTopProjectsByNewDevelopers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TransactionVolumePerUser_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsPaymentCompletionPercentage_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
+            $ref: '#/components/schemas/ChartWithPercentage'
     Analytics_TotalShopItemsSoldByToken_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyShopTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTransactionsByMode_Request:
+    Analytics_EcosystemMonthlyActiveEcoWallets_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyTransactingWalletsBySegment_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_AverageD3Retention_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_ShopCollectionTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_DailyProjectVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsMonthlyTransactionVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsTransactionsByProvider_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsTransactionsByCountry_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]TrailsTransactionByCountry'
-          items:
-            $ref: '#/components/schemas/TrailsTransactionByCountry'
-    Analytics_EcosystemTopProjectsByNewWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_MonthlyShopVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_AverageD1Retention_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MarketTxnEventMonthly_Response:
-      type: object
-      properties:
-        marketStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyNewWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyUniqueVisitors_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyNewWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
     Analytics_TrailsTotalUniqueTransactingWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsDailyTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalMarketplaceTransactingUsers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsTransactionsByMode_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TrailsTransactionByMode'
+          items:
+            $ref: '#/components/schemas/TrailsTransactionByMode'
+    Analytics_EcosystemMonthlyTransactionVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    ErrorWebrpcBadResponse:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadResponse
+        code:
+          type: number
+          example: -5
+        msg:
+          type: string
+          example: bad response
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    Analytics_EcosystemTopProjectsByTransactionVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_DailyMarketplaceTransactions_Request:
       type: object
       properties:
         filter:
@@ -7819,7 +8026,593 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_WalletsTotal_Request:
+    Analytics_MarketplaceCollectionTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_DailyUniqueVisitors_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_TotalProjectTransactionsByCollection_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsMonthlyTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TopShopBuyers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyShopTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemWalletsByType_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_WalletsByBrowser_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemWalletsByOS_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    TrailsTransactionByProvider:
+      type: object
+      required:
+      - providerSwap
+      - providerBridge
+      - uniqueTransactingUsers
+      - paymentsStarted
+      - paymentsCompleted
+      - completionPercent
+      - avgTxnDuration
+      - providerFees
+      - totalFees
+      - totalVolume
+      properties:
+        providerSwap:
+          type: string
+        providerBridge:
+          type: string
+        uniqueTransactingUsers:
+          type: number
+        paymentsStarted:
+          type: number
+        paymentsCompleted:
+          type: number
+        completionPercent:
+          type: number
+        avgTxnDuration:
+          type: number
+        providerFees:
+          type: number
+        totalFees:
+          type: number
+        totalVolume:
+          type: number
+    Analytics_DailyTransactingUserConversion_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_D28RetentionByCohort_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyProjectVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsTxnSentMonthly_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    TrailsTransactionByMode:
+      type: object
+      required:
+      - mode
+      - uniqueTransactingUsers
+      - paymentsStarted
+      - paymentsCompleted
+      - completionPercent
+      - totalFees
+      - totalVolume
+      properties:
+        mode:
+          type: string
+        uniqueTransactingUsers:
+          type: number
+        paymentsStarted:
+          type: number
+        paymentsCompleted:
+          type: number
+        completionPercent:
+          type: number
+        totalFees:
+          type: number
+        totalVolume:
+          type: number
+    Analytics_DailyTransactingUserConversion_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyTransactingUserConversion_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_AverageD7Retention_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsByOrigin_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_D3RetentionByCohort_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_AverageDAU_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_ViewsByDevice_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_TrailsDailyTransactingWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemTotalProjects_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemMonthlyTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MarketTxnEventTotal_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyShopTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_AverageMarketplaceTransactionPrice_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalMarketplaceItemsSoldByToken_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TokenTransactionData'
+          items:
+            $ref: '#/components/schemas/TokenTransactionData'
+    Analytics_AverageD7Retention_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemDailyNewProjects_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_RepeatingTransactingUserPercentage_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemWalletsByLoginMethod_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsByCountry_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_DailyShopTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalWalletTxnConversionRate_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyShopVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Chart:
+      type: object
+      required:
+      - value
+      - label
+      properties:
+        value:
+          type: number
+        label:
+          type: string
+    Analytics_MonthlyProjectVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsTotalTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyWalletTxnConversionRate_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyTransactingWalletsBySegment_Response:
+      type: object
+      properties:
+        data:
+          type: object
+          description: map<string,[]Chart>
+          additionalProperties:
+            type: array
+            description: '[]Chart'
+            items:
+              $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyProjectTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyUniqueVisitors_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTotalContracts_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsByCountry_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTopProjectsByTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_TrailsPaymentCompletionPercentage_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalProjectVolumeByCollection_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_D1RetentionByCohort_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_AverageD1Retention_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_ViewsByCountry_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsTxnSentTotal_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_AverageMarketplaceTransactionPrice_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsTopTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TrailsTransactionDetail'
+          items:
+            $ref: '#/components/schemas/TrailsTransactionDetail'
+    Analytics_EcosystemMonthlyNewWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsDailyAverageTransactionDuration_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyComputeByService_Response:
+      type: object
+      properties:
+        computeStats:
+          type: object
+          description: map<string,[]Chart>
+          additionalProperties:
+            type: array
+            description: '[]Chart'
+            items:
+              $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemTotalTransactionVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WeeklyActiveWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_ShopCollectionTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_EcosystemTotalProjects_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsTransactionsByAmount_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalMarketplaceItemsOffered_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    ErrorWebrpcEndpoint:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcEndpoint
+        code:
+          type: number
+          example: 0
+        msg:
+          type: string
+          example: endpoint error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Analytics_TopMarketplaceBuyers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemMonthlyContracts_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTopProjectsByNewDevelopers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemMonthlyActiveWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsDailyTransactionVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemActiveMarketplaces_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_DailyViews_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyProjectTransactionsByCollection_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsDailyAverageTransactionDuration_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    AnalyticsProjectType:
+      type: string
+      description: Represented as string on the server side
+      enum:
+      - ALL
+      - CREATED
+      - RELATED
+    Analytics_MonthlyActiveWalletsBySegment_Response:
+      type: object
+      properties:
+        data:
+          type: object
+          description: map<string,[]Chart>
+          additionalProperties:
+            type: array
+            description: '[]Chart'
+            items:
+              $ref: '#/components/schemas/Chart'
+    Analytics_ComputeByService_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectVolumeByChain_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_RepeatingTransactingUserPercentage_Request:
       type: object
       properties:
         filter:
@@ -7832,12 +8625,17 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTotalTransactionVolume_Request:
+    Analytics_TotalProjectVolumeByCollection_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTotalActiveProjects_Response:
+    Analytics_TrailsMonthlyAverageTransactionDuration_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_RollingStickiness_Response:
       type: object
       properties:
         data:
@@ -7845,11 +8643,6 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalActiveProjects_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
     TrailsTransactionDetail:
       type: object
       required:
@@ -7896,538 +8689,11 @@ components:
           type: number
         totalVolume:
           type: number
-    Analytics_ConnectionsByOrigin_Request:
+    Analytics_TrailsDailyTransactionVolume_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyComputeByService_Response:
-      type: object
-      properties:
-        computeStats:
-          type: object
-          description: map<string,[]Chart>
-          additionalProperties:
-            type: array
-            description: '[]Chart'
-            items:
-              $ref: '#/components/schemas/Chart'
-    Analytics_TotalProjectTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    ErrorWebrpcBadResponse:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadResponse
-        code:
-          type: number
-          example: -5
-        msg:
-          type: string
-          example: bad response
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    Analytics_MonthlyTransactingWalletsBySegment_Response:
-      type: object
-      properties:
-        data:
-          type: object
-          description: map<string,[]Chart>
-          additionalProperties:
-            type: array
-            description: '[]Chart'
-            items:
-              $ref: '#/components/schemas/Chart'
-    Analytics_RollingStickiness_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_GetOrderbookCollections_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]QueryResult'
-          items:
-            $ref: '#/components/schemas/QueryResult'
-    Analytics_MonthlyShopTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalProjectTransactionsByCollection_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_DailyNewWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Chart:
-      type: object
-      required:
-      - value
-      - label
-      properties:
-        value:
-          type: number
-        label:
-          type: string
-    Analytics_AverageMarketplaceTransactionPrice_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalProjectVolumeByChain_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsByDevice_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_CreditsPerMonthlyActiveUser_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsMonthly_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemMonthlyActiveWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTransactionsByMode_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]TrailsTransactionByMode'
-          items:
-            $ref: '#/components/schemas/TrailsTransactionByMode'
-    Analytics_TrailsDailyTransactingWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_RollingStickiness_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyNewWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalViews_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemWalletsByDevice_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemDailyNewWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsMonthlyActiveWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_ShopCollectionTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsTransactionsByRoute_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsByOS_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_TrailsAverageTransactionDuration_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsByType_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_AverageD14Retention_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsDailyAverageTransactionDuration_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MarketplaceCollectionTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyMarketplaceTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TopMarketplaceSellers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    ErrorWebrpcBadRoute:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadRoute
-        code:
-          type: number
-          example: -2
-        msg:
-          type: string
-          example: bad route
-        cause:
-          type: string
-        status:
-          type: number
-          example: 404
-    Analytics_WalletsByBrowser_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceTransactingUsers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyPaymentCompletionPercentage_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    ErrorWebrpcEndpoint:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcEndpoint
-        code:
-          type: number
-          example: 0
-        msg:
-          type: string
-          example: endpoint error
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Analytics_AverageD1Retention_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalProjectsCreated_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_D1RetentionByCohort_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TransactingUserConversion_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_D1RetentionByCohort_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTransactionsByAmount_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsTransactionsByProvider_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]TrailsTransactionByProvider'
-          items:
-            $ref: '#/components/schemas/TrailsTransactionByProvider'
-    Analytics_EcosystemTopProjectsByDeveloperActivity_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyPaymentCompletionPercentage_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    QueryFilter:
-      type: object
-      properties:
-        projectId:
-          type: number
-        ecosystemId:
-          type: number
-        startDate:
-          type: string
-        endDate:
-          type: string
-        dateInterval:
-          $ref: '#/components/schemas/DateInterval'
-        collections:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        tokenId:
-          type: string
-        projectType:
-          $ref: '#/components/schemas/AnalyticsProjectType'
-    Analytics_D28RetentionByCohort_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_CreditsPerMonthlyActiveUser_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_TotalTransactingUsers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyProjectVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_DailyMarketplaceVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_D14RetentionByCohort_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTopProjectsByActiveWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MarketTxnEventTotal_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemDailyNewProjects_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    AnalyticsProjectType:
-      type: string
-      description: Represented as string on the server side
-      enum:
-      - ALL
-      - CREATED
-      - RELATED
-    Analytics_TotalShopItemsSoldByToken_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]TokenTransactionData'
-          items:
-            $ref: '#/components/schemas/TokenTransactionData'
-    Analytics_DailyShopTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceItemsSold_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemWalletsByOS_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_TrailsMonthlyTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_DailyShopVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalShopItemsPurchased_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WalletsTxnSentTotal_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    TrailsTransactionByMode:
-      type: object
-      required:
-      - mode
-      - uniqueTransactingUsers
-      - paymentsStarted
-      - paymentsCompleted
-      - completionPercent
-      - totalFees
-      - totalVolume
-      properties:
-        mode:
-          type: string
-        uniqueTransactingUsers:
-          type: number
-        paymentsStarted:
-          type: number
-        paymentsCompleted:
-          type: number
-        completionPercent:
-          type: number
-        totalFees:
-          type: number
-        totalVolume:
-          type: number
     ErrorWebrpcBadRequest:
       type: object
       required:
@@ -8450,7 +8716,548 @@ components:
         status:
           type: number
           example: 400
+    Analytics_TrailsMonthlyTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_AverageD1Retention_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyMarketplaceVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    ErrorWebrpcStreamLost:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcStreamLost
+        code:
+          type: number
+          example: -9
+        msg:
+          type: string
+          example: stream lost
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Analytics_TopMarketplaceSellers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTopProjectsByTransactingUsers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTransactionsByRoute_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TrailsTransactionByRoute'
+          items:
+            $ref: '#/components/schemas/TrailsTransactionByRoute'
+    Analytics_EcosystemTotalTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalMarketplaceTradedCollections_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_AverageStickiness_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MarketWalletsDaily_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_D14RetentionByCohort_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsDailyTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalShopPurchasers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalMarketplaceVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MarketTxnEventDaily_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyWalletTxnConversionRate_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_CreditsPerMonthlyActiveUser_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_D3RetentionByCohort_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_AverageD14Retention_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalWalletTxnConversionRate_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_ActiveSessions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyMarketplaceVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TopShopBuyers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    QueryResult:
+      type: object
+      required:
+      - collection
+      - source
+      - volumeUSD
+      - numTokens
+      - numTxns
+      properties:
+        collection:
+          type: string
+        source:
+          type: string
+        tokenId:
+          type: string
+        volumeUSD:
+          type: number
+        numTokens:
+          type: number
+        numTxns:
+          type: number
+    Analytics_DailyMarketplaceTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_CreditsPerDailyActiveUser_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_TrailsMonthlyActiveWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsByOS_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    MultiValueChart:
+      type: object
+      required:
+      - value
+      - label
+      properties:
+        value:
+          type: object
+          description: map<string,float64>
+          additionalProperties:
+            type: number
+        label:
+          type: string
+    Analytics_EcosystemTopProjectsByDeveloperActivity_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    TrailsTransactionByCountry:
+      type: object
+      required:
+      - country
+      - transactingWallets
+      - paymentsCompleted
+      - completionPercent
+      - totalVolume
+      properties:
+        country:
+          type: string
+        transactingWallets:
+          type: number
+        paymentsCompleted:
+          type: number
+        completionPercent:
+          type: number
+        totalVolume:
+          type: number
+    Analytics_EcosystemTotalTransactingUsers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemWalletsByDevice_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MarketWalletsTotal_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_GetOrderbookCollections_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyUniqueTransactingUsers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTopProjectsByTransactingUsers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_MonthlyUniqueTransactingUsers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_DailyNewWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    ErrorWebrpcBadMethod:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadMethod
+        code:
+          type: number
+          example: -3
+        msg:
+          type: string
+          example: bad method
+        cause:
+          type: string
+        status:
+          type: number
+          example: 405
+    Analytics_MonthlyNewWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_D14RetentionByCohort_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_ConnectionsByOrigin_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalShopVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsDailyTransactingWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsByDevice_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_DailyMarketplaceVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTopProjectsByTransactionVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectTransactionVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsMonthly_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectVolumeByToken_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
     Analytics_EcosystemTotalContracts_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalViews_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MarketWalletsMonthly_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsByType_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_EcosystemMonthlyTransactingUsers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalShopVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalShopPurchasers_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemMonthlyNewProjects_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TotalProjectTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyComputeByType_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_WalletsTxnSentMonthly_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsTotalTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MarketTxnEventMonthly_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TransactionVolumePerTransactingUser_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyComputeByService_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectVolumeByToken_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemActiveMarketplaces_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_ExportTrailsTransactions_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TrailsTransactionDetail'
+          items:
+            $ref: '#/components/schemas/TrailsTransactionDetail'
+    Analytics_TrailsTotalTransactionVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MarketTxnEventMonthly_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyShopVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_ViewsByDevice_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyShopVolume_Response:
       type: object
       properties:
         data:
@@ -8466,237 +9273,6 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyProjectTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsByBrowser_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_EcosystemMonthlyActiveEcoWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTopProjectsByActiveWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_EcosystemTotalProjects_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyActiveWalletsBySegment_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceTransactingUsers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsMonthlyTransactingWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyMarketplaces_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_DailyWalletTxnConversionRate_Response:
-      type: object
-      properties:
-        marketStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WalletsByOrigin_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_EcosystemTotalTransactionVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyActiveWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemWalletsByBrowser_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TransactingUserConversion_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyWalletTxnConversionRate_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthOnMonthTransactingUserRetention_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTotalTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemActiveMarketplaces_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTopProjectsByNewDevelopers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_TotalMarketplaceItemsSold_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsTransactionsByCountry_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyTransactingUserConversion_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyTransactingUserConversion_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_AvgBalanceOfSequenceWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalShopVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemDailyActiveWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_CreditsPerDailyActiveUser_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MarketWalletsDaily_Response:
-      type: object
-      properties:
-        marketStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_ActiveSessions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyProjectTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyUniqueTransactingUsers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WalletsTxnSentDaily_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsByOrigin_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTotalWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
     Analytics_TransactionVolumePerUser_Response:
       type: object
       properties:
@@ -8705,6 +9281,19 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
+    Analytics_DailyProjectVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsTxnSentTotal_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
     Analytics_TrailsAverageTransactionDuration_Response:
       type: object
       properties:
@@ -8713,7 +9302,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_D7RetentionByCohort_Response:
+    Analytics_EcosystemMonthlyMarketplaces_Response:
       type: object
       properties:
         data:
@@ -8721,7 +9310,33 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTransactionsByAmount_Response:
+    Analytics_MonthlyWalletTxnConversionRate_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyProjectTransactionsByCollection_Response:
+      type: object
+      properties:
+        data:
+          type: object
+          description: map<string,[]Chart>
+          additionalProperties:
+            type: array
+            description: '[]Chart'
+            items:
+              $ref: '#/components/schemas/Chart'
+    Analytics_TotalShopTransactions_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTotalProjectsCreated_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemWalletsByLoginMethod_Response:
       type: object
       properties:
         data:
@@ -8729,121 +9344,12 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyMarketplaceVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemWalletsByOS_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyProjectTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyMarketplaceTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalCompute_Response:
-      type: object
-      properties:
-        computeStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyMarketplaceVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsMonthlyAverageTransactionDuration_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MarketTxnEventTotal_Response:
-      type: object
-      properties:
-        marketStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_DailyComputeByType_Response:
-      type: object
-      properties:
-        computeStats:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_EcosystemActiveMarketplaces_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalShopTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WeekOnWeekTransactingUserRetention_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalDevelopers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MarketWalletsDaily_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_AvgBalanceOfTransactingSequenceWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
     Analytics_TrailsMonthlyPaymentCompletionPercentage_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_WeekOnWeekTransactingUserRetention_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyUniqueTransactingUsers_Response:
+    Analytics_TopMarketplaceSellers_Response:
       type: object
       properties:
         data:
@@ -8851,103 +9357,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemMonthlyNewProjects_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTransactionsByRoute_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]TrailsTransactionByRoute'
-          items:
-            $ref: '#/components/schemas/TrailsTransactionByRoute'
-    Analytics_TotalProjectVolumeByToken_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    TrailsTransactionByProvider:
-      type: object
-      required:
-      - providerSwap
-      - providerBridge
-      - uniqueTransactingUsers
-      - paymentsStarted
-      - paymentsCompleted
-      - completionPercent
-      - avgTxnDuration
-      - providerFees
-      - totalFees
-      - totalVolume
-      properties:
-        providerSwap:
-          type: string
-        providerBridge:
-          type: string
-        uniqueTransactingUsers:
-          type: number
-        paymentsStarted:
-          type: number
-        paymentsCompleted:
-          type: number
-        completionPercent:
-          type: number
-        avgTxnDuration:
-          type: number
-        providerFees:
-          type: number
-        totalFees:
-          type: number
-        totalVolume:
-          type: number
-    Analytics_ExportTrailsTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTopProjectsByTransactionVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_MonthlyUniqueTransactingUsers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_ActiveSessions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalMarketplaces_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyMarketplaces_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyShopVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsPaymentCompletionPercentage_Response:
+    Analytics_TotalTransactingUsers_Response:
       type: object
       properties:
         data:
@@ -8977,25 +9387,7 @@ components:
         status:
           type: number
           example: 400
-    Analytics_TrailsMonthlyTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalProjectTransactionsByToken_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_AvgBalanceOfSequenceWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsDaily_Response:
+    Analytics_WalletsTxnSentDaily_Response:
       type: object
       properties:
         walletStats:
@@ -9003,23 +9395,22 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTopProjectsByTransactingUsers_Response:
+    Analytics_WalletsTotal_Request:
       type: object
       properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_MarketplaceCollectionTransactions_Response:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectTransactionVolume_Request:
       type: object
       properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_TotalShopVolume_Response:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalMarketplaceItemsOffered_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_AverageDAU_Response:
       type: object
       properties:
         data:
@@ -9027,7 +9418,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemDailyNewProjects_Response:
+    Analytics_TotalMarketplaceVolume_Response:
       type: object
       properties:
         data:
@@ -9035,17 +9426,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_GetOrderbookCollections_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalViews_Response:
+    Analytics_WeeklyActiveWallets_Response:
       type: object
       properties:
         data:
@@ -9053,16 +9434,19 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalContracts_Request:
+    Analytics_EcosystemTopProjectsByTransactions_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TopShopBuyers_Request:
+    Analytics_TotalMarketplaceItemsPurchased_Response:
       type: object
       properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
     Analytics_EcosystemMonthlyTransactingUsers_Response:
       type: object
       properties:
@@ -9071,7 +9455,37 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TransactionVolumePerTransactingUser_Response:
+    Analytics_TotalCompute_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalMarketplaceItemsPurchased_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_CreditsPerMonthlyActiveUser_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_AvgBalanceOfTransactingSequenceWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    DateInterval:
+      type: string
+      description: Represented as uint16 on the server side
+      enum:
+      - DAY
+      - WEEK
+      - MONTH
+    Analytics_TotalShopItemsPurchased_Response:
       type: object
       properties:
         data:
@@ -9087,33 +9501,12 @@ components:
           description: '[]MultiValueChart'
           items:
             $ref: '#/components/schemas/MultiValueChart'
-    Analytics_MonthOnMonthTransactingUserRetention_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TopMarketplaceSellers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalProjectTransactionsByCollection_Request:
+    Analytics_ShopCollectionTransactions_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalShopTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_D14RetentionByCohort_Response:
+    Analytics_TotalMarketplaceTransactions_Response:
       type: object
       properties:
         data:
@@ -9121,7 +9514,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TrailsDailyTransactionVolume_Response:
+    Analytics_TransactionVolumePerTransactingUser_Response:
       type: object
       properties:
         data:
@@ -9129,12 +9522,39 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemActiveDevelopers_Request:
+    Analytics_TransactingUserConversion_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_D3RetentionByCohort_Response:
+    ErrorWebrpcBadRoute:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadRoute
+        code:
+          type: number
+          example: -2
+        msg:
+          type: string
+          example: bad route
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    Analytics_TransactionVolumePerUser_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectTransactions_Response:
       type: object
       properties:
         data:
@@ -9142,12 +9562,101 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemDailyNewWallets_Request:
+    Analytics_TrailsDailyActiveWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_DailyMarketplaceVolume_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsMonthlyPaymentCompletionPercentage_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsDaily_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_MonthlyTransactingUserConversion_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    ErrorWebrpcRequestFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcRequestFailed
+        code:
+          type: number
+          example: -1
+        msg:
+          type: string
+          example: request failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Analytics_MonthlyProjectVolumeByCollection_Response:
+      type: object
+      properties:
+        data:
+          type: object
+          description: map<string,[]Chart>
+          additionalProperties:
+            type: array
+            description: '[]Chart'
+            items:
+              $ref: '#/components/schemas/Chart'
+    Analytics_TrailsMonthlyTransactingWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_ViewsByOS_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_EcosystemTotalDevelopers_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceTradedCollections_Response:
+    Analytics_AverageShopPurchasePrice_Response:
       type: object
       properties:
         data:
@@ -9163,12 +9672,12 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TotalWalletTxnConversionRate_Request:
+    Analytics_TotalTransactingUsers_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_ViewsByOS_Response:
+    Analytics_EcosystemWalletsByDevice_Response:
       type: object
       properties:
         data:
@@ -9176,37 +9685,6 @@ components:
           description: '[]ChartWithPercentage'
           items:
             $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_TotalProjectTransactionsByChain_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemDailyActiveWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_AverageDAU_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsMonthlyActiveWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceItemsPurchased_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
     Analytics_ViewsByCountry_Response:
       type: object
       properties:
@@ -9215,86 +9693,7 @@ components:
           description: '[]ChartWithPercentage'
           items:
             $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_EcosystemWalletsByType_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_EcosystemWalletsByCountry_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyProjectVolumeByCollection_Response:
-      type: object
-      properties:
-        data:
-          type: object
-          description: map<string,[]Chart>
-          additionalProperties:
-            type: array
-            description: '[]Chart'
-            items:
-              $ref: '#/components/schemas/Chart'
-    Analytics_RepeatingTransactingUserPercentage_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTopTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]TrailsTransactionDetail'
-          items:
-            $ref: '#/components/schemas/TrailsTransactionDetail'
-    Analytics_DailyShopTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_AverageD7Retention_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemMonthlyContracts_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalMarketplaceVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_D3RetentionByCohort_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyWalletTxnConversionRate_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsTxnSentDaily_Response:
+    Analytics_WalletsMonthly_Response:
       type: object
       properties:
         walletStats:
@@ -9302,392 +9701,6 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TotalMarketplaceItemsOffered_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyTransactionVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsTotalTransactionVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalProjectTransactionsByChain_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyComputeByService_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsTopTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalShopItemsPurchased_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTopProjectsByTransactionVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    TokenTransactionData:
-      type: object
-      required:
-      - collectionId
-      - collectionName
-      - tokenId
-      - tokenName
-      - itemQuantities
-      properties:
-        collectionId:
-          type: string
-        collectionName:
-          type: string
-        tokenId:
-          type: string
-        tokenName:
-          type: string
-        itemQuantities:
-          type: number
-    Analytics_TotalProjectTransactionsByToken_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyTransactingUserConversion_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalProjectVolumeByToken_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    ChartWithPercentage:
-      type: object
-      required:
-      - label
-      - total
-      - percentage
-      properties:
-        label:
-          type: string
-        total:
-          type: number
-        percentage:
-          type: number
-    Analytics_EcosystemTotalMarketplaces_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyActiveWalletsBySegment_Response:
-      type: object
-      properties:
-        data:
-          type: object
-          description: map<string,[]Chart>
-          additionalProperties:
-            type: array
-            description: '[]Chart'
-            items:
-              $ref: '#/components/schemas/Chart'
-    Analytics_TotalMarketplaceItemsListed_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemMonthlyTransactingUsers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsByType_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_D7RetentionByCohort_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MonthlyProjectTransactionsByCollection_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_AverageStickiness_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyTransactionVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_AverageD7Retention_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyTransactionVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalShopPurchasers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyComputeByType_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalProjectTransactionVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TransactionVolumePerTransactingUser_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TopMarketplaceBuyers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    TrailsTransactionByCountry:
-      type: object
-      required:
-      - country
-      - transactingWallets
-      - paymentsCompleted
-      - completionPercent
-      - totalVolume
-      properties:
-        country:
-          type: string
-        transactingWallets:
-          type: number
-        paymentsCompleted:
-          type: number
-        completionPercent:
-          type: number
-        totalVolume:
-          type: number
-    Analytics_WalletsByCountry_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_ViewsByDevice_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_AverageMarketplaceTransactionPrice_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemWalletsByLoginMethod_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemWalletsByLoginMethod_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TopMarketplaceBuyers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_UserEvents_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    MultiValueChart:
-      type: object
-      required:
-      - value
-      - label
-      properties:
-        value:
-          type: object
-          description: map<string,float64>
-          additionalProperties:
-            type: number
-        label:
-          type: string
-    Analytics_EcosystemMonthlyTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalTransactingUsers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WalletsDaily_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemWalletsByBrowser_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_TotalShopPurchasers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TrailsMonthlyTransactingWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_ComputeByService_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTopProjectsByDeveloperActivity_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_DailyProjectVolume_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_ViewsByCountry_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TrailsDailyActiveWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WalletsByCountry_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_ViewsByOS_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TopShopBuyers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTopProjectsByTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_MonthlyProjectTransactionsByCollection_Response:
-      type: object
-      properties:
-        data:
-          type: object
-          description: map<string,[]Chart>
-          additionalProperties:
-            type: array
-            description: '[]Chart'
-            items:
-              $ref: '#/components/schemas/Chart'
     TrailsTransactionByRoute:
       type: object
       required:
@@ -9722,7 +9735,25 @@ components:
           type: number
         totalVolume:
           type: number
-    Analytics_TotalMarketplaceItemsOffered_Response:
+    Analytics_EcosystemWalletsCreated_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTopProjectsByNewDevelopers_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]MultiValueChart'
+          items:
+            $ref: '#/components/schemas/MultiValueChart'
+    Analytics_EcosystemTotalActiveProjects_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectTransactionsByToken_Response:
       type: object
       properties:
         data:
@@ -9730,52 +9761,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_WalletsTxnSentTotal_Response:
-      type: object
-      properties:
-        walletStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    ErrorWebrpcBadMethod:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadMethod
-        code:
-          type: number
-          example: -3
-        msg:
-          type: string
-          example: bad method
-        cause:
-          type: string
-        status:
-          type: number
-          example: 405
-    Analytics_EcosystemWalletsCreated_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTopProjectsByTransactions_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTotalProjectsCreated_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalWalletTxnConversionRate_Response:
+    Analytics_MarketWalletsDaily_Response:
       type: object
       properties:
         marketStats:
@@ -9783,19 +9769,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    DateInterval:
-      type: string
-      description: Represented as uint16 on the server side
-      enum:
-      - DAY
-      - WEEK
-      - MONTH
-    Analytics_MonthlyProjectVolumeByCollection_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_D28RetentionByCohort_Response:
+    Analytics_TrailsTransactionsByAmount_Response:
       type: object
       properties:
         data:
@@ -9803,6 +9777,126 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
+    Analytics_TotalMarketplaceItemsListed_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyWalletTxnConversionRate_Response:
+      type: object
+      properties:
+        marketStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WalletsByDevice_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTotalUniqueTransactingWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsTransactionsByDomain_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemWalletsByOS_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsTransactionsByDomain_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TrailsDailyPaymentCompletionPercentage_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_TrailsMonthlyTransactionVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalCompute_Response:
+      type: object
+      properties:
+        computeStats:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_WeekOnWeekTransactingUserRetention_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    TokenTransactionData:
+      type: object
+      required:
+      - collectionId
+      - collectionName
+      - tokenId
+      - tokenName
+      - itemQuantities
+      properties:
+        collectionId:
+          type: string
+        collectionName:
+          type: string
+        tokenId:
+          type: string
+        tokenName:
+          type: string
+        itemQuantities:
+          type: number
+    Analytics_AvgBalanceOfSequenceWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_AverageD3Retention_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemWalletsByBrowser_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_MonthlyProjectVolume_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_AverageD3Retention_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
     Analytics_EcosystemWalletsByCountry_Response:
       type: object
       properties:
@@ -9811,128 +9905,52 @@ components:
           description: '[]ChartWithPercentage'
           items:
             $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_WalletsMonthly_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    ErrorWebrpcRequestFailed:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcRequestFailed
-        code:
-          type: number
-          example: -1
-        msg:
-          type: string
-          example: request failed
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Analytics_EcosystemTotalTransactingUsers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_DailyMarketplaceTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
     Analytics_DailyUniqueTransactingUsers_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemWalletsCreated_Response:
+    QueryFilter:
       type: object
       properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_TotalProjectVolumeByCollection_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTotalTransactingUsers_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTopProjectsByNewWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_WeeklyActiveWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalNewWallets_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTotalTransactionVolume_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    ErrorWebrpcInternalError:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcInternalError
-        code:
+        projectId:
           type: number
-          example: -7
-        msg:
-          type: string
-          example: internal error
-        cause:
-          type: string
-        status:
+        ecosystemId:
           type: number
-          example: 500
-    Analytics_AverageShopPurchasePrice_Request:
+        startDate:
+          type: string
+        endDate:
+          type: string
+        dateInterval:
+          $ref: '#/components/schemas/DateInterval'
+        collections:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        tokenId:
+          type: string
+        projectType:
+          $ref: '#/components/schemas/AnalyticsProjectType'
+    Analytics_TrailsTransactionsByCountry_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]TrailsTransactionByCountry'
+          items:
+            $ref: '#/components/schemas/TrailsTransactionByCountry'
+    Analytics_WalletsByType_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyActiveWallets_Request:
+    Analytics_TrailsTopTransactions_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemMonthlyActiveEcoWallets_Response:
+    Analytics_TransactingUserConversion_Response:
       type: object
       properties:
         data:
@@ -9940,24 +9958,84 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_TotalMarketplaceTradedCollections_Request:
+    Analytics_ActiveSessions_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
-    Analytics_MarketWalletsMonthly_Response:
+    Analytics_WalletsByOS_Request:
       type: object
       properties:
-        marketStats:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectTransactionsByToken_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_DailyNewWallets_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_EcosystemTopProjectsByDeveloperActivity_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/QueryFilter'
+    Analytics_D1RetentionByCohort_Response:
+      type: object
+      properties:
+        data:
           type: array
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_ViewsByDevice_Request:
+    Analytics_ConnectionsByOrigin_Response:
+      type: object
+      properties:
+        walletStats:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_GetOrderbookCollections_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]QueryResult'
+          items:
+            $ref: '#/components/schemas/QueryResult'
+    Analytics_TotalMarketplaceTransactingUsers_Request:
       type: object
       properties:
         filter:
           $ref: '#/components/schemas/QueryFilter'
+    Analytics_TotalProjectTransactionsByChain_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
+    Analytics_EcosystemWalletsByBrowser_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]ChartWithPercentage'
+          items:
+            $ref: '#/components/schemas/ChartWithPercentage'
+    Analytics_EcosystemMonthlyNewWallets_Response:
+      type: object
+      properties:
+        data:
+          type: array
+          description: '[]Chart'
+          items:
+            $ref: '#/components/schemas/Chart'
     Analytics_AverageStickiness_Response:
       type: object
       properties:
@@ -9966,7 +10044,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_DailyMarketplaceVolume_Response:
+    Analytics_TotalShopTransactions_Response:
       type: object
       properties:
         data:
@@ -9974,7 +10052,7 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_DailyNewWallets_Response:
+    Analytics_MonthlyProjectTransactions_Response:
       type: object
       properties:
         data:
@@ -9982,81 +10060,3 @@ components:
           description: '[]Chart'
           items:
             $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemWalletsByDevice_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]ChartWithPercentage'
-          items:
-            $ref: '#/components/schemas/ChartWithPercentage'
-    Analytics_TotalMarketplaceItemsPurchased_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MonthlyWalletTxnConversionRate_Response:
-      type: object
-      properties:
-        marketStats:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_EcosystemTotalProjects_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_AverageDAU_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_MarketTxnEventDaily_Response:
-      type: object
-      properties:
-        marketStats:
-          type: array
-          description: '[]MultiValueChart'
-          items:
-            $ref: '#/components/schemas/MultiValueChart'
-    Analytics_RepeatingTransactingUserPercentage_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_UserEvents_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_EcosystemTotalDevelopers_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'
-    Analytics_TotalProjectTransactions_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_WeeklyActiveWallets_Response:
-      type: object
-      properties:
-        data:
-          type: array
-          description: '[]Chart'
-          items:
-            $ref: '#/components/schemas/Chart'
-    Analytics_MarketTxnEventMonthly_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/QueryFilter'

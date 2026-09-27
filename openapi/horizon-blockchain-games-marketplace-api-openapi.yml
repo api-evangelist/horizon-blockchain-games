@@ -2024,9 +2024,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Marketplace_ListCurrencies_Request:
+    Marketplace_GetFloorOrder_Request:
       type: object
-    ErrorNotImplemented:
+      properties:
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/CollectiblesFilter'
+    ErrorWebrpcServerPanic:
       type: object
       required:
       - error
@@ -2036,688 +2041,30 @@ components:
       properties:
         error:
           type: string
-          example: NotImplemented
+          example: WebrpcServerPanic
         code:
           type: number
-          example: 9999
+          example: -6
         msg:
           type: string
-          example: Not Implemented
+          example: server panic
         cause:
           type: string
         status:
           type: number
           example: 500
-    ErrorInvalidTier:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: InvalidTier
-        code:
-          type: number
-          example: 3003
-        msg:
-          type: string
-          example: Invalid subscription tier
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    SortBy:
-      type: object
-      required:
-      - column
-      - order
-      properties:
-        column:
-          type: string
-        order:
-          $ref: '#/components/schemas/SortOrder'
-    Marketplace_GenerateBuyTransaction_Request:
-      type: object
-      properties:
-        collectionAddress:
-          type: string
-        buyer:
-          type: string
-        marketplace:
-          $ref: '#/components/schemas/MarketplaceKind'
-        ordersData:
-          type: array
-          description: '[]OrderData'
-          items:
-            $ref: '#/components/schemas/OrderData'
-        additionalFees:
-          type: array
-          description: '[]AdditionalFee'
-          items:
-            $ref: '#/components/schemas/AdditionalFee'
-        walletType:
-          $ref: '#/components/schemas/WalletKind'
-    Marketplace_GenerateOfferTransaction_Response:
-      type: object
-      properties:
-        steps:
-          type: array
-          description: '[]Step'
-          items:
-            $ref: '#/components/schemas/Step'
-    Marketplace_GetLowestPriceListingForCollectible_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-    TokenMetadata:
-      type: object
-      required:
-      - tokenId
-      - name
-      - attributes
-      properties:
-        tokenId:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        image:
-          type: string
-        video:
-          type: string
-        audio:
-          type: string
-        properties:
-          type: object
-          description: map<string,any>
-          additionalProperties:
-            type: object
-        attributes:
-          type: array
-          description: '[]map<string,any>'
-          items:
-            type: object
-            description: map<string,any>
-            additionalProperties:
-              type: object
-        imageData:
-          type: string
-        externalUrl:
-          type: string
-        backgroundColor:
-          type: string
-        animationUrl:
-          type: string
-        decimals:
-          type: number
-        updatedAt:
-          type: string
-        assets:
-          type: array
-          description: '[]Asset'
-          items:
-            $ref: '#/components/schemas/Asset'
-    ErrorPermissionDenied:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: PermissionDenied
-        code:
-          type: number
-          example: 1001
-        msg:
-          type: string
-          example: Permission denied
-        cause:
-          type: string
-        status:
-          type: number
-          example: 403
-    Marketplace_ListCollectionActivities_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-    Marketplace_ListCollectionActivities_Response:
-      type: object
-      properties:
-        activities:
-          type: array
-          description: '[]Activity'
-          items:
-            $ref: '#/components/schemas/Activity'
-        page:
-          $ref: '#/components/schemas/Page'
-    PropertyFilter:
-      type: object
-      required:
-      - name
-      - type
-      properties:
-        name:
-          type: string
-        type:
-          $ref: '#/components/schemas/PropertyType'
-        min:
-          type: number
-        max:
-          type: number
-        values:
-          type: array
-          description: '[]any'
-          items:
-            type: object
-    OrderbookKind:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - unknown
-      - sequence_marketplace_v1
-      - sequence_marketplace_v2
-      - blur
-      - opensea
-      - looks_rare
-      - reservoir
-      - x2y2
-    CheckoutOptionsItem:
-      type: object
-      required:
-      - tokenId
-      - quantity
-      properties:
-        tokenId:
-          type: string
-        quantity:
-          type: string
-    Marketplace_ListCollectiblesWithLowestListing_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        filter:
-          $ref: '#/components/schemas/CollectiblesFilter'
-        page:
-          $ref: '#/components/schemas/Page'
-    Marketplace_GenerateCancelTransaction_Response:
-      type: object
-      properties:
-        steps:
-          type: array
-          description: '[]Step'
-          items:
-            $ref: '#/components/schemas/Step'
-    Marketplace_GetCollectibleLowestOffer_Response:
-      type: object
-      properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    CollectionConfig:
-      type: object
-      required:
-      - lastSynced
-      - collectiblesSynced
-      - activitiesSynced
-      - activitiesSyncedContinuity
-      properties:
-        lastSynced:
-          type: object
-          description: map<string,CollectionLastSynced>
-          additionalProperties:
-            $ref: '#/components/schemas/CollectionLastSynced'
-        collectiblesSynced:
-          type: string
-        activitiesSynced:
-          type: string
-        activitiesSyncedContinuity:
-          type: string
-    Marketplace_GetHighestPriceListingForCollectible_Response:
-      type: object
-      properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    Marketplace_CheckoutOptionsSalesContract_Response:
-      type: object
-      properties:
-        options:
-          $ref: '#/components/schemas/CheckoutOptions'
-    Marketplace_GetHighestPriceOfferForCollectible_Response:
-      type: object
-      properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    CollectionPriority:
+    ActivityAction:
       type: string
       description: Represented as uint8 on the server side
       enum:
       - unknown
-      - low
-      - normal
-      - high
-    GetOrdersInput:
-      type: object
-      required:
-      - contractAddress
-      - orderId
-      - marketplace
-      properties:
-        contractAddress:
-          type: string
-        orderId:
-          type: string
-        marketplace:
-          $ref: '#/components/schemas/MarketplaceKind'
-    Marketplace_GetHighestPriceListingForCollectible_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-    Marketplace_ListCollectibleListings_Response:
-      type: object
-      properties:
-        listings:
-          type: array
-          description: '[]Order'
-          items:
-            $ref: '#/components/schemas/Order'
-        page:
-          $ref: '#/components/schemas/Page'
-    CollectionLastSynced:
-      type: object
-      required:
-      - allOrders
-      - newOrders
-      properties:
-        allOrders:
-          type: string
-        newOrders:
-          type: string
-    CurrencyStatus:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - unknown
-      - created
-      - syncing_metadata
-      - active
-      - failed
-    ErrorNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: NotFound
-        code:
-          type: number
-          example: 3000
-        msg:
-          type: string
-          example: Resource not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Marketplace_ListCollectibleActivities_Response:
-      type: object
-      properties:
-        activities:
-          type: array
-          description: '[]Activity'
-          items:
-            $ref: '#/components/schemas/Activity'
-        page:
-          $ref: '#/components/schemas/Page'
-    PostRequest:
-      type: object
-      required:
-      - endpoint
-      - method
-      - body
-      properties:
-        endpoint:
-          type: string
-        method:
-          type: string
-        body:
-          type: object
-    Marketplace_SupportedMarketplaces_Response:
-      type: object
-      properties:
-        marketplaces:
-          type: array
-          description: '[]MarketplaceKind'
-          items:
-            $ref: '#/components/schemas/MarketplaceKind'
-    Marketplace_GetLowestPriceOfferForCollectible_Response:
-      type: object
-      properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    ErrorMethodNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: MethodNotFound
-        code:
-          type: number
-          example: 1003
-        msg:
-          type: string
-          example: Method not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 404
-    Page:
-      type: object
-      required:
-      - page
-      - pageSize
-      properties:
-        page:
-          type: number
-        pageSize:
-          type: number
-        more:
-          type: boolean
-        sort:
-          type: array
-          description: '[]SortBy'
-          items:
-            $ref: '#/components/schemas/SortBy'
-    Marketplace_ListCollectibleOffers_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-        page:
-          $ref: '#/components/schemas/Page'
-    WalletKind:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - unknown
-      - sequence
-    Marketplace_GetCountOfFilteredCollectibles_Request:
-      type: object
-      properties:
-        side:
-          $ref: '#/components/schemas/OrderSide'
-        contractAddress:
-          type: string
-        filter:
-          $ref: '#/components/schemas/CollectiblesFilter'
-    Marketplace_GenerateSellTransaction_Response:
-      type: object
-      properties:
-        steps:
-          type: array
-          description: '[]Step'
-          items:
-            $ref: '#/components/schemas/Step'
-    Marketplace_GetCountOfOffersForCollectible_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-    ExecuteType:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - unknown
-      - order
-    Marketplace_ListCollectibles_Request:
-      type: object
-      properties:
-        side:
-          $ref: '#/components/schemas/OrderSide'
-        contractAddress:
-          type: string
-        filter:
-          $ref: '#/components/schemas/CollectiblesFilter'
-        page:
-          $ref: '#/components/schemas/Page'
-    SourceKind:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - unknown
-      - external
-      - sequence_marketplace_v1
-      - sequence_marketplace_v2
-    CheckoutOptionsMarketplaceOrder:
-      type: object
-      required:
-      - contractAddress
-      - orderId
-      - marketplace
-      properties:
-        contractAddress:
-          type: string
-        orderId:
-          type: string
-        marketplace:
-          $ref: '#/components/schemas/MarketplaceKind'
-    ErrorProjectLimitReached:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: ProjectLimitReached
-        code:
-          type: number
-          example: 3005
-        msg:
-          type: string
-          example: Project limit reached
-        cause:
-          type: string
-        status:
-          type: number
-          example: 402
-    OrderStatus:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - unknown
-      - active
-      - inactive
-      - expired
-      - cancelled
-      - filled
-      - decimals_missing
-    Marketplace_GetCollectibleHighestListing_Response:
-      type: object
-      properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    TransactionCrypto:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - none
-      - partially
-      - all
-    Marketplace_ListCollectibleActivities_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-    CollectiblesFilter:
-      type: object
-      required:
-      - includeEmpty
-      properties:
-        includeEmpty:
-          type: boolean
-        searchText:
-          type: string
-        properties:
-          type: array
-          description: '[]PropertyFilter'
-          items:
-            $ref: '#/components/schemas/PropertyFilter'
-        marketplaces:
-          type: array
-          description: '[]MarketplaceKind'
-          items:
-            $ref: '#/components/schemas/MarketplaceKind'
-        inAccounts:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        notInAccounts:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        ordersCreatedBy:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        ordersNotCreatedBy:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        inCurrencyAddresses:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        notInCurrencyAddresses:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    Marketplace_GetCountOfOffersForCollectible_Response:
-      type: object
-      properties:
-        count:
-          type: number
-    ErrorWebrpcBadRoute:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadRoute
-        code:
-          type: number
-          example: -2
-        msg:
-          type: string
-          example: bad route
-        cause:
-          type: string
-        status:
-          type: number
-          example: 404
-    ErrorWebrpcStreamLost:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcStreamLost
-        code:
-          type: number
-          example: -9
-        msg:
-          type: string
-          example: stream lost
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Marketplace_GetCountOfAllCollectibles_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-    Marketplace_GetCountOfListingsForCollectible_Response:
-      type: object
-      properties:
-        count:
-          type: number
-    Marketplace_GenerateCancelTransaction_Request:
-      type: object
-      properties:
-        collectionAddress:
-          type: string
-        maker:
-          type: string
-        marketplace:
-          $ref: '#/components/schemas/MarketplaceKind'
-        orderId:
-          type: string
-    Marketplace_GetCollectionDetail_Response:
-      type: object
-      properties:
-        collection:
-          $ref: '#/components/schemas/Collection'
+      - listing
+      - offer
+      - mint
+      - sale
+      - listingCancel
+      - offerCancel
+      - transfer
     Currency:
       type: object
       required:
@@ -2766,17 +2113,38 @@ components:
           type: string
         refreshMetadataJob:
           type: number
-    Marketplace_ListOffersForCollectible_Response:
+    Marketplace_GenerateCancelTransaction_Response:
       type: object
       properties:
-        offers:
+        steps:
+          type: array
+          description: '[]Step'
+          items:
+            $ref: '#/components/schemas/Step'
+    Marketplace_SupportedMarketplaces_Response:
+      type: object
+      properties:
+        marketplaces:
+          type: array
+          description: '[]MarketplaceKind'
+          items:
+            $ref: '#/components/schemas/MarketplaceKind'
+    Marketplace_GetOrders_Response:
+      type: object
+      properties:
+        orders:
           type: array
           description: '[]Order'
           items:
             $ref: '#/components/schemas/Order'
         page:
           $ref: '#/components/schemas/Page'
-    ErrorWebrpcEndpoint:
+    Marketplace_GetCollectibleHighestOffer_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    ErrorWebrpcBadResponse:
       type: object
       required:
       - error
@@ -2786,101 +2154,31 @@ components:
       properties:
         error:
           type: string
-          example: WebrpcEndpoint
+          example: WebrpcBadResponse
         code:
           type: number
-          example: 0
+          example: -5
         msg:
           type: string
-          example: endpoint error
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Marketplace_CheckoutOptionsMarketplace_Request:
-      type: object
-      properties:
-        wallet:
-          type: string
-        orders:
-          type: array
-          description: '[]CheckoutOptionsMarketplaceOrder'
-          items:
-            $ref: '#/components/schemas/CheckoutOptionsMarketplaceOrder'
-        additionalFee:
-          type: number
-    MarketplaceKind:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - unknown
-      - sequence_marketplace_v1
-      - sequence_marketplace_v2
-      - blur
-      - zerox
-      - opensea
-      - looks_rare
-      - x2y2
-      - alienswap
-      - payment_processor
-      - mintify
-      - magic_eden
-    SortOrder:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - DESC
-      - ASC
-    Marketplace_GetCollectible_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-    Marketplace_GetCollectionDetail_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-    Marketplace_GetFloorOrder_Response:
-      type: object
-      properties:
-        collectible:
-          $ref: '#/components/schemas/CollectibleOrder'
-    Marketplace_GetCollectibleHighestListing_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-    ErrorWebrpcServerPanic:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcServerPanic
-        code:
-          type: number
-          example: -6
-        msg:
-          type: string
-          example: server panic
+          example: bad response
         cause:
           type: string
         status:
           type: number
           example: 500
-    ErrorUnauthorized:
+    OrderData:
+      type: object
+      required:
+      - orderId
+      - quantity
+      properties:
+        orderId:
+          type: string
+        quantity:
+          type: string
+        tokenId:
+          type: string
+    ErrorWebrpcInternalError:
       type: object
       required:
       - error
@@ -2890,27 +2188,18 @@ components:
       properties:
         error:
           type: string
-          example: Unauthorized
+          example: WebrpcInternalError
         code:
           type: number
-          example: 1000
+          example: -7
         msg:
           type: string
-          example: Unauthorized access
+          example: internal error
         cause:
           type: string
         status:
           type: number
-          example: 401
-    Marketplace_ListCollectiblesWithHighestOffer_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        filter:
-          $ref: '#/components/schemas/CollectiblesFilter'
-        page:
-          $ref: '#/components/schemas/Page'
+          example: 500
     Order:
       type: object
       required:
@@ -3027,7 +2316,20 @@ components:
           type: string
         deletedAt:
           type: string
-    ErrorUserNotFound:
+    Marketplace_ListCollectionActivities_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+    WalletKind:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - unknown
+      - sequence
+    ErrorWebrpcBadRequest:
       type: object
       required:
       - error
@@ -3037,19 +2339,75 @@ components:
       properties:
         error:
           type: string
-          example: UserNotFound
+          example: WebrpcBadRequest
         code:
           type: number
-          example: 3001
+          example: -4
         msg:
           type: string
-          example: User not found
+          example: bad request
         cause:
           type: string
         status:
           type: number
           example: 400
-    Marketplace_GetCollectibleLowestOffer_Request:
+    PropertyType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - INT
+      - STRING
+      - ARRAY
+      - GENERIC
+    ErrorWebrpcClientDisconnected:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcClientDisconnected
+        code:
+          type: number
+          example: -8
+        msg:
+          type: string
+          example: client disconnected
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Marketplace_GetCountOfListingsForCollectible_Response:
+      type: object
+      properties:
+        count:
+          type: number
+    Marketplace_GenerateSellTransaction_Request:
+      type: object
+      properties:
+        collectionAddress:
+          type: string
+        seller:
+          type: string
+        marketplace:
+          $ref: '#/components/schemas/MarketplaceKind'
+        ordersData:
+          type: array
+          description: '[]OrderData'
+          items:
+            $ref: '#/components/schemas/OrderData'
+        additionalFees:
+          type: array
+          description: '[]AdditionalFee'
+          items:
+            $ref: '#/components/schemas/AdditionalFee'
+        walletType:
+          $ref: '#/components/schemas/WalletKind'
+    Marketplace_ListCollectibleListings_Request:
       type: object
       properties:
         contractAddress:
@@ -3058,15 +2416,151 @@ components:
           type: string
         filter:
           $ref: '#/components/schemas/OrderFilter'
-    Marketplace_ListOffersForCollectible_Request:
+        page:
+          $ref: '#/components/schemas/Page'
+    TransactionNFTCheckoutProvider:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - unknown
+      - sardine
+      - transak
+    CollectiblesFilter:
+      type: object
+      required:
+      - includeEmpty
+      properties:
+        includeEmpty:
+          type: boolean
+        searchText:
+          type: string
+        properties:
+          type: array
+          description: '[]PropertyFilter'
+          items:
+            $ref: '#/components/schemas/PropertyFilter'
+        marketplaces:
+          type: array
+          description: '[]MarketplaceKind'
+          items:
+            $ref: '#/components/schemas/MarketplaceKind'
+        inAccounts:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        notInAccounts:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        ordersCreatedBy:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        ordersNotCreatedBy:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        inCurrencyAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        notInCurrencyAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    ErrorWebrpcStreamLost:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcStreamLost
+        code:
+          type: number
+          example: -9
+        msg:
+          type: string
+          example: stream lost
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    TransactionOnRampProvider:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - unknown
+      - sardine
+      - transak
+    CollectionPriority:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - unknown
+      - low
+      - normal
+      - high
+    CheckoutOptions:
+      type: object
+      required:
+      - crypto
+      - swap
+      - nftCheckout
+      - onRamp
+      properties:
+        crypto:
+          $ref: '#/components/schemas/TransactionCrypto'
+        swap:
+          type: array
+          description: '[]TransactionSwapProvider'
+          items:
+            $ref: '#/components/schemas/TransactionSwapProvider'
+        nftCheckout:
+          type: array
+          description: '[]TransactionNFTCheckoutProvider'
+          items:
+            $ref: '#/components/schemas/TransactionNFTCheckoutProvider'
+        onRamp:
+          type: array
+          description: '[]TransactionOnRampProvider'
+          items:
+            $ref: '#/components/schemas/TransactionOnRampProvider'
+    Page:
+      type: object
+      required:
+      - page
+      - pageSize
+      properties:
+        page:
+          type: number
+        pageSize:
+          type: number
+        more:
+          type: boolean
+        sort:
+          type: array
+          description: '[]SortBy'
+          items:
+            $ref: '#/components/schemas/SortBy'
+    Marketplace_ListCollectibleActivities_Response:
       type: object
       properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
+        activities:
+          type: array
+          description: '[]Activity'
+          items:
+            $ref: '#/components/schemas/Activity'
         page:
           $ref: '#/components/schemas/Page'
     ErrorInvalidArgument:
@@ -3091,118 +2585,20 @@ components:
         status:
           type: number
           example: 400
-    Marketplace_ListCurrencies_Response:
+    Marketplace_CheckoutOptionsSalesContract_Request:
       type: object
       properties:
-        currencies:
-          type: array
-          description: '[]Currency'
-          items:
-            $ref: '#/components/schemas/Currency'
-    AdditionalFee:
-      type: object
-      required:
-      - amount
-      - receiver
-      properties:
-        amount:
+        wallet:
           type: string
-        receiver:
-          type: string
-    Marketplace_ListListingsForCollectible_Request:
-      type: object
-      properties:
         contractAddress:
           type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-        page:
-          $ref: '#/components/schemas/Page'
-    Marketplace_GetCountOfAllCollectibles_Response:
-      type: object
-      properties:
-        count:
-          type: number
-    Marketplace_GetHighestPriceOfferForCollectible_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-    PropertyType:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - INT
-      - STRING
-      - ARRAY
-      - GENERIC
-    Signature:
-      type: object
-      required:
-      - domain
-      - types
-      - primaryType
-      - value
-      properties:
-        domain:
-          $ref: '#/components/schemas/Domain'
-        types:
-          type: object
-        primaryType:
-          type: string
-        value:
-          type: object
-    TransactionOnRampProvider:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - unknown
-      - sardine
-      - transak
-    Marketplace_ListCollectibleOffers_Response:
-      type: object
-      properties:
-        offers:
-          type: array
-          description: '[]Order'
-          items:
-            $ref: '#/components/schemas/Order'
-        page:
-          $ref: '#/components/schemas/Page'
-    Marketplace_GenerateOfferTransaction_Request:
-      type: object
-      properties:
         collectionAddress:
           type: string
-        maker:
-          type: string
-        contractType:
-          $ref: '#/components/schemas/ContractType'
-        orderbook:
-          $ref: '#/components/schemas/OrderbookKind'
-        offer:
-          $ref: '#/components/schemas/CreateReq'
-        walletType:
-          $ref: '#/components/schemas/WalletKind'
-    FeeBreakdown:
-      type: object
-      required:
-      - kind
-      - recipientAddress
-      - bps
-      properties:
-        kind:
-          type: string
-        recipientAddress:
-          type: string
-        bps:
-          type: number
+        items:
+          type: array
+          description: '[]CheckoutOptionsItem'
+          items:
+            $ref: '#/components/schemas/CheckoutOptionsItem'
     OrderFilter:
       type: object
       properties:
@@ -3221,21 +2617,19 @@ components:
           description: '[]string'
           items:
             type: string
-    Marketplace_GenerateListingTransaction_Request:
-      type: object
-      properties:
-        collectionAddress:
-          type: string
-        owner:
-          type: string
-        contractType:
-          $ref: '#/components/schemas/ContractType'
-        orderbook:
-          $ref: '#/components/schemas/OrderbookKind'
-        listing:
-          $ref: '#/components/schemas/CreateReq'
-        walletType:
-          $ref: '#/components/schemas/WalletKind'
+    StepType:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - unknown
+      - tokenApproval
+      - buy
+      - sell
+      - createListing
+      - createOffer
+      - signEIP712
+      - signEIP191
+      - cancel
     Marketplace_GetLowestPriceOfferForCollectible_Request:
       type: object
       properties:
@@ -3245,28 +2639,54 @@ components:
           type: string
         filter:
           $ref: '#/components/schemas/OrderFilter'
-    Marketplace_GenerateSellTransaction_Request:
+    Collection:
       type: object
+      required:
+      - id
+      - status
+      - chainId
+      - contractAddress
+      - contractType
+      - priority
+      - tokenQuantityDecimals
+      - config
+      - syncContractMetadataJob
+      - refreshMetadataJob
+      - refreshMetadataTimestamp
+      - createdAt
+      - updatedAt
       properties:
-        collectionAddress:
+        id:
+          type: number
+        status:
+          $ref: '#/components/schemas/CollectionStatus'
+        chainId:
+          type: number
+        contractAddress:
           type: string
-        seller:
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        priority:
+          $ref: '#/components/schemas/CollectionPriority'
+        tokenQuantityDecimals:
+          type: number
+        config:
+          $ref: '#/components/schemas/CollectionConfig'
+        syncContractMetadataJob:
+          type: number
+        refreshMetadataJob:
+          type: number
+        refreshMetadataTimestamp:
           type: string
-        marketplace:
-          $ref: '#/components/schemas/MarketplaceKind'
-        ordersData:
-          type: array
-          description: '[]OrderData'
-          items:
-            $ref: '#/components/schemas/OrderData'
-        additionalFees:
-          type: array
-          description: '[]AdditionalFee'
-          items:
-            $ref: '#/components/schemas/AdditionalFee'
-        walletType:
-          $ref: '#/components/schemas/WalletKind'
-    ErrorWebrpcBadMethod:
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        deletedAt:
+          type: string
+    Marketplace_SupportedMarketplaces_Request:
+      type: object
+    ErrorWebrpcBadRoute:
       type: object
       required:
       - error
@@ -3276,91 +2696,105 @@ components:
       properties:
         error:
           type: string
-          example: WebrpcBadMethod
+          example: WebrpcBadRoute
         code:
           type: number
-          example: -3
+          example: -2
         msg:
           type: string
-          example: bad method
+          example: bad route
         cause:
           type: string
         status:
           type: number
-          example: 405
-    Marketplace_CheckoutOptionsMarketplace_Response:
+          example: 404
+    Marketplace_GenerateOfferTransaction_Response:
       type: object
       properties:
-        options:
-          $ref: '#/components/schemas/CheckoutOptions'
-    Marketplace_GetLowestPriceListingForCollectible_Response:
+        steps:
+          type: array
+          description: '[]Step'
+          items:
+            $ref: '#/components/schemas/Step'
+    Marketplace_GetOrders_Request:
       type: object
       properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    Marketplace_GetCollectibleHighestOffer_Response:
+        input:
+          type: array
+          description: '[]GetOrdersInput'
+          items:
+            $ref: '#/components/schemas/GetOrdersInput'
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_GetFloorOrder_Response:
       type: object
       properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    CollectionStatus:
+        collectible:
+          $ref: '#/components/schemas/CollectibleOrder'
+    ErrorUserNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: UserNotFound
+        code:
+          type: number
+          example: 3001
+        msg:
+          type: string
+          example: User not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    GetOrdersInput:
+      type: object
+      required:
+      - contractAddress
+      - orderId
+      - marketplace
+      properties:
+        contractAddress:
+          type: string
+        orderId:
+          type: string
+        marketplace:
+          $ref: '#/components/schemas/MarketplaceKind'
+    ErrorNotImplemented:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: NotImplemented
+        code:
+          type: number
+          example: 9999
+        msg:
+          type: string
+          example: Not Implemented
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    OrderSide:
       type: string
       description: Represented as uint8 on the server side
       enum:
       - unknown
-      - created
-      - syncing_contract_metadata
-      - synced_contract_metadata
-      - syncing_metadata
-      - synced_metadata
-      - syncing_tokens
-      - synced_tokens
-      - syncing_orders
-      - active
-      - failed
-      - inactive
-      - incompatible_type
-    Marketplace_ListCollectiblesWithHighestOffer_Response:
-      type: object
-      properties:
-        collectibles:
-          type: array
-          description: '[]CollectibleOrder'
-          items:
-            $ref: '#/components/schemas/CollectibleOrder'
-        page:
-          $ref: '#/components/schemas/Page'
-    Marketplace_GetCollectibleLowestListing_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-    ErrorSessionExpired:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: SessionExpired
-        code:
-          type: number
-          example: 1002
-        msg:
-          type: string
-          example: Session expired
-        cause:
-          type: string
-        status:
-          type: number
-          example: 403
+      - listing
+      - offer
     Activity:
       type: object
       required:
@@ -3428,6 +2862,76 @@ components:
           type: string
         deletedAt:
           type: string
+    Marketplace_GenerateListingTransaction_Request:
+      type: object
+      properties:
+        collectionAddress:
+          type: string
+        owner:
+          type: string
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        orderbook:
+          $ref: '#/components/schemas/OrderbookKind'
+        listing:
+          $ref: '#/components/schemas/CreateReq'
+        walletType:
+          $ref: '#/components/schemas/WalletKind'
+    Marketplace_ListCollectibles_Request:
+      type: object
+      properties:
+        side:
+          $ref: '#/components/schemas/OrderSide'
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/CollectiblesFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_GetCollectibleLowestOffer_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    Marketplace_GetHighestPriceOfferForCollectible_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    Marketplace_GetCountOfFilteredCollectibles_Response:
+      type: object
+      properties:
+        count:
+          type: number
+    ExecuteType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - unknown
+      - order
+    Marketplace_GetLowestPriceOfferForCollectible_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    SourceKind:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - unknown
+      - external
+      - sequence_marketplace_v1
+      - sequence_marketplace_v2
+    Marketplace_ListOffersForCollectible_Response:
+      type: object
+      properties:
+        offers:
+          type: array
+          description: '[]Order'
+          items:
+            $ref: '#/components/schemas/Order'
+        page:
+          $ref: '#/components/schemas/Page'
     Domain:
       type: object
       required:
@@ -3444,14 +2948,55 @@ components:
           type: number
         verifyingContract:
           type: string
-    ContractType:
-      type: string
-      description: Represented as uint16 on the server side
-      enum:
-      - UNKNOWN
-      - ERC20
-      - ERC721
-      - ERC1155
+    TokenMetadata:
+      type: object
+      required:
+      - tokenId
+      - name
+      - attributes
+      properties:
+        tokenId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        video:
+          type: string
+        audio:
+          type: string
+        properties:
+          type: object
+          description: map<string,any>
+          additionalProperties:
+            type: object
+        attributes:
+          type: array
+          description: '[]map<string,any>'
+          items:
+            type: object
+            description: map<string,any>
+            additionalProperties:
+              type: object
+        imageData:
+          type: string
+        externalUrl:
+          type: string
+        backgroundColor:
+          type: string
+        animationUrl:
+          type: string
+        decimals:
+          type: number
+        updatedAt:
+          type: string
+        assets:
+          type: array
+          description: '[]Asset'
+          items:
+            $ref: '#/components/schemas/Asset'
     ErrorWebrpcRequestFailed:
       type: object
       required:
@@ -3474,13 +3019,273 @@ components:
         status:
           type: number
           example: 400
-    Marketplace_GetCollectible_Response:
+    Marketplace_GetCountOfOffersForCollectible_Response:
       type: object
       properties:
-        metadata:
-          $ref: '#/components/schemas/TokenMetadata'
-    Marketplace_SupportedMarketplaces_Request:
+        count:
+          type: number
+    Marketplace_CheckoutOptionsMarketplace_Response:
       type: object
+      properties:
+        options:
+          $ref: '#/components/schemas/CheckoutOptions'
+    Marketplace_GetCollectibleHighestOffer_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+    ErrorInvalidTier:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidTier
+        code:
+          type: number
+          example: 3003
+        msg:
+          type: string
+          example: Invalid subscription tier
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Marketplace_GenerateSellTransaction_Response:
+      type: object
+      properties:
+        steps:
+          type: array
+          description: '[]Step'
+          items:
+            $ref: '#/components/schemas/Step'
+    Marketplace_GetCollectible_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+    Marketplace_GetCountOfFilteredCollectibles_Request:
+      type: object
+      properties:
+        side:
+          $ref: '#/components/schemas/OrderSide'
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/CollectiblesFilter'
+    Marketplace_GenerateBuyTransaction_Response:
+      type: object
+      properties:
+        steps:
+          type: array
+          description: '[]Step'
+          items:
+            $ref: '#/components/schemas/Step'
+    Marketplace_ListListingsForCollectible_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_GetCountOfListingsForCollectible_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+    ErrorPermissionDenied:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: PermissionDenied
+        code:
+          type: number
+          example: 1001
+        msg:
+          type: string
+          example: Permission denied
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    Marketplace_GetCountOfAllCollectibles_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+    AdditionalFee:
+      type: object
+      required:
+      - amount
+      - receiver
+      properties:
+        amount:
+          type: string
+        receiver:
+          type: string
+    TransactionCrypto:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - none
+      - partially
+      - all
+    ErrorUnauthorized:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unauthorized
+        code:
+          type: number
+          example: 1000
+        msg:
+          type: string
+          example: Unauthorized access
+        cause:
+          type: string
+        status:
+          type: number
+          example: 401
+    Marketplace_ListCollectiblesWithLowestListing_Response:
+      type: object
+      properties:
+        collectibles:
+          type: array
+          description: '[]CollectibleOrder'
+          items:
+            $ref: '#/components/schemas/CollectibleOrder'
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_GetCollectibleLowestListing_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+    Marketplace_ListCollectiblesWithHighestOffer_Response:
+      type: object
+      properties:
+        collectibles:
+          type: array
+          description: '[]CollectibleOrder'
+          items:
+            $ref: '#/components/schemas/CollectibleOrder'
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_ListOffersForCollectible_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_GenerateOfferTransaction_Request:
+      type: object
+      properties:
+        collectionAddress:
+          type: string
+        maker:
+          type: string
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        orderbook:
+          $ref: '#/components/schemas/OrderbookKind'
+        offer:
+          $ref: '#/components/schemas/CreateReq'
+        walletType:
+          $ref: '#/components/schemas/WalletKind'
+    ErrorNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: NotFound
+        code:
+          type: number
+          example: 3000
+        msg:
+          type: string
+          example: Resource not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorWebrpcBadMethod:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadMethod
+        code:
+          type: number
+          example: -3
+        msg:
+          type: string
+          example: bad method
+        cause:
+          type: string
+        status:
+          type: number
+          example: 405
+    Marketplace_ListCollectiblesWithHighestOffer_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/CollectiblesFilter'
+        page:
+          $ref: '#/components/schemas/Page'
     Marketplace_GenerateListingTransaction_Response:
       type: object
       properties:
@@ -3489,19 +3294,42 @@ components:
           description: '[]Step'
           items:
             $ref: '#/components/schemas/Step'
-    StepType:
+    TransactionSwapProvider:
       type: string
-      description: Represented as uint8 on the server side
+      description: Represented as uint32 on the server side
       enum:
       - unknown
-      - tokenApproval
-      - buy
-      - sell
-      - createListing
-      - createOffer
-      - signEIP712
-      - signEIP191
-      - cancel
+      - zerox
+    Marketplace_ListCollectiblesWithLowestListing_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/CollectiblesFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+    FeeBreakdown:
+      type: object
+      required:
+      - kind
+      - recipientAddress
+      - bps
+      properties:
+        kind:
+          type: string
+        recipientAddress:
+          type: string
+        bps:
+          type: number
+    Marketplace_ListCurrencies_Response:
+      type: object
+      properties:
+        currencies:
+          type: array
+          description: '[]Currency'
+          items:
+            $ref: '#/components/schemas/Currency'
     ErrorTimeout:
       type: object
       required:
@@ -3524,16 +3352,58 @@ components:
         status:
           type: number
           example: 408
-    Marketplace_ListCollectibles_Response:
+    OrderStatus:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - unknown
+      - active
+      - inactive
+      - expired
+      - cancelled
+      - filled
+      - decimals_missing
+    ErrorSessionExpired:
       type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
       properties:
-        collectibles:
+        error:
+          type: string
+          example: SessionExpired
+        code:
+          type: number
+          example: 1002
+        msg:
+          type: string
+          example: Session expired
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    PropertyFilter:
+      type: object
+      required:
+      - name
+      - type
+      properties:
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/PropertyType'
+        min:
+          type: number
+        max:
+          type: number
+        values:
           type: array
-          description: '[]CollectibleOrder'
+          description: '[]any'
           items:
-            $ref: '#/components/schemas/CollectibleOrder'
-        page:
-          $ref: '#/components/schemas/Page'
+            type: object
     Step:
       type: object
       required:
@@ -3559,26 +3429,151 @@ components:
           $ref: '#/components/schemas/PostRequest'
         executeType:
           $ref: '#/components/schemas/ExecuteType'
-    Marketplace_GetCountOfFilteredCollectibles_Response:
+    SortBy:
+      type: object
+      required:
+      - column
+      - order
+      properties:
+        column:
+          type: string
+        order:
+          $ref: '#/components/schemas/SortOrder'
+    Marketplace_GenerateCancelTransaction_Request:
+      type: object
+      properties:
+        collectionAddress:
+          type: string
+        maker:
+          type: string
+        marketplace:
+          $ref: '#/components/schemas/MarketplaceKind'
+        orderId:
+          type: string
+    CreateReq:
+      type: object
+      required:
+      - tokenId
+      - quantity
+      - expiry
+      - currencyAddress
+      - pricePerToken
+      properties:
+        tokenId:
+          type: string
+        quantity:
+          type: string
+        expiry:
+          type: string
+        currencyAddress:
+          type: string
+        pricePerToken:
+          type: string
+    CheckoutOptionsMarketplaceOrder:
+      type: object
+      required:
+      - contractAddress
+      - orderId
+      - marketplace
+      properties:
+        contractAddress:
+          type: string
+        orderId:
+          type: string
+        marketplace:
+          $ref: '#/components/schemas/MarketplaceKind'
+    ContractType:
+      type: string
+      description: Represented as uint16 on the server side
+      enum:
+      - UNKNOWN
+      - ERC20
+      - ERC721
+      - ERC1155
+    Marketplace_GenerateBuyTransaction_Request:
+      type: object
+      properties:
+        collectionAddress:
+          type: string
+        buyer:
+          type: string
+        marketplace:
+          $ref: '#/components/schemas/MarketplaceKind'
+        ordersData:
+          type: array
+          description: '[]OrderData'
+          items:
+            $ref: '#/components/schemas/OrderData'
+        additionalFees:
+          type: array
+          description: '[]AdditionalFee'
+          items:
+            $ref: '#/components/schemas/AdditionalFee'
+        walletType:
+          $ref: '#/components/schemas/WalletKind'
+    Marketplace_GetCollectibleHighestListing_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+    CheckoutOptionsItem:
+      type: object
+      required:
+      - tokenId
+      - quantity
+      properties:
+        tokenId:
+          type: string
+        quantity:
+          type: string
+    Marketplace_GetCollectibleLowestListing_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    Marketplace_GetHighestPriceListingForCollectible_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    Marketplace_GetCountOfAllCollectibles_Response:
       type: object
       properties:
         count:
           type: number
-    Marketplace_CheckoutOptionsSalesContract_Request:
+    CollectionStatus:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - unknown
+      - created
+      - syncing_contract_metadata
+      - synced_contract_metadata
+      - syncing_metadata
+      - synced_metadata
+      - syncing_tokens
+      - synced_tokens
+      - syncing_orders
+      - active
+      - failed
+      - inactive
+      - incompatible_type
+    Marketplace_ListCollectibleOffers_Request:
       type: object
       properties:
-        wallet:
-          type: string
         contractAddress:
           type: string
-        collectionAddress:
+        tokenId:
           type: string
-        items:
-          type: array
-          description: '[]CheckoutOptionsItem'
-          items:
-            $ref: '#/components/schemas/CheckoutOptionsItem'
-    ErrorWebrpcBadRequest:
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+    ErrorProjectNotFound:
       type: object
       required:
       - error
@@ -3588,18 +3583,223 @@ components:
       properties:
         error:
           type: string
-          example: WebrpcBadRequest
+          example: ProjectNotFound
         code:
           type: number
-          example: -4
+          example: 3002
         msg:
           type: string
-          example: bad request
+          example: Project not found
         cause:
           type: string
         status:
           type: number
           example: 400
+    Marketplace_GetLowestPriceListingForCollectible_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    Marketplace_GetLowestPriceListingForCollectible_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+    Marketplace_GetCollectibleHighestListing_Response:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+    ErrorMethodNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MethodNotFound
+        code:
+          type: number
+          example: 1003
+        msg:
+          type: string
+          example: Method not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    Marketplace_GetHighestPriceOfferForCollectible_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+    Marketplace_GetCollectionDetail_Response:
+      type: object
+      properties:
+        collection:
+          $ref: '#/components/schemas/Collection'
+    Marketplace_ListListingsForCollectible_Response:
+      type: object
+      properties:
+        listings:
+          type: array
+          description: '[]Order'
+          items:
+            $ref: '#/components/schemas/Order'
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_ListCollectionActivities_Response:
+      type: object
+      properties:
+        activities:
+          type: array
+          description: '[]Activity'
+          items:
+            $ref: '#/components/schemas/Activity'
+        page:
+          $ref: '#/components/schemas/Page'
+    CollectionConfig:
+      type: object
+      required:
+      - lastSynced
+      - collectiblesSynced
+      - activitiesSynced
+      - activitiesSyncedContinuity
+      properties:
+        lastSynced:
+          type: object
+          description: map<string,CollectionLastSynced>
+          additionalProperties:
+            $ref: '#/components/schemas/CollectionLastSynced'
+        collectiblesSynced:
+          type: string
+        activitiesSynced:
+          type: string
+        activitiesSyncedContinuity:
+          type: string
+    Marketplace_ListCurrencies_Request:
+      type: object
+    CollectionLastSynced:
+      type: object
+      required:
+      - allOrders
+      - newOrders
+      properties:
+        allOrders:
+          type: string
+        newOrders:
+          type: string
+    Marketplace_GetCollectible_Response:
+      type: object
+      properties:
+        metadata:
+          $ref: '#/components/schemas/TokenMetadata'
+    Marketplace_GetCollectionDetail_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+    Marketplace_CheckoutOptionsSalesContract_Response:
+      type: object
+      properties:
+        options:
+          $ref: '#/components/schemas/CheckoutOptions'
+    Marketplace_ListCollectibles_Response:
+      type: object
+      properties:
+        collectibles:
+          type: array
+          description: '[]CollectibleOrder'
+          items:
+            $ref: '#/components/schemas/CollectibleOrder'
+        page:
+          $ref: '#/components/schemas/Page'
+    ErrorProjectLimitReached:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ProjectLimitReached
+        code:
+          type: number
+          example: 3005
+        msg:
+          type: string
+          example: Project limit reached
+        cause:
+          type: string
+        status:
+          type: number
+          example: 402
+    MarketplaceKind:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - unknown
+      - sequence_marketplace_v1
+      - sequence_marketplace_v2
+      - blur
+      - zerox
+      - opensea
+      - looks_rare
+      - x2y2
+      - alienswap
+      - payment_processor
+      - mintify
+      - magic_eden
+    CurrencyStatus:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - unknown
+      - created
+      - syncing_metadata
+      - active
+      - failed
+    OrderbookKind:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - unknown
+      - sequence_marketplace_v1
+      - sequence_marketplace_v2
+      - blur
+      - opensea
+      - looks_rare
+      - reservoir
+      - x2y2
+    Marketplace_GetCountOfOffersForCollectible_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        filter:
+          $ref: '#/components/schemas/OrderFilter'
+    SortOrder:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - DESC
+      - ASC
     Asset:
       type: object
       required:
@@ -3630,17 +3830,7 @@ components:
           type: number
         updatedAt:
           type: string
-    Marketplace_GetOrders_Response:
-      type: object
-      properties:
-        orders:
-          type: array
-          description: '[]Order'
-          items:
-            $ref: '#/components/schemas/Order'
-        page:
-          $ref: '#/components/schemas/Page'
-    Marketplace_ListListingsForCollectible_Response:
+    Marketplace_ListCollectibleListings_Response:
       type: object
       properties:
         listings:
@@ -3650,100 +3840,7 @@ components:
             $ref: '#/components/schemas/Order'
         page:
           $ref: '#/components/schemas/Page'
-    Collection:
-      type: object
-      required:
-      - id
-      - status
-      - chainId
-      - contractAddress
-      - contractType
-      - priority
-      - tokenQuantityDecimals
-      - config
-      - syncContractMetadataJob
-      - refreshMetadataJob
-      - refreshMetadataTimestamp
-      - createdAt
-      - updatedAt
-      properties:
-        id:
-          type: number
-        status:
-          $ref: '#/components/schemas/CollectionStatus'
-        chainId:
-          type: number
-        contractAddress:
-          type: string
-        contractType:
-          $ref: '#/components/schemas/ContractType'
-        priority:
-          $ref: '#/components/schemas/CollectionPriority'
-        tokenQuantityDecimals:
-          type: number
-        config:
-          $ref: '#/components/schemas/CollectionConfig'
-        syncContractMetadataJob:
-          type: number
-        refreshMetadataJob:
-          type: number
-        refreshMetadataTimestamp:
-          type: string
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
-        deletedAt:
-          type: string
-    CreateReq:
-      type: object
-      required:
-      - tokenId
-      - quantity
-      - expiry
-      - currencyAddress
-      - pricePerToken
-      properties:
-        tokenId:
-          type: string
-        quantity:
-          type: string
-        expiry:
-          type: string
-        currencyAddress:
-          type: string
-        pricePerToken:
-          type: string
-    ErrorWebrpcInternalError:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcInternalError
-        code:
-          type: number
-          example: -7
-        msg:
-          type: string
-          example: internal error
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    Marketplace_GetFloorOrder_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        filter:
-          $ref: '#/components/schemas/CollectiblesFilter'
-    Marketplace_GetCountOfListingsForCollectible_Request:
+    Marketplace_GetCollectibleLowestOffer_Request:
       type: object
       properties:
         contractAddress:
@@ -3752,139 +3849,35 @@ components:
           type: string
         filter:
           $ref: '#/components/schemas/OrderFilter'
-    TransactionSwapProvider:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - unknown
-      - zerox
-    Marketplace_GetCollectibleLowestListing_Response:
-      type: object
-      properties:
-        order:
-          $ref: '#/components/schemas/Order'
-    ErrorWebrpcBadResponse:
+    Signature:
       type: object
       required:
-      - error
-      - code
-      - msg
-      - status
+      - domain
+      - types
+      - primaryType
+      - value
       properties:
-        error:
+        domain:
+          $ref: '#/components/schemas/Domain'
+        types:
+          type: object
+        primaryType:
           type: string
-          example: WebrpcBadResponse
-        code:
-          type: number
-          example: -5
-        msg:
-          type: string
-          example: bad response
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    OrderData:
-      type: object
-      required:
-      - orderId
-      - quantity
-      properties:
-        orderId:
-          type: string
-        quantity:
-          type: string
-        tokenId:
-          type: string
-    Marketplace_ListCollectiblesWithLowestListing_Response:
+        value:
+          type: object
+    Marketplace_CheckoutOptionsMarketplace_Request:
       type: object
       properties:
-        collectibles:
+        wallet:
+          type: string
+        orders:
           type: array
-          description: '[]CollectibleOrder'
+          description: '[]CheckoutOptionsMarketplaceOrder'
           items:
-            $ref: '#/components/schemas/CollectibleOrder'
-        page:
-          $ref: '#/components/schemas/Page'
-    Marketplace_GenerateBuyTransaction_Response:
-      type: object
-      properties:
-        steps:
-          type: array
-          description: '[]Step'
-          items:
-            $ref: '#/components/schemas/Step'
-    CheckoutOptions:
-      type: object
-      required:
-      - crypto
-      - swap
-      - nftCheckout
-      - onRamp
-      properties:
-        crypto:
-          $ref: '#/components/schemas/TransactionCrypto'
-        swap:
-          type: array
-          description: '[]TransactionSwapProvider'
-          items:
-            $ref: '#/components/schemas/TransactionSwapProvider'
-        nftCheckout:
-          type: array
-          description: '[]TransactionNFTCheckoutProvider'
-          items:
-            $ref: '#/components/schemas/TransactionNFTCheckoutProvider'
-        onRamp:
-          type: array
-          description: '[]TransactionOnRampProvider'
-          items:
-            $ref: '#/components/schemas/TransactionOnRampProvider'
-    ErrorProjectNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: ProjectNotFound
-        code:
+            $ref: '#/components/schemas/CheckoutOptionsMarketplaceOrder'
+        additionalFee:
           type: number
-          example: 3002
-        msg:
-          type: string
-          example: Project not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorWebrpcClientDisconnected:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcClientDisconnected
-        code:
-          type: number
-          example: -8
-        msg:
-          type: string
-          example: client disconnected
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Marketplace_GetCollectibleHighestOffer_Request:
+    Marketplace_GetHighestPriceListingForCollectible_Request:
       type: object
       properties:
         contractAddress:
@@ -3893,53 +3886,6 @@ components:
           type: string
         filter:
           $ref: '#/components/schemas/OrderFilter'
-    ActivityAction:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - unknown
-      - listing
-      - offer
-      - mint
-      - sale
-      - listingCancel
-      - offerCancel
-      - transfer
-    OrderSide:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - unknown
-      - listing
-      - offer
-    Marketplace_ListCollectibleListings_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        filter:
-          $ref: '#/components/schemas/OrderFilter'
-        page:
-          $ref: '#/components/schemas/Page'
-    TransactionNFTCheckoutProvider:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - unknown
-      - sardine
-      - transak
-    Marketplace_GetOrders_Request:
-      type: object
-      properties:
-        input:
-          type: array
-          description: '[]GetOrdersInput'
-          items:
-            $ref: '#/components/schemas/GetOrdersInput'
-        page:
-          $ref: '#/components/schemas/Page'
     CollectibleOrder:
       type: object
       required:
@@ -3953,6 +3899,60 @@ components:
           $ref: '#/components/schemas/Order'
         offer:
           $ref: '#/components/schemas/Order'
+    Marketplace_ListCollectibleActivities_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+    Marketplace_ListCollectibleOffers_Response:
+      type: object
+      properties:
+        offers:
+          type: array
+          description: '[]Order'
+          items:
+            $ref: '#/components/schemas/Order'
+        page:
+          $ref: '#/components/schemas/Page'
+    PostRequest:
+      type: object
+      required:
+      - endpoint
+      - method
+      - body
+      properties:
+        endpoint:
+          type: string
+        method:
+          type: string
+        body:
+          type: object
+    ErrorWebrpcEndpoint:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcEndpoint
+        code:
+          type: number
+          example: 0
+        msg:
+          type: string
+          example: endpoint error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

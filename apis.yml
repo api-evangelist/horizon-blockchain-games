@@ -101,7 +101,7 @@ apis:
   - type: OpenAPI
     url: openapi/horizon-blockchain-games-marketplace-api-openapi.yml
 - aid: horizon-blockchain-games:horizon-blockchain-games-public-api
-  name: Horizon Blockchain Games public API
+  name: Horizon Blockchain Games Public API
   description: >-
     Endpoints accessible by passing your project-access-key in the header. This is injected whenever you
     login automatically.
@@ -127,7 +127,7 @@ apis:
   - type: OpenAPI
     url: openapi/horizon-blockchain-games-rpc-api-openapi.yml
 - aid: horizon-blockchain-games:horizon-blockchain-games-secret-api
-  name: Horizon Blockchain Games secret API
+  name: Horizon Blockchain Games Secret API
   description: >-
     Endpoints that require a Sequence service token intended to be secret. You can manually generate one
     on Sequence Builder and pass it as a Bearer Token.
