@@ -3243,189 +3243,11 @@ paths:
       description: Xr-Sepolia Relayer
 components:
   schemas:
-    ErrorInvalidArgument:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: InvalidArgument
-        code:
-          type: number
-          example: 2001
-        msg:
-          type: string
-          example: Invalid argument
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorEmailTemplateExists:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: EmailTemplateExists
-        code:
-          type: number
-          example: 3004
-        msg:
-          type: string
-          example: Email Template exists
-        cause:
-          type: string
-        status:
-          type: number
-          example: 409
-    Builder_GetAudience_Response:
+    Builder_UpdateAudience_Response:
       type: object
       properties:
         audience:
           $ref: '#/components/schemas/Audience'
-        contacts:
-          type: array
-          description: '[]AudienceContact'
-          items:
-            $ref: '#/components/schemas/AudienceContact'
-        contracts:
-          type: array
-          description: '[]Contract'
-          items:
-            $ref: '#/components/schemas/Contract'
-    ContractSourceType:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - LINKED
-      - DEPLOYED
-      - SALE
-    ErrorUnauthorized:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: Unauthorized
-        code:
-          type: number
-          example: 1000
-        msg:
-          type: string
-          example: Unauthorized access
-        cause:
-          type: string
-        status:
-          type: number
-          example: 401
-    ErrorWebrpcServerPanic:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcServerPanic
-        code:
-          type: number
-          example: -6
-        msg:
-          type: string
-          example: server panic
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    ErrorRequestConflict:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: RequestConflict
-        code:
-          type: number
-          example: 1004
-        msg:
-          type: string
-          example: Conflict with target resource
-        cause:
-          type: string
-        status:
-          type: number
-          example: 409
-    ErrorServiceDisabled:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: ServiceDisabled
-        code:
-          type: number
-          example: 1005
-        msg:
-          type: string
-          example: Service disabled
-        cause:
-          type: string
-        status:
-          type: number
-          example: 404
-    Builder_RemoveAudienceContacts_Response:
-      type: object
-      properties:
-        ok:
-          type: boolean
-    Builder_AddAudienceContacts_Response:
-      type: object
-      properties:
-        ok:
-          type: boolean
-    Builder_ListAudiences_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-    Builder_GetContract_Response:
-      type: object
-      properties:
-        contract:
-          $ref: '#/components/schemas/Contract'
-    Builder_UpdateAudience_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-        audienceId:
-          type: number
-        name:
-          type: string
     ErrorWebrpcBadRoute:
       type: object
       required:
@@ -3448,281 +3270,6 @@ components:
         status:
           type: number
           example: 404
-    Builder_ListAudiences_Response:
-      type: object
-      properties:
-        audiences:
-          type: array
-          description: '[]Audience'
-          items:
-            $ref: '#/components/schemas/Audience'
-    ErrorNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: NotFound
-        code:
-          type: number
-          example: 3000
-        msg:
-          type: string
-          example: Resource not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorWebrpcBadMethod:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadMethod
-        code:
-          type: number
-          example: -3
-        msg:
-          type: string
-          example: bad method
-        cause:
-          type: string
-        status:
-          type: number
-          example: 405
-    ErrorUserNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: UserNotFound
-        code:
-          type: number
-          example: 3001
-        msg:
-          type: string
-          example: User not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Builder_AddAudienceContacts_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-        audienceId:
-          type: number
-        contacts:
-          type: array
-          description: '[]AudienceContact'
-          items:
-            $ref: '#/components/schemas/AudienceContact'
-    Builder_ListContractSources_Response:
-      type: object
-      properties:
-        page:
-          $ref: '#/components/schemas/Page'
-        contractSources:
-          type: array
-          description: '[]ContractSource'
-          items:
-            $ref: '#/components/schemas/ContractSource'
-    ErrorInvalidNetwork:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: InvalidNetwork
-        code:
-          type: number
-          example: 3007
-        msg:
-          type: string
-          example: Invalid network
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorTimeout:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: Timeout
-        code:
-          type: number
-          example: 2000
-        msg:
-          type: string
-          example: Request timed out
-        cause:
-          type: string
-        status:
-          type: number
-          example: 408
-    ErrorSessionExpired:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: SessionExpired
-        code:
-          type: number
-          example: 1002
-        msg:
-          type: string
-          example: Session expired
-        cause:
-          type: string
-        status:
-          type: number
-          example: 403
-    ErrorWebrpcBadResponse:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadResponse
-        code:
-          type: number
-          example: -5
-        msg:
-          type: string
-          example: bad response
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    AudienceContact:
-      type: object
-      required:
-      - id
-      - audienceId
-      - address
-      - createdAt
-      - updatedAt
-      properties:
-        id:
-          type: number
-        audienceId:
-          type: number
-        name:
-          type: string
-        address:
-          type: string
-        email:
-          type: string
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
-    SortBy:
-      type: object
-      required:
-      - column
-      properties:
-        column:
-          type: string
-        order:
-          $ref: '#/components/schemas/SortOrder'
-    SortOrder:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - DESC
-      - ASC
-    ErrorInvitationExpired:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: InvitationExpired
-        code:
-          type: number
-          example: 4000
-        msg:
-          type: string
-          example: Invitation code is expired
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorWebrpcInternalError:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcInternalError
-        code:
-          type: number
-          example: -7
-        msg:
-          type: string
-          example: internal error
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    ContractFilter:
-      type: object
-      properties:
-        chainId:
-          type: number
-        contractSourceType:
-          $ref: '#/components/schemas/ContractSourceType'
-        contractType:
-          type: string
     Builder_GetAudience_Request:
       type: object
       properties:
@@ -3730,7 +3277,7 @@ components:
           type: number
         audienceId:
           type: number
-    ErrorWebrpcRequestFailed:
+    ErrorEmailTemplateExists:
       type: object
       required:
       - error
@@ -3740,68 +3287,93 @@ components:
       properties:
         error:
           type: string
-          example: WebrpcRequestFailed
+          example: EmailTemplateExists
         code:
           type: number
-          example: -1
+          example: 3004
         msg:
           type: string
-          example: request failed
+          example: Email Template exists
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    ErrorWebrpcServerPanic:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcServerPanic
+        code:
+          type: number
+          example: -6
+        msg:
+          type: string
+          example: server panic
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    ErrorWebrpcStreamLost:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcStreamLost
+        code:
+          type: number
+          example: -9
+        msg:
+          type: string
+          example: stream lost
         cause:
           type: string
         status:
           type: number
           example: 400
-    Builder_ListContracts_Request:
+    Builder_GetAudience_Response:
+      type: object
+      properties:
+        audience:
+          $ref: '#/components/schemas/Audience'
+        contacts:
+          type: array
+          description: '[]AudienceContact'
+          items:
+            $ref: '#/components/schemas/AudienceContact'
+        contracts:
+          type: array
+          description: '[]Contract'
+          items:
+            $ref: '#/components/schemas/Contract'
+    Builder_UpdateAudience_Request:
       type: object
       properties:
         projectId:
           type: number
-        filter:
-          $ref: '#/components/schemas/ContractFilter'
-        page:
-          $ref: '#/components/schemas/Page'
-    Contract:
-      type: object
-      required:
-      - id
-      - projectId
-      - contractName
-      - contractAddress
-      - contractType
-      - chainId
-      - source
-      - createdAt
-      - updatedAt
-      properties:
-        id:
-          type: number
-        projectId:
-          type: number
-        contractName:
-          type: string
-        contractAddress:
-          type: string
-        contractType:
-          type: string
-        chainId:
-          type: number
-        source:
-          $ref: '#/components/schemas/ContractSourceType'
-        itemsContractAddress:
-          type: string
-        abi:
-          type: string
-        bytecode:
-          type: string
-        bytecodeHash:
-          type: string
         audienceId:
           type: number
-        createdAt:
+        name:
           type: string
-        updatedAt:
-          type: string
+    ContractSourceType:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - LINKED
+      - DEPLOYED
+      - SALE
     ErrorFeatureNotIncluded:
       type: object
       required:
@@ -3824,6 +3396,96 @@ components:
         status:
           type: number
           example: 402
+    ErrorWebrpcBadMethod:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadMethod
+        code:
+          type: number
+          example: -3
+        msg:
+          type: string
+          example: bad method
+        cause:
+          type: string
+        status:
+          type: number
+          example: 405
+    Audience:
+      type: object
+      required:
+      - id
+      - projectId
+      - name
+      - contactCount
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: number
+        projectId:
+          type: number
+        name:
+          type: string
+        contactCount:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        deletedAt:
+          type: string
+    ErrorPermissionDenied:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: PermissionDenied
+        code:
+          type: number
+          example: 1001
+        msg:
+          type: string
+          example: Permission denied
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    ErrorMethodNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MethodNotFound
+        code:
+          type: number
+          example: 1003
+        msg:
+          type: string
+          example: Method not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
     Builder_ListContracts_Response:
       type: object
       properties:
@@ -3834,11 +3496,6 @@ components:
           description: '[]Contract'
           items:
             $ref: '#/components/schemas/Contract'
-    Builder_CreateAudience_Response:
-      type: object
-      properties:
-        audience:
-          $ref: '#/components/schemas/Audience'
     ContractSource:
       type: object
       required:
@@ -3893,14 +3550,60 @@ components:
           type: string
         updatedAt:
           type: string
-    Builder_ListContractSources_Request:
+    Builder_AddAudienceContacts_Request:
       type: object
       properties:
         projectId:
           type: number
-        page:
-          $ref: '#/components/schemas/Page'
-    ErrorWebrpcBadRequest:
+        audienceId:
+          type: number
+        contacts:
+          type: array
+          description: '[]AudienceContact'
+          items:
+            $ref: '#/components/schemas/AudienceContact'
+    Contract:
+      type: object
+      required:
+      - id
+      - projectId
+      - contractName
+      - contractAddress
+      - contractType
+      - chainId
+      - source
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: number
+        projectId:
+          type: number
+        contractName:
+          type: string
+        contractAddress:
+          type: string
+        contractType:
+          type: string
+        chainId:
+          type: number
+        source:
+          $ref: '#/components/schemas/ContractSourceType'
+        itemsContractAddress:
+          type: string
+        abi:
+          type: string
+        bytecode:
+          type: string
+        bytecodeHash:
+          type: string
+        audienceId:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    ErrorSessionExpired:
       type: object
       required:
       - error
@@ -3910,18 +3613,115 @@ components:
       properties:
         error:
           type: string
-          example: WebrpcBadRequest
+          example: SessionExpired
         code:
           type: number
-          example: -4
+          example: 1002
         msg:
           type: string
-          example: bad request
+          example: Session expired
         cause:
           type: string
         status:
           type: number
-          example: 400
+          example: 403
+    Builder_RemoveAudienceContacts_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        audienceId:
+          type: number
+        contactIds:
+          type: array
+          description: '[]uint64'
+          items:
+            type: number
+    ErrorRequestConflict:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RequestConflict
+        code:
+          type: number
+          example: 1004
+        msg:
+          type: string
+          example: Conflict with target resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    Page:
+      type: object
+      properties:
+        pageSize:
+          type: number
+        page:
+          type: number
+        column:
+          type: string
+        more:
+          type: boolean
+        before:
+          type: object
+        after:
+          type: object
+        sort:
+          type: array
+          description: '[]SortBy'
+          items:
+            $ref: '#/components/schemas/SortBy'
+    Builder_AddAudienceContacts_Response:
+      type: object
+      properties:
+        ok:
+          type: boolean
+    Builder_GetContract_Request:
+      type: object
+      properties:
+        id:
+          type: number
+    AudienceContact:
+      type: object
+      required:
+      - id
+      - audienceId
+      - address
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: number
+        audienceId:
+          type: number
+        name:
+          type: string
+        address:
+          type: string
+        email:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    Builder_CreateAudience_Response:
+      type: object
+      properties:
+        audience:
+          $ref: '#/components/schemas/Audience'
+    Builder_ListAudiences_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
     ErrorInvalidTier:
       type: object
       required:
@@ -3944,225 +3744,6 @@ components:
         status:
           type: number
           example: 400
-    Builder_RemoveAudienceContacts_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-        audienceId:
-          type: number
-        contactIds:
-          type: array
-          description: '[]uint64'
-          items:
-            type: number
-    ErrorProjectNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: ProjectNotFound
-        code:
-          type: number
-          example: 3002
-        msg:
-          type: string
-          example: Project not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Builder_DeleteAudience_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-        audienceId:
-          type: number
-    Audience:
-      type: object
-      required:
-      - id
-      - projectId
-      - name
-      - contactCount
-      - createdAt
-      - updatedAt
-      properties:
-        id:
-          type: number
-        projectId:
-          type: number
-        name:
-          type: string
-        contactCount:
-          type: number
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
-        deletedAt:
-          type: string
-    Builder_UpdateAudience_Response:
-      type: object
-      properties:
-        audience:
-          $ref: '#/components/schemas/Audience'
-    ErrorWebrpcClientDisconnected:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcClientDisconnected
-        code:
-          type: number
-          example: -8
-        msg:
-          type: string
-          example: client disconnected
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Builder_GetContract_Request:
-      type: object
-      properties:
-        id:
-          type: number
-    Builder_CreateAudience_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-        name:
-          type: string
-    ErrorAlreadyCollaborator:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: AlreadyCollaborator
-        code:
-          type: number
-          example: 4001
-        msg:
-          type: string
-          example: Already a collaborator
-        cause:
-          type: string
-        status:
-          type: number
-          example: 409
-    ErrorPermissionDenied:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: PermissionDenied
-        code:
-          type: number
-          example: 1001
-        msg:
-          type: string
-          example: Permission denied
-        cause:
-          type: string
-        status:
-          type: number
-          example: 403
-    ErrorMethodNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: MethodNotFound
-        code:
-          type: number
-          example: 1003
-        msg:
-          type: string
-          example: Method not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 404
-    ErrorWebrpcEndpoint:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcEndpoint
-        code:
-          type: number
-          example: 0
-        msg:
-          type: string
-          example: endpoint error
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorWebrpcStreamLost:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcStreamLost
-        code:
-          type: number
-          example: -9
-        msg:
-          type: string
-          example: stream lost
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Builder_DeleteAudience_Response:
-      type: object
-      properties:
-        ok:
-          type: boolean
     ErrorSubscriptionLimit:
       type: object
       required:
@@ -4185,29 +3766,380 @@ components:
         status:
           type: number
           example: 402
-    Page:
+    ErrorUserNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: UserNotFound
+        code:
+          type: number
+          example: 3001
+        msg:
+          type: string
+          example: User not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorTimeout:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Timeout
+        code:
+          type: number
+          example: 2000
+        msg:
+          type: string
+          example: Request timed out
+        cause:
+          type: string
+        status:
+          type: number
+          example: 408
+    ErrorInvalidArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidArgument
+        code:
+          type: number
+          example: 2001
+        msg:
+          type: string
+          example: Invalid argument
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorServiceDisabled:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ServiceDisabled
+        code:
+          type: number
+          example: 1005
+        msg:
+          type: string
+          example: Service disabled
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    ErrorWebrpcBadResponse:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadResponse
+        code:
+          type: number
+          example: -5
+        msg:
+          type: string
+          example: bad response
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    ErrorWebrpcInternalError:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcInternalError
+        code:
+          type: number
+          example: -7
+        msg:
+          type: string
+          example: internal error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    Builder_GetContract_Response:
       type: object
       properties:
-        pageSize:
+        contract:
+          $ref: '#/components/schemas/Contract'
+    ContractFilter:
+      type: object
+      properties:
+        chainId:
+          type: number
+        contractSourceType:
+          $ref: '#/components/schemas/ContractSourceType'
+        contractType:
+          type: string
+    ErrorInvitationExpired:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvitationExpired
+        code:
+          type: number
+          example: 4000
+        msg:
+          type: string
+          example: Invitation code is expired
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: NotFound
+        code:
+          type: number
+          example: 3000
+        msg:
+          type: string
+          example: Resource not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    SortOrder:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - DESC
+      - ASC
+    ErrorProjectNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ProjectNotFound
+        code:
+          type: number
+          example: 3002
+        msg:
+          type: string
+          example: Project not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_ListAudiences_Response:
+      type: object
+      properties:
+        audiences:
+          type: array
+          description: '[]Audience'
+          items:
+            $ref: '#/components/schemas/Audience'
+    ErrorWebrpcClientDisconnected:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcClientDisconnected
+        code:
+          type: number
+          example: -8
+        msg:
+          type: string
+          example: client disconnected
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_ListContracts_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        filter:
+          $ref: '#/components/schemas/ContractFilter'
+        page:
+          $ref: '#/components/schemas/Page'
+    Builder_RemoveAudienceContacts_Response:
+      type: object
+      properties:
+        ok:
+          type: boolean
+    ErrorWebrpcBadRequest:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadRequest
+        code:
+          type: number
+          example: -4
+        msg:
+          type: string
+          example: bad request
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_CreateAudience_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        name:
+          type: string
+    Builder_ListContractSources_Request:
+      type: object
+      properties:
+        projectId:
           type: number
         page:
+          $ref: '#/components/schemas/Page'
+    ErrorUnauthorized:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unauthorized
+        code:
           type: number
+          example: 1000
+        msg:
+          type: string
+          example: Unauthorized access
+        cause:
+          type: string
+        status:
+          type: number
+          example: 401
+    ErrorWebrpcEndpoint:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcEndpoint
+        code:
+          type: number
+          example: 0
+        msg:
+          type: string
+          example: endpoint error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Builder_ListContractSources_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        contractSources:
+          type: array
+          description: '[]ContractSource'
+          items:
+            $ref: '#/components/schemas/ContractSource'
+    Builder_DeleteAudience_Response:
+      type: object
+      properties:
+        ok:
+          type: boolean
+    SortBy:
+      type: object
+      required:
+      - column
+      properties:
         column:
           type: string
-        more:
-          type: boolean
-        before:
-          type: object
-        after:
-          type: object
-        sort:
-          type: array
-          description: '[]SortBy'
-          items:
-            $ref: '#/components/schemas/SortBy'
-    Indexer_SyncBalance_Response:
+        order:
+          $ref: '#/components/schemas/SortOrder'
+    Builder_DeleteAudience_Request:
       type: object
-    ErrorResourceExhausted:
+      properties:
+        projectId:
+          type: number
+        audienceId:
+          type: number
+    ErrorInvalidNetwork:
       type: object
       required:
       - error
@@ -4217,24 +4149,19 @@ components:
       properties:
         error:
           type: string
-          example: ResourceExhausted
+          example: InvalidNetwork
         code:
           type: number
-          example: 2004
+          example: 3007
         msg:
           type: string
-          example: Resource exhausted
+          example: Invalid network
         cause:
           type: string
         status:
           type: number
           example: 400
-    Indexer_GetEtherBalance_Response:
-      type: object
-      properties:
-        balance:
-          $ref: '#/components/schemas/EtherBalance'
-    ErrorMetadataCallFailed:
+    ErrorAlreadyCollaborator:
       type: object
       required:
       - error
@@ -4244,19 +4171,41 @@ components:
       properties:
         error:
           type: string
-          example: MetadataCallFailed
+          example: AlreadyCollaborator
         code:
           type: number
-          example: 3003
+          example: 4001
         msg:
           type: string
-          example: Metadata service call failed
+          example: Already a collaborator
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    ErrorWebrpcRequestFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcRequestFailed
+        code:
+          type: number
+          example: -1
+        msg:
+          type: string
+          example: request failed
         cause:
           type: string
         status:
           type: number
           example: 400
-    ErrorUnavailable:
+    ErrorAborted:
       type: object
       required:
       - error
@@ -4266,13 +4215,13 @@ components:
       properties:
         error:
           type: string
-          example: Unavailable
+          example: Aborted
         code:
           type: number
-          example: 2002
+          example: 1005
         msg:
           type: string
-          example: Unavailable resource
+          example: Request aborted
         cause:
           type: string
         status:
@@ -4300,12 +4249,7 @@ components:
         status:
           type: number
           example: 400
-    Indexer_GetEtherBalance_Request:
-      type: object
-      properties:
-        accountAddress:
-          type: string
-    ErrorAborted:
+    ErrorMetadataCallFailed:
       type: object
       required:
       - error
@@ -4315,27 +4259,18 @@ components:
       properties:
         error:
           type: string
-          example: Aborted
+          example: MetadataCallFailed
         code:
           type: number
-          example: 1005
+          example: 3003
         msg:
           type: string
-          example: Request aborted
+          example: Metadata service call failed
         cause:
           type: string
         status:
           type: number
           example: 400
-    Indexer_SyncBalance_Request:
-      type: object
-      properties:
-        accountAddress:
-          type: string
-        contractAddress:
-          type: string
-        tokenID:
-          type: string
     EtherBalance:
       type: object
       required:
@@ -4346,6 +4281,156 @@ components:
           type: string
         balanceWei:
           type: string
+    Indexer_SyncBalance_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+        contractAddress:
+          type: string
+        tokenID:
+          type: string
+    Indexer_GetEtherBalance_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+    ErrorResourceExhausted:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ResourceExhausted
+        code:
+          type: number
+          example: 2004
+        msg:
+          type: string
+          example: Resource exhausted
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorUnavailable:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unavailable
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Unavailable resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_GetEtherBalance_Response:
+      type: object
+      properties:
+        balance:
+          $ref: '#/components/schemas/EtherBalance'
+    Indexer_SyncBalance_Response:
+      type: object
+    API_GetSwapPrice_Request:
+      type: object
+      properties:
+        buyCurrencyAddress:
+          type: string
+        sellCurrencyAddress:
+          type: string
+        buyAmount:
+          type: string
+        chainId:
+          type: number
+        slippagePercentage:
+          type: number
+    API_GetSwapQuote_Request:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        buyCurrencyAddress:
+          type: string
+        sellCurrencyAddress:
+          type: string
+        buyAmount:
+          type: string
+        chainId:
+          type: number
+        includeApprove:
+          type: boolean
+        slippagePercentage:
+          type: number
+    ErrorGeoblocked:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Geoblocked
+        code:
+          type: number
+          example: 1006
+        msg:
+          type: string
+          example: Geoblocked region
+        cause:
+          type: string
+        status:
+          type: number
+          example: 451
+    API_IsValidETHAuthProof_Response:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+    API_GetSwapPrices_Response:
+      type: object
+      properties:
+        swapPrices:
+          type: array
+          description: '[]SwapPrice'
+          items:
+            $ref: '#/components/schemas/SwapPrice'
+    API_IsValidMessageSignature_Response:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+    API_GetSwapPrice_Response:
+      type: object
+      properties:
+        swapPrice:
+          $ref: '#/components/schemas/SwapPrice'
+    API_IsValidTypedDataSignature_Response:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+    API_GetSwapQuote_Response:
+      type: object
+      properties:
+        swapQuote:
+          $ref: '#/components/schemas/SwapQuote'
     SwapPrice:
       type: object
       required:
@@ -4365,6 +4450,96 @@ components:
           type: string
         transactionValue:
           type: string
+    API_LinkWallet_Response:
+      type: object
+      properties:
+        status:
+          type: boolean
+    LinkedWallet:
+      type: object
+      required:
+      - id
+      - walletAddress
+      - linkedWalletAddress
+      properties:
+        id:
+          type: number
+        walletType:
+          type: string
+        walletAddress:
+          type: string
+        linkedWalletAddress:
+          type: string
+        createdAt:
+          type: string
+    API_GetLinkedWallets_Request:
+      type: object
+      properties:
+        parentWalletAddress:
+          type: string
+        parentWalletMessage:
+          type: string
+        parentWalletSignature:
+          type: string
+        signatureChainId:
+          type: string
+    API_GetLinkedWallets_Response:
+      type: object
+      properties:
+        linkedWallets:
+          type: array
+          description: '[]LinkedWallet'
+          items:
+            $ref: '#/components/schemas/LinkedWallet'
+    API_GetSwapPrices_Request:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        buyCurrencyAddress:
+          type: string
+        buyAmount:
+          type: string
+        chainId:
+          type: number
+        slippagePercentage:
+          type: number
+    API_IsValidETHAuthProof_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        ethAuthProofString:
+          type: string
+    API_IsValidMessageSignature_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        message:
+          type: string
+        signature:
+          type: string
+    API_IsValidSignature_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        digest:
+          type: string
+        signature:
+          type: string
+    API_RemoveLinkedWallet_Response:
+      type: object
+      properties:
+        status:
+          type: boolean
     ErrorInvalidArgument_2:
       type: object
       required:
@@ -4387,11 +4562,39 @@ components:
         status:
           type: number
           example: 400
-    API_GetSwapPrice_Response:
+    API_IsValidSignature_Response:
       type: object
       properties:
-        swapPrice:
-          $ref: '#/components/schemas/SwapPrice'
+        isValid:
+          type: boolean
+    API_RemoveLinkedWallet_Request:
+      type: object
+      properties:
+        parentWalletAddress:
+          type: string
+        parentWalletMessage:
+          type: string
+        parentWalletSignature:
+          type: string
+        linkedWalletAddress:
+          type: string
+        linkedWalletMessage:
+          type: string
+        linkedWalletSignature:
+          type: string
+        signatureChainId:
+          type: string
+    API_IsValidTypedDataSignature_Request:
+      type: object
+      properties:
+        chainId:
+          type: string
+        walletAddress:
+          type: string
+        typedData:
+          type: object
+        signature:
+          type: string
     SwapQuote:
       type: object
       required:
@@ -4420,75 +4623,6 @@ components:
           type: string
         approveData:
           type: string
-    API_RemoveLinkedWallet_Response:
-      type: object
-      properties:
-        status:
-          type: boolean
-    API_GetSwapPrices_Request:
-      type: object
-      properties:
-        userAddress:
-          type: string
-        buyCurrencyAddress:
-          type: string
-        buyAmount:
-          type: string
-        chainId:
-          type: number
-        slippagePercentage:
-          type: number
-    API_GetSwapQuote_Response:
-      type: object
-      properties:
-        swapQuote:
-          $ref: '#/components/schemas/SwapQuote'
-    API_IsValidMessageSignature_Request:
-      type: object
-      properties:
-        chainId:
-          type: string
-        walletAddress:
-          type: string
-        message:
-          type: string
-        signature:
-          type: string
-    API_GetSwapPrice_Request:
-      type: object
-      properties:
-        buyCurrencyAddress:
-          type: string
-        sellCurrencyAddress:
-          type: string
-        buyAmount:
-          type: string
-        chainId:
-          type: number
-        slippagePercentage:
-          type: number
-    API_LinkWallet_Response:
-      type: object
-      properties:
-        status:
-          type: boolean
-    API_RemoveLinkedWallet_Request:
-      type: object
-      properties:
-        parentWalletAddress:
-          type: string
-        parentWalletMessage:
-          type: string
-        parentWalletSignature:
-          type: string
-        linkedWalletAddress:
-          type: string
-        linkedWalletMessage:
-          type: string
-        linkedWalletSignature:
-          type: string
-        signatureChainId:
-          type: string
     API_LinkWallet_Request:
       type: object
       properties:
@@ -4507,176 +4641,6 @@ components:
         signatureChainId:
           type: string
         linkedWalletType:
-          type: string
-    API_IsValidETHAuthProof_Response:
-      type: object
-      properties:
-        isValid:
-          type: boolean
-    API_GetSwapPrices_Response:
-      type: object
-      properties:
-        swapPrices:
-          type: array
-          description: '[]SwapPrice'
-          items:
-            $ref: '#/components/schemas/SwapPrice'
-    API_IsValidMessageSignature_Response:
-      type: object
-      properties:
-        isValid:
-          type: boolean
-    API_GetSwapQuote_Request:
-      type: object
-      properties:
-        userAddress:
-          type: string
-        buyCurrencyAddress:
-          type: string
-        sellCurrencyAddress:
-          type: string
-        buyAmount:
-          type: string
-        chainId:
-          type: number
-        includeApprove:
-          type: boolean
-        slippagePercentage:
-          type: number
-    API_GetLinkedWallets_Request:
-      type: object
-      properties:
-        parentWalletAddress:
-          type: string
-        parentWalletMessage:
-          type: string
-        parentWalletSignature:
-          type: string
-        signatureChainId:
-          type: string
-    API_IsValidETHAuthProof_Request:
-      type: object
-      properties:
-        chainId:
-          type: string
-        walletAddress:
-          type: string
-        ethAuthProofString:
-          type: string
-    API_IsValidSignature_Response:
-      type: object
-      properties:
-        isValid:
-          type: boolean
-    LinkedWallet:
-      type: object
-      required:
-      - id
-      - walletAddress
-      - linkedWalletAddress
-      properties:
-        id:
-          type: number
-        walletType:
-          type: string
-        walletAddress:
-          type: string
-        linkedWalletAddress:
-          type: string
-        createdAt:
-          type: string
-    API_GetLinkedWallets_Response:
-      type: object
-      properties:
-        linkedWallets:
-          type: array
-          description: '[]LinkedWallet'
-          items:
-            $ref: '#/components/schemas/LinkedWallet'
-    API_IsValidSignature_Request:
-      type: object
-      properties:
-        chainId:
-          type: string
-        walletAddress:
-          type: string
-        digest:
-          type: string
-        signature:
-          type: string
-    API_IsValidTypedDataSignature_Response:
-      type: object
-      properties:
-        isValid:
-          type: boolean
-    API_IsValidTypedDataSignature_Request:
-      type: object
-      properties:
-        chainId:
-          type: string
-        walletAddress:
-          type: string
-        typedData:
-          type: object
-        signature:
-          type: string
-    ErrorGeoblocked:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: Geoblocked
-        code:
-          type: number
-          example: 1006
-        msg:
-          type: string
-          example: Geoblocked region
-        cause:
-          type: string
-        status:
-          type: number
-          example: 451
-    Metadata_RefreshAllContractTokens_Response:
-      type: object
-      properties:
-        task:
-          $ref: '#/components/schemas/Task'
-        retryAfter:
-          type: number
-    Task:
-      type: object
-      required:
-      - id
-      - queue
-      - try
-      - payload
-      properties:
-        id:
-          type: number
-        queue:
-          type: string
-        status:
-          $ref: '#/components/schemas/TaskStatus'
-        try:
-          type: number
-        runAt:
-          type: string
-        lastRanAt:
-          type: string
-        createdAt:
-          type: string
-        payload:
-          type: array
-          description: '[]byte'
-          items:
-            type: string
-        hash:
           type: string
     ErrorValidationFailed:
       type: object
@@ -4700,239 +4664,19 @@ components:
         status:
           type: number
           example: 400
-    Metadata_RefreshContractTokens_Response:
+    Metadata_SearchMetadata_Response:
       type: object
       properties:
-        task:
-          $ref: '#/components/schemas/Task'
-    ErrorTokenDirectoryDisabled:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: TokenDirectoryDisabled
-        code:
-          type: number
-          example: 4001
-        msg:
-          type: string
-          example: Token Directory is disabled
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ContractInfo:
-      type: object
-      required:
-      - chainId
-      - address
-      - name
-      - type
-      - symbol
-      - logoURI
-      - deployed
-      - bytecodeHash
-      - extensions
-      - contentHash
-      - updatedAt
-      - notFound
-      - status
-      properties:
-        chainId:
-          type: number
-        address:
-          type: string
-        name:
-          type: string
-        type:
-          type: string
-        symbol:
-          type: string
-        decimals:
-          type: number
-        logoURI:
-          type: string
-        deployed:
-          type: boolean
-        bytecodeHash:
-          type: string
-        extensions:
-          $ref: '#/components/schemas/ContractInfoExtensions'
-        contentHash:
-          type: number
-        updatedAt:
-          type: string
-        notFound:
-          type: boolean
-        queuedAt:
-          type: string
-        status:
-          $ref: '#/components/schemas/ResourceStatus'
-    ContractInfoExtensions:
-      type: object
-      required:
-      - link
-      - description
-      - categories
-      - ogImage
-      - ogName
-      - originChainId
-      - originAddress
-      - blacklist
-      - verified
-      - verifiedBy
-      - featured
-      properties:
-        link:
-          type: string
-        description:
-          type: string
-        categories:
+        tokenMetadata:
           type: array
-          description: '[]string'
+          description: '[]TokenMetadata'
           items:
-            type: string
-        ogImage:
-          type: string
-        ogName:
-          type: string
-        originChainId:
-          type: number
-        originAddress:
-          type: string
-        blacklist:
-          type: boolean
-        verified:
-          type: boolean
-        verifiedBy:
-          type: string
-        featured:
-          type: boolean
-    Metadata_RefreshContractInfo_Request:
-      type: object
-      properties:
-        chainHandle:
-          type: string
-        contractAddress:
-          type: string
-    Metadata_SearchContracts_Response:
-      type: object
-      properties:
+            $ref: '#/components/schemas/TokenMetadata'
         contractInfo:
           type: array
           description: '[]ContractInfo'
           items:
             $ref: '#/components/schemas/ContractInfo'
-        nextPage:
-          $ref: '#/components/schemas/Page_2'
-    Metadata_SearchContracts_Request:
-      type: object
-      properties:
-        q:
-          type: string
-        chainID:
-          type: string
-        chainIDs:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        types:
-          type: array
-          description: '[]ContractType'
-          items:
-            $ref: '#/components/schemas/ContractType'
-        page:
-          $ref: '#/components/schemas/Page_2'
-    Metadata_SearchMetadata_Request:
-      type: object
-      properties:
-        filter:
-          type: string
-        chainID:
-          type: string
-        types:
-          type: array
-          description: '[]ContractType'
-          items:
-            $ref: '#/components/schemas/ContractType'
-        excludeTokenMetadata:
-          type: boolean
-    ErrorFail:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: Fail
-        code:
-          type: number
-          example: 1005
-        msg:
-          type: string
-          example: Request Failed
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    Asset:
-      type: object
-      required:
-      - id
-      - collectionId
-      - metadataField
-      properties:
-        id:
-          type: number
-        collectionId:
-          type: number
-        tokenId:
-          type: string
-        url:
-          type: string
-        metadataField:
-          type: string
-        filename:
-          type: string
-        filesize:
-          type: number
-        mimeType:
-          type: string
-        width:
-          type: number
-        height:
-          type: number
-        updatedAt:
-          type: string
-    Metadata_RefreshContractInfo_Response:
-      type: object
-    TaskStatus:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - QUEUED
-      - PAUSED
-      - FAILED
-      - COMPLETED
-    ContractType:
-      type: string
-      description: Represented as uint16 on the server side
-      enum:
-      - UNKNOWN
-      - ERC20
-      - ERC721
-      - ERC1155
     TokenMetadata:
       type: object
       required:
@@ -4989,13 +4733,6 @@ components:
           type: string
         lastFetched:
           type: string
-    Metadata_RefreshAllContractTokens_Request:
-      type: object
-      properties:
-        chainHandle:
-          type: string
-        contractAddress:
-          type: string
     ErrorRateLimited:
       type: object
       required:
@@ -5018,28 +4755,6 @@ components:
         status:
           type: number
           example: 429
-    ErrorRequiredArgument:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: RequiredArgument
-        code:
-          type: number
-          example: 2002
-        msg:
-          type: string
-          example: Required argument missing
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
     ResourceStatus:
       type: string
       description: Represented as uint32 on the server side
@@ -5047,46 +4762,6 @@ components:
       - NOT_AVAILABLE
       - STALE
       - AVAILABLE
-    Metadata_RefreshContractTokens_Request:
-      type: object
-      properties:
-        chainHandle:
-          type: string
-        contractAddress:
-          type: string
-        tokenIDs:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    Metadata_SearchMetadata_Response:
-      type: object
-      properties:
-        tokenMetadata:
-          type: array
-          description: '[]TokenMetadata'
-          items:
-            $ref: '#/components/schemas/TokenMetadata'
-        contractInfo:
-          type: array
-          description: '[]ContractInfo'
-          items:
-            $ref: '#/components/schemas/ContractInfo'
-    Page_2:
-      type: object
-      properties:
-        page:
-          type: number
-        column:
-          type: string
-        before:
-          type: object
-        after:
-          type: object
-        pageSize:
-          type: number
-        more:
-          type: boolean
     ErrorChainNotFound:
       type: object
       required:
@@ -5109,7 +4784,17 @@ components:
         status:
           type: number
           example: 400
-    ErrorInsufficientFee:
+    Metadata_RefreshContractInfo_Response:
+      type: object
+    TaskStatus:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - QUEUED
+      - PAUSED
+      - FAILED
+      - COMPLETED
+    ErrorFail:
       type: object
       required:
       - error
@@ -5119,28 +4804,311 @@ components:
       properties:
         error:
           type: string
-          example: InsufficientFee
+          example: Fail
         code:
           type: number
-          example: 3004
+          example: 1005
         msg:
           type: string
-          example: Insufficient fee
+          example: Request Failed
         cause:
           type: string
         status:
           type: number
-          example: 402
-    Relayer_FeeTokens_Response:
+          example: 500
+    Metadata_SearchContracts_Request:
       type: object
       properties:
-        isFeeRequired:
-          type: boolean
-        tokens:
+        q:
+          type: string
+        chainID:
+          type: string
+        chainIDs:
           type: array
-          description: '[]FeeToken'
+          description: '[]string'
           items:
-            $ref: '#/components/schemas/FeeToken'
+            type: string
+        types:
+          type: array
+          description: '[]ContractType'
+          items:
+            $ref: '#/components/schemas/ContractType'
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Metadata_SearchContracts_Response:
+      type: object
+      properties:
+        contractInfo:
+          type: array
+          description: '[]ContractInfo'
+          items:
+            $ref: '#/components/schemas/ContractInfo'
+        nextPage:
+          $ref: '#/components/schemas/Page_2'
+    Metadata_RefreshContractTokens_Response:
+      type: object
+      properties:
+        task:
+          $ref: '#/components/schemas/Task'
+    Page_2:
+      type: object
+      properties:
+        page:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        pageSize:
+          type: number
+        more:
+          type: boolean
+    ContractInfo:
+      type: object
+      required:
+      - chainId
+      - address
+      - name
+      - type
+      - symbol
+      - logoURI
+      - deployed
+      - bytecodeHash
+      - extensions
+      - contentHash
+      - updatedAt
+      - notFound
+      - status
+      properties:
+        chainId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        symbol:
+          type: string
+        decimals:
+          type: number
+        logoURI:
+          type: string
+        deployed:
+          type: boolean
+        bytecodeHash:
+          type: string
+        extensions:
+          $ref: '#/components/schemas/ContractInfoExtensions'
+        contentHash:
+          type: number
+        updatedAt:
+          type: string
+        notFound:
+          type: boolean
+        queuedAt:
+          type: string
+        status:
+          $ref: '#/components/schemas/ResourceStatus'
+    Metadata_SearchMetadata_Request:
+      type: object
+      properties:
+        filter:
+          type: string
+        chainID:
+          type: string
+        types:
+          type: array
+          description: '[]ContractType'
+          items:
+            $ref: '#/components/schemas/ContractType'
+        excludeTokenMetadata:
+          type: boolean
+    Metadata_RefreshAllContractTokens_Response:
+      type: object
+      properties:
+        task:
+          $ref: '#/components/schemas/Task'
+        retryAfter:
+          type: number
+    ContractType:
+      type: string
+      description: Represented as uint16 on the server side
+      enum:
+      - UNKNOWN
+      - ERC20
+      - ERC721
+      - ERC1155
+    Metadata_RefreshContractInfo_Request:
+      type: object
+      properties:
+        chainHandle:
+          type: string
+        contractAddress:
+          type: string
+    Metadata_RefreshAllContractTokens_Request:
+      type: object
+      properties:
+        chainHandle:
+          type: string
+        contractAddress:
+          type: string
+    Metadata_RefreshContractTokens_Request:
+      type: object
+      properties:
+        chainHandle:
+          type: string
+        contractAddress:
+          type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Asset:
+      type: object
+      required:
+      - id
+      - collectionId
+      - metadataField
+      properties:
+        id:
+          type: number
+        collectionId:
+          type: number
+        tokenId:
+          type: string
+        url:
+          type: string
+        metadataField:
+          type: string
+        filename:
+          type: string
+        filesize:
+          type: number
+        mimeType:
+          type: string
+        width:
+          type: number
+        height:
+          type: number
+        updatedAt:
+          type: string
+    ErrorRequiredArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RequiredArgument
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Required argument missing
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ContractInfoExtensions:
+      type: object
+      required:
+      - link
+      - description
+      - categories
+      - ogImage
+      - ogName
+      - originChainId
+      - originAddress
+      - blacklist
+      - verified
+      - verifiedBy
+      - featured
+      properties:
+        link:
+          type: string
+        description:
+          type: string
+        categories:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        ogImage:
+          type: string
+        ogName:
+          type: string
+        originChainId:
+          type: number
+        originAddress:
+          type: string
+        blacklist:
+          type: boolean
+        verified:
+          type: boolean
+        verifiedBy:
+          type: string
+        featured:
+          type: boolean
+    Task:
+      type: object
+      required:
+      - id
+      - queue
+      - try
+      - payload
+      properties:
+        id:
+          type: number
+        queue:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        try:
+          type: number
+        runAt:
+          type: string
+        lastRanAt:
+          type: string
+        createdAt:
+          type: string
+        payload:
+          type: array
+          description: '[]byte'
+          items:
+            type: string
+        hash:
+          type: string
+    ErrorTokenDirectoryDisabled:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: TokenDirectoryDisabled
+        code:
+          type: number
+          example: 4001
+        msg:
+          type: string
+          example: Token Directory is disabled
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
     GasSponsor:
       type: object
       required:
@@ -5175,6 +5143,22 @@ components:
           type: string
         deletedAt:
           type: string
+    FeeOption:
+      type: object
+      required:
+      - token
+      - to
+      - value
+      - gasLimit
+      properties:
+        token:
+          $ref: '#/components/schemas/FeeToken'
+        to:
+          type: string
+        value:
+          type: string
+        gasLimit:
+          type: number
     Relayer_FeeOptions_Request:
       type: object
       properties:
@@ -5186,15 +5170,131 @@ components:
           type: string
         simulate:
           type: boolean
-    Relayer_GetChainID_Request:
-      type: object
     Relayer_GetChainID_Response:
       type: object
       properties:
         chainID:
           type: number
+    Relayer_AddGasSponsor_Response:
+      type: object
+      properties:
+        status:
+          type: boolean
+        gasSponsor:
+          $ref: '#/components/schemas/GasSponsor'
+    Page_3:
+      type: object
+      properties:
+        pageSize:
+          type: number
+        page:
+          type: number
+        more:
+          type: boolean
+        totalRecords:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        sort:
+          type: array
+          description: '[]SortBy'
+          items:
+            $ref: '#/components/schemas/SortBy_2'
     Relayer_FeeTokens_Request:
       type: object
+    ErrorInsufficientFee:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InsufficientFee
+        code:
+          type: number
+          example: 3004
+        msg:
+          type: string
+          example: Insufficient fee
+        cause:
+          type: string
+        status:
+          type: number
+          example: 402
+    Relayer_FeeTokens_Response:
+      type: object
+      properties:
+        isFeeRequired:
+          type: boolean
+        tokens:
+          type: array
+          description: '[]FeeToken'
+          items:
+            $ref: '#/components/schemas/FeeToken'
+    Relayer_GetChainID_Request:
+      type: object
+    Relayer_ListGasSponsors_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        page:
+          $ref: '#/components/schemas/Page_3'
+    FeeToken:
+      type: object
+      required:
+      - chainId
+      - name
+      - symbol
+      - type
+      - logoURL
+      properties:
+        chainId:
+          type: number
+        name:
+          type: string
+        symbol:
+          type: string
+        type:
+          $ref: '#/components/schemas/FeeTokenType'
+        decimals:
+          type: number
+        logoURL:
+          type: string
+        contractAddress:
+          type: string
+        tokenID:
+          type: string
+    Relayer_FeeOptions_Response:
+      type: object
+      properties:
+        options:
+          type: array
+          description: '[]FeeOption'
+          items:
+            $ref: '#/components/schemas/FeeOption'
+        sponsored:
+          type: boolean
+        quote:
+          type: string
+    Relayer_AddGasSponsor_Request:
+      type: object
+      properties:
+        projectId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        active:
+          type: boolean
     SortBy_2:
       type: object
       required:
@@ -5222,106 +5322,6 @@ components:
           description: '[]GasSponsor'
           items:
             $ref: '#/components/schemas/GasSponsor'
-    FeeOption:
-      type: object
-      required:
-      - token
-      - to
-      - value
-      - gasLimit
-      properties:
-        token:
-          $ref: '#/components/schemas/FeeToken'
-        to:
-          type: string
-        value:
-          type: string
-        gasLimit:
-          type: number
-    Relayer_AddGasSponsor_Response:
-      type: object
-      properties:
-        status:
-          type: boolean
-        gasSponsor:
-          $ref: '#/components/schemas/GasSponsor'
-    Relayer_ListGasSponsors_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-        page:
-          $ref: '#/components/schemas/Page_3'
-    Relayer_FeeOptions_Response:
-      type: object
-      properties:
-        options:
-          type: array
-          description: '[]FeeOption'
-          items:
-            $ref: '#/components/schemas/FeeOption'
-        sponsored:
-          type: boolean
-        quote:
-          type: string
-    Relayer_AddGasSponsor_Request:
-      type: object
-      properties:
-        projectId:
-          type: number
-        address:
-          type: string
-        name:
-          type: string
-        active:
-          type: boolean
-    Page_3:
-      type: object
-      properties:
-        pageSize:
-          type: number
-        page:
-          type: number
-        more:
-          type: boolean
-        totalRecords:
-          type: number
-        column:
-          type: string
-        before:
-          type: object
-        after:
-          type: object
-        sort:
-          type: array
-          description: '[]SortBy'
-          items:
-            $ref: '#/components/schemas/SortBy_2'
-    FeeToken:
-      type: object
-      required:
-      - chainId
-      - name
-      - symbol
-      - type
-      - logoURL
-      properties:
-        chainId:
-          type: number
-        name:
-          type: string
-        symbol:
-          type: string
-        type:
-          $ref: '#/components/schemas/FeeTokenType'
-        decimals:
-          type: number
-        logoURL:
-          type: string
-        contractAddress:
-          type: string
-        tokenID:
-          type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
