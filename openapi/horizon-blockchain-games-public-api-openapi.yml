@@ -3843,32 +3843,17 @@ paths:
       description: Metadata
 components:
   schemas:
-    TokenBalancesFilter:
+    Indexer_GetTokenBalancesByContract_Response:
       type: object
-      required:
-      - accountAddresses
-      - contractStatus
-      - contractWhitelist
-      - contractBlacklist
       properties:
-        accountAddresses:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
           type: array
-          description: '[]string'
+          description: '[]TokenBalance'
           items:
-            type: string
-        contractStatus:
-          $ref: '#/components/schemas/ContractVerificationStatus'
-        contractWhitelist:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        contractBlacklist:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    ErrorAborted:
+            $ref: '#/components/schemas/TokenBalance'
+    ErrorRequestConflict:
       type: object
       required:
       - error
@@ -3878,18 +3863,115 @@ components:
       properties:
         error:
           type: string
-          example: Aborted
+          example: RequestConflict
         code:
           type: number
-          example: 1005
+          example: 1004
         msg:
           type: string
-          example: Request aborted
+          example: Conflict with target resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 409
+    Indexer_GetNativeTokenBalance_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+    Indexer_GetTokenSupplies_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        contractType:
+          $ref: '#/components/schemas/ContractType'
+        tokenIDs:
+          type: array
+          description: '[]TokenSupply'
+          items:
+            $ref: '#/components/schemas/TokenSupply'
+    Indexer_FetchTransactionReceipt_Response:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceipt'
+    ErrorWebrpcEndpoint:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcEndpoint
+        code:
+          type: number
+          example: 0
+        msg:
+          type: string
+          example: endpoint error
         cause:
           type: string
         status:
           type: number
           example: 400
+    Indexer_GetNativeTokenBalance_Response:
+      type: object
+      properties:
+        balance:
+          $ref: '#/components/schemas/NativeTokenBalance'
+    ContractInfoExtensions:
+      type: object
+      required:
+      - link
+      - description
+      - ogImage
+      - originChainId
+      - originAddress
+      - blacklist
+      - verified
+      - verifiedBy
+      - featured
+      properties:
+        link:
+          type: string
+        description:
+          type: string
+        ogImage:
+          type: string
+        originChainId:
+          type: number
+        originAddress:
+          type: string
+        blacklist:
+          type: boolean
+        verified:
+          type: boolean
+        verifiedBy:
+          type: string
+        featured:
+          type: boolean
+    Indexer_SubscribeBalanceUpdates_Response:
+      type: object
+      properties:
+        balance:
+          $ref: '#/components/schemas/TokenBalance'
+    MetadataOptions:
+      type: object
+      properties:
+        verifiedOnly:
+          type: boolean
+        unverifiedOnly:
+          type: boolean
+        includeContracts:
+          type: array
+          description: '[]string'
+          items:
+            type: string
     Indexer_GetTokenBalancesSummary_Request:
       type: object
       properties:
@@ -3899,6 +3981,552 @@ components:
           type: boolean
         page:
           $ref: '#/components/schemas/Page'
+    TxnInfo:
+      type: object
+      required:
+      - from
+      - to
+      - value
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        value:
+          type: string
+    EventLogDataType:
+      type: string
+      description: Represented as uint8 on the server side
+      enum:
+      - EVENT
+      - TOKEN_TRANSFER
+      - NATIVE_TOKEN_TRANSFER
+      - SEQUENCE_TXN
+    TxnTransferType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - UNKNOWN
+      - SEND
+      - RECEIVE
+    ErrorWebrpcServerPanic:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcServerPanic
+        code:
+          type: number
+          example: -6
+        msg:
+          type: string
+          example: server panic
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    ContractInfo:
+      type: object
+      required:
+      - chainId
+      - address
+      - name
+      - type
+      - symbol
+      - logoURI
+      - deployed
+      - bytecodeHash
+      - extensions
+      - contentHash
+      - updatedAt
+      properties:
+        chainId:
+          type: number
+        address:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        symbol:
+          type: string
+        decimals:
+          type: number
+        logoURI:
+          type: string
+        deployed:
+          type: boolean
+        bytecodeHash:
+          type: string
+        extensions:
+          $ref: '#/components/schemas/ContractInfoExtensions'
+        contentHash:
+          type: number
+        updatedAt:
+          type: string
+    Indexer_GetBalanceUpdates_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    Indexer_FetchTransactionReceiptWithFilter_Response:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceipt'
+    Page:
+      type: object
+      properties:
+        page:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        sort:
+          type: array
+          description: '[]SortBy'
+          items:
+            $ref: '#/components/schemas/SortBy'
+        pageSize:
+          type: number
+        more:
+          type: boolean
+    Indexer_GetBalanceUpdates_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        lastBlockNumber:
+          type: number
+        lastBlockHash:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+    Indexer_GetTokenBalancesDetails_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    ErrorMetadataCallFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MetadataCallFailed
+        code:
+          type: number
+          example: 3003
+        msg:
+          type: string
+          example: Metadata service call failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorProjectNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ProjectNotFound
+        code:
+          type: number
+          example: 3002
+        msg:
+          type: string
+          example: Project not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    TransactionReceipt:
+      type: object
+      required:
+      - txnHash
+      - txnStatus
+      - txnIndex
+      - txnType
+      - blockHash
+      - blockNumber
+      - gasUsed
+      - effectiveGasPrice
+      - from
+      - to
+      - logs
+      - final
+      - reorged
+      properties:
+        txnHash:
+          type: string
+        txnStatus:
+          $ref: '#/components/schemas/TransactionStatus'
+        txnIndex:
+          type: number
+        txnType:
+          $ref: '#/components/schemas/TransactionType'
+        blockHash:
+          type: string
+        blockNumber:
+          type: number
+        gasUsed:
+          type: number
+        effectiveGasPrice:
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        logs:
+          type: array
+          description: '[]TransactionLog'
+          items:
+            $ref: '#/components/schemas/TransactionLog'
+        final:
+          type: boolean
+        reorged:
+          type: boolean
+    ErrorWebrpcBadMethod:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadMethod
+        code:
+          type: number
+          example: -3
+        msg:
+          type: string
+          example: bad method
+        cause:
+          type: string
+        status:
+          type: number
+          example: 405
+    Indexer_FetchTransactionReceiptWithFilter_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TransactionFilter'
+        maxBlockWait:
+          type: number
+    ErrorWebrpcRequestFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcRequestFailed
+        code:
+          type: number
+          example: -1
+        msg:
+          type: string
+          example: request failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorMethodNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: MethodNotFound
+        code:
+          type: number
+          example: 1003
+        msg:
+          type: string
+          example: Method not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    TransactionType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - LegacyTxnType
+      - AccessListTxnType
+      - DynamicFeeTxnType
+    SortBy:
+      type: object
+      required:
+      - column
+      - order
+      properties:
+        column:
+          type: string
+        order:
+          $ref: '#/components/schemas/SortOrder'
+    ErrorWebrpcBadResponse:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcBadResponse
+        code:
+          type: number
+          example: -5
+        msg:
+          type: string
+          example: bad response
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    TransactionStatus:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - FAILED
+      - SUCCESSFUL
+    ErrorSessionExpired:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: SessionExpired
+        code:
+          type: number
+          example: 1002
+        msg:
+          type: string
+          example: Session expired
+        cause:
+          type: string
+        status:
+          type: number
+          example: 403
+    ContractVerificationStatus:
+      type: string
+      description: Represented as string on the server side
+      enum:
+      - VERIFIED
+      - UNVERIFIED
+      - ALL
+    Indexer_GetTokenSuppliesMap_Response:
+      type: object
+      properties:
+        supplies:
+          type: object
+          description: map<string,[]TokenSupply>
+          additionalProperties:
+            type: array
+            description: '[]TokenSupply'
+            items:
+              $ref: '#/components/schemas/TokenSupply'
+    TransactionFilter:
+      type: object
+      properties:
+        txnHash:
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        contractAddress:
+          type: string
+        event:
+          type: string
+    EventFilter:
+      type: object
+      properties:
+        events:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        accounts:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    ErrorQueryFailed:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: QueryFailed
+        code:
+          type: number
+          example: 2003
+        msg:
+          type: string
+          example: Query failed
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_SubscribeEvents_Response:
+      type: object
+      properties:
+        log:
+          $ref: '#/components/schemas/EventLog'
+    Indexer_SubscribeEvents_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/EventFilter'
+    Indexer_SubscribeBalanceUpdates_Request:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+    Indexer_GetTokenBalancesByContract_Request:
+      type: object
+      properties:
+        filter:
+          $ref: '#/components/schemas/TokenBalancesByContractFilter'
+        omitMetadata:
+          type: boolean
+        page:
+          $ref: '#/components/schemas/Page'
+    Indexer_GetTokenBalances_Request:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+        contractAddress:
+          type: string
+        tokenID:
+          type: string
+        includeMetadata:
+          type: boolean
+        metadataOptions:
+          $ref: '#/components/schemas/MetadataOptions'
+        includeCollectionTokens:
+          type: boolean
+        page:
+          $ref: '#/components/schemas/Page'
+    Indexer_GetTransactionHistory_Response:
+      type: object
+      properties:
+        page:
+          $ref: '#/components/schemas/Page'
+        transactions:
+          type: array
+          description: '[]Transaction'
+          items:
+            $ref: '#/components/schemas/Transaction'
+    ErrorNotFound:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: NotFound
+        code:
+          type: number
+          example: 3000
+        msg:
+          type: string
+          example: Resource not found
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorTimeout:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Timeout
+        code:
+          type: number
+          example: 2000
+        msg:
+          type: string
+          example: Request timed out
+        cause:
+          type: string
+        status:
+          type: number
+          example: 408
     TokenMetadata:
       type: object
       required:
@@ -3948,7 +4576,14 @@ components:
           description: '[]Asset'
           items:
             $ref: '#/components/schemas/Asset'
-    ErrorWebrpcServerPanic:
+    Indexer_FetchTransactionReceipt_Request:
+      type: object
+      properties:
+        txnHash:
+          type: string
+        maxBlockWait:
+          type: number
+    ErrorWebrpcStreamLost:
       type: object
       required:
       - error
@@ -3958,97 +4593,18 @@ components:
       properties:
         error:
           type: string
-          example: WebrpcServerPanic
+          example: WebrpcStreamLost
         code:
           type: number
-          example: -6
+          example: -9
         msg:
           type: string
-          example: server panic
+          example: stream lost
         cause:
           type: string
         status:
           type: number
-          example: 500
-    TxnTransfer:
-      type: object
-      required:
-      - transferType
-      - contractAddress
-      - contractType
-      - from
-      - to
-      - amounts
-      - logIndex
-      properties:
-        transferType:
-          $ref: '#/components/schemas/TxnTransferType'
-        contractAddress:
-          type: string
-        contractType:
-          $ref: '#/components/schemas/ContractType'
-        from:
-          type: string
-        to:
-          type: string
-        tokenIds:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        amounts:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        logIndex:
-          type: number
-        contractInfo:
-          $ref: '#/components/schemas/ContractInfo'
-        tokenMetadata:
-          type: object
-          description: map<string,TokenMetadata>
-          additionalProperties:
-            $ref: '#/components/schemas/TokenMetadata'
-    EventDecoded:
-      type: object
-      required:
-      - topicHash
-      - eventSig
-      - types
-      - names
-      - values
-      properties:
-        topicHash:
-          type: string
-        eventSig:
-          type: string
-        types:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        names:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        values:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    Indexer_GetTokenSupplies_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        includeMetadata:
-          type: boolean
-        metadataOptions:
-          $ref: '#/components/schemas/MetadataOptions'
-        page:
-          $ref: '#/components/schemas/Page'
+          example: 400
     ErrorPermissionDenied:
       type: object
       required:
@@ -4071,33 +4627,6 @@ components:
         status:
           type: number
           example: 403
-    ErrorRequestConflict:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: RequestConflict
-        code:
-          type: number
-          example: 1004
-        msg:
-          type: string
-          example: Conflict with target resource
-        cause:
-          type: string
-        status:
-          type: number
-          example: 409
-    Indexer_FetchTransactionReceiptWithFilter_Response:
-      type: object
-      properties:
-        receipt:
-          $ref: '#/components/schemas/TransactionReceipt'
     TransactionHistoryFilter:
       type: object
       properties:
@@ -4131,305 +4660,6 @@ components:
           type: number
         tokenID:
           type: string
-    NativeTokenBalance:
-      type: object
-      required:
-      - accountAddress
-      - balance
-      properties:
-        accountAddress:
-          type: string
-        balance:
-          type: string
-    Indexer_GetTokenSuppliesMap_Request:
-      type: object
-      properties:
-        tokenMap:
-          type: object
-          description: map<string,[]string>
-          additionalProperties:
-            type: array
-            description: '[]string'
-            items:
-              type: string
-        includeMetadata:
-          type: boolean
-        metadataOptions:
-          $ref: '#/components/schemas/MetadataOptions'
-    Indexer_GetNativeTokenBalance_Response:
-      type: object
-      properties:
-        balance:
-          $ref: '#/components/schemas/NativeTokenBalance'
-    TxnInfo:
-      type: object
-      required:
-      - from
-      - to
-      - value
-      properties:
-        from:
-          type: string
-        to:
-          type: string
-        value:
-          type: string
-    Indexer_GetTokenBalancesByContract_Response:
-      type: object
-      properties:
-        page:
-          $ref: '#/components/schemas/Page'
-        balances:
-          type: array
-          description: '[]TokenBalance'
-          items:
-            $ref: '#/components/schemas/TokenBalance'
-    EventLogDataType:
-      type: string
-      description: Represented as uint8 on the server side
-      enum:
-      - EVENT
-      - TOKEN_TRANSFER
-      - NATIVE_TOKEN_TRANSFER
-      - SEQUENCE_TXN
-    Transaction:
-      type: object
-      required:
-      - txnHash
-      - blockNumber
-      - blockHash
-      - chainId
-      - timestamp
-      properties:
-        txnHash:
-          type: string
-        blockNumber:
-          type: number
-        blockHash:
-          type: string
-        chainId:
-          type: number
-        metaTxnID:
-          type: string
-        transfers:
-          type: array
-          description: '[]TxnTransfer'
-          items:
-            $ref: '#/components/schemas/TxnTransfer'
-        timestamp:
-          type: string
-    Indexer_FetchTransactionReceipt_Response:
-      type: object
-      properties:
-        receipt:
-          $ref: '#/components/schemas/TransactionReceipt'
-    Indexer_GetTransactionHistory_Response:
-      type: object
-      properties:
-        page:
-          $ref: '#/components/schemas/Page'
-        transactions:
-          type: array
-          description: '[]Transaction'
-          items:
-            $ref: '#/components/schemas/Transaction'
-    Indexer_GetBalanceUpdates_Response:
-      type: object
-      properties:
-        page:
-          $ref: '#/components/schemas/Page'
-        balances:
-          type: array
-          description: '[]TokenBalance'
-          items:
-            $ref: '#/components/schemas/TokenBalance'
-    Indexer_SubscribeReceipts_Response:
-      type: object
-      properties:
-        receipt:
-          $ref: '#/components/schemas/TransactionReceipt'
-    ContractInfoExtensions:
-      type: object
-      required:
-      - link
-      - description
-      - ogImage
-      - originChainId
-      - originAddress
-      - blacklist
-      - verified
-      - verifiedBy
-      - featured
-      properties:
-        link:
-          type: string
-        description:
-          type: string
-        ogImage:
-          type: string
-        originChainId:
-          type: number
-        originAddress:
-          type: string
-        blacklist:
-          type: boolean
-        verified:
-          type: boolean
-        verifiedBy:
-          type: string
-        featured:
-          type: boolean
-    Indexer_FetchTransactionReceiptWithFilter_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/TransactionFilter'
-        maxBlockWait:
-          type: number
-    ErrorQueryFailed:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: QueryFailed
-        code:
-          type: number
-          example: 2003
-        msg:
-          type: string
-          example: Query failed
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    TransactionFilter:
-      type: object
-      properties:
-        txnHash:
-          type: string
-        from:
-          type: string
-        to:
-          type: string
-        contractAddress:
-          type: string
-        event:
-          type: string
-    ContractVerificationStatus:
-      type: string
-      description: Represented as string on the server side
-      enum:
-      - VERIFIED
-      - UNVERIFIED
-      - ALL
-    EventFilter:
-      type: object
-      properties:
-        events:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        contractAddresses:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        accounts:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        tokenIDs:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    Indexer_GetBalanceUpdates_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        lastBlockNumber:
-          type: number
-        lastBlockHash:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-    ErrorSessionExpired:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: SessionExpired
-        code:
-          type: number
-          example: 1002
-        msg:
-          type: string
-          example: Session expired
-        cause:
-          type: string
-        status:
-          type: number
-          example: 403
-    Indexer_SubscribeEvents_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/EventFilter'
-    ErrorMetadataCallFailed:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: MetadataCallFailed
-        code:
-          type: number
-          example: 3003
-        msg:
-          type: string
-          example: Metadata service call failed
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    TransactionLog:
-      type: object
-      required:
-      - contractAddress
-      - topics
-      - data
-      - index
-      properties:
-        contractAddress:
-          type: string
-        topics:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        data:
-          type: string
-        index:
-          type: number
     ContractType:
       type: string
       description: Represented as uint8 on the server side
@@ -4444,200 +4674,17 @@ components:
       - ERC721_BRIDGE
       - ERC1155_BRIDGE
       - SEQ_MARKETPLACE
-    Indexer_FetchTransactionReceipt_Request:
+    Indexer_GetTokenSupplies_Request:
       type: object
       properties:
-        txnHash:
-          type: string
-        maxBlockWait:
-          type: number
-    Indexer_GetTokenBalances_Request:
-      type: object
-      properties:
-        accountAddress:
-          type: string
         contractAddress:
-          type: string
-        tokenID:
           type: string
         includeMetadata:
           type: boolean
         metadataOptions:
           $ref: '#/components/schemas/MetadataOptions'
-        includeCollectionTokens:
-          type: boolean
         page:
           $ref: '#/components/schemas/Page'
-    TokenBalance:
-      type: object
-      required:
-      - contractType
-      - contractAddress
-      - accountAddress
-      - balance
-      - blockHash
-      - blockNumber
-      - chainId
-      - uniqueCollectibles
-      - isSummary
-      properties:
-        contractType:
-          $ref: '#/components/schemas/ContractType'
-        contractAddress:
-          type: string
-        accountAddress:
-          type: string
-        tokenID:
-          type: string
-        balance:
-          type: string
-        blockHash:
-          type: string
-        blockNumber:
-          type: number
-        chainId:
-          type: number
-        uniqueCollectibles:
-          type: string
-        isSummary:
-          type: boolean
-        contractInfo:
-          $ref: '#/components/schemas/ContractInfo'
-        tokenMetadata:
-          $ref: '#/components/schemas/TokenMetadata'
-    ErrorWebrpcBadResponse:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadResponse
-        code:
-          type: number
-          example: -5
-        msg:
-          type: string
-          example: bad response
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    Indexer_GetTokenSuppliesMap_Response:
-      type: object
-      properties:
-        supplies:
-          type: object
-          description: map<string,[]TokenSupply>
-          additionalProperties:
-            type: array
-            description: '[]TokenSupply'
-            items:
-              $ref: '#/components/schemas/TokenSupply'
-    ErrorNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: NotFound
-        code:
-          type: number
-          example: 3000
-        msg:
-          type: string
-          example: Resource not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    SortOrder:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - DESC
-      - ASC
-    ErrorProjectNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: ProjectNotFound
-        code:
-          type: number
-          example: 3002
-        msg:
-          type: string
-          example: Project not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorResourceExhausted:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: ResourceExhausted
-        code:
-          type: number
-          example: 2004
-        msg:
-          type: string
-          example: Resource exhausted
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorUnavailable:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: Unavailable
-        code:
-          type: number
-          example: 2002
-        msg:
-          type: string
-          example: Unavailable resource
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    TransactionStatus:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - FAILED
-      - SUCCESSFUL
     Indexer_GetTokenBalancesDetails_Request:
       type: object
       properties:
@@ -4647,75 +4694,7 @@ components:
           type: boolean
         page:
           $ref: '#/components/schemas/Page'
-    ErrorWebrpcStreamLost:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcStreamLost
-        code:
-          type: number
-          example: -9
-        msg:
-          type: string
-          example: stream lost
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    TokenSupply:
-      type: object
-      required:
-      - tokenID
-      - supply
-      - chainId
-      properties:
-        tokenID:
-          type: string
-        supply:
-          type: string
-        chainId:
-          type: number
-        contractInfo:
-          $ref: '#/components/schemas/ContractInfo'
-        tokenMetadata:
-          $ref: '#/components/schemas/TokenMetadata'
-    TransactionType:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - LegacyTxnType
-      - AccessListTxnType
-      - DynamicFeeTxnType
-    ErrorWebrpcBadMethod:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadMethod
-        code:
-          type: number
-          example: -3
-        msg:
-          type: string
-          example: bad method
-        cause:
-          type: string
-        status:
-          type: number
-          example: 405
-    Indexer_GetTokenBalancesSummary_Response:
+    Indexer_GetTokenBalances_Response:
       type: object
       properties:
         page:
@@ -4725,64 +4704,6 @@ components:
           description: '[]TokenBalance'
           items:
             $ref: '#/components/schemas/TokenBalance'
-    Page:
-      type: object
-      properties:
-        page:
-          type: number
-        column:
-          type: string
-        before:
-          type: object
-        after:
-          type: object
-        sort:
-          type: array
-          description: '[]SortBy'
-          items:
-            $ref: '#/components/schemas/SortBy'
-        pageSize:
-          type: number
-        more:
-          type: boolean
-    Indexer_SubscribeEvents_Response:
-      type: object
-      properties:
-        log:
-          $ref: '#/components/schemas/EventLog'
-    ErrorInvalidArgument:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: InvalidArgument
-        code:
-          type: number
-          example: 2001
-        msg:
-          type: string
-          example: Invalid argument
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Indexer_GetTransactionHistory_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/TransactionHistoryFilter'
-        page:
-          $ref: '#/components/schemas/Page'
-        includeMetadata:
-          type: boolean
-        metadataOptions:
-          $ref: '#/components/schemas/MetadataOptions'
     ErrorWebrpcBadRequest:
       type: object
       required:
@@ -4805,43 +4726,61 @@ components:
         status:
           type: number
           example: 400
-    ErrorWebrpcEndpoint:
+    TokenSupply:
       type: object
       required:
-      - error
-      - code
-      - msg
-      - status
+      - tokenID
+      - supply
+      - chainId
       properties:
-        error:
+        tokenID:
           type: string
-          example: WebrpcEndpoint
-        code:
+        supply:
+          type: string
+        chainId:
           type: number
-          example: 0
-        msg:
-          type: string
-          example: endpoint error
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Indexer_GetNativeTokenBalance_Request:
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo'
+        tokenMetadata:
+          $ref: '#/components/schemas/TokenMetadata'
+    Indexer_SubscribeReceipts_Request:
       type: object
       properties:
-        accountAddress:
-          type: string
-    SortBy:
+        filter:
+          $ref: '#/components/schemas/TransactionFilter'
+    Indexer_SubscribeReceipts_Response:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceipt'
+    EventDecoded:
       type: object
       required:
-      - column
-      - order
+      - topicHash
+      - eventSig
+      - types
+      - names
+      - values
       properties:
-        column:
+        topicHash:
           type: string
-        order:
-          $ref: '#/components/schemas/SortOrder'
+        eventSig:
+          type: string
+        types:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        names:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        values:
+          type: array
+          description: '[]string'
+          items:
+            type: string
     EventLog:
       type: object
       required:
@@ -4894,303 +4833,65 @@ components:
             type: object
         event:
           $ref: '#/components/schemas/EventDecoded'
-    ErrorWebrpcRequestFailed:
+    TxnTransfer:
       type: object
       required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcRequestFailed
-        code:
-          type: number
-          example: -1
-        msg:
-          type: string
-          example: request failed
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    ErrorWebrpcBadRoute:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcBadRoute
-        code:
-          type: number
-          example: -2
-        msg:
-          type: string
-          example: bad route
-        cause:
-          type: string
-        status:
-          type: number
-          example: 404
-    TransactionReceipt:
-      type: object
-      required:
-      - txnHash
-      - txnStatus
-      - txnIndex
-      - txnType
-      - blockHash
-      - blockNumber
-      - gasUsed
-      - effectiveGasPrice
+      - transferType
+      - contractAddress
+      - contractType
       - from
       - to
-      - logs
-      - final
-      - reorged
+      - amounts
+      - logIndex
       properties:
-        txnHash:
+        transferType:
+          $ref: '#/components/schemas/TxnTransferType'
+        contractAddress:
           type: string
-        txnStatus:
-          $ref: '#/components/schemas/TransactionStatus'
-        txnIndex:
-          type: number
-        txnType:
-          $ref: '#/components/schemas/TransactionType'
-        blockHash:
-          type: string
-        blockNumber:
-          type: number
-        gasUsed:
-          type: number
-        effectiveGasPrice:
-          type: string
+        contractType:
+          $ref: '#/components/schemas/ContractType'
         from:
           type: string
         to:
           type: string
-        logs:
-          type: array
-          description: '[]TransactionLog'
-          items:
-            $ref: '#/components/schemas/TransactionLog'
-        final:
-          type: boolean
-        reorged:
-          type: boolean
-    Indexer_SubscribeReceipts_Request:
-      type: object
-      properties:
-        filter:
-          $ref: '#/components/schemas/TransactionFilter'
-    ErrorMethodNotFound:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: MethodNotFound
-        code:
-          type: number
-          example: 1003
-        msg:
-          type: string
-          example: Method not found
-        cause:
-          type: string
-        status:
-          type: number
-          example: 404
-    MetadataOptions:
-      type: object
-      properties:
-        verifiedOnly:
-          type: boolean
-        unverifiedOnly:
-          type: boolean
-        includeContracts:
+        tokenIds:
           type: array
           description: '[]string'
           items:
             type: string
-    ContractInfo:
-      type: object
-      required:
-      - chainId
-      - address
-      - name
-      - type
-      - symbol
-      - logoURI
-      - deployed
-      - bytecodeHash
-      - extensions
-      - contentHash
-      - updatedAt
-      properties:
-        chainId:
-          type: number
-        address:
-          type: string
-        name:
-          type: string
-        type:
-          type: string
-        symbol:
-          type: string
-        decimals:
-          type: number
-        logoURI:
-          type: string
-        deployed:
-          type: boolean
-        bytecodeHash:
-          type: string
-        extensions:
-          $ref: '#/components/schemas/ContractInfoExtensions'
-        contentHash:
-          type: number
-        updatedAt:
-          type: string
-    ErrorTimeout:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: Timeout
-        code:
-          type: number
-          example: 2000
-        msg:
-          type: string
-          example: Request timed out
-        cause:
-          type: string
-        status:
-          type: number
-          example: 408
-    Indexer_SubscribeBalanceUpdates_Response:
-      type: object
-      properties:
-        balance:
-          $ref: '#/components/schemas/TokenBalance'
-    Indexer_GetTokenBalancesDetails_Response:
-      type: object
-      properties:
-        page:
-          $ref: '#/components/schemas/Page'
-        balances:
-          type: array
-          description: '[]TokenBalance'
-          items:
-            $ref: '#/components/schemas/TokenBalance'
-    TokenBalancesByContractFilter:
-      type: object
-      required:
-      - contractAddresses
-      - accountAddresses
-      - contractStatus
-      properties:
-        contractAddresses:
+        amounts:
           type: array
           description: '[]string'
           items:
             type: string
-        accountAddresses:
+        logIndex:
+          type: number
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo'
+        tokenMetadata:
+          type: object
+          description: map<string,TokenMetadata>
+          additionalProperties:
+            $ref: '#/components/schemas/TokenMetadata'
+    TransactionLog:
+      type: object
+      required:
+      - contractAddress
+      - topics
+      - data
+      - index
+      properties:
+        contractAddress:
+          type: string
+        topics:
           type: array
           description: '[]string'
           items:
             type: string
-        contractStatus:
-          $ref: '#/components/schemas/ContractVerificationStatus'
-    Indexer_GetTokenBalances_Response:
-      type: object
-      properties:
-        page:
-          $ref: '#/components/schemas/Page'
-        balances:
-          type: array
-          description: '[]TokenBalance'
-          items:
-            $ref: '#/components/schemas/TokenBalance'
-    ErrorWebrpcInternalError:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
+        data:
           type: string
-          example: WebrpcInternalError
-        code:
+        index:
           type: number
-          example: -7
-        msg:
-          type: string
-          example: internal error
-        cause:
-          type: string
-        status:
-          type: number
-          example: 500
-    Indexer_GetTokenSupplies_Response:
-      type: object
-      properties:
-        page:
-          $ref: '#/components/schemas/Page'
-        contractType:
-          $ref: '#/components/schemas/ContractType'
-        tokenIDs:
-          type: array
-          description: '[]TokenSupply'
-          items:
-            $ref: '#/components/schemas/TokenSupply'
-    ErrorWebrpcClientDisconnected:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: WebrpcClientDisconnected
-        code:
-          type: number
-          example: -8
-        msg:
-          type: string
-          example: client disconnected
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    TxnTransferType:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - UNKNOWN
-      - SEND
-      - RECEIVE
     Asset:
       type: object
       required:
@@ -5220,15 +4921,65 @@ components:
           type: number
         updatedAt:
           type: string
-    Indexer_GetTokenBalancesByContract_Request:
+    Indexer_GetTransactionHistory_Request:
       type: object
       properties:
         filter:
-          $ref: '#/components/schemas/TokenBalancesByContractFilter'
-        omitMetadata:
-          type: boolean
+          $ref: '#/components/schemas/TransactionHistoryFilter'
         page:
           $ref: '#/components/schemas/Page'
+        includeMetadata:
+          type: boolean
+        metadataOptions:
+          $ref: '#/components/schemas/MetadataOptions'
+    ErrorWebrpcInternalError:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcInternalError
+        code:
+          type: number
+          example: -7
+        msg:
+          type: string
+          example: internal error
+        cause:
+          type: string
+        status:
+          type: number
+          example: 500
+    Transaction:
+      type: object
+      required:
+      - txnHash
+      - blockNumber
+      - blockHash
+      - chainId
+      - timestamp
+      properties:
+        txnHash:
+          type: string
+        blockNumber:
+          type: number
+        blockHash:
+          type: string
+        chainId:
+          type: number
+        metaTxnID:
+          type: string
+        transfers:
+          type: array
+          description: '[]TxnTransfer'
+          items:
+            $ref: '#/components/schemas/TxnTransfer'
+        timestamp:
+          type: string
     ErrorUnauthorized:
       type: object
       required:
@@ -5251,6 +5002,49 @@ components:
         status:
           type: number
           example: 401
+    SortOrder:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - DESC
+      - ASC
+    ErrorResourceExhausted:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: ResourceExhausted
+        code:
+          type: number
+          example: 2004
+        msg:
+          type: string
+          example: Resource exhausted
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_GetTokenSuppliesMap_Request:
+      type: object
+      properties:
+        tokenMap:
+          type: object
+          description: map<string,[]string>
+          additionalProperties:
+            type: array
+            description: '[]string'
+            items:
+              type: string
+        includeMetadata:
+          type: boolean
+        metadataOptions:
+          $ref: '#/components/schemas/MetadataOptions'
     EventLogType:
       type: string
       description: Represented as uint8 on the server side
@@ -5258,22 +5052,273 @@ components:
       - UNKNOWN
       - BLOCK_ADDED
       - BLOCK_REMOVED
-    Indexer_SubscribeBalanceUpdates_Request:
+    ErrorWebrpcBadRoute:
       type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
       properties:
+        error:
+          type: string
+          example: WebrpcBadRoute
+        code:
+          type: number
+          example: -2
+        msg:
+          type: string
+          example: bad route
+        cause:
+          type: string
+        status:
+          type: number
+          example: 404
+    ErrorAborted:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Aborted
+        code:
+          type: number
+          example: 1005
+        msg:
+          type: string
+          example: Request aborted
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorUnavailable:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Unavailable
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Unavailable resource
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    ErrorInvalidArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: InvalidArgument
+        code:
+          type: number
+          example: 2001
+        msg:
+          type: string
+          example: Invalid argument
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    TokenBalancesFilter:
+      type: object
+      required:
+      - accountAddresses
+      - contractStatus
+      - contractWhitelist
+      - contractBlacklist
+      properties:
+        accountAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractStatus:
+          $ref: '#/components/schemas/ContractVerificationStatus'
+        contractWhitelist:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractBlacklist:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    NativeTokenBalance:
+      type: object
+      required:
+      - accountAddress
+      - balance
+      properties:
+        accountAddress:
+          type: string
+        balance:
+          type: string
+    TokenBalancesByContractFilter:
+      type: object
+      required:
+      - contractAddresses
+      - accountAddresses
+      - contractStatus
+      properties:
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        accountAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        contractStatus:
+          $ref: '#/components/schemas/ContractVerificationStatus'
+    TokenBalance:
+      type: object
+      required:
+      - contractType
+      - contractAddress
+      - accountAddress
+      - balance
+      - blockHash
+      - blockNumber
+      - chainId
+      - uniqueCollectibles
+      - isSummary
+      properties:
+        contractType:
+          $ref: '#/components/schemas/ContractType'
         contractAddress:
           type: string
-    Metadata_SearchTokenIDs_Request:
+        accountAddress:
+          type: string
+        tokenID:
+          type: string
+        balance:
+          type: string
+        blockHash:
+          type: string
+        blockNumber:
+          type: number
+        chainId:
+          type: number
+        uniqueCollectibles:
+          type: string
+        isSummary:
+          type: boolean
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo'
+        tokenMetadata:
+          $ref: '#/components/schemas/TokenMetadata'
+    ErrorWebrpcClientDisconnected:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: WebrpcClientDisconnected
+        code:
+          type: number
+          example: -8
+        msg:
+          type: string
+          example: client disconnected
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Indexer_GetTokenBalancesSummary_Response:
       type: object
       properties:
-        chainID:
-          type: string
-        contractAddress:
-          type: string
-        filter:
-          $ref: '#/components/schemas/Filter'
+        page:
+          $ref: '#/components/schemas/Page'
+        balances:
+          type: array
+          description: '[]TokenBalance'
+          items:
+            $ref: '#/components/schemas/TokenBalance'
+    Metadata_SearchTokenMetadata_Response:
+      type: object
+      properties:
         page:
           $ref: '#/components/schemas/Page_2'
+        tokenMetadata:
+          type: array
+          description: '[]TokenMetadata'
+          items:
+            $ref: '#/components/schemas/TokenMetadata_2'
+    Metadata_EnqueueTokensForRefresh_Response:
+      type: object
+      properties:
+        taskId:
+          type: number
+    PropertyFilter:
+      type: object
+      required:
+      - name
+      - type
+      properties:
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/PropertyType'
+        min:
+          type: number
+        max:
+          type: number
+        values:
+          type: array
+          description: '[]any'
+          items:
+            type: object
+    ErrorRateLimited:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RateLimited
+        code:
+          type: number
+          example: 2005
+        msg:
+          type: string
+          example: Rate limited
+        cause:
+          type: string
+        status:
+          type: number
+          example: 429
     ErrorValidationFailed:
       type: object
       required:
@@ -5296,77 +5341,25 @@ components:
         status:
           type: number
           example: 400
-    Metadata_SearchTokenMetadata_Response:
+    Metadata_GetContractInfo_Request:
       type: object
       properties:
-        page:
-          $ref: '#/components/schemas/Page_2'
-        tokenMetadata:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+    Metadata_SearchContractInfo_Response:
+      type: object
+      properties:
+        contractInfoList:
           type: array
-          description: '[]TokenMetadata'
+          description: '[]ContractInfo'
           items:
-            $ref: '#/components/schemas/TokenMetadata_2'
-    Metadata_GetTokenMetadata_Response:
+            $ref: '#/components/schemas/ContractInfo_2'
+    Metadata_SearchContractInfo_Request:
       type: object
       properties:
-        tokenMetadata:
-          type: array
-          description: '[]TokenMetadata'
-          items:
-            $ref: '#/components/schemas/TokenMetadata_2'
-        task:
-          $ref: '#/components/schemas/Task'
-    Metadata_GetTokenMetadataBatch_Response:
-      type: object
-      properties:
-        contractTokenMetadata:
-          type: object
-          description: map<string,[]TokenMetadata>
-          additionalProperties:
-            type: array
-            description: '[]TokenMetadata'
-            items:
-              $ref: '#/components/schemas/TokenMetadata_2'
-        task:
-          $ref: '#/components/schemas/Task'
-    Filter:
-      type: object
-      properties:
-        text:
-          type: string
-        properties:
-          type: array
-          description: '[]PropertyFilter'
-          items:
-            $ref: '#/components/schemas/PropertyFilter'
-    Task:
-      type: object
-      required:
-      - id
-      - queue
-      - try
-      - payload
-      properties:
-        id:
-          type: number
-        queue:
-          type: string
-        status:
-          $ref: '#/components/schemas/TaskStatus'
-        try:
-          type: number
-        runAt:
-          type: string
-        lastRanAt:
-          type: string
-        createdAt:
-          type: string
-        payload:
-          type: array
-          description: '[]byte'
-          items:
-            type: string
-        hash:
+        contractAddress:
           type: string
     TokenMetadata_2:
       type: object
@@ -5424,14 +5417,185 @@ components:
           type: string
         lastFetched:
           type: string
-    PropertyType:
+    Metadata_GetTokenMetadataBatch_Response:
+      type: object
+      properties:
+        contractTokenMetadata:
+          type: object
+          description: map<string,[]TokenMetadata>
+          additionalProperties:
+            type: array
+            description: '[]TokenMetadata'
+            items:
+              $ref: '#/components/schemas/TokenMetadata_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    TaskStatus:
       type: string
-      description: Represented as uint32 on the server side
+      description: Represented as uint8 on the server side
       enum:
-      - INT
-      - STRING
-      - ARRAY
-      - GENERIC
+      - QUEUED
+      - PAUSED
+      - FAILED
+      - COMPLETED
+    Metadata_DirectoryGetNetworks_Request:
+      type: object
+      properties:
+        includeTestnets:
+          type: boolean
+        onlyFeatured:
+          type: boolean
+    Metadata_TokenCollectionFilters_Response:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: '[]PropertyFilter'
+          items:
+            $ref: '#/components/schemas/PropertyFilter'
+    Metadata_GetContractInfoBatch_Response:
+      type: object
+      properties:
+        contractInfoMap:
+          type: object
+          description: map<string,ContractInfo>
+          additionalProperties:
+            $ref: '#/components/schemas/ContractInfo_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    ErrorRequiredArgument:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: RequiredArgument
+        code:
+          type: number
+          example: 2002
+        msg:
+          type: string
+          example: Required argument missing
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Metadata_GetTokenMetadata_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    ContractInfoExtensions_2:
+      type: object
+      required:
+      - link
+      - description
+      - categories
+      - ogImage
+      - ogName
+      - originChainId
+      - originAddress
+      - blacklist
+      - verified
+      - verifiedBy
+      - featured
+      properties:
+        link:
+          type: string
+        description:
+          type: string
+        categories:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        ogImage:
+          type: string
+        ogName:
+          type: string
+        originChainId:
+          type: number
+        originAddress:
+          type: string
+        blacklist:
+          type: boolean
+        verified:
+          type: boolean
+        verifiedBy:
+          type: string
+        featured:
+          type: boolean
+    ErrorTokenDirectoryDisabled:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: TokenDirectoryDisabled
+        code:
+          type: number
+          example: 4001
+        msg:
+          type: string
+          example: Token Directory is disabled
+        cause:
+          type: string
+        status:
+          type: number
+          example: 400
+    Metadata_RefreshTokenMetadata_Response:
+      type: object
+      properties:
+        taskId:
+          type: number
+    Metadata_EnqueueTokensForRefresh_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        tokenIDs:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+        refreshAll:
+          type: boolean
+    Metadata_GetContractInfoBatch_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
+    Metadata_SearchContractInfoBatch_Request:
+      type: object
+      properties:
+        contractAddresses:
+          type: array
+          description: '[]string'
+          items:
+            type: string
     Metadata_RefreshTokenMetadata_Request:
       type: object
       properties:
@@ -5446,66 +5610,26 @@ components:
             type: string
         refreshAll:
           type: boolean
-    ErrorRateLimited:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: RateLimited
-        code:
-          type: number
-          example: 2005
-        msg:
-          type: string
-          example: Rate limited
-        cause:
-          type: string
-        status:
-          type: number
-          example: 429
-    ErrorGeoblocked:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: Geoblocked
-        code:
-          type: number
-          example: 1006
-        msg:
-          type: string
-          example: Geoblocked region
-        cause:
-          type: string
-        status:
-          type: number
-          example: 451
-    ResourceStatus:
-      type: string
-      description: Represented as uint32 on the server side
-      enum:
-      - NOT_AVAILABLE
-      - STALE
-      - AVAILABLE
-    Metadata_SearchTokens_Response:
+    Metadata_SearchContractInfoBatch_Response:
       type: object
       properties:
-        tokenMetadata:
+        contractInfoByChain:
+          type: object
+          description: map<string,[]ContractInfo>
+          additionalProperties:
+            type: array
+            description: '[]ContractInfo'
+            items:
+              $ref: '#/components/schemas/ContractInfo_2'
+    Metadata_DirectoryGetCollections_Response:
+      type: object
+      properties:
+        collections:
           type: array
-          description: '[]TokenMetadata'
+          description: '[]ContractInfo'
           items:
-            $ref: '#/components/schemas/TokenMetadata_2'
-        nextPage:
+            $ref: '#/components/schemas/ContractInfo_2'
+        page:
           $ref: '#/components/schemas/Page_2'
     ErrorChainNotFound:
       type: object
@@ -5529,14 +5653,96 @@ components:
         status:
           type: number
           example: 400
-    TaskStatus:
+    Metadata_GetContractInfo_Response:
+      type: object
+      properties:
+        contractInfo:
+          $ref: '#/components/schemas/ContractInfo_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    ResourceStatus:
       type: string
-      description: Represented as uint8 on the server side
+      description: Represented as uint32 on the server side
       enum:
-      - QUEUED
-      - PAUSED
-      - FAILED
-      - COMPLETED
+      - NOT_AVAILABLE
+      - STALE
+      - AVAILABLE
+    Filter:
+      type: object
+      properties:
+        text:
+          type: string
+        properties:
+          type: array
+          description: '[]PropertyFilter'
+          items:
+            $ref: '#/components/schemas/PropertyFilter'
+    Metadata_SearchTokens_Request:
+      type: object
+      properties:
+        q:
+          type: string
+        chainID:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Metadata_GetTokenMetadataBatch_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractTokenMap:
+          type: object
+          description: map<string,[]string>
+          additionalProperties:
+            type: array
+            description: '[]string'
+            items:
+              type: string
+    PropertyType:
+      type: string
+      description: Represented as uint32 on the server side
+      enum:
+      - INT
+      - STRING
+      - ARRAY
+      - GENERIC
+    Metadata_TokenCollectionFilters_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+    Metadata_GetTokenMetadata_Response:
+      type: object
+      properties:
+        tokenMetadata:
+          type: array
+          description: '[]TokenMetadata'
+          items:
+            $ref: '#/components/schemas/TokenMetadata_2'
+        task:
+          $ref: '#/components/schemas/Task'
+    Metadata_DirectoryGetNetworks_Response:
+      type: object
+      properties:
+        networks:
+          type: array
+          description: '[]uint64'
+          items:
+            type: number
+    Metadata_SearchTokenMetadata_Request:
+      type: object
+      properties:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/Filter'
+        page:
+          $ref: '#/components/schemas/Page_2'
     ErrorFail:
       type: object
       required:
@@ -5559,43 +5765,6 @@ components:
         status:
           type: number
           example: 500
-    Metadata_GetContractInfo_Request:
-      type: object
-      properties:
-        chainID:
-          type: string
-        contractAddress:
-          type: string
-    Metadata_EnqueueTokensForRefresh_Response:
-      type: object
-      properties:
-        taskId:
-          type: number
-    Metadata_GetContractInfoBatch_Response:
-      type: object
-      properties:
-        contractInfoMap:
-          type: object
-          description: map<string,ContractInfo>
-          additionalProperties:
-            $ref: '#/components/schemas/ContractInfo_2'
-        task:
-          $ref: '#/components/schemas/Task'
-    Page_2:
-      type: object
-      properties:
-        page:
-          type: number
-        column:
-          type: string
-        before:
-          type: object
-        after:
-          type: object
-        pageSize:
-          type: number
-        more:
-          type: boolean
     ContractInfo_2:
       type: object
       required:
@@ -5643,14 +5812,46 @@ components:
           type: string
         status:
           $ref: '#/components/schemas/ResourceStatus'
-    Metadata_SearchContractInfo_Response:
+    Metadata_SearchTokenIDs_Request:
       type: object
       properties:
-        contractInfoList:
+        chainID:
+          type: string
+        contractAddress:
+          type: string
+        filter:
+          $ref: '#/components/schemas/Filter'
+        page:
+          $ref: '#/components/schemas/Page_2'
+    Task:
+      type: object
+      required:
+      - id
+      - queue
+      - try
+      - payload
+      properties:
+        id:
+          type: number
+        queue:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        try:
+          type: number
+        runAt:
+          type: string
+        lastRanAt:
+          type: string
+        createdAt:
+          type: string
+        payload:
           type: array
-          description: '[]ContractInfo'
+          description: '[]byte'
           items:
-            $ref: '#/components/schemas/ContractInfo_2'
+            type: string
+        hash:
+          type: string
     Metadata_DirectoryGetCollections_Request:
       type: object
       properties:
@@ -5662,51 +5863,52 @@ components:
           type: boolean
         page:
           $ref: '#/components/schemas/Page_2'
-    Metadata_SearchContractInfoBatch_Request:
+    Page_2:
       type: object
       properties:
-        contractAddresses:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    Metadata_GetContractInfo_Response:
-      type: object
-      properties:
-        contractInfo:
-          $ref: '#/components/schemas/ContractInfo_2'
-        task:
-          $ref: '#/components/schemas/Task'
-    Metadata_GetTokenMetadataBatch_Request:
-      type: object
-      properties:
-        chainID:
-          type: string
-        contractTokenMap:
-          type: object
-          description: map<string,[]string>
-          additionalProperties:
-            type: array
-            description: '[]string'
-            items:
-              type: string
-    Metadata_TokenCollectionFilters_Response:
-      type: object
-      properties:
-        filters:
-          type: array
-          description: '[]PropertyFilter'
-          items:
-            $ref: '#/components/schemas/PropertyFilter'
-    Metadata_DirectoryGetCollections_Response:
-      type: object
-      properties:
-        collections:
-          type: array
-          description: '[]ContractInfo'
-          items:
-            $ref: '#/components/schemas/ContractInfo_2'
         page:
+          type: number
+        column:
+          type: string
+        before:
+          type: object
+        after:
+          type: object
+        pageSize:
+          type: number
+        more:
+          type: boolean
+    ErrorGeoblocked:
+      type: object
+      required:
+      - error
+      - code
+      - msg
+      - status
+      properties:
+        error:
+          type: string
+          example: Geoblocked
+        code:
+          type: number
+          example: 1006
+        msg:
+          type: string
+          example: Geoblocked region
+        cause:
+          type: string
+        status:
+          type: number
+          example: 451
+    Metadata_SearchTokens_Response:
+      type: object
+      properties:
+        tokenMetadata:
+          type: array
+          description: '[]TokenMetadata'
+          items:
+            $ref: '#/components/schemas/TokenMetadata_2'
+        nextPage:
           $ref: '#/components/schemas/Page_2'
     Metadata_SearchTokenIDs_Response:
       type: object
@@ -5718,208 +5920,6 @@ components:
           description: '[]string'
           items:
             type: string
-    Metadata_SearchContractInfo_Request:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-    PropertyFilter:
-      type: object
-      required:
-      - name
-      - type
-      properties:
-        name:
-          type: string
-        type:
-          $ref: '#/components/schemas/PropertyType'
-        min:
-          type: number
-        max:
-          type: number
-        values:
-          type: array
-          description: '[]any'
-          items:
-            type: object
-    Metadata_TokenCollectionFilters_Request:
-      type: object
-      properties:
-        chainID:
-          type: string
-        contractAddress:
-          type: string
-    Metadata_RefreshTokenMetadata_Response:
-      type: object
-      properties:
-        taskId:
-          type: number
-    Metadata_SearchContractInfoBatch_Response:
-      type: object
-      properties:
-        contractInfoByChain:
-          type: object
-          description: map<string,[]ContractInfo>
-          additionalProperties:
-            type: array
-            description: '[]ContractInfo'
-            items:
-              $ref: '#/components/schemas/ContractInfo_2'
-    Metadata_GetTokenMetadata_Request:
-      type: object
-      properties:
-        chainID:
-          type: string
-        contractAddress:
-          type: string
-        tokenIDs:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    Metadata_DirectoryGetNetworks_Response:
-      type: object
-      properties:
-        networks:
-          type: array
-          description: '[]uint64'
-          items:
-            type: number
-    Metadata_SearchTokens_Request:
-      type: object
-      properties:
-        q:
-          type: string
-        chainID:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page_2'
-    Metadata_EnqueueTokensForRefresh_Request:
-      type: object
-      properties:
-        chainID:
-          type: string
-        contractAddress:
-          type: string
-        tokenIDs:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        refreshAll:
-          type: boolean
-    Metadata_DirectoryGetNetworks_Request:
-      type: object
-      properties:
-        includeTestnets:
-          type: boolean
-        onlyFeatured:
-          type: boolean
-    ErrorRequiredArgument:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: RequiredArgument
-        code:
-          type: number
-          example: 2002
-        msg:
-          type: string
-          example: Required argument missing
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
-    Metadata_SearchTokenMetadata_Request:
-      type: object
-      properties:
-        chainID:
-          type: string
-        contractAddress:
-          type: string
-        filter:
-          $ref: '#/components/schemas/Filter'
-        page:
-          $ref: '#/components/schemas/Page_2'
-    ContractInfoExtensions_2:
-      type: object
-      required:
-      - link
-      - description
-      - categories
-      - ogImage
-      - ogName
-      - originChainId
-      - originAddress
-      - blacklist
-      - verified
-      - verifiedBy
-      - featured
-      properties:
-        link:
-          type: string
-        description:
-          type: string
-        categories:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-        ogImage:
-          type: string
-        ogName:
-          type: string
-        originChainId:
-          type: number
-        originAddress:
-          type: string
-        blacklist:
-          type: boolean
-        verified:
-          type: boolean
-        verifiedBy:
-          type: string
-        featured:
-          type: boolean
-    Metadata_GetContractInfoBatch_Request:
-      type: object
-      properties:
-        chainID:
-          type: string
-        contractAddresses:
-          type: array
-          description: '[]string'
-          items:
-            type: string
-    ErrorTokenDirectoryDisabled:
-      type: object
-      required:
-      - error
-      - code
-      - msg
-      - status
-      properties:
-        error:
-          type: string
-          example: TokenDirectoryDisabled
-        code:
-          type: number
-          example: 4001
-        msg:
-          type: string
-          example: Token Directory is disabled
-        cause:
-          type: string
-        status:
-          type: number
-          example: 400
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
