@@ -1,20 +1,21 @@
-generated: '2026-07-19'
+generated: '2026-09-23'
 method: generated
-source: openapi/horizon-blockchain-games-analytics-openapi-original.json, openapi/horizon-blockchain-games-builder-openapi-original.json,
-  openapi/horizon-blockchain-games-indexer-openapi-original.json, openapi/horizon-blockchain-games-infrastructure-openapi-original.json,
-  openapi/horizon-blockchain-games-marketplace-openapi-original.json, openapi/horizon-blockchain-games-metadata-openapi-original.json,
-  openapi/horizon-blockchain-games-transactions-openapi-original.json
+source: openapi/horizon-blockchain-games-analytics-api-openapi.yml, openapi/horizon-blockchain-games-marketplace-api-openapi.yml,
+  openapi/horizon-blockchain-games-public-api-openapi.yml, openapi/horizon-blockchain-games-rpc-api-openapi.yml,
+  openapi/horizon-blockchain-games-secret-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 302
   by_action_class:
-    acting: 302
+    acting: 272
+    connected: 30
   by_consequence:
-    write: 283
-    physical: 18
+    write: 256
+    physical: 15
     safety-critical: 1
+    read: 30
   human_in_the_loop_required: 1
 operations:
 - path: /rpc/Analytics/TotalCompute
@@ -2867,794 +2868,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Builder/GetContract
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/ListContracts
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/ListContractSources
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/ListAudiences
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/GetAudience
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/CreateAudience
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/UpdateAudience
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/DeleteAudience
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/AddAudienceContacts
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Builder/RemoveAudienceContacts
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetEtherBalance
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetNativeTokenBalance
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTokenBalancesSummary
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTokenBalancesDetails
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTokenBalancesByContract
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTokenBalances
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTokenSupplies
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTokenSuppliesMap
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetBalanceUpdates
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTransactionHistory
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/SyncBalance
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/FetchTransactionReceipt
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetOrderbookOrders
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetTopOrders
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/FetchTransactionReceiptWithFilter
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetAllWebhookListeners
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/GetWebhookListener
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/AddWebhookListener
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/UpdateWebhookListener
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/RemoveWebhookListener
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/ToggleWebhookListener
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/PauseAllWebhookListeners
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/ResumeAllWebhookListeners
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/SubscribeReceipts
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/SubscribeEvents
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Indexer/SubscribeBalanceUpdates
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/IsValidSignature
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/IsValidMessageSignature
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/IsValidTypedDataSignature
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/IsValidETHAuthProof
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/LinkWallet
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/GetLinkedWallets
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/RemoveLinkedWallet
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/GetSwapPrice
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/GetSwapPrices
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/API/GetSwapQuote
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /rpc/Marketplace/ListCurrencies
   method: post
+  operationId: postRpcMarketplaceListCurrencies
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3672,6 +2888,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCollectionDetail
   method: post
+  operationId: postRpcMarketplaceGetCollectionDetail
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3689,6 +2906,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCollectible
   method: post
+  operationId: postRpcMarketplaceGetCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3706,6 +2924,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetLowestPriceOfferForCollectible
   method: post
+  operationId: postRpcMarketplaceGetLowestPriceOfferForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3723,6 +2942,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetHighestPriceOfferForCollectible
   method: post
+  operationId: postRpcMarketplaceGetHighestPriceOfferForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3740,6 +2960,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetLowestPriceListingForCollectible
   method: post
+  operationId: postRpcMarketplaceGetLowestPriceListingForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3757,6 +2978,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetHighestPriceListingForCollectible
   method: post
+  operationId: postRpcMarketplaceGetHighestPriceListingForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3774,6 +2996,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListListingsForCollectible
   method: post
+  operationId: postRpcMarketplaceListListingsForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3791,6 +3014,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListOffersForCollectible
   method: post
+  operationId: postRpcMarketplaceListOffersForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3808,6 +3032,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCountOfListingsForCollectible
   method: post
+  operationId: postRpcMarketplaceGetCountOfListingsForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3825,6 +3050,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCountOfOffersForCollectible
   method: post
+  operationId: postRpcMarketplaceGetCountOfOffersForCollectible
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3842,6 +3068,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCollectibleLowestOffer
   method: post
+  operationId: postRpcMarketplaceGetCollectibleLowestOffer
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3859,6 +3086,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCollectibleHighestOffer
   method: post
+  operationId: postRpcMarketplaceGetCollectibleHighestOffer
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3876,6 +3104,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCollectibleLowestListing
   method: post
+  operationId: postRpcMarketplaceGetCollectibleLowestListing
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3893,6 +3122,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCollectibleHighestListing
   method: post
+  operationId: postRpcMarketplaceGetCollectibleHighestListing
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3910,6 +3140,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListCollectibleListings
   method: post
+  operationId: postRpcMarketplaceListCollectibleListings
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3927,6 +3158,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListCollectibleOffers
   method: post
+  operationId: postRpcMarketplaceListCollectibleOffers
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3944,6 +3176,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GenerateBuyTransaction
   method: post
+  operationId: postRpcMarketplaceGenerateBuyTransaction
   x-agentic-access:
     action-class: acting
     consequence: physical
@@ -3963,6 +3196,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GenerateSellTransaction
   method: post
+  operationId: postRpcMarketplaceGenerateSellTransaction
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3980,6 +3214,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GenerateListingTransaction
   method: post
+  operationId: postRpcMarketplaceGenerateListingTransaction
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3997,6 +3232,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GenerateOfferTransaction
   method: post
+  operationId: postRpcMarketplaceGenerateOfferTransaction
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4014,6 +3250,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GenerateCancelTransaction
   method: post
+  operationId: postRpcMarketplaceGenerateCancelTransaction
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4031,25 +3268,19 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListCollectibles
   method: post
+  operationId: postRpcMarketplaceListCollectibles
   x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /rpc/Marketplace/GetCountOfAllCollectibles
   method: post
+  operationId: postRpcMarketplaceGetCountOfAllCollectibles
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4067,6 +3298,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetCountOfFilteredCollectibles
   method: post
+  operationId: postRpcMarketplaceGetCountOfFilteredCollectibles
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4084,6 +3316,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetFloorOrder
   method: post
+  operationId: postRpcMarketplaceGetFloorOrder
   x-agentic-access:
     action-class: acting
     consequence: physical
@@ -4103,6 +3336,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListCollectionActivities
   method: post
+  operationId: postRpcMarketplaceListCollectionActivities
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4120,6 +3354,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListCollectibleActivities
   method: post
+  operationId: postRpcMarketplaceListCollectibleActivities
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4137,6 +3372,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListCollectiblesWithLowestListing
   method: post
+  operationId: postRpcMarketplaceListCollectiblesWithLowestListing
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4154,6 +3390,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/ListCollectiblesWithHighestOffer
   method: post
+  operationId: postRpcMarketplaceListCollectiblesWithHighestOffer
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4171,6 +3408,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/GetOrders
   method: post
+  operationId: postRpcMarketplaceGetOrders
   x-agentic-access:
     action-class: acting
     consequence: physical
@@ -4190,6 +3428,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/CheckoutOptionsMarketplace
   method: post
+  operationId: postRpcMarketplaceCheckoutOptionsMarketplace
   x-agentic-access:
     action-class: acting
     consequence: physical
@@ -4209,6 +3448,7 @@ operations:
     audit: required
 - path: /rpc/Marketplace/CheckoutOptionsSalesContract
   method: post
+  operationId: postRpcMarketplaceCheckoutOptionsSalesContract
   x-agentic-access:
     action-class: acting
     consequence: physical
@@ -4228,6 +3468,241 @@ operations:
     audit: required
 - path: /rpc/Marketplace/SupportedMarketplaces
   method: post
+  operationId: postRpcMarketplaceSupportedMarketplaces
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetNativeTokenBalance
+  method: post
+  operationId: postRpcIndexerGetNativeTokenBalance
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetTokenBalancesSummary
+  method: post
+  operationId: postRpcIndexerGetTokenBalancesSummary
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetTokenBalancesDetails
+  method: post
+  operationId: postRpcIndexerGetTokenBalancesDetails
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetTokenBalancesByContract
+  method: post
+  operationId: postRpcIndexerGetTokenBalancesByContract
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetTokenBalances
+  method: post
+  operationId: postRpcIndexerGetTokenBalances
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetTokenSupplies
+  method: post
+  operationId: postRpcIndexerGetTokenSupplies
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetTokenSuppliesMap
+  method: post
+  operationId: postRpcIndexerGetTokenSuppliesMap
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetBalanceUpdates
+  method: post
+  operationId: postRpcIndexerGetBalanceUpdates
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetTransactionHistory
+  method: post
+  operationId: postRpcIndexerGetTransactionHistory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/FetchTransactionReceipt
+  method: post
+  operationId: postRpcIndexerFetchTransactionReceipt
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/FetchTransactionReceiptWithFilter
+  method: post
+  operationId: postRpcIndexerFetchTransactionReceiptWithFilter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/SubscribeReceipts
+  method: post
+  operationId: postRpcIndexerSubscribeReceipts
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/SubscribeEvents
+  method: post
+  operationId: postRpcIndexerSubscribeEvents
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/SubscribeBalanceUpdates
+  method: post
+  operationId: postRpcIndexerSubscribeBalanceUpdates
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4245,6 +3720,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/RefreshTokenMetadata
   method: post
+  operationId: postRpcMetadataRefreshTokenMetadata
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4262,57 +3738,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/EnqueueTokensForRefresh
   method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Metadata/RefreshContractInfo
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Metadata/RefreshContractTokens
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Metadata/RefreshAllContractTokens
-  method: post
+  operationId: postRpcMetadataEnqueueTokensForRefresh
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4330,6 +3756,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/GetTokenMetadata
   method: post
+  operationId: postRpcMetadataGetTokenMetadata
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4347,6 +3774,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/GetTokenMetadataBatch
   method: post
+  operationId: postRpcMetadataGetTokenMetadataBatch
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4364,6 +3792,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/SearchTokenMetadata
   method: post
+  operationId: postRpcMetadataSearchTokenMetadata
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4381,6 +3810,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/SearchTokenIDs
   method: post
+  operationId: postRpcMetadataSearchTokenIDs
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4398,6 +3828,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/TokenCollectionFilters
   method: post
+  operationId: postRpcMetadataTokenCollectionFilters
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4415,108 +3846,55 @@ operations:
     audit: required
 - path: /rpc/Metadata/GetContractInfo
   method: post
+  operationId: postRpcMetadataGetContractInfo
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /rpc/Metadata/GetContractInfoBatch
   method: post
+  operationId: postRpcMetadataGetContractInfoBatch
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /rpc/Metadata/SearchContractInfo
   method: post
+  operationId: postRpcMetadataSearchContractInfo
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /rpc/Metadata/SearchContractInfoBatch
   method: post
+  operationId: postRpcMetadataSearchContractInfoBatch
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Metadata/SearchMetadata
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /rpc/Metadata/SearchTokens
   method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Metadata/SearchContracts
-  method: post
+  operationId: postRpcMetadataSearchTokens
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4534,6 +3912,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/DirectoryGetNetworks
   method: post
+  operationId: postRpcMetadataDirectoryGetNetworks
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4551,6 +3930,7 @@ operations:
     audit: required
 - path: /rpc/Metadata/DirectoryGetCollections
   method: post
+  operationId: postRpcMetadataDirectoryGetCollections
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4566,14 +3946,75 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/CreateCollection
+- path: /rpc/Builder/GetContract
   method: post
+  operationId: postRpcBuilderGetContract
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Builder/ListContracts
+  method: post
+  operationId: postRpcBuilderListContracts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Builder/ListContractSources
+  method: post
+  operationId: postRpcBuilderListContractSources
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Builder/ListAudiences
+  method: post
+  operationId: postRpcBuilderListAudiences
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Builder/GetAudience
+  method: post
+  operationId: postRpcBuilderGetAudience
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Builder/CreateAudience
+  method: post
+  operationId: postRpcBuilderCreateAudience
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4583,14 +4024,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/GetCollection
+- path: /rpc/Builder/UpdateAudience
   method: post
+  operationId: postRpcBuilderUpdateAudience
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4600,14 +4042,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/ListCollections
+- path: /rpc/Builder/DeleteAudience
   method: post
+  operationId: postRpcBuilderDeleteAudience
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4617,14 +4060,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/UpdateCollection
+- path: /rpc/Builder/AddAudienceContacts
   method: post
+  operationId: postRpcBuilderAddAudienceContacts
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4634,14 +4078,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/DeleteCollection
+- path: /rpc/Builder/RemoveAudienceContacts
   method: post
+  operationId: postRpcBuilderRemoveAudienceContacts
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4651,14 +4096,27 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/PublishCollection
+- path: /rpc/Indexer/GetEtherBalance
   method: post
+  operationId: postRpcIndexerGetEtherBalance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/SyncBalance
+  method: post
+  operationId: postRpcIndexerSyncBalance
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4668,14 +4126,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/UnpublishCollection
+- path: /rpc/API/IsValidSignature
   method: post
+  operationId: postRpcAPIIsValidSignature
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4685,14 +4144,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/CreateContractCollection
+- path: /rpc/API/IsValidMessageSignature
   method: post
+  operationId: postRpcAPIIsValidMessageSignature
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4702,14 +4162,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/GetContractCollection
+- path: /rpc/API/IsValidTypedDataSignature
   method: post
+  operationId: postRpcAPIIsValidTypedDataSignature
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4719,14 +4180,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/ListContractCollections
+- path: /rpc/API/IsValidETHAuthProof
   method: post
+  operationId: postRpcAPIIsValidETHAuthProof
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4736,14 +4198,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/UpdateContractCollection
+- path: /rpc/API/LinkWallet
   method: post
+  operationId: postRpcAPILinkWallet
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4753,14 +4216,27 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/DeleteContractCollection
+- path: /rpc/API/GetLinkedWallets
   method: post
+  operationId: postRpcAPIGetLinkedWallets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/API/RemoveLinkedWallet
+  method: post
+  operationId: postRpcAPIRemoveLinkedWallet
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4770,14 +4246,51 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/CreateToken
+- path: /rpc/API/GetSwapPrice
   method: post
+  operationId: postRpcAPIGetSwapPrice
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/API/GetSwapPrices
+  method: post
+  operationId: postRpcAPIGetSwapPrices
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/API/GetSwapQuote
+  method: post
+  operationId: postRpcAPIGetSwapQuote
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Metadata/RefreshContractInfo
+  method: post
+  operationId: postRpcMetadataRefreshContractInfo
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4787,14 +4300,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/GetToken
+- path: /rpc/Metadata/RefreshContractTokens
   method: post
+  operationId: postRpcMetadataRefreshContractTokens
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4804,14 +4318,15 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/ListTokens
+- path: /rpc/Metadata/RefreshAllContractTokens
   method: post
+  operationId: postRpcMetadataRefreshAllContractTokens
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     audience: null
     token:
       max-ttl: 900
@@ -4821,127 +4336,45 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /rpc/Collections/UpdateToken
+- path: /rpc/Metadata/SearchMetadata
   method: post
+  operationId: postRpcMetadataSearchMetadata
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Collections/DeleteToken
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Metadata/SearchContracts
   method: post
+  operationId: postRpcMetadataSearchContracts
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
+    - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Collections/CreateAsset
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Collections/GetAsset
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Collections/UpdateAsset
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /rpc/Collections/DeleteAsset
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /rpc/Relayer/GetChainID
   method: post
+  operationId: postRpcRelayerGetChainID
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /rpc/Relayer/FeeTokens
   method: post
+  operationId: postRpcRelayerFeeTokens
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4959,6 +4392,7 @@ operations:
     audit: required
 - path: /rpc/Relayer/FeeOptions
   method: post
+  operationId: postRpcRelayerFeeOptions
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4976,6 +4410,7 @@ operations:
     audit: required
 - path: /rpc/Relayer/ListGasSponsors
   method: post
+  operationId: postRpcRelayerListGasSponsors
   x-agentic-access:
     action-class: acting
     consequence: physical
@@ -4995,12 +4430,517 @@ operations:
     audit: required
 - path: /rpc/Relayer/AddGasSponsor
   method: post
+  operationId: postRpcRelayerAddGasSponsor
   x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
     scope:
     - AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/GetOrderbookOrders
+  method: post
+  operationId: postRpcIndexerGetOrderbookOrders
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/GetTopOrders
+  method: post
+  operationId: postRpcIndexerGetTopOrders
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/GetAllWebhookListeners
+  method: post
+  operationId: postRpcIndexerGetAllWebhookListeners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/GetWebhookListener
+  method: post
+  operationId: postRpcIndexerGetWebhookListener
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Indexer/AddWebhookListener
+  method: post
+  operationId: postRpcIndexerAddWebhookListener
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/UpdateWebhookListener
+  method: post
+  operationId: postRpcIndexerUpdateWebhookListener
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/RemoveWebhookListener
+  method: post
+  operationId: postRpcIndexerRemoveWebhookListener
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/ToggleWebhookListener
+  method: post
+  operationId: postRpcIndexerToggleWebhookListener
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/PauseAllWebhookListeners
+  method: post
+  operationId: postRpcIndexerPauseAllWebhookListeners
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Indexer/ResumeAllWebhookListeners
+  method: post
+  operationId: postRpcIndexerResumeAllWebhookListeners
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/CreateCollection
+  method: post
+  operationId: postRpcCollectionsCreateCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/GetCollection
+  method: post
+  operationId: postRpcCollectionsGetCollection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Collections/ListCollections
+  method: post
+  operationId: postRpcCollectionsListCollections
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Collections/UpdateCollection
+  method: post
+  operationId: postRpcCollectionsUpdateCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/DeleteCollection
+  method: post
+  operationId: postRpcCollectionsDeleteCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/PublishCollection
+  method: post
+  operationId: postRpcCollectionsPublishCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/UnpublishCollection
+  method: post
+  operationId: postRpcCollectionsUnpublishCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/CreateContractCollection
+  method: post
+  operationId: postRpcCollectionsCreateContractCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/GetContractCollection
+  method: post
+  operationId: postRpcCollectionsGetContractCollection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Collections/ListContractCollections
+  method: post
+  operationId: postRpcCollectionsListContractCollections
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Collections/UpdateContractCollection
+  method: post
+  operationId: postRpcCollectionsUpdateContractCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/DeleteContractCollection
+  method: post
+  operationId: postRpcCollectionsDeleteContractCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/CreateToken
+  method: post
+  operationId: postRpcCollectionsCreateToken
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/GetToken
+  method: post
+  operationId: postRpcCollectionsGetToken
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/ListTokens
+  method: post
+  operationId: postRpcCollectionsListTokens
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/UpdateToken
+  method: post
+  operationId: postRpcCollectionsUpdateToken
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/DeleteToken
+  method: post
+  operationId: postRpcCollectionsDeleteToken
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/CreateAsset
+  method: post
+  operationId: postRpcCollectionsCreateAsset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/GetAsset
+  method: post
+  operationId: postRpcCollectionsGetAsset
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rpc/Collections/UpdateAsset
+  method: post
+  operationId: postRpcCollectionsUpdateAsset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rpc/Collections/DeleteAsset
+  method: post
+  operationId: postRpcCollectionsDeleteAsset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMHhiZWU3NGU3ZmZkNzdkMThhZDJhOTg2ODEyZGE2MTc5ODk0MDY4ODZjIiwiaWF0IjoxNzQxNjg3NDg4LCJwcm9qZWN0IjoxNjgxNX0.LvTwKf0T6IBK9HuRFboXCNh2YY9d6EwDoQAlGYC80KQ
     audience: null
     token:
       max-ttl: 900
