@@ -64,6 +64,141 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Horizon Blockchain Games is a company surfaced as a portfolio company of initialized-capital and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Horizon Blockchain Games is the web3 gaming studio and infrastructure company behind Skyweaver and the Sequence platform (sequence.xyz / 0xsequence) — a modular, open-source web3 development stack for onchain apps, DeFi, stablecoins, and games. Sequence unifies smart-contract wallets, embedded Wallet-as-a-Service, 1-click cross-chain payments, an NFT marketplace, a multi-chain indexer, token metadata, a transaction relayer with gas sponsorship, a node gateway, analytics, and SDKs for Web, Unity, Unreal, React Native, and Go. Its APIs are webrpc JSON-RPC-over-HTTP services spanning 40+ EVM chains, authenticated with project access keys. Sequence was acquired by Polygon Labs. This profile was enriched by the API Evangelist pipeline from Sequence's public developer surface.
 
-Backed by: initialized-capital — https://horizongames.net/
+**Areas:** Company · Consumer · Blockchain · Web3 · Gaming · NFT · Wallets · Cryptocurrency · Smart Contracts · Marketplace · Developer Tools · Ethereum
+
+## Horizon Blockchain Games on APIs.io
+
+Everything profiled for Horizon Blockchain Games is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/horizon-blockchain-games/](https://apis.io/providers/horizon-blockchain-games/)** — or go straight to one of the APIs or properties below.
+
+### APIs (5)
+
+- [Horizon Blockchain Games Analytics API](https://apis.io/apis/horizon-blockchain-games/horizon-blockchain-games-analytics-api/) — The Analytics API from Horizon Blockchain Games — 177 operation(s) for analytics.
+- [Horizon Blockchain Games Marketplace API](https://apis.io/apis/horizon-blockchain-games/horizon-blockchain-games-marketplace-api/) — The Marketplace API from Horizon Blockchain Games — 34 operation(s) for marketplace.
+- [Horizon Blockchain Games Public API](https://apis.io/apis/horizon-blockchain-games/horizon-blockchain-games-public-api/) — Endpoints accessible by passing your project-access-key in the header. This is injected whenever you login automatically.
+- [Horizon Blockchain Games Rpc API](https://apis.io/apis/horizon-blockchain-games/horizon-blockchain-games-rpc-api/) — The Rpc API from Horizon Blockchain Games — 32 operation(s) for rpc.
+- [Horizon Blockchain Games Secret API](https://apis.io/apis/horizon-blockchain-games/horizon-blockchain-games-secret-api/) — Endpoints that require a Sequence service token intended to be secret. You can manually generate one on Sequence Builder and pass it as a Bearer Token.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Horizon Blockchain Games Webhooks](https://apis.io/asyncapis/horizon-blockchain-games/horizon-blockchain-games-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [horizon-blockchain-games-sequence](https://apis.io/servers/horizon-blockchain-games/horizon-blockchain-games-sequence/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Horizon Blockchain Games Agentic Access](https://apis.io/agentic-access/horizon-blockchain-games/horizon-blockchain-games-agentic-access/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Api Analytics API](https://apis.io/collections/horizon-blockchain-games/open-horizon-blockchain-games-analytics-api/)
+- [Api Analytics Marketplace API](https://apis.io/collections/horizon-blockchain-games/open-horizon-blockchain-games-marketplace-api/)
+- [Api Analytics public API](https://apis.io/collections/horizon-blockchain-games/open-horizon-blockchain-games-public-api/)
+- [Api Analytics Rpc API](https://apis.io/collections/horizon-blockchain-games/open-horizon-blockchain-games-rpc-api/)
+- [Api Analytics secret API](https://apis.io/collections/horizon-blockchain-games/open-horizon-blockchain-games-secret-api/)
+
+#### Overlays (7)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Horizon Blockchain Games Analytics Overlay](https://apis.io/overlays/horizon-blockchain-games/horizon-blockchain-games-analytics-overlay/)
+- [Horizon Blockchain Games Builder Overlay](https://apis.io/overlays/horizon-blockchain-games/horizon-blockchain-games-builder-overlay/)
+- [Horizon Blockchain Games Indexer Overlay](https://apis.io/overlays/horizon-blockchain-games/horizon-blockchain-games-indexer-overlay/)
+- [Horizon Blockchain Games Infrastructure Overlay](https://apis.io/overlays/horizon-blockchain-games/horizon-blockchain-games-infrastructure-overlay/)
+- [Horizon Blockchain Games Marketplace Overlay](https://apis.io/overlays/horizon-blockchain-games/horizon-blockchain-games-marketplace-overlay/)
+- [Horizon Blockchain Games Metadata Overlay](https://apis.io/overlays/horizon-blockchain-games/horizon-blockchain-games-metadata-overlay/)
+- [Horizon Blockchain Games Transactions Overlay](https://apis.io/overlays/horizon-blockchain-games/horizon-blockchain-games-transactions-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Horizon Blockchain Games Authentication](https://apis.io/security/horizon-blockchain-games/horizon-blockchain-games-authentication/)
+- [Horizon Blockchain Games Domain Security](https://apis.io/security/horizon-blockchain-games/horizon-blockchain-games-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://horizongames.net/)
+- [Documentation](https://docs.sequence.xyz)
+- [Getting started](https://docs.sequence.xyz/solutions/builder/getting-started)
+- [API reference](https://docs.sequence.xyz/api-references/overview)
+- [Pricing](https://sequence.xyz/pricing)
+- [Sign up](https://sequence.build)
+- [Support](https://support.sequence.xyz/en/)
+- [Blog](https://sequence.xyz/blog)
+- [Terms of service](https://sequence.xyz/terms)
+- [Privacy policy](https://sequence.xyz/privacy)
+- [GitHub](https://github.com/0xsequence)
+- [Status](https://status.sequence.info)
+
+## API Evangelist rating
+
+**Kin Score 46.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 53.7 |
+| Contract governance | 4.5 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 63.7 |
+| Access clarity | 31.6 |
+
+**Agent readiness 29.0** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 22.3** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/horizon-blockchain-games/](https://apis.io/providers/horizon-blockchain-games/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Horizon Blockchain Games: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/horizon-blockchain-games/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
